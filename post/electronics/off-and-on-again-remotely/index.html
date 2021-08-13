@@ -1,0 +1,367 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>'Off and on again' remotely - Jack of All Trades</title>
+<meta name=description content="The internet in Durham, which was allowing me to use the workstation there remotely, has gone down; support tell me to &lsquo;turn it off and on again&rsquo;. But obviously I can&rsquo;t do that remotely. Ah well, it wasn&rsquo;t really needed. But what if it were? I&rsquo;ve run servers over unreliable wifi links with good uptime before, with a failsafe script which rebooted everything if it couldn&rsquo;t ping the gateway for too long—and looking at the logs, sometimes it was needed.">
+<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/electronics\/off-and-on-again-remotely\/","name":"\u0027 off and on again\u0027 remotely"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"\u0027Off and on again\u0027 remotely","description":"The internet in Durham, which was allowing me to use the workstation there remotely, has gone down; support tell me to \u0026lsquo;turn it off and on again\u0026rsquo;. But obviously I can\u0026rsquo;t do that remotely. Ah well, it wasn\u0026rsquo;t really needed. But what if it were? I\u0026rsquo;ve run servers over unreliable wifi links with good uptime before, with a failsafe script which rebooted everything if it couldn\u0026rsquo;t ping the gateway for too long—and looking at the logs, sometimes it was needed.","inLanguage":"en","wordCount":696,"datePublished":"2018-08-02T08:30:53","dateModified":"2018-08-02T08:30:53","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/electronics\/off-and-on-again-remotely\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
+<meta property="og:title" content="'Off and on again' remotely">
+<meta property="og:description" content="The internet in Durham, which was allowing me to use the workstation there remotely, has gone down; support tell me to &lsquo;turn it off and on again&rsquo;. But obviously I can&rsquo;t do that remotely. Ah well, it wasn&rsquo;t really needed. But what if it were? I&rsquo;ve run servers over unreliable wifi links with good uptime before, with a failsafe script which rebooted everything if it couldn&rsquo;t ping the gateway for too long—and looking at the logs, sometimes it was needed.">
+<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
+<meta property="og:url" content="https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jack of All Trades">
+<meta name=twitter:title content="'Off and on again' remotely">
+<meta name=twitter:description content="The internet in Durham, which was allowing me to use the workstation there remotely, has gone down; support tell me to &lsquo;turn it off and on again&rsquo;. But obviously I can&rsquo;t do that …">
+<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
+<meta name=twitter:card content="summary">
+<meta name=generator content="Hugo 0.87.0">
+<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title=Home href=https://2e0byo.github.io/>Home</a>
+</li>
+<li>
+<a title=About href=https://2e0byo.github.io/page/about/>About</a>
+</li>
+<li class=navlinks-container>
+<a class=navlinks-parent>Project by...</a>
+<div class=navlinks-children>
+<a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a>
+</div>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Jack of All Trades" href=https://2e0byo.github.io/>
+<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<div id=header-big-imgs data-num-img=1 data-img-src-1=/img/dscf1146.jpg></div>
+<header class="header-section has-img">
+<div class="intro-header big-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=post-heading>
+<h1>'Off and on again' remotely</h1>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on August 2, 2018
+&nbsp;(Last modified on August 13, 2021)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</div>
+</div>
+</div>
+</div>
+<span class=img-desc style=display:inline></span>
+</div>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=post-heading>
+<h1>'Off and on again' remotely</h1>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on August 2, 2018
+&nbsp;(Last modified on August 13, 2021)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article role=main class=blog-post>
+<p>The internet in Durham, which was allowing me to use the workstation
+there remotely, has gone down; support tell me to &lsquo;turn it off and on
+again&rsquo;. But obviously I can&rsquo;t do that remotely. Ah well, it wasn&rsquo;t
+really needed. But what if it <em>were</em>? I&rsquo;ve run servers over
+unreliable wifi links with good uptime before, with a failsafe script
+which rebooted everything if it couldn&rsquo;t ping the gateway for too
+long—and looking at the logs, sometimes it was needed. But I can&rsquo;t
+reboot the router (and though I&rsquo;ll replace it, there&rsquo;s little
+opensource DSL firmware, so I&rsquo;m never going to be able to reboot
+the <em>modem</em>). So what we need is the remote equivalent of pulling the
+plug out and putting it back in again. I have a few of those <a href=https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi>Poor
+Man’s Rasberry
+Pi</a> boards
+lying around; one could surely be made to pulse a relay if it can&rsquo;t
+ping after a while? But the only relays I have (mainly rescued from a
+faulty boiler) are designed for industrial 24v DC. I hunted for a
+while and then gave up on finding any 12v relays. Isn&rsquo;t there a
+circuit called a voltage doubler? As usual, SM0VPO has some
+<a href=http://www.sm0vpo.com/>information</a>. I was going to use a 555
+timer, but that shamed me: I can still build a discrete
+multivibrator—it was one of the first circuits I ever built, after
+all. But first off the relay inline in an extension cord. Here I
+made a completely daft error: the box is about 100% too long, because
+I thought the cable exit grommets went the other way round. But
+anyhow, here is how to make a box out of hardboard, that most
+intractable thing:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1086.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1086.jpg alt=Cut>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1086.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Cut</p>
+</figcaption>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1087.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1087.jpg alt="Mark holes">
+</div>
+<a href=https://2e0byo.github.io/img/dscf1087.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Mark holes</p>
+</figcaption>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1088.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1088.jpg alt=Drill>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1088.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Drill</p>
+</figcaption>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1089.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1089.jpg alt="Temporary clamp to drill ends">
+</div>
+<a href=https://2e0byo.github.io/img/dscf1089.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Temporary clamp to drill ends</p>
+</figcaption>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1090.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1090.jpg alt="Enlarge holes">
+</div>
+<a href=https://2e0byo.github.io/img/dscf1090.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Enlarge holes</p>
+</figcaption>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1091.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1091.jpg alt="Glue ends">
+</div>
+<a href=https://2e0byo.github.io/img/dscf1091.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Glue ends</p>
+</figcaption>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1092.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1092.jpg alt="Glue up">
+</div>
+<a href=https://2e0byo.github.io/img/dscf1092.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Glue up</p>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Well that wasn&rsquo;t too bad. One face is screwed with <em>very</em> small
+screws into small bits of ply glued on the inside of another face.
+Here&rsquo;s the thing all wired up:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3169.jpg alt=/img/dscf3169.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf3169.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>Now for the circuitry. First I built a simple doubler and switched
+the whole thing as the load of a bc547 common-emmiter switch. Then I
+found an easily accessible gpio and soldered a length of magnet wire
+to it: first problem—it boots up <em>high.</em> Now we can&rsquo;t simply invert
+that, as the line will go low when the board reboots, and it should be
+able to do that without switching the load. So the first idea was to
+AND one inverted and one ordinary GPIO, so I built the rather silly
+bit of RT/DL on the LHS of the schematic. Except that the firmware
+goes into failsafe mode if it detects any kind of load on some of the
+GPIOs, and one of those I&rsquo;d picked was clearly one of them. Worse, in
+testing it I managed to short the 12v rail to ground, and something on
+the board blew up with a nasty smell. On reboot it refused to boot; I
+hunted for a while and then gave up. So that board is now scrap
+(aren&rsquo;t we glad it&rsquo;s not a Pi!). For the 99p it cost you couldn&rsquo;t
+even get the PSU, so I&rsquo;m not too heartbroken. A better idea, I
+decided, was to use the power LED and the GPIO it <em>didn&rsquo;t</em> mind me
+connecting to something. So the final schematic:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1149_v1.jpg alt=/img/dscf1149_v1.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1149_v1.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>And after logging in remotely, I can turn the relay on and off by
+setting gpio 18 low:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1146.jpg alt=/img/dscf1146.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1146.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>Now to take it up to Durham and see if it works up there—and whether
+it scares anyone. _Update: _After about two months of constant usage,
+I have not had to reset the internet by hand once. Looking at the
+logs, it frequently goes down, but generally resets itself; so far
+we&rsquo;ve needed about three reboots. Incidentally, when using this
+<em>manually</em> to reboot the internet, one must remember to start screen
+and then execute something like <code>relay_on.sh; sleep 10; relay\_off.sh</code>
+otherwise it <em>turns off the router you are using to connect</em> and you
+can&rsquo;t turn it on again, short of unplugging the relay. The board has
+plenty of spare cpu power, and is also the DNS server, and keeps track
+of the public IP address.</p>
+</article>
+<ul class="pager blog-pager">
+<li class=previous>
+<a href=https://2e0byo.github.io/post/electronics/frequency-counter/display-board/ data-toggle=tooltip data-placement=top title="Display Board">&larr; Previous Post</a>
+</li>
+<li class=next>
+<a href=https://2e0byo.github.io/post/electronics/frequency-counter/basic-counter/ data-toggle=tooltip data-placement=top title="Basic Counter">Next Post &rarr;</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:2e0byo@gmail.com title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/2e0byo title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+John Morris
+&nbsp;&bull;&nbsp;&copy;
+2021
+&nbsp;&bull;&nbsp;
+<a href=https://2e0byo.github.io/>Jack of All Trades</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/2e0byo.github.io/tree/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
+</body>
+</html>

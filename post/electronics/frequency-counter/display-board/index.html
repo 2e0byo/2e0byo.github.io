@@ -1,0 +1,389 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Display Board - Jack of All Trades</title>
+<meta name=description content="I started this peice of test equipment when I was about 15, I think, built the timebase with enthusiasm, the counting chain with a bit less, and then wondered how on earth I was to attach the 7-segment displays. Surely not one wire each?! So the project languished, and eventually got relegated to the shelf without ever being finished. All I had was the breadboard and two schematics which nearly corresponded with what was in front of me:">
+<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/electronics\/frequency-counter\/display-board\/","name":"Display board"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Display Board","description":"I started this peice of test equipment when I was about 15, I think, built the timebase with enthusiasm, the counting chain with a bit less, and then wondered how on earth I was to attach the 7-segment displays. Surely not one wire each?! So the project languished, and eventually got relegated to the shelf without ever being finished. All I had was the breadboard and two schematics which nearly corresponded with what was in front of me:","inLanguage":"en","wordCount":797,"datePublished":"2018-07-31T16:02:59","dateModified":"2018-07-31T16:02:59","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":["Frequency Counter"],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/electronics\/frequency-counter\/display-board\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
+<meta property="og:title" content="Display Board">
+<meta property="og:description" content="I started this peice of test equipment when I was about 15, I think, built the timebase with enthusiasm, the counting chain with a bit less, and then wondered how on earth I was to attach the 7-segment displays. Surely not one wire each?! So the project languished, and eventually got relegated to the shelf without ever being finished. All I had was the breadboard and two schematics which nearly corresponded with what was in front of me:">
+<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
+<meta property="og:url" content="https://2e0byo.github.io/post/electronics/frequency-counter/display-board/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jack of All Trades">
+<meta name=twitter:title content="Display Board">
+<meta name=twitter:description content="I started this peice of test equipment when I was about 15, I think, built the timebase with enthusiasm, the counting chain with a bit less, and then wondered how on earth I was to attach the …">
+<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
+<meta name=twitter:card content="summary">
+<meta name=generator content="Hugo 0.87.0">
+<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title=Home href=https://2e0byo.github.io/>Home</a>
+</li>
+<li>
+<a title=About href=https://2e0byo.github.io/page/about/>About</a>
+</li>
+<li class=navlinks-container>
+<a class=navlinks-parent>Project by...</a>
+<div class=navlinks-children>
+<a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a>
+</div>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Jack of All Trades" href=https://2e0byo.github.io/>
+<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<header class=header-section>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=post-heading>
+<h1>Display Board</h1>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on July 31, 2018
+&nbsp;(Last modified on August 13, 2021)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article role=main class=blog-post>
+<p>I started this peice of test equipment when I was about 15, I think,
+built the timebase with enthusiasm, the counting chain with a bit
+less, and then wondered how on earth I was to attach the 7-segment
+displays. Surely not one wire each?! So the project languished, and
+eventually got relegated to the shelf without ever being finished.
+All I had was the breadboard and two schematics which <em>nearly</em>
+corresponded with what was in front of me:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf11341.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf11341.jpg alt="Counting chain and decoders">
+</div>
+<a href=https://2e0byo.github.io/img/dscf11341.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Counting chain and decoders</p>
+</figcaption>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1135.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1135.jpg alt=Timebase>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1135.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Timebase</p>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>I seem to have started on a more sensible switching scheme, with diode
+and gates summed at a transistor (might it not be more sensible to use
+a CMOS Nand gate if we&rsquo;re going to handle higher frequencies?).
+Coincidentally I amassed a lot of ATA cables, which have 40 pins. 10
+digits with decimal places = 80 leads + ground: could I make a pcb and
+and use two ATA cables to connect the board to the counting chain? A
+frequency counter/pulse width measurer would be very useful, and I
+keep improvising them with MPUs. When I ordered parts for the battery
+charger (on which more later) I picked up 100 0805 150R resistors. I
+remembered I&rsquo;d settled on them to drive the digits, and didn&rsquo;t
+re-check the calculation: this was to prove interesting later. Then
+time to fire up KiCAD and make a very fiddly board:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/2018-07-31-133545-screenshot.png)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/2018-07-31-133545-screenshot.png alt=/img/2018-07-31-133545-screenshot.png>
+</div>
+<a href=https://2e0byo.github.io/img/2018-07-31-133545-screenshot.png itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/2018-07-31-133510-screenshot.png)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/2018-07-31-133510-screenshot.png alt=/img/2018-07-31-133510-screenshot.png>
+</div>
+<a href=https://2e0byo.github.io/img/2018-07-31-133510-screenshot.png itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>I&rsquo;m getting the hang of the global tools. Still, I should 1. have
+set the clearance higher and 2. have used an autorouter, as some of
+those tracks are dangerously close. In fact, transferring was a
+complete nightmare&mdash;the glossy surface of the paper <em>won&rsquo;t</em> come off
+and I had to go around nearly every track with a needle. Next time
+different paper. Etch and etch and etch, for about 3 hours: the
+etchant hit saturation quite early. Also need a bigger, and vertical
+etching tank. Here&rsquo;s the result:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3177.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3177.jpg alt=/img/dscf3177.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf3177.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3176.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3176.jpg alt=/img/dscf3176.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf3176.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>As you can see I left the toner on to guide the drilling, which made
+things a lot easier. I also drilled the ata header pins at 0.8mm and
+had to re-drill at 1mm. Then gluing (with a small wire dipped in
+superglue) and soldering all the resistors, and then the digits and
+headers:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1120.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1120.jpg alt=/img/dscf1120.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1120.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1121.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1121.jpg alt=/img/dscf1121.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1121.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>At this point I discovered the &lsquo;key&rsquo; pin on an ATA cable which is
+blanked, and cut the corresponding header pins. Later I found
+non-keyed cables and had to solder the pins back in place, which was
+hard work. Now we just need something to wire up the other end
+with. My preference is magnet wire: I have lots of it, it&rsquo;s easily
+stripped with the iron at ~380 but the odd brush with an iron at 290
+(soldering temperature) will do it no harm, unlike plastic-sheathed
+cable which will instantly fuse. So I had to cut and &lsquo;strip&rsquo; 80 little
+bits of wire, which was tedious, and then solder them onto some
+stripboard along with the headers:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1123.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1123.jpg alt=/img/dscf1123.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1123.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1124.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1124.jpg alt=/img/dscf1124.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1124.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>And then several hours to
+solder them all to the driver ICs, and correct the odd wiring mistake
+from when I first built this board. As you can see, it&rsquo;s rather
+bright; in fact, so bright I quickly got a headache:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1125.jpg alt=/img/dscf1125.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1125.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>Those last digits are all &lsquo;8s&rsquo; because they&rsquo;re counting faster than
+persistence of vision, as the scope show:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1127.jpg alt=/img/dscf1127.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1127.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>The 74hc4051 driving the rightmost (LSB) digit didn&rsquo;t work properly,
+probably because I had a bright idea and tried to strip some magnet
+wire attached to it and overheated it. I swapped it for an old 4511
+(not HC) which was to cause me problems. For now it needed to be
+dimmer, and I wasn&rsquo;t replacing those 150R resistors. PWM was the
+obvious way to go, and I threw together a test using the
+￼<a href=https://2e0byo.github.io/post/electronics/pic-development-board>Pinguino</a>
+and a transistor to switch the ground return. It does
+<em>work</em>:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1131-e1533041588764.jpg alt=/img/dscf1131-e1533041588764.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1131-e1533041588764.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>…kind of: that 4511 is not driving properly. In fact, it doesn&rsquo;t like
+working at all into a PWM load. I was stumped for a long time, and
+eventually decided to replace it and ignore the problem for now. So I
+build a 555 based PWM driver (the same one the whole internet builds)
+and connected it up. Then in a fit of inspiration I tried <em>reading
+the datasheet</em> for the 4511, which points out that the enable pin may
+be used for &lsquo;brightness control&rsquo;. Duh! Feeding the PWM into the
+enable and grounding the display board gives me a nice smooth
+adjustable brightness:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1133.jpg alt=/img/dscf1133.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1133.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>As you can see, there used to be a linear PSU on the board, but it was
+silly and inefficient so I replaced it with a 5v SMPSU of the plug-in
+kind. Now we have the counter and display: all that&rsquo;s needed is the
+gating logic, an input amplifier and a case. I may, finally, finish
+this thing!</p>
+<div class=blog-tags>
+<a href=https://2e0byo.github.io//tags/frequency-counter/>Frequency Counter</a>&nbsp;
+</div>
+</article>
+<ul class="pager blog-pager">
+<li class=previous>
+<a href=https://2e0byo.github.io/post/electronics/cd-player-line-in/ data-toggle=tooltip data-placement=top title="CD Player Line-In">&larr; Previous Post</a>
+</li>
+<li class=next>
+<a href=https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/ data-toggle=tooltip data-placement=top title="'Off and on again' remotely">Next Post &rarr;</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:2e0byo@gmail.com title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/2e0byo title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+John Morris
+&nbsp;&bull;&nbsp;&copy;
+2021
+&nbsp;&bull;&nbsp;
+<a href=https://2e0byo.github.io/>Jack of All Trades</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/2e0byo.github.io/tree/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
+</body>
+</html>

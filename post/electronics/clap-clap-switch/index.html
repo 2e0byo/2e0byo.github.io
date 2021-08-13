@@ -1,0 +1,299 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Clap-clap switch - Jack of All Trades</title>
+<meta name=description content="I&rsquo;ve always thought of those clap-activated switches as a bit of a gimmick&mdash;after all, you can always just move the lightswitch if it&rsquo;s that hard to get at. But currently my mother is hobbling around on crutches, and it suddenly struck me that turning the uplighter on from the doorway would be handy. A rummage through the junkbox found a board—I think from an old washing machine—full of relays, and 5v relays at that, so no need for a voltage multiplier to turn the relay on.">
+<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/electronics\/clap-clap-switch\/","name":"Clap clap switch"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Clap-clap switch","description":"I\u0026rsquo;ve always thought of those clap-activated switches as a bit of a gimmick\u0026mdash;after all, you can always just move the lightswitch if it\u0026rsquo;s that hard to get at. But currently my mother is hobbling around on crutches, and it suddenly struck me that turning the uplighter on from the doorway would be handy. A rummage through the junkbox found a board—I think from an old washing machine—full of relays, and 5v relays at that, so no need for a voltage multiplier to turn the relay on.","inLanguage":"en","wordCount":739,"datePublished":"2018-09-19T15:33:39","dateModified":"2018-09-19T15:33:39","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/electronics\/clap-clap-switch\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
+<meta property="og:title" content="Clap-clap switch">
+<meta property="og:description" content="I&rsquo;ve always thought of those clap-activated switches as a bit of a gimmick&mdash;after all, you can always just move the lightswitch if it&rsquo;s that hard to get at. But currently my mother is hobbling around on crutches, and it suddenly struck me that turning the uplighter on from the doorway would be handy. A rummage through the junkbox found a board—I think from an old washing machine—full of relays, and 5v relays at that, so no need for a voltage multiplier to turn the relay on.">
+<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
+<meta property="og:url" content="https://2e0byo.github.io/post/electronics/clap-clap-switch/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jack of All Trades">
+<meta name=twitter:title content="Clap-clap switch">
+<meta name=twitter:description content="I&rsquo;ve always thought of those clap-activated switches as a bit of a gimmick&mdash;after all, you can always just move the lightswitch if it&rsquo;s that hard to get at. But currently my mother is …">
+<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
+<meta name=twitter:card content="summary">
+<meta name=generator content="Hugo 0.87.0">
+<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title=Home href=https://2e0byo.github.io/>Home</a>
+</li>
+<li>
+<a title=About href=https://2e0byo.github.io/page/about/>About</a>
+</li>
+<li class=navlinks-container>
+<a class=navlinks-parent>Project by...</a>
+<div class=navlinks-children>
+<a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a>
+</div>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Jack of All Trades" href=https://2e0byo.github.io/>
+<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<header class=header-section>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=post-heading>
+<h1>Clap-clap switch</h1>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on September 19, 2018
+&nbsp;(Last modified on October 5, 2020)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article role=main class=blog-post>
+<p>I&rsquo;ve always thought of those clap-activated switches as a bit of a
+gimmick&mdash;after all, you can always just move the lightswitch if it&rsquo;s
+that hard to get at. But currently my mother is hobbling around on
+crutches, and it suddenly struck me that turning the uplighter on from
+the doorway would be handy. A rummage through the junkbox found a
+board—I think from an old washing machine—full of relays, and 5v
+relays at that, so no need for a voltage multiplier to turn the relay
+on. I also found an old &lsquo;usb charger&rsquo; rated at 1A 4.2V (?!), which is
+thankfully enough to turn on the relay.</p>
+<p>Looking over the internet, most people just feed a common-emitter npn
+with an appropriately biased mic; some use a darlington for more gain.
+I could just feed this into a 555 bistable and rely on amplitude alone
+to prevent false triggering, but that seems a little crude; also, the
+room is used for music lessons, and clapping is not unheard of. It
+would be better to have some distinctive pattern; after a little
+thought I came up with the following:</p>
+<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/schem.jpg alt=/img/schem.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/schem.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>The microphone (an electret pulled from something once) is biased by
+the 1k and parallel 10k resistors: ideal biasing was somewhere between
+1k and 5k, and I had no 5K pot. The 10k is logarithmic anyhow, so the
+adjustment curve is fun. The first two transistors amplify in
+common-emmitter mode, the second being an easy point to add
+amplification by biasing the base up with a resistor if needed.</p>
+<p>This feeds two 555 timers, both in monostable mode. The first (top)
+generates a 110ms pulse to debounce the input; the second (bottom)
+generates a pulse between .1 and ~3s for the timeout circuit.
+Continuing to the right on the top, two flip-flops form a kind of ring
+counter: the rightmost toggles, driving the relay, after the leftmost
+has recieved two rising edges (i.e. two claps). The reset circuit is
+crude: the leftmost flip-flop is reset and the rightmost is set to its
+current state (i.e. unaffected&mdash;and any momentary glitch ought to be
+held on by relay which takes a while to turn off anyhow). To ensure
+that the leftmost doesn&rsquo;t toggle the rightmost when it resets I added
+a 10nf capacitor on the base of the transistor (which takes a moment
+to charge, thus adding a slight delay—or you can say it&rsquo;s a low-pass
+filter and curves the sharp rising edge). These are both fed from the
+lower 555, inverted, via a 22uF capacitor to generate a short-ish
+pulse (about 10ms)—the inversion being so that the pulse comes at the
+<em>end</em> of the reset window.</p>
+<p>Not shown are most of the decoupling capacitors, which turned out to
+be essential to stop the flip-flops going mad, the protection diode
+across the relay coil (otherwise it never turns off!); the hefty
+(22uF) electrolytic near the transistors (top left) stops them putting
+enough load on the supply to cause a loud clap to register as two, or
+even more: this puzzled me for a while until I thought of it.</p>
+<p>Most useful of all is the LED on Q of the first flip-flop, which turns
+on during the <em>low</em> window (F1 in the timing diagram). Without this,
+use is highly frustrating. With the LED you adjust the threshold pot
+until it turns on when you clap (taking care to give it some
+margin—the supply drifts, and as the relay makes some noise turning
+off it can go into oscillation, which is not good), and then adjust
+the &lsquo;window&rsquo; pot, watching the LED. It will turn off by itself under
+the reset timeout, and the game is to set a long enough timeout to be
+able to turn the LED off—and the output on—first. Here&rsquo;s the two
+pots:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1199.jpg alt=/img/dscf1199.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf1199.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>I should probably put knobs on them. But this is not for long term
+usage (after all, it&rsquo;s drawing current to turn on). Here&rsquo;s the
+breadboard, a bit of the insulating hardboard added:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3204.jpg alt=/img/dscf3204.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf3204.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>A closeup of the board (rather cramped) and the mains enclosure, safe
+if not pretty:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3207.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3207.jpg alt=Board>
+</div>
+<a href=https://2e0byo.github.io/img/dscf3207.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Board</p>
+</figcaption>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1200.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1200.jpg alt="Mains circuitry to the left">
+</div>
+<a href=https://2e0byo.github.io/img/dscf1200.jpg itemprop=contentUrl></a>
+<figcaption>
+<p>Mains circuitry to the left</p>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>And it works! Not bad for an evening&rsquo;s inspiration. At some point I
+might even add a video or something to prove it. And if anyone else
+does this—unless like me you have a lot of random parts around, save
+yourself the hassle and use a microprocessor, or maybe even <a href=https://github.com/tom-s/clap-detector>dsp on a
+computer</a>.</p>
+</article>
+<ul class="pager blog-pager">
+<li class=previous>
+<a href=https://2e0byo.github.io/post/coding/chuffchuff-cheaply/ data-toggle=tooltip data-placement=top title="ChuffChuff (cheaply)">&larr; Previous Post</a>
+</li>
+<li class=next>
+<a href=https://2e0byo.github.io/post/workbench/napkin-rings/ data-toggle=tooltip data-placement=top title="Napkin Rings">Next Post &rarr;</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:2e0byo@gmail.com title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/2e0byo title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+John Morris
+&nbsp;&bull;&nbsp;&copy;
+2021
+&nbsp;&bull;&nbsp;
+<a href=https://2e0byo.github.io/>Jack of All Trades</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/2e0byo.github.io/tree/3abd32b0f7e1290f25f7495eb0eed0a48c20d3bc>3abd32b0</a>]
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
+</body>
+</html>

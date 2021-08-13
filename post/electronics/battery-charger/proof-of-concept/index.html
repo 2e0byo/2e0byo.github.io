@@ -1,0 +1,271 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Proof of Concept - Jack of All Trades</title>
+<meta name=description content="By this point we have all we need for a basic charge, and I do actually need to charge some batteries. I can build a simple current regulator with an LM317 and a resistor, which will be good enough for now.
+No Termination The simplest thing would be just to charge some batteries and log to the computer. There&rsquo;s a marvellous thing out there called FeedGnuPlot which makes graphing realtime or static data so easy one has to resist the temptation to graph everything.">
+<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/electronics\/battery-charger\/proof-of-concept\/","name":"Proof of concept"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Proof of Concept","description":"By this point we have all we need for a basic charge, and I do actually need to charge some batteries. I can build a simple current regulator with an LM317 and a resistor, which will be good enough for now.\nNo Termination The simplest thing would be just to charge some batteries and log to the computer. There\u0026rsquo;s a marvellous thing out there called FeedGnuPlot which makes graphing realtime or static data so easy one has to resist the temptation to graph everything.","inLanguage":"en","wordCount":538,"datePublished":"2018-07-20T07:30:59","dateModified":"2018-07-20T07:30:59","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":["orphaned projects, Battery charger"],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/electronics\/battery-charger\/proof-of-concept\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
+<meta property="og:title" content="Proof of Concept">
+<meta property="og:description" content="By this point we have all we need for a basic charge, and I do actually need to charge some batteries. I can build a simple current regulator with an LM317 and a resistor, which will be good enough for now.
+No Termination The simplest thing would be just to charge some batteries and log to the computer. There&rsquo;s a marvellous thing out there called FeedGnuPlot which makes graphing realtime or static data so easy one has to resist the temptation to graph everything.">
+<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
+<meta property="og:url" content="https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jack of All Trades">
+<meta name=twitter:title content="Proof of Concept">
+<meta name=twitter:description content="By this point we have all we need for a basic charge, and I do actually need to charge some batteries. I can build a simple current regulator with an LM317 and a resistor, which will be good enough …">
+<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
+<meta name=twitter:card content="summary">
+<meta name=generator content="Hugo 0.87.0">
+<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title=Home href=https://2e0byo.github.io/>Home</a>
+</li>
+<li>
+<a title=About href=https://2e0byo.github.io/page/about/>About</a>
+</li>
+<li class=navlinks-container>
+<a class=navlinks-parent>Project by...</a>
+<div class=navlinks-children>
+<a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a>
+</div>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Jack of All Trades" href=https://2e0byo.github.io/>
+<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<header class=header-section>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=post-heading>
+<h1>Proof of Concept</h1>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on July 20, 2018
+&nbsp;(Last modified on October 6, 2020)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article role=main class=blog-post>
+<p>By this point we have all we need for a basic charge, and I do
+actually need to charge some batteries. I can build a simple current
+regulator with an LM317 and a resistor, which will be good enough for
+now.</p>
+<h1 id=no-termination>No Termination</h1>
+<p>The simplest thing would be just to charge some batteries and log to
+the computer. There&rsquo;s a marvellous thing out there called
+<a href=https://github.com/dkogan/feedgnuplot>FeedGnuPlot</a> which makes
+graphing realtime or static data so easy one has to resist the
+temptation to graph everything. But before we can do that, we need to
+be able to read analogue values and throw them over USB.</p>
+<h1 id=code>Code</h1>
+<p>The Pic has a lot of ADC inputs, and Pinguino supports using all of
+PortA as analogue input. The code is incredibly simple:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c> <span class=cp>#define batteryIn 0 
+</span><span class=cp></span> <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>raw_adc</span><span class=p>;</span> 
+ <span class=n>raw_adc</span> <span class=o>=</span> <span class=n>analogueRead</span><span class=p>(</span><span class=n>batteryIn</span><span class=p>);</span>
+</code></pre></div><p>But because ADCs can jitter a bit, I generally take an average. I
+should really work out if this is worth it, particularly as the PIC
+can&rsquo;t do floating point (more on that later):</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>total</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> 
+<span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>i</span><span class=p>;</span>
+<span class=kt>void</span> <span class=nf>get_voltage</span><span class=p>(){</span> 
+	<span class=n>total</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> 
+	<span class=k>for</span> <span class=p>(</span><span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;</span><span class=mi>10</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span> 
+		<span class=n>total</span> <span class=o>+=</span> <span class=n>analogRead</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span> 
+		<span class=p>}</span> 
+	<span class=n>raw_adc</span> <span class=o>=</span> <span class=n>total</span> <span class=o>/</span> <span class=mi>10</span><span class=p>;</span> 
+	<span class=k>return</span><span class=p>;</span> 
+	<span class=p>}</span>
+</code></pre></div><p>the preprocessor+compiler+goodness knows what else here has problems
+with sensible things like declaring i in the for loop, so there we
+go. The default behaviour of division on the PIC with integers is to
+truncate, which isn&rsquo;t great, so we define:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=kt>unsigned</span> <span class=kt>int</span> <span class=nf>round_closest</span><span class=p>(</span><span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>dividend</span><span class=p>,</span> <span class=kt>unsigned</span> <span class=kt>int</span> <span class=n>divisor</span><span class=p>)</span> <span class=p>{</span> 
+	<span class=k>return</span> <span class=p>(</span><span class=n>dividend</span> <span class=o>+</span> <span class=p>(</span><span class=n>divisor</span> <span class=o>/</span> <span class=mi>2</span><span class=p>))</span> <span class=o>/</span> <span class=n>divisor</span><span class=p>;</span> 
+	<span class=p>}</span>
+</code></pre></div><p>Which came, I think, from StackExchange, but is pretty simple to
+understand. Now we just need to print the logged values over USB.
+One would think that the inbuilt CDC (Usb Serial) library would be
+ideal, but unfortunately it won&rsquo;t compile… The Pinguino IDE .deb from
+the main website depends upon something—I forget what—which there is
+no longer a debian package for, but which installs fine via pip. So I
+went looking for the ide source, and found that the official GitHub
+repository only has v11, but the downloaded debs (which include the
+libraries) are v12 (!). At some point I should unpack the .deb, edit
+out the dependency, and re-install; for now I&rsquo;m using v11 with the
+kludge of pointing it at the v12 libraries. Hopefully that&rsquo;s why it
+doesn&rsquo;t work, as CDC would be nice&mdash;it greatly simplifies <em>reading</em>
+from the computer. I was stumped, and then found the inbuilt &lsquo;BULK&rsquo;
+USB mode. I don&rsquo;t know enough about USB to know what it&rsquo;s doing
+(other than not emulating a serial port), but the library comes with a
+simple Python script to read a string sent with BULK.printf(). That
+gives us everything we need for a first basic test. Here&rsquo;s the rather
+hasty mock-up. Note the potential divider feeding the ADC to protect
+it from the full voltage.</p>
+<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf11131-e1532011094813.jpg alt=/img/dscf11131-e1532011094813.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf11131-e1532011094813.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>Unfortunately I deleted the log, so I can&rsquo;t screenshot gnuplot, but
+here&rsquo;s a screenshot from the code I wrote to play with termination
+conditions. In reality the curve continues to the right and starts
+climbing again, which is when we&rsquo;re into overcharge, but I truncated
+the data.</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/overcharge.png alt=/img/overcharge.png>
+</div>
+<a href=https://2e0byo.github.io/img/overcharge.png itemprop=contentUrl></a>
+</figure>
+</div>
+<p>Clearly, it works. Now to get it to work out when to <em>stop</em> charging.</p>
+<div class=blog-tags>
+<a href=https://2e0byo.github.io//tags/orphaned-projects/>orphaned projects</a>&nbsp;
+<a href=https://2e0byo.github.io//tags/battery-charger/>Battery charger</a>&nbsp;
+</div>
+</article>
+<ul class="pager blog-pager">
+<li class=previous>
+<a href=https://2e0byo.github.io/post/electronics/pic-development-board/ data-toggle=tooltip data-placement=top title="PIC Development Board">&larr; Previous Post</a>
+</li>
+<li class=next>
+<a href=https://2e0byo.github.io/post/bookbinding/more-bookbinding-tools/ data-toggle=tooltip data-placement=top title="More bookbinding tools">Next Post &rarr;</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:2e0byo@gmail.com title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/2e0byo title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+John Morris
+&nbsp;&bull;&nbsp;&copy;
+2021
+&nbsp;&bull;&nbsp;
+<a href=https://2e0byo.github.io/>Jack of All Trades</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/2e0byo.github.io/tree/b7dc32a5a3cf02070ea381dee137a8ffe4341c32>b7dc32a5</a>]
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
+</body>
+</html>

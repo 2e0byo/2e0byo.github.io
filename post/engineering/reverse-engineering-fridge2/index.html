@@ -1,0 +1,482 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Reverse Engineering a Fridge: Part 2 - Jack of All Trades</title>
+<meta name=description content="Hardware So we have five mains circuits: the lamp, the fan, the heaters, the compressor, and the &lsquo;superfreeze&rsquo; button, which I think just adds the starting coils permanently. The original controller only switches four of these on the board (the superfreeze is a manual switch), and uses triacs for all except the compressor, which has a 10A relay. Of course, that requires the controller to be attached to the AC neutral, which isn&rsquo;t a great idea with exposed hardware like a prototype balanced on a fridge.">
+<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge2\/","name":"Reverse engineering a fridge part 2"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Reverse Engineering a Fridge: Part 2","description":"Hardware So we have five mains circuits: the lamp, the fan, the heaters, the compressor, and the \u0026lsquo;superfreeze\u0026rsquo; button, which I think just adds the starting coils permanently. The original controller only switches four of these on the board (the superfreeze is a manual switch), and uses triacs for all except the compressor, which has a 10A relay. Of course, that requires the controller to be attached to the AC neutral, which isn\u0026rsquo;t a great idea with exposed hardware like a prototype balanced on a fridge.","inLanguage":"en","wordCount":1761,"datePublished":"2021-01-21T15:42:44","dateModified":"2021-01-21T15:42:44","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge2\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
+<meta property="og:title" content="Reverse Engineering a Fridge: Part 2">
+<meta property="og:description" content="Hardware So we have five mains circuits: the lamp, the fan, the heaters, the compressor, and the &lsquo;superfreeze&rsquo; button, which I think just adds the starting coils permanently. The original controller only switches four of these on the board (the superfreeze is a manual switch), and uses triacs for all except the compressor, which has a 10A relay. Of course, that requires the controller to be attached to the AC neutral, which isn&rsquo;t a great idea with exposed hardware like a prototype balanced on a fridge.">
+<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
+<meta property="og:url" content="https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jack of All Trades">
+<meta name=twitter:title content="Reverse Engineering a Fridge: Part 2">
+<meta name=twitter:description content="Hardware So we have five mains circuits: the lamp, the fan, the heaters, the compressor, and the &lsquo;superfreeze&rsquo; button, which I think just adds the starting coils permanently. The original …">
+<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
+<meta name=twitter:card content="summary">
+<meta name=generator content="Hugo 0.87.0">
+<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title=Home href=https://2e0byo.github.io/>Home</a>
+</li>
+<li>
+<a title=About href=https://2e0byo.github.io/page/about/>About</a>
+</li>
+<li class=navlinks-container>
+<a class=navlinks-parent>Project by...</a>
+<div class=navlinks-children>
+<a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a>
+</div>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Jack of All Trades" href=https://2e0byo.github.io/>
+<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<header class=header-section>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=post-heading>
+<h1>Reverse Engineering a Fridge: Part 2</h1>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on January 21, 2021
+&nbsp;(Last modified on August 13, 2021)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article role=main class=blog-post>
+<h1 id=hardware>Hardware</h1>
+<p>So we have five mains circuits: the lamp, the fan, the heaters, the
+compressor, and the &lsquo;superfreeze&rsquo; button, which I think just adds the
+starting coils permanently. The original controller only switches
+four of these on the board (the superfreeze is a manual switch), and
+uses triacs for all except the compressor, which has a 10A relay. Of
+course, that requires the controller to be attached to the AC neutral,
+which isn&rsquo;t a great idea with exposed hardware like a prototype
+balanced on a fridge. So we&rsquo;ll use relays for everything: three
+low-current relays, and two great big 15A monsters, all from the
+microwave control board.</p>
+<p>I wired these all up on protoboard, with back-emf diodes and BC547s as
+switches. To save current they are switched with a resistor bypassed
+by a capacitor: on connection the capacitor dumps full current on the
+relay, but then charges up and effectively disappears, so changing the
+resistor value allows us to set a lower holding current. These were
+picked by feel: 10k for the little relays, which seem fine with that
+(remember we&rsquo;re talking 24v!). One little relay is most over-used and
+needed the resistor shorting out, and even <em>then</em> he did not make a
+happy clicking sound like his friends. I think he may be growing old,
+but we&rsquo;ll use SSR in the final thing anyhow.</p>
+<p>Here is the relay board:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/20210121_121502.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210121_121502.jpg alt=/img/20210121_121502.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/20210121_121502.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/20210121_121445.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210121_121445.jpg alt=/img/20210121_121445.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/20210121_121445.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>And here&rsquo;s the rest of the hardware:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/20210121_121435.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210121_121435.jpg alt=/img/20210121_121435.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/20210121_121435.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/20210121_121524.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210121_121524.jpg alt=/img/20210121_121524.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/20210121_121524.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>The rest of the hardware was fairly straightforward. An ESP32, on a
+generic Chinese dev board, drives the relays. There are at present
+three DS18B20 temperature sensors: two to calibrate the thermistors, but I
+plan on removing them, and one to measure the room temperature, since
+it might be interesting to know what difference very cold or hot days
+make. The thermistors are in a potential divider connected to the
+ESP32&rsquo;s famously bad ADC. A 100nF capacitor partly mitigates the ADC;
+we don&rsquo;t need much resolution for this so we only read at 9-bits, and
+it&rsquo;s pretty much useable.</p>
+<h1 id=firmware>Firmware</h1>
+<p>The ESP32 is running MicroPython, which is brilliant. Development is
+measured in minutes, not hours, and compiling is unneeded, plus I can
+actually read the final code. Of course all this comes at a price in
+terms of speed and current draw, but neither matter much here. We can
+also use asyncio, which saves having to think about the loop.</p>
+<p>I first wrote a basic hal (<code>hal.py</code>) to turn things on and off. The
+light is handled directly in the hal, as a callback to Peter Hinch&rsquo;s
+excellent async switch code.</p>
+<p>With that the the fridge could be remote controlled over wifi using
+<code>webrepl</code>, which is an amusing gimmick but not much use. So we use
+MQTT and have it respond to commands sent to
+<code>kitchen/fridge/CommandControl</code>. Simultaneously all the temperatures
+are logged every five seconds over MQTT.</p>
+<p>Now it was just a matter of picking resistor values to get a decent
+range on the ADC, which took a bit of trial and error, and then
+calibrating the thermistors against the DS18B20s. I cable-tied one to
+the thermistor attached to the heat exchange and ran some
+experiments. I&rsquo;m not sure how hot you&rsquo;re supposed to take the
+exchange, but 30 degrees seemed reasonable. Just as well, as the
+thermistor hits 0 at about that value.</p>
+<p>Here is a graph of my first run, showing 511-thermistor value against
+time and temperature against time:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/raw-cal1.png.jpg alt=/img/raw-cal1.png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/raw-cal1.png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>Hmm. That&rsquo;s not very linear. Here&rsquo;s the calibration curve:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/func-cal1.png.jpg alt=/img/func-cal1.png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/func-cal1.png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>I can certainly make a table of interpolations out of this, but it&rsquo;s
+going to be big. Let&rsquo;s try again:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/raw-cal2.png.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/raw-cal2.png.jpg alt=/img/raw-cal2.png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/raw-cal2.png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/func-cal2.png.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/func-cal2.png.jpg alt=/img/func-cal2.png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/func-cal2.png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>Which has very different raw values. Here they are on top of each
+other:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dual-func-cal.png.jpg alt=/img/dual-func-cal.png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dual-func-cal.png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>Maybe the problem is thermal lag, even though the calibrating sensor
+is attached to the thermistor? In the last test I used the compressor
+(with &lsquo;deep freeze&rsquo;) to lower the temperature, and then the fan to
+warm it up (with the compressor off), and then the heater. I did the
+same for this test, but rather than switching to heaters at -4 I went
+all the way up to zero. I also left the fan on to slow the heating
+effect, and opened the freezer door so as not to heat up the
+enclosure. (I turned the fan off at 15 degrees, as I was getting
+impatient.)</p>
+<p>How good does it need to be? Not necessarily very good, though that
+would be nice. I don&rsquo;t mind leaving the sensors in permanently if
+need be.</p>
+<p>After a bit of thought, I aggregated all the data, did a polynomia<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>l
+fit with numpy, excluded everything too far from the fit, did
+<em>another</em> fit on the resultant data, and generated a 3rd-order
+polynomial which fit the reduced data nicely:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/cal-agregate.png.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/cal-agregate.png.jpg alt=/img/cal-agregate.png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/cal-agregate.png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/cal-agregate-fit.png.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/cal-agregate-fit.png.jpg alt=/img/cal-agregate-fit.png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/cal-agregate-fit.png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>The only trouble is that this is backwards. We want to go <em>from</em>
+sensor reading <em>to</em> temperature. The coefficients were horrendous,
+and the rearrangement (courtesy of Wolfram Alpha) was horrible, so I
+did the fit backwards. It needed a 6th-order polynomial to fit, but
+when I did a fit <em>on the previous fit</em> I got something which lay
+neatly&mdash;enough&mdash;on top of the data:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/cal-agregate-fit2.png.jpg alt=/img/cal-agregate-fit2.png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/cal-agregate-fit2.png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>The only problem is that we have to solve a 6th-order polynomial on an
+MCU. Given that there are only 512 possibly values, a lookup table
+might be better, but then this MCU runs at 160MHz and doesn&rsquo;t seem to
+care. Of course there&rsquo;s no numpy for MicroPython (at least, not for
+doing curve fitting) so we compute the output manually:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>eval_poly</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>coeffs</span><span class=p>):</span>
+    <span class=s2>&#34;&#34;&#34;
+</span><span class=s2>    Evalulate polynomial.
+</span><span class=s2>
+</span><span class=s2>    Coeffs should be passed little-endian, ie coeffs[0] = x^0.
+</span><span class=s2>    &#34;&#34;&#34;</span>
+    <span class=n>y</span> <span class=o>=</span> <span class=mi>0</span>
+    <span class=k>for</span> <span class=n>i</span><span class=p>,</span> <span class=n>coeff</span> <span class=ow>in</span> <span class=nb>enumerate</span><span class=p>(</span><span class=n>coeffs</span><span class=p>):</span>
+        <span class=n>y</span> <span class=o>+=</span> <span class=n>coeff</span> <span class=o>*</span> <span class=n>x</span> <span class=o>**</span> <span class=n>i</span>
+    <span class=k>return</span> <span class=n>y</span>
+</code></pre></div><p>In Cpython that returns slightly different values from numpy.
+Presumably numpy implements this stuff in c.</p>
+<p>When I have enough data I shall do the same for the fridge
+thermistor. For now I only have laggy noise:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/laggy_noise.png.jpg alt=/img/laggy_noise.png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/laggy_noise.png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>These thermistors are very non-linear! On the other hand, it seems
+like they picked a thermistor which would work well at freezing
+temperatures, which makes sense.</p>
+<h1 id=discoveries>Discoveries</h1>
+<ul>
+<li>The compressor has a manual timeout after it is switched off,
+preventing you from turning it on again for around 5
+minutes. (Possibly temperature based?)</li>
+</ul>
+<h1 id=control-logic>Control logic</h1>
+<p>We control the fridge and freezer separately. If the fridge is too
+warm, we turn the compressor on. If it is too cold, we turn the
+compressor off. If the freezer is too cold, we do nothing (as it
+doesn&rsquo;t much matter anyhow). But we could turn the heaters and fan
+on. But if it is too warm, we turn the fan + compressor on.</p>
+<p>Every time we turn the compressor off we start a ten minute timer
+which disables it until it elapses, to save wear and tear, just in
+case the starter relay <em>doesn&rsquo;t</em> do so.</p>
+<p>Every twelve hours we defrost, by running for five minutes or until
+the cooler reaches 10 degrees. Additionally, if the freezer
+temperature fails to fall by 2 degrees in fifteen minutes (this might need
+adjusting), we guess that it needs defrosting and run a panic defrost,
+stopping the current cooling cycle. If it fails to fall by one degree
+in eight minutes, we turn on the deep freeze. Hopefully this logic
+would sooner or later catch an ice build up, but we can always review
+it later&mdash;or indeed, command a manual defrost over mqtt.</p>
+<p>The fridge temperature is taken from the fridge thermistor. The
+freezer temperature is taken from a DS18B20 on a bit of flat cable,
+stuffed in a drawer. The cooler temperature is taken from the
+attached thermistor. (I suspect they guessed the fridge temperature
+by running the fan for a bit and then sampling the cooler. This would
+fail if the thing were awfully iced up, as it was this time.) The
+room temperature is taken from another DS18B20 on top of the fridge.
+Whilst I plan to box up the controller and redeem the power supply
+(currently it&rsquo;s running from a dual lm317 supply I built as a child),
+I&rsquo;ll leave it separate and on top&mdash;that way it&rsquo;s easier to get at.</p>
+<p>Everything can be remotely controlled, and everything is logged to
+<code>kitchen/fridge/log</code> and <code>kitchen/fridge/temperature</code> so I should be
+able to get some data on efficiency and hopefully tune it.</p>
+<h1 id=limitiations>Limitiations</h1>
+<p>At present the DS18B20s sometimes fail to convert (gives 85). I&rsquo;ve
+reduced the frequency by trying repeatedly, but give up after 3
+attempts (might need to wait longer). The graphing code just ignores
+any 85s. I suspect the onboard 3.3v regulator is struggling to output
+enough current to power the thing parasitically. Additionally, I need
+to check that DQ is properly pulled high in the waiting time: if it
+isn&rsquo;t, then all the current is coming via the 1k pull up, which is
+likely not enough. The driver <em>ought</em> to put the pin in output mode
+and drive it high for the duration, but without a datalogger on
+it/examining the source code there&rsquo;s no way to tell.</p>
+<h1 id=further-developments>Further developments</h1>
+<p>I should like to add a buzzer, so we can warn if the door is left open
+or the device goes out of temperature range. I&rsquo;m also not quite sure
+what happens at the moment if the wifi goes down: I suspect the
+controller will be fine, but I need to test it (the risk is more a
+buggy connection which never gets established). And, of course, it
+should be in a proper box so nobody goes a-gefingerpoken, which could
+be interesting as nearly everything is at mains potential.</p>
+<p>And, most importantly, we just need to get a lot more data so we can
+characterise it a bit better.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>{</span><span class=nt>&#34;msg&#34;</span><span class=p>:</span> <span class=s2>&#34;start cooling&#34;</span><span class=p>,</span> <span class=nt>&#34;msg_id&#34;</span><span class=p>:</span> <span class=mi>11</span><span class=p>,</span> <span class=nt>&#34;timestamp&#34;</span><span class=p>:</span> <span class=s2>&#34;2021-1-22 19:43:11&#34;</span><span class=p>}</span>
+<span class=err>//response</span> <span class=err>to</span> <span class=err>status</span> <span class=err>query</span>
+<span class=p>{</span><span class=nt>&#34;msg&#34;</span><span class=p>:</span> <span class=s2>&#34;{&#39;heaters&#39;: False, &#39;fan&#39;: False, &#39;deep_freeze&#39;: False, &#39;compressor&#39;: False, &#39;light&#39;: False}&#34;</span><span class=p>,</span> <span class=nt>&#34;msg_id&#34;</span><span class=p>:</span> <span class=mi>17</span><span class=p>,</span> <span class=nt>&#34;timestamp&#34;</span><span class=p>:</span> <span class=s2>&#34;2021-1-22 19:43:33&#34;</span><span class=p>}</span>
+<span class=p>{</span><span class=nt>&#34;msg&#34;</span><span class=p>:</span> <span class=s2>&#34;Turning compressor on&#34;</span><span class=p>,</span> <span class=nt>&#34;msg_id&#34;</span><span class=p>:</span> <span class=mi>57</span><span class=p>,</span> <span class=nt>&#34;timestamp&#34;</span><span class=p>:</span> <span class=s2>&#34;2021-1-22 19:47:34&#34;</span><span class=p>}</span>
+<span class=p>{</span><span class=nt>&#34;msg&#34;</span><span class=p>:</span> <span class=s2>&#34;Turning compressor and fan on&#34;</span><span class=p>,</span> <span class=nt>&#34;msg_id&#34;</span><span class=p>:</span> <span class=mi>58</span><span class=p>,</span> <span class=nt>&#34;timestamp&#34;</span><span class=p>:</span> <span class=s2>&#34;2021-1-22 19:47:34&#34;</span><span class=p>}</span>
+<span class=err>//response</span> <span class=err>to</span> <span class=err>status</span> <span class=err>query</span>
+<span class=p>{</span><span class=nt>&#34;msg&#34;</span><span class=p>:</span> <span class=s2>&#34;{&#39;heaters&#39;: False, &#39;fan&#39;: True, &#39;deep_freeze&#39;: False, &#39;compressor&#39;: True, &#39;light&#39;: False}&#34;</span><span class=p>,</span> <span class=nt>&#34;msg_id&#34;</span><span class=p>:</span> <span class=mi>74</span><span class=p>,</span> <span class=nt>&#34;timestamp&#34;</span><span class=p>:</span> <span class=s2>&#34;2021-1-22 19:49:3&#34;</span><span class=p>}</span>
+<span class=p>{</span><span class=nt>&#34;msg&#34;</span><span class=p>:</span> <span class=s2>&#34;Deep freezing as freezing slowly&#34;</span><span class=p>,</span> <span class=nt>&#34;msg_id&#34;</span><span class=p>:</span> <span class=mi>88</span><span class=p>,</span> <span class=nt>&#34;timestamp&#34;</span><span class=p>:</span> <span class=s2>&#34;2021-1-22 19:50:27&#34;</span><span class=p>}</span>
+<span class=err>//response</span> <span class=err>to</span> <span class=err>status</span> <span class=err>query</span>
+<span class=p>{</span><span class=nt>&#34;msg&#34;</span><span class=p>:</span> <span class=s2>&#34;{&#39;heaters&#39;: False, &#39;fan&#39;: True, &#39;deep_freeze&#39;: True, &#39;compressor&#39;: True, &#39;light&#39;: False}&#34;</span><span class=p>,</span> <span class=nt>&#34;msg_id&#34;</span><span class=p>:</span> <span class=mi>202</span><span class=p>,</span> <span class=nt>&#34;timestamp&#34;</span><span class=p>:</span> <span class=s2>&#34;2021-1-22 20:2:2&#34;</span><span class=p>}</span>
+</code></pre></div><p>Eventually, I got round to having another look at the controller. See part three:
+<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3>fixing the defrost</a>.</p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>Obviously, this is a logarithmic (reverse-log) rather than polynomial fn.
+But I was a bit daft the day I did this, and my day-job is in theology, not
+maths. As it happened I dropped the thermistors entirely in the end.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</article>
+<ul class="pager blog-pager">
+<li class=previous>
+<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/ data-toggle=tooltip data-placement=top title="Reverse Engineering a Fridge">&larr; Previous Post</a>
+</li>
+<li class=next>
+<a href=https://2e0byo.github.io/post/carpentry/workbench2/ data-toggle=tooltip data-placement=top title="Carpentry Workbench">Next Post &rarr;</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:2e0byo@gmail.com title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/2e0byo title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+John Morris
+&nbsp;&bull;&nbsp;&copy;
+2021
+&nbsp;&bull;&nbsp;
+<a href=https://2e0byo.github.io/>Jack of All Trades</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/2e0byo.github.io/tree/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
+</body>
+</html>

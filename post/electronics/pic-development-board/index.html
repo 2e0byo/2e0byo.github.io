@@ -1,0 +1,343 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>PIC Development Board - Jack of All Trades</title>
+<meta name=description content="As part of the Battery Charger project I need a basic PIC dev board. I built one a long time ago for A2 coursework, and I even found the artwork lying around, but the tracks and pads were too small for hand etching and drilling. Trying to open the cad files in KiCad I discovered that they&rsquo;ve changed everything, and half the symbols &lsquo;cannot be found&rsquo;. I&rsquo;ve also completely forgotten how to use KiCad or schematic capture/Pcb design software in general: all pointing to a need to redraw.">
+<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/electronics\/pic-development-board\/","name":"Pic development board"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"PIC Development Board","description":"As part of the Battery Charger project I need a basic PIC dev board. I built one a long time ago for A2 coursework, and I even found the artwork lying around, but the tracks and pads were too small for hand etching and drilling. Trying to open the cad files in KiCad I discovered that they\u0026rsquo;ve changed everything, and half the symbols \u0026lsquo;cannot be found\u0026rsquo;. I\u0026rsquo;ve also completely forgotten how to use KiCad or schematic capture\/Pcb design software in general: all pointing to a need to redraw.","inLanguage":"en","wordCount":382,"datePublished":"2018-07-19T17:09:12","dateModified":"2018-07-19T17:09:12","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/electronics\/pic-development-board\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
+<meta property="og:title" content="PIC Development Board">
+<meta property="og:description" content="As part of the Battery Charger project I need a basic PIC dev board. I built one a long time ago for A2 coursework, and I even found the artwork lying around, but the tracks and pads were too small for hand etching and drilling. Trying to open the cad files in KiCad I discovered that they&rsquo;ve changed everything, and half the symbols &lsquo;cannot be found&rsquo;. I&rsquo;ve also completely forgotten how to use KiCad or schematic capture/Pcb design software in general: all pointing to a need to redraw.">
+<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
+<meta property="og:url" content="https://2e0byo.github.io/post/electronics/pic-development-board/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jack of All Trades">
+<meta name=twitter:title content="PIC Development Board">
+<meta name=twitter:description content="As part of the Battery Charger project I need a basic PIC dev board. I built one a long time ago for A2 coursework, and I even found the artwork lying around, but the tracks and pads were too small …">
+<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
+<meta name=twitter:card content="summary">
+<meta name=generator content="Hugo 0.87.0">
+<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+<div class=container-fluid>
+<div class=navbar-header>
+<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
+</div>
+<div class="collapse navbar-collapse" id=main-navbar>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a title=Home href=https://2e0byo.github.io/>Home</a>
+</li>
+<li>
+<a title=About href=https://2e0byo.github.io/page/about/>About</a>
+</li>
+<li class=navlinks-container>
+<a class=navlinks-parent>Project by...</a>
+<div class=navlinks-children>
+<a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a>
+</div>
+</li>
+</ul>
+</div>
+<div class=avatar-container>
+<div class=avatar-img-border>
+<a title="Jack of All Trades" href=https://2e0byo.github.io/>
+<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
+</a>
+</div>
+</div>
+</div>
+</nav>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div>
+<header class=header-section>
+<div class="intro-header no-img">
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=post-heading>
+<h1>PIC Development Board</h1>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on July 19, 2018
+&nbsp;(Last modified on August 13, 2021)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class=container role=main>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article role=main class=blog-post>
+<p>As part of the <a href=https://2e0byo.github.io/tags/battery-charger/>Battery Charger</a>
+project I need a basic PIC dev board. I built one a long time ago for
+A2 coursework, and I even found the artwork lying around, but the
+tracks and pads were too small for hand etching and drilling. Trying
+to open the cad files in KiCad I discovered that they&rsquo;ve changed
+everything, and half the symbols &lsquo;cannot be found&rsquo;. I&rsquo;ve also
+completely forgotten how to use KiCad or schematic capture/Pcb design
+software in general: all pointing to a need to redraw.</p>
+<p>After rather too long I proudly examined the result:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/2018-07-19-150302-screenshot-png.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/2018-07-19-150302-screenshot-png.jpg alt=/img/2018-07-19-150302-screenshot-png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/2018-07-19-150302-screenshot-png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/2018-07-19-150330-screenshot-png.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/2018-07-19-150330-screenshot-png.jpg alt=/img/2018-07-19-150330-screenshot-png.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/2018-07-19-150330-screenshot-png.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>It&rsquo;s incredibly basic: just a few headers, crystal, usb, and a few
+resistors and capacitors. The wiggle in that track is to balance up
+the differential length; it&rsquo;s completely pointless at this scale but I
+quite liked it. If you look closely at the schematic you can see what
+I didn&rsquo;t: the D+ and D- are wired to the wrong pins. If you look even
+harder you&rsquo;ll notice that not-MCLR is tied to <em>ground</em> not VCC, so the
+MPU won&rsquo;t even run. I didn&rsquo;t notice that; more frustration.</p>
+<p>The Pcb was made the usual way: print to photo paper from a laser,
+clean board with wire wool and ethanol, iron on, soak paper, scrub off
+with scourer, etch, clean. Google &lsquo;toner transfer pcb&rsquo; and you can
+find a lot of people who know a lot about it. I half-remembered, but
+it worked fine:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf10931.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf10931.jpg alt=/img/dscf10931.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf10931.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf10941.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf10941.jpg alt=/img/dscf10941.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf10941.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf10951.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf10951.jpg alt=/img/dscf10951.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf10951.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf10971.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf10971.jpg alt=/img/dscf10971.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf10971.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf11001.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf11001.jpg alt=/img/dscf11001.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf11001.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf10981.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf10981.jpg alt=/img/dscf10981.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf10981.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>Does anyone know the concentration of ferric cholride for etching?
+I&rsquo;ve lost the scrap of paper I used to keep pinned to the board with
+it written on, and it seems no-one thinks of niceties like that
+online&mldr; in the end I took a ratio, which was too dilute. But it
+etched in the end. Then to assemble, and mount on a bit of ply with an
+lcd module, regulator, and a scrap of pcb to develop on:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf11031.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf11031.jpg alt=/img/dscf11031.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf11031.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf11021.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf11021.jpg alt=/img/dscf11021.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf11021.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf11011.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf11011.jpg alt=/img/dscf11011.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf11011.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>Program:</p>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf11051.jpg alt=/img/dscf11051.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf11051.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<p>&mldr;and test. Of course, it didn&rsquo;t work, because of those two idiotic
+mistakes.</p>
+<p>Moving the resistor was easy, moving the usb lines more
+annoying:</p>
+<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf11061.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf11061.jpg alt=/img/dscf11061.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf11061.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+<div class=box>
+<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
+<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf11091.jpg)>
+<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf11091.jpg alt=/img/dscf11091.jpg>
+</div>
+<a href=https://2e0byo.github.io/img/dscf11091.jpg itemprop=contentUrl></a>
+</figure>
+</div>
+</div>
+<p>Plug in the programmer, download the Pinguino bootloader (only
+available from a GitHub repository!), plug the usb into the computer
+and &lsquo;lsusb&rsquo;: it shows up! Artwork and files will go up on my <a href=https://gitlab.com/2e0byo>Gitlab
+repository</a> when I have re-drawn.</p>
+</article>
+<ul class="pager blog-pager">
+<li class=previous>
+<a href=https://2e0byo.github.io/post/electronics/battery-charger/background/ data-toggle=tooltip data-placement=top title=Background>&larr; Previous Post</a>
+</li>
+<li class=next>
+<a href=https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/ data-toggle=tooltip data-placement=top title="Proof of Concept">Next Post &rarr;</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center footer-links">
+<li>
+<a href=mailto:2e0byo@gmail.com title="Email me">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://github.com/2e0byo title=GitHub>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href title=RSS>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="credits copyright text-muted">
+John Morris
+&nbsp;&bull;&nbsp;&copy;
+2021
+&nbsp;&bull;&nbsp;
+<a href=https://2e0byo.github.io/>Jack of All Trades</a>
+</p>
+<p class="credits theme-by text-muted">
+<a href=https://gohugo.io>Hugo v0.87.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/2e0byo.github.io/tree/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]
+</p>
+</div>
+</div>
+</div>
+</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
+</body>
+</html>
