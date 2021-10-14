@@ -269,6 +269,23 @@ The first shot at a workbench sat dormant for a fair while. Meanwhile it got col
 </div>
 </article>
 <article class=post-preview>
+<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/>
+<h2 class=post-title>Reverse Engineering a Fridge: Part 3</h2>
+</a>
+<p class=post-meta>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on April 18, 2021
+&nbsp;(Last modified on October 14, 2021)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</p>
+<div class=post-entry>
+OpenFridge has been running the fridge since the first post, which apparently was in January. In that time:
+The fridge has been very cold (in fact so cold I increased the setpoint to 5 degrees and moved the sensor to the bottom) The freezer has been cold, as desired The controller reboots pretty frequently The controller sometimes loses the network connection and can&rsquo;t allocate enough ram to recover it The controller occasionally latches up entirely, even with the software watchdog enabled, and refuses to respond to serial commands.
+<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/ class=post-read-more>[Read More]</a>
+</div>
+</article>
+<article class=post-preview>
 <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/>
 <h2 class=post-title>Reverse Engineering a Fridge: Part 2</h2>
 </a>
@@ -282,23 +299,6 @@ The first shot at a workbench sat dormant for a fair while. Meanwhile it got col
 <div class=post-entry>
 Hardware So we have five mains circuits: the lamp, the fan, the heaters, the compressor, and the &lsquo;superfreeze&rsquo; button, which I think just adds the starting coils permanently. The original controller only switches four of these on the board (the superfreeze is a manual switch), and uses triacs for all except the compressor, which has a 10A relay. Of course, that requires the controller to be attached to the AC neutral, which isn&rsquo;t a great idea with exposed hardware like a prototype balanced on a fridge.
 <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/ class=post-read-more>[Read More]</a>
-</div>
-</article>
-<article class=post-preview>
-<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/>
-<h2 class=post-title>Reverse Engineering a Fridge</h2>
-</a>
-<p class=post-meta>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on January 18, 2021
-&nbsp;(Last modified on August 13, 2021)
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
-</span>
-</p>
-<div class=post-entry>
-We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:
-I don&rsquo;t mind a bit of swing in the temperature, but that&rsquo;s all over the place. In the meantime the fridge compartment turned into a freezer, albeit not a very good one. Time to take it apart and see what the problem could be.
-<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/ class=post-read-more>[Read More]</a>
 </div>
 </article>
 </div>
