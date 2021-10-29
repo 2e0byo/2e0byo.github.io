@@ -105,8 +105,7 @@
 <div class=post-heading>
 <h1>Posts</h1>
 <span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on October 14, 2021
-&nbsp;(Last modified on October 15, 2021)
+<i class="fas fa-calendar"></i>&nbsp;Posted on October 29, 2021
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
 </span>
 </div>
@@ -119,6 +118,24 @@
 <div class=row>
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 <div class=posts-list>
+<article class=post-preview>
+<a href=https://2e0byo.github.io/post/coding/modern-authentication/>
+<h2 class=post-title>“Modern Authentication”: Outlook365 in Emacs</h2>
+</a>
+<p class=post-meta>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on October 29, 2021
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</p>
+<div class=post-entry>
+A few weeks ago I received an email from the university stating:
+Further to our previous communication advising about a change to basic authentication for Durham mailboxes, on 28th October 2021 we will be removing the ability to connect to University email via IMAP and our records indicate that you currently access email in this way.
+This, apparently, is down to the fact that
+Basic authentication is no longer secure enough to support modern working as it does not support security features such as Multi-Factor Authentication (MFA).
+<a href=https://2e0byo.github.io/post/coding/modern-authentication/ class=post-read-more>[Read More]</a>
+</div>
+</article>
 <article class=post-preview>
 <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/>
 <h2 class=post-title>ClosedFridge: RIP OpenFridge</h2>
@@ -285,22 +302,6 @@ The first shot at a workbench sat dormant for a fair while. Meanwhile it got col
 OpenFridge has been running the fridge since the first post, which apparently was in January. In that time:
 The fridge has been very cold (in fact so cold I increased the setpoint to 5 degrees and moved the sensor to the bottom) The freezer has been cold, as desired The controller reboots pretty frequently The controller sometimes loses the network connection and can&rsquo;t allocate enough ram to recover it The controller occasionally latches up entirely, even with the software watchdog enabled, and refuses to respond to serial commands.
 <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/ class=post-read-more>[Read More]</a>
-</div>
-</article>
-<article class=post-preview>
-<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/>
-<h2 class=post-title>Reverse Engineering a Fridge: Part 2</h2>
-</a>
-<p class=post-meta>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on January 21, 2021
-&nbsp;(Last modified on August 13, 2021)
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
-</span>
-</p>
-<div class=post-entry>
-Hardware So we have five mains circuits: the lamp, the fan, the heaters, the compressor, and the &lsquo;superfreeze&rsquo; button, which I think just adds the starting coils permanently. The original controller only switches four of these on the board (the superfreeze is a manual switch), and uses triacs for all except the compressor, which has a 10A relay. Of course, that requires the controller to be attached to the AC neutral, which isn&rsquo;t a great idea with exposed hardware like a prototype balanced on a fridge.
-<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/ class=post-read-more>[Read More]</a>
 </div>
 </article>
 </div>

@@ -136,6 +136,22 @@ blog</a>.</p>
 </div>
 <div class=posts-list>
 <article class=post-preview>
+<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/>
+<h2 class=post-title>Reverse Engineering a Fridge: Part 2</h2>
+</a>
+<p class=post-meta>
+<span class=post-meta>
+<i class="fas fa-calendar"></i>&nbsp;Posted on January 21, 2021
+&nbsp;(Last modified on August 13, 2021)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
+</span>
+</p>
+<div class=post-entry>
+Hardware So we have five mains circuits: the lamp, the fan, the heaters, the compressor, and the &lsquo;superfreeze&rsquo; button, which I think just adds the starting coils permanently. The original controller only switches four of these on the board (the superfreeze is a manual switch), and uses triacs for all except the compressor, which has a 10A relay. Of course, that requires the controller to be attached to the AC neutral, which isn&rsquo;t a great idea with exposed hardware like a prototype balanced on a fridge.
+<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/ class=post-read-more>[Read More]</a>
+</div>
+</article>
+<article class=post-preview>
 <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/>
 <h2 class=post-title>Reverse Engineering a Fridge</h2>
 </a>
@@ -285,25 +301,6 @@ Like most people I used to use ~/Downloads and go through it (with ncdu) every t
 <a href=https://2e0byo.github.io/post/coding/volatile-tmp/ class=post-read-more>[Read More]</a>
 </div>
 </article>
-<article class=post-preview>
-<a href=https://2e0byo.github.io/post/coding/cli-countdown-timer/>
-<h2 class=post-title>CLI Countdown Timer</h2>
-<h3 class=post-subtitle>
-Stop procrastinating and do some work
-</h3>
-</a>
-<p class=post-meta>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on September 29, 2020
-&nbsp;(Last modified on October 3, 2020)
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
-</span>
-</p>
-<div class=post-entry>
-I wrote this a while ago, and it’s been in use ever since: a very simple script which counts down (or up) while printing the remaining time. Controlled with standard job control, it’s one up on sleep as you can see how long is left. This is occasionally handy; if I only have ten seconds on the clock before lunch I’ll not start something new, but if I’ve got fifteen it might make sense.
-<a href=https://2e0byo.github.io/post/coding/cli-countdown-timer/ class=post-read-more>[Read More]</a>
-</div>
-</article>
 </div>
 <ul class="pager main-pager">
 <li class=previous>
@@ -317,7 +314,6 @@ I wrote this a while ago, and it’s been in use ever since: a very simple scrip
 </div>
 </div>
 <div class=page-meta>
-(Last modified on October 15, 2021)
 </div>
 <footer>
 <div class=container>
