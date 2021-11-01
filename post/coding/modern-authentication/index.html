@@ -9,7 +9,7 @@
  This, apparently, is down to the fact that
  Basic authentication is no longer secure enough to support modern working as it does not support security features such as Multi-Factor Authentication (MFA).">
 <meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/coding\/modern-authentication\/","name":"“ modern authentication” outlook365 in emacs"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"“Modern Authentication”: Outlook365 in Emacs","description":"A few weeks ago I received an email from the university stating:\n Further to our previous communication advising about a change to basic authentication for Durham mailboxes, on 28th October 2021 we will be removing the ability to connect to University email via IMAP and our records indicate that you currently access email in this way.\n This, apparently, is down to the fact that\n Basic authentication is no longer secure enough to support modern working as it does not support security features such as Multi-Factor Authentication (MFA).","inLanguage":"en","wordCount":1171,"datePublished":"2021-10-29T16:37:35","dateModified":"2021-10-29T16:37:35","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/coding\/modern-authentication\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/coding\/modern-authentication\/","name":"“ modern authentication” outlook365 in emacs"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"“Modern Authentication”: Outlook365 in Emacs","description":"A few weeks ago I received an email from the university stating:\n Further to our previous communication advising about a change to basic authentication for Durham mailboxes, on 28th October 2021 we will be removing the ability to connect to University email via IMAP and our records indicate that you currently access email in this way.\n This, apparently, is down to the fact that\n Basic authentication is no longer secure enough to support modern working as it does not support security features such as Multi-Factor Authentication (MFA).","inLanguage":"en","wordCount":1472,"datePublished":"2021-10-29T16:37:35","dateModified":"2021-10-29T16:37:35","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/coding\/modern-authentication\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
 <meta property="og:title" content="“Modern Authentication”: Outlook365 in Emacs">
 <meta property="og:description" content="A few weeks ago I received an email from the university stating:
  Further to our previous communication advising about a change to basic authentication for Durham mailboxes, on 28th October 2021 we will be removing the ability to connect to University email via IMAP and our records indicate that you currently access email in this way.
@@ -117,6 +117,7 @@
 <h1>“Modern Authentication”: Outlook365 in Emacs</h1>
 <span class=post-meta>
 <i class="fas fa-calendar"></i>&nbsp;Posted on October 29, 2021
+&nbsp;(Last modified on November 1, 2021)
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
 </span>
 </div>
@@ -237,43 +238,86 @@ isn&rsquo;t enabled by default. Thus we have to</p>
 </code></pre></div><p>Now <code>smtpmail</code> tries to retrieve the the access token from <code>auth-store</code>, which
 in turn looks it up in <code>.authinfo.gpg</code>, which looks something like:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=nv>machine</span> <span class=nv>outlook.office365.com</span> <span class=nv>login</span> <span class=nv>EMAIL</span> <span class=nv>port</span> <span class=mi>587</span> <span class=nv>smtp-auth</span> <span class=nv>xoauth2</span> <span class=nv>password</span> <span class=nv>PASS</span>
-</code></pre></div><p>Now, how do we get the access token? Somewhere in that thread a horrible hack
-was mentioned, and I decided to use it. We can get an access token from the
-refresh token like this (this took me far too long to figure out, but was
-apparently so trivial to the original poster it wasn&rsquo;t even mentioned):</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp>
-<span class=p>(</span><span class=nv>oauth2-token-access-token</span>
- <span class=p>(</span><span class=nv>oauth2-refresh-access</span>
-  <span class=p>(</span><span class=nv>make-oauth2-token</span>
-   <span class=ss>:refresh-token</span> <span class=s>&#34;&lt;TOKEN&gt;&#34;</span>
-   <span class=ss>:token-url</span> <span class=s>&#34;https://login.microsoftonline.com/common/oauth2/v2.0/token&#34;</span>
-   <span class=ss>:client-id</span> <span class=s>&#34;&lt;THUNDERBIRD CLIENT ID&gt;&#34;</span>
-   <span class=ss>:client-secret</span> <span class=s>&#34;&lt;THUNDERBIRD CLIENT SECRET&gt;&#34;</span>
-   <span class=p>)))</span>
-</code></pre></div><p>Where the refresh token is the one we obtained earlier. I simply placed this
-code (without line breaks) in the password field of the authinfo line. Since
-emacs <em>evaluates</em> the field you can put arbitrary code in it, and in effect
-perform code injection for a good purpose. A better solution might be to store
-the refresh token in one place and read it from there, so if we ever have to
-change it it&rsquo;s easier. Reading file contents is surprisingly <a href=https://stackoverflow.com/questions/34432246/>odd in emacs</a>:</p>
+</code></pre></div><p>Now, how do we get the access token? One option is just to put an access token
+in here. I ended up doing something else, which feels much less like a hack
+than putting a function in <code>password</code> and taking advantage of the fact that the
+content of <code>password</code> is wrapped up in a function and has to be called (in any
+case I couldn&rsquo;t get this to work<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, but it&rsquo;s mentioned in the thread). First we
+have a very simple wrapper function to get the token:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nb>defun</span> <span class=nv>get-access-token</span> <span class=p>(</span><span class=nv>auth</span><span class=p>)</span>
+  <span class=s>&#34;Get access token.  AUTH is a plist with the right keys from 
+</span><span class=s>  auth-search.
+</span><span class=s>  
+</span><span class=s>  Returns just the access token as a string extracted from the
+</span><span class=s>  oauth2 struct.&#34;</span>
+  <span class=p>(</span><span class=nv>oauth2-token-access-token</span>
+   <span class=p>(</span><span class=nv>oauth2-refresh-access</span>
+    <span class=p>(</span><span class=nv>make-oauth2-token</span>
+     <span class=ss>:refresh-token</span> <span class=p>(</span><span class=nf>funcall</span> <span class=p>(</span><span class=nv>plist-get</span> <span class=nv>auth</span> <span class=ss>:secret</span><span class=p>))</span>
+     <span class=ss>:token-url</span> <span class=p>(</span><span class=nv>plist-get</span> <span class=nv>auth</span> <span class=ss>:token-url</span><span class=p>)</span>
+     <span class=ss>:client-id</span> <span class=p>(</span><span class=nv>plist-get</span> <span class=nv>auth</span> <span class=ss>:client-id</span><span class=p>)</span>
+     <span class=ss>:client-secret</span> <span class=p>(</span><span class=nv>plist-get</span> <span class=nv>auth</span> <span class=ss>:client-secret</span><span class=p>)))))</span>
+</code></pre></div><p>Then we put the right keys in our <code>authinfo.gpg</code>. I haven&rsquo;t bothered hiding
+anything except the refresh token, but apparently a patch has made it/will make
+it upstream to allow you to specify more than one hidden field. Since this is
+stored in a gpg encrypted file it&rsquo;s safe on disk anyhow. And anyhow the key
+storage for offlineimap is necessarily a lot less secure, since I want it to run
+without user interaction.</p>
+<p>The trouble is that the method defined for xauth2 authentication in smtpmail
+depends on being given the token directly. I simply overrode it:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>cl-defmethod</span> <span class=nv>smtpmail-try-auth-method</span>
+  <span class=p>(</span><span class=nv>process</span> <span class=p>(</span><span class=nv>_mech</span> <span class=p>(</span><span class=nf>eql</span> <span class=nv>xoauth2</span><span class=p>))</span> <span class=nv>user</span> <span class=nv>password</span><span class=p>)</span>
+  <span class=p>(</span><span class=nv>smtpmail-command-or-throw</span>
+   <span class=nv>process</span>
+   <span class=p>(</span><span class=k>let*</span> <span class=p>(</span>
+          <span class=c1>;; Get the auth entry manually so we can get the other secrets</span>
+          <span class=p>(</span><span class=nv>auth</span> <span class=p>(</span><span class=nf>car</span> <span class=p>(</span><span class=nv>auth-source-search</span> <span class=ss>:user</span> <span class=nv>user</span> <span class=ss>:password</span> <span class=nv>password</span><span class=p>)))</span>
+          <span class=c1>;; Get token</span>
+          <span class=p>(</span><span class=nv>token</span> <span class=p>(</span><span class=nv>get-access-token</span> <span class=nv>auth</span><span class=p>)))</span>
+     <span class=p>(</span><span class=nv>concat</span> <span class=s>&#34;AUTH XOAUTH2 &#34;</span>
+             <span class=p>(</span><span class=nv>base64-encode-string</span>
+              <span class=p>(</span><span class=nv>concat</span> <span class=s>&#34;user=&#34;</span> <span class=nv>user</span> <span class=s>&#34;\1auth=Bearer &#34;</span> <span class=nv>token</span> <span class=s>&#34;\1\1&#34;</span><span class=p>)</span> <span class=no>t</span><span class=p>)))))</span>
+</code></pre></div><p>This is a little crude: firstly we repeat the search smtpmail has already done
+in order to get the whole auth-source plist; then we get the first item (<code>car</code>),
+then we pass that up. Since refresh tokens are effectively unique, and I don&rsquo;t
+have multiple accounts per fully-qualified username anyhow, collisions won&rsquo;t
+occur, but this is still ugly, as the original search was able to use <code>:host</code>
+(stored in the auth-source file as <code>machine</code>, because&mldr; well&mldr;).</p>
+<p>Other than that it&rsquo;s identical to the function shipped with <code>smtpmail</code>.</p>
+<p>Currently offlineimap gets its refresh token from one place, and emacs from
+another. It might be better to read the refresh token from the same file in both
+cases, in case we ever need to change it. Reading file contents is surprisingly
+<a href=https://stackoverflow.com/questions/34432246/>odd in emacs</a>:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-lisp data-lang=lisp><span class=p>(</span><span class=nv>with-temp-buffer</span>
   <span class=p>(</span><span class=nv>insert-file-contents</span> <span class=s>&#34;path/to/file&#34;</span><span class=p>)</span>
   <span class=p>(</span><span class=nv>buffer-string</span><span class=p>)</span>
   <span class=p>)</span>
-</code></pre></div><h2 id=legality>Legality</h2>
-<p>So with the aid of Thunderbird&rsquo;s not-so-secret application secret and a glorious
-hack in <code>.authinfo.gpg</code> we can send and receive email. Is this legal?
-According to some claims in that thread, possibly not: apparently developers are
-not supposed to share their app secret, although how they are supposed to avoid
-doing so&mdash;since after all the application does need to <em>use</em> it, and it runs on
-the user&rsquo;s machine, so intercepting it will be very easy&mdash;is unclear.
-Thunderbird apparently got round this by registering the app with the Legal
-Person of the organisation. Whether that was to avoid being sued individually,
-or to claim that they only shared it with themselves, I don&rsquo;t know. In any case
-Micro$oft apparently don&rsquo;t directly forbid &lsquo;embedding the application secret in
-an opensource application&rsquo; unlike Google.</p>
+</code></pre></div><p>On the other hand, I don&rsquo;t think I&rsquo;ll be at Durham long enough for them to
+refresh the refresh token.</p>
+<h2 id=legality>Legality</h2>
+<p>So with the aid of Thunderbird&rsquo;s not-so-secret application secret we can send
+and receive email. Is this legal? According to some claims in that thread,
+possibly not: apparently developers are not supposed to share their app secret,
+although how they are supposed to avoid doing so&mdash;since after all the
+application does need to <em>use</em> it, and it runs on the user&rsquo;s machine, so
+intercepting it will be very easy&mdash;is unclear. Thunderbird apparently got round
+this by registering the app with the Legal Person of the organisation. Whether
+that was to avoid being sued individually, or to claim that they only shared it
+with themselves, I don&rsquo;t know. In any case Micro$oft apparently don&rsquo;t directly
+forbid &lsquo;embedding the application secret in an opensource application&rsquo; unlike
+Google.</p>
 <p>In the longer run, the obvious solution is to host one&rsquo;s own email server and
 stop worrying about all this.</p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>A previous version of this post suggested it did, but I had not realised
+emacs caches secrets. <code>(auth-source-forget-all-cached)</code> will get you back
+to a pristine state for testing.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 </article>
 <ul class="pager blog-pager">
 <li class=previous>
@@ -330,7 +374,7 @@ John Morris
 </p>
 <p class="credits theme-by text-muted">
 <a href=https://gohugo.io>Hugo v0.88.1</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/bbe5e349bb353f55f9b6d386d96cfcd7a56bfc44>bbe5e349</a>]
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/4a5727fa9fc059e285e0d15f797e77ef6ef681a5>4a5727fa</a>]
 </p>
 </div>
 </div>
