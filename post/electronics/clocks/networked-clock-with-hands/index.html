@@ -1,163 +1,32 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Networked Clock with Hands - Jack of All Trades</title>
-<meta name=description content="Dad rather liked my clock. In fact, he went looking for &lsquo;a clock with hands and an adjustable chime&rsquo;. Which, of course, made me wonder whether I could make one.
-The first question was the hands: I liked the leds at the front of mine, and didn&rsquo;t see the point in moving real hands around with a stepper motor or something of the kind. A digital clock should, I think, look digital.">
-<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/electronics\/clocks\/networked-clock-with-hands\/","name":"Networked clock with hands"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Networked Clock with Hands","description":"Dad rather liked my clock. In fact, he went looking for \u0026lsquo;a clock with hands and an adjustable chime\u0026rsquo;. Which, of course, made me wonder whether I could make one.\nThe first question was the hands: I liked the leds at the front of mine, and didn\u0026rsquo;t see the point in moving real hands around with a stepper motor or something of the kind. A digital clock should, I think, look digital.","inLanguage":"en","wordCount":1371,"datePublished":"2020-01-12T22:48:29","dateModified":"2020-01-12T22:48:29","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":["Clocks"],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/electronics\/clocks\/networked-clock-with-hands\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
-<meta property="og:title" content="Networked Clock with Hands">
-<meta property="og:description" content="Dad rather liked my clock. In fact, he went looking for &lsquo;a clock with hands and an adjustable chime&rsquo;. Which, of course, made me wonder whether I could make one.
-The first question was the hands: I liked the leds at the front of mine, and didn&rsquo;t see the point in moving real hands around with a stepper motor or something of the kind. A digital clock should, I think, look digital.">
-<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
-<meta property="og:url" content="https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Jack of All Trades">
-<meta name=twitter:title content="Networked Clock with Hands">
-<meta name=twitter:description content="Dad rather liked my clock. In fact, he went looking for &lsquo;a clock with hands and an adjustable chime&rsquo;. Which, of course, made me wonder whether I could make one.
-The first question was the …">
-<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
-<meta name=twitter:card content="summary">
-<meta name=generator content="Hugo 0.91.2">
-<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
-<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
-<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
-</head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-<div class=container-fluid>
-<div class=navbar-header>
-<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Networked Clock with Hands - Jack of All Trades</title><meta name=description content="Dad rather liked my clock. In fact, he went looking for &lsquo;a clock with hands and an adjustable chime&rsquo;. Which, of course, made me wonder whether I could make one.
+The first question was the hands: I liked the leds at the front of mine, and didn&rsquo;t see the point in moving real hands around with a stepper motor or something of the kind. A digital clock should, I think, look digital."><meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/electronics\/clocks\/networked-clock-with-hands\/","name":"Networked clock with hands"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Networked Clock with Hands","description":"Dad rather liked my clock. In fact, he went looking for \u0026lsquo;a clock with hands and an adjustable chime\u0026rsquo;. Which, of course, made me wonder whether I could make one.\nThe first question was the hands: I liked the leds at the front of mine, and didn\u0026rsquo;t see the point in moving real hands around with a stepper motor or something of the kind. A digital clock should, I think, look digital.","inLanguage":"en","wordCount":1371,"datePublished":"2020-01-12T22:48:29","dateModified":"2020-01-12T22:48:29","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":["Clocks"],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/electronics\/clocks\/networked-clock-with-hands\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script><meta property="og:title" content="Networked Clock with Hands"><meta property="og:description" content="Dad rather liked my clock. In fact, he went looking for &lsquo;a clock with hands and an adjustable chime&rsquo;. Which, of course, made me wonder whether I could make one.
+The first question was the hands: I liked the leds at the front of mine, and didn&rsquo;t see the point in moving real hands around with a stepper motor or something of the kind. A digital clock should, I think, look digital."><meta property="og:image" content="https://2e0byo.github.io/img/planing.png"><meta property="og:url" content="https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/"><meta property="og:type" content="website"><meta property="og:site_name" content="Jack of All Trades"><meta name=twitter:title content="Networked Clock with Hands"><meta name=twitter:description content="Dad rather liked my clock. In fact, he went looking for &lsquo;a clock with hands and an adjustable chime&rsquo;. Which, of course, made me wonder whether I could make one.
+The first question was the …"><meta name=twitter:image content="https://2e0byo.github.io/img/planing.png"><meta name=twitter:card content="summary"><meta name=generator content="Hugo 0.101.0"><link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
 <span class=sr-only>Toggle navigation</span>
 <span class=icon-bar></span>
 <span class=icon-bar></span>
-<span class=icon-bar></span>
-</button>
-<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
-</div>
-<div class="collapse navbar-collapse" id=main-navbar>
-<ul class="nav navbar-nav navbar-right">
-<li>
-<a title=Home href=https://2e0byo.github.io/>Home</a>
-</li>
-<li>
-<a title=search href=https://2e0byo.github.io/search/>search</a>
-</li>
-<li>
-<a title=About href=https://2e0byo.github.io/page/about/>About</a>
-</li>
-<li class=navlinks-container>
-<a class=navlinks-parent>Project by...</a>
-<div class=navlinks-children>
-<a href=https://2e0byo.github.io/categories>Category</a>
-<a href=https://2e0byo.github.io/tags>Tag</a>
-</div>
-</li>
-</ul>
-</div>
-<div class=avatar-container>
-<div class=avatar-img-border>
-<a title="Jack of All Trades" href=https://2e0byo.github.io/>
-<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
-</a>
-</div>
-</div>
-</div>
-</nav>
-<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
-<div class=pswp__bg></div>
-<div class=pswp__scroll-wrap>
-<div class=pswp__container>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-</div>
-<div class="pswp__ui pswp__ui--hidden">
-<div class=pswp__top-bar>
-<div class=pswp__counter></div>
-<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title=Home href=https://2e0byo.github.io/>Home</a></li><li><a title=search href=https://2e0byo.github.io/search/>search</a></li><li><a title=About href=https://2e0byo.github.io/page/about/>About</a></li><li class=navlinks-container><a class=navlinks-parent>Project by...</a><div class=navlinks-children><a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a></div></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Jack of All Trades" href=https://2e0byo.github.io/><img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-<div class=pswp__preloader>
-<div class=pswp__preloader__icn>
-<div class=pswp__preloader__cut>
-<div class=pswp__preloader__donut></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-<div class=pswp__share-tooltip></div>
-</div>
-<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-</button>
-<div class=pswp__caption>
-<div class=pswp__caption__center></div>
-</div>
-</div>
-</div>
-</div>
-<div id=header-big-imgs data-num-img=3 data-img-src-1=/img/dscf3203.jpg data-img-src-2=/img/dscf1207.jpg data-img-src-3=/img/dscf1208.jpg></div>
-<header class="header-section has-img">
-<div class="intro-header big-img">
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class=post-heading>
-<h1>Networked Clock with Hands</h1>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2020
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><div id=header-big-imgs data-num-img=3 data-img-src-1=/img/dscf3203.jpg data-img-src-2=/img/dscf1207.jpg data-img-src-3=/img/dscf1208.jpg></div><header class="header-section has-img"><div class="intro-header big-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Networked Clock with Hands</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2020
 &nbsp;(Last modified on August 13, 2021)
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
-</span>
-</div>
-</div>
-</div>
-</div>
-<span class=img-desc style=display:inline></span>
-</div>
-<div class="intro-header no-img">
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class=post-heading>
-<h1>Networked Clock with Hands</h1>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2020
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris</span></div></div></div></div><span class=img-desc style=display:inline></span></div><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Networked Clock with Hands</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2020
 &nbsp;(Last modified on August 13, 2021)
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class=container role=main>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<article role=main class=blog-post>
-<p>Dad rather liked my clock. In fact, he went looking for &lsquo;a clock with
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris</span></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>Dad rather liked my clock. In fact, he went looking for &lsquo;a clock with
 hands and an adjustable chime&rsquo;. Which, of course, made me wonder
-whether I could make one.</p>
-<p>The first question was the hands: I liked
+whether I could make one.</p><p>The first question was the hands: I liked
 the leds at the front of mine, and didn&rsquo;t see the point in moving real
 hands around with a stepper motor or something of the kind. A digital
 clock should, I think, look digital. Looking online for things like
-&lsquo;led ring clocks&rsquo; showed the odd design, but none with all three hands
+&rsquo;led ring clocks&rsquo; showed the odd design, but none with all three hands
 in one ring, and three rings struck me as a bit much. Thus I started
 looking on farnell for bicolour leds to make the hands out of, and
 found an orange/red led on clearance at around 10p each: and also some
 red/green <em>rectangular</em> leds. Now, wouldn&rsquo;t it be nice to have the
-&lsquo;ticks&rsquo; in the display differently <em>shaped</em> as well as coloured?</p>
-<p>But how to drive it all? I&rsquo;d assumed the same underlying hardware as
+&rsquo;ticks&rsquo; in the display differently <em>shaped</em> as well as coloured?</p><p>But how to drive it all? I&rsquo;d assumed the same underlying hardware as
 mine, but a multiplexed display was clearly out of the question. At
 this point I got everything wrong: rather than googling &lsquo;serial led
 driver ic&rsquo; I set about designing my own: a set of cascaded shift
@@ -166,302 +35,65 @@ give red and &lsquo;01&rsquo; green (&lsquo;11&rsquo; is forbidden in software).
 built anything of the kind and assumed that one just wired the clocks
 together and the outputs to inputs; after testing on a breadboard with
 two ics a board was designed accordingly, aiming at being as
-aesthetically pleasing as possible:</p>
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
-<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/2020-01-12-215737-screenshot.png)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/2020-01-12-215737-screenshot.png alt="IC placement errors are cause by moving the footprint's center so as to place the ics programatically with the python shell.'">
-</div>
-<a href=https://2e0byo.github.io/img/2020-01-12-215737-screenshot.png itemprop=contentUrl></a>
-<figcaption>
-<p>IC placement errors are cause by moving the footprint's center so as to place the ics programatically with the python shell.'</p>
-</figcaption>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/2020-01-12-215804-screenshot.png)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/2020-01-12-215804-screenshot.png alt=/img/2020-01-12-215804-screenshot.png>
-</div>
-<a href=https://2e0byo.github.io/img/2020-01-12-215804-screenshot.png itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/2020-01-12-215057-screenshot.png)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/2020-01-12-215057-screenshot.png alt=/img/2020-01-12-215057-screenshot.png>
-</div>
-<a href=https://2e0byo.github.io/img/2020-01-12-215057-screenshot.png itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1150-1.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1150-1.jpg alt=/img/dscf1150-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1150-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-</div>
-<p>This board is riddled with mistakes: the clock and latch are actually
+aesthetically pleasing as possible:</p><div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery><link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/2020-01-12-215737-screenshot.png)><img itemprop=thumbnail src=https://2e0byo.github.io/img/2020-01-12-215737-screenshot.png alt="IC placement errors are cause by moving the footprint's center so as to place the ics programatically with the python shell.'"></div><a href=https://2e0byo.github.io/img/2020-01-12-215737-screenshot.png itemprop=contentUrl></a><figcaption><p>IC placement errors are cause by moving the footprint's center so as to place the ics programatically with the python shell.'</p></figcaption></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/2020-01-12-215804-screenshot.png)><img itemprop=thumbnail src=https://2e0byo.github.io/img/2020-01-12-215804-screenshot.png alt=/img/2020-01-12-215804-screenshot.png></div><a href=https://2e0byo.github.io/img/2020-01-12-215804-screenshot.png itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/2020-01-12-215057-screenshot.png)><img itemprop=thumbnail src=https://2e0byo.github.io/img/2020-01-12-215057-screenshot.png alt=/img/2020-01-12-215057-screenshot.png></div><a href=https://2e0byo.github.io/img/2020-01-12-215057-screenshot.png itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1150-1.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1150-1.jpg alt=/img/dscf1150-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1150-1.jpg itemprop=contentUrl></a></figure></div></div><p>This board is riddled with mistakes: the clock and latch are actually
 wired in rings (!), the clocks are fed in the same order as the data
 (and thus lag), the tolerences are rather fine, and multiple tracks
 are fed between ics to avoid vias. I&rsquo;d never made a double-sided
 board before, but toner transfer worked really well for smaller
-boards, so why not?</p>
-<h3 id=main-board>Main Board</h3>
-<p>It turned out that there were other variables: the paper shrunk under
+boards, so why not?</p><h3 id=main-board>Main Board</h3><p>It turned out that there were other variables: the paper shrunk under
 heat, but I&rsquo;d already ironed one side and drilled all the holes.
 Fortunately the tolerance was still just about on, but the <em>other</em>
 side had to be shrunk in the oven until it fitted the board, then
 aligned and &lsquo;glued on&rsquo; with the iron <em>really quickly</em> to make sure it
 lined up, and then ironed all over. There were a few failures and a
 lot of annoyance: just getting the toner on the pcb and the holes
-drilled took 2 days.</p>
-<p>Then there were the dropped tracks. The front was pretty good, but
+drilled took 2 days.</p><p>Then there were the dropped tracks. The front was pretty good, but
 almost a third of the back needed touching up. For another day I went
 over every track with fine sharpie and magnifying glass, painting on
-the extra tracks:</p>
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1171-1.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1171-1.jpg alt=/img/dscf1171-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1171-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1172-1.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1172-1.jpg alt=/img/dscf1172-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1172-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1173-1.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1173-1.jpg alt=/img/dscf1173-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1173-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1174-1.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1174-1.jpg alt=/img/dscf1174-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1174-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1176-1.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1176-1.jpg alt=/img/dscf1176-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1176-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-</div>
-<p>Then it was checked and checked again, and finally placed in the
+the extra tracks:</p><div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1171-1.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1171-1.jpg alt=/img/dscf1171-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1171-1.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1172-1.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1172-1.jpg alt=/img/dscf1172-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1172-1.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1173-1.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1173-1.jpg alt=/img/dscf1173-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1173-1.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1174-1.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1174-1.jpg alt=/img/dscf1174-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1174-1.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1176-1.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1176-1.jpg alt=/img/dscf1176-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1176-1.jpg itemprop=contentUrl></a></figure></div></div><p>Then it was checked and checked again, and finally placed in the
 <a href=https://2e0byo.github.io/post/electronics/vertical-etching-tank>vertical etching tank</a>
 at some unearthly hour of the night. When the board was cleaned it
 <em>looked</em> pretty good, but back at the bench there were broken tracks
 everywhere. Another day or so went to bridging them all with <em>really
-tiny</em> bits of wire painstakingly soldered on top:</p>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1177-1.jpg alt=/img/dscf1177-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1177-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<p>Then the resistors (0805) and the ics, and at last the final 7-seg
-displays to test it:
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1181-1.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1181-1.jpg alt=/img/dscf1181-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1181-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1185-1.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1185-1.jpg alt=/img/dscf1185-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1185-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-</div>
-</p>
-<p>The result was a complete failure. I was testing with a Pinguino
+tiny</em> bits of wire painstakingly soldered on top:</p><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1177-1.jpg alt=/img/dscf1177-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1177-1.jpg itemprop=contentUrl></a></figure></div><p>Then the resistors (0805) and the ics, and at last the final 7-seg
+displays to test it:<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1181-1.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1181-1.jpg alt=/img/dscf1181-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1181-1.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1185-1.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1185-1.jpg alt=/img/dscf1185-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1185-1.jpg itemprop=contentUrl></a></figure></div></div></p><p>The result was a complete failure. I was testing with a Pinguino
 board, and even with the serial timing turned far too slow to update a
 clock I only got random noise out. To begin with nothing came through
 at all: broken tracks had slipped through. Then it things came
 through, but bore no relation to input. Scope probes on the lines and
 repetitive signalling (oh for a sampling oscilloscope!) showed phase
 errors creeping in from about the third IC. Google, and the discovery
-that I&rsquo;d done it all wrong.</p>
-<p>I cut all the clock lines and tried clocking the last two ICs
+that I&rsquo;d done it all wrong.</p><p>I cut all the clock lines and tried clocking the last two ICs
 individually from a schmitt trigger: they worked. So the display was
 divided up and two schmitt buffers (I think) wired ugly-bug on the
 back, alongside much larger smoothing capacitors, and capacitors were
 added accross the data line to decouple it. The clocks were fed
 backwards, and some of the dodgy tracks were replaced with wire.
 After two days it worked, both with the Pinguino (5v) board and,
-importantly, with the OpenWrt-running router:</p>
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1189-1.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1189-1.jpg alt=/img/dscf1189-1.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1189-1.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1192.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1192.jpg alt=/img/dscf1192.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1192.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-</div>
-<p>Then the leds could be added, to reveal further broken tracks. Then
+importantly, with the OpenWrt-running router:</p><div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1189-1.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1189-1.jpg alt=/img/dscf1189-1.jpg></div><a href=https://2e0byo.github.io/img/dscf1189-1.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1192.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1192.jpg alt=/img/dscf1192.jpg></div><a href=https://2e0byo.github.io/img/dscf1192.jpg itemprop=contentUrl></a></figure></div></div><p>Then the leds could be added, to reveal further broken tracks. Then
 the LEDs were far dimmer than the central digits, and I cut the
 latter&rsquo;s ground and inserted a mosfet switch for PWM, which worked
 fine with the Pinguino but later proved impossible to do reliably with
 the larger board (no integrated PWM was available, and bit-banging was
 too unstable, causing display flicker), so a 555 timer was added on
-the back of the board.</p>
-<h1 id=amplifier>Amplifier</h1>
-<p>I&rsquo;d ordered a stereo class-D board (which are now available for ~£1 on
+the back of the board.</p><h1 id=amplifier>Amplifier</h1><p>I&rsquo;d ordered a stereo class-D board (which are now available for ~£1 on
 Amazon), but it didn&rsquo;t come in time, so I threw together a basic
 op-amp-with-pushpull-pair with heavily filtered inputs, mounted in a
 shielded tray of pcb. It isn&rsquo;t capable of much power (the output
 stage is bc547/557) but it does work, and since the chime has not
-actually been used has remained unreplaced:</p>
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1195.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1195.jpg alt=/img/dscf1195.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1195.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1196.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1196.jpg alt=/img/dscf1196.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1196.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-</div>
-<h1 id=case>Case</h1>
-<p>I spent most of the planning time trying to think up a design simple
+actually been used has remained unreplaced:</p><div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1195.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1195.jpg alt=/img/dscf1195.jpg></div><a href=https://2e0byo.github.io/img/dscf1195.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1196.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1196.jpg alt=/img/dscf1196.jpg></div><a href=https://2e0byo.github.io/img/dscf1196.jpg itemprop=contentUrl></a></figure></div></div><h1 id=case>Case</h1><p>I spent most of the planning time trying to think up a design simple
 enough to be buildable in a hurry, and yet sufficient to offset the
 face and give the clock some grandeur. The final design is based on
-&lsquo;the&rsquo; art-deco clock, and was fairly heavily modelled to get the
-proportions right, but I&rsquo;ve lost the file.</p>
-<p>When the perspex arrived the thicker stuff showed cracking from the
-bandsaw. I decided to press on regardless:</p>
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3203.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3203.jpg alt=/img/dscf3203.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf3203.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3195.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3195.jpg alt=/img/dscf3195.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf3195.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3199.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3199.jpg alt=/img/dscf3199.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf3199.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3200.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3200.jpg alt=/img/dscf3200.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf3200.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3201.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3201.jpg alt=/img/dscf3201.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf3201.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3202.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3202.jpg alt=/img/dscf3202.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf3202.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-</div>
-<p>This time the edges were scraped with a stanley blade in lieu of
+&rsquo;the&rsquo; art-deco clock, and was fairly heavily modelled to get the
+proportions right, but I&rsquo;ve lost the file.</p><p>When the perspex arrived the thicker stuff showed cracking from the
+bandsaw. I decided to press on regardless:</p><div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3203.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3203.jpg alt=/img/dscf3203.jpg></div><a href=https://2e0byo.github.io/img/dscf3203.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3195.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3195.jpg alt=/img/dscf3195.jpg></div><a href=https://2e0byo.github.io/img/dscf3195.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3199.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3199.jpg alt=/img/dscf3199.jpg></div><a href=https://2e0byo.github.io/img/dscf3199.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3200.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3200.jpg alt=/img/dscf3200.jpg></div><a href=https://2e0byo.github.io/img/dscf3200.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3201.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3201.jpg alt=/img/dscf3201.jpg></div><a href=https://2e0byo.github.io/img/dscf3201.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf3202.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf3202.jpg alt=/img/dscf3202.jpg></div><a href=https://2e0byo.github.io/img/dscf3202.jpg itemprop=contentUrl></a></figure></div></div><p>This time the edges were scraped with a stanley blade in lieu of
 filing, which worked very well, delivering clean flat edges before the
 flame polishing. The two smaller side pieces were cut in half by hand
 to save money when buying the plastic: I&rsquo;m quite pleased with the
 accuracy. Then gluing up with superglue. Unfortunately the superglue
 fogged inside the cracks, and they stand out when viewed from the
 side. But the effect is minimal, and face on the case is exactly as
-designed:</p>
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1207.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1207.jpg alt=/img/dscf1207.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1207.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1208.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1208.jpg alt=/img/dscf1208.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1208.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1197.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1197.jpg alt=/img/dscf1197.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/dscf1197.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-</div>
-<p>The knob on the rear controls the brightness of the central digits.</p>
-<h1 id=software>Software</h1>
-<p>This clock uses a simplified, rather cleaned up version of the code
+designed:</p><div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1207.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1207.jpg alt=/img/dscf1207.jpg></div><a href=https://2e0byo.github.io/img/dscf1207.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1208.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1208.jpg alt=/img/dscf1208.jpg></div><a href=https://2e0byo.github.io/img/dscf1208.jpg itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/dscf1197.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/dscf1197.jpg alt=/img/dscf1197.jpg></div><a href=https://2e0byo.github.io/img/dscf1197.jpg itemprop=contentUrl></a></figure></div></div><p>The knob on the rear controls the brightness of the central digits.</p><h1 id=software>Software</h1><p>This clock uses a simplified, rather cleaned up version of the code
 running the <a href=https://2e0byo.github.io/post/electronics/clocks/networked-alarm-clock>older
 clock</a>.
 It has a rather basic web interface which allows one to change the
@@ -479,90 +111,26 @@ pseudofiles. The board can be updated in .4s, but for reliability we
 slow it down and take .8s. An unforseen consequence of those tiny
 bits of wire repairing tracks is that they act as little speakers,
 contracting and expanding with the data. The worst offenders were
-glued down, and the noise is minimal when the case is assembled.</p>
-<p>Since it&rsquo;s been in the living room I&rsquo;ve spent far too long watching
+glued down, and the noise is minimal when the case is assembled.</p><p>Since it&rsquo;s been in the living room I&rsquo;ve spent far too long watching
 for display glitches, but so far I think I&rsquo;ve seen one, maximum, in a
-total of several hours' observation—and I may just have blinked. The
+total of several hours&rsquo; observation—and I may just have blinked. The
 chosen colour scheme minimises current consumption, but it is possible
-to have more blinkenlights.</p>
-<p>In use, the second is easily read. For the other hands it&rsquo;s quicker
+to have more blinkenlights.</p><p>In use, the second is easily read. For the other hands it&rsquo;s quicker
 to read the central digits, although looking a little longer shows
-where they are.</p>
-<p>This is easily the best clock I&rsquo;ve made, and other than a possible
+where they are.</p><p>This is easily the best clock I&rsquo;ve made, and other than a possible
 repeat with a Raspberry Pi Zero (£10!) board driving it and updated
-front board, I&rsquo;ve no plans for any others, at least of this kind.</p>
-<div class=blog-tags>
-<a href=https://2e0byo.github.io//tags/clocks/>Clocks</a>&nbsp;
-</div>
-</article>
-<ul class="pager blog-pager">
-<li class=previous>
-<a href=https://2e0byo.github.io/post/electronics/vertical-etching-tank/ data-toggle=tooltip data-placement=top title="Vertical Etching Tank">&larr; Previous Post</a>
-</li>
-<li class=next>
-<a href=https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/ data-toggle=tooltip data-placement=top title="Quick Sunrise Alarm Clock">Next Post &rarr;</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<footer>
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<ul class="list-inline text-center footer-links">
-<li>
-<a href=mailto:2e0byo@gmail.com title="Email me">
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://github.com/2e0byo title=GitHub>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-github fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://gitlab.com/2e0byo title=GitLab>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href title=RSS>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-</ul>
-<p class="credits copyright text-muted">
-John Morris
+front board, I&rsquo;ve no plans for any others, at least of this kind.</p><div class=blog-tags><a href=https://2e0byo.github.io//tags/clocks/>Clocks</a>&nbsp;</div></article><ul class="pager blog-pager"><li class=previous><a href=https://2e0byo.github.io/post/electronics/vertical-etching-tank/ data-toggle=tooltip data-placement=top title="Vertical Etching Tank">&larr; Previous Post</a></li><li class=next><a href=https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/ data-toggle=tooltip data-placement=top title="Quick Sunrise Alarm Clock">Next Post &rarr;</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:2e0byo@gmail.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/2e0byo title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://gitlab.com/2e0byo title=GitLab><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">John Morris
 &nbsp;&bull;&nbsp;&copy;
-2021
+2022
 &nbsp;&bull;&nbsp;
-<a href=https://2e0byo.github.io/>Jack of All Trades</a>
-</p>
-<p class="credits theme-by text-muted">
-<a href=https://gohugo.io>Hugo v0.91.2</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]
-</p>
-</div>
-</div>
-</div>
-</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<a href=https://2e0byo.github.io/>Jack of All Trades</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.101.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
 <script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
 <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
 <script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
-</body>
-</html>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script></body></html>

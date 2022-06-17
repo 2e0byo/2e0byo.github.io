@@ -1,191 +1,33 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>ClosedFridge: RIP OpenFridge - Jack of All Trades</title>
-<meta name=description content="Refrigerate in peace, OpenFridge.
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>ClosedFridge: RIP OpenFridge - Jack of All Trades</title><meta name=description content="Refrigerate in peace, OpenFridge.
 The hardware OpenFridge was controlling is no more. It now looks like this:
-   Heat Exchange
-      Door
-    Obviously, it should not look like this. What follows is a post-mortem, because it is worth learning from one&rsquo;s mistakes.
-The final moments of a fridge After fixing the defrost I did not get around to replacing the blown thermal fuse.">
-<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge4\/","name":"Closed fridge RIP open fridge"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"ClosedFridge: RIP OpenFridge","description":"Refrigerate in peace, OpenFridge.\nThe hardware OpenFridge was controlling is no more. It now looks like this:\n   Heat Exchange\n      Door\n    Obviously, it should not look like this. What follows is a post-mortem, because it is worth learning from one\u0026rsquo;s mistakes.\nThe final moments of a fridge After fixing the defrost I did not get around to replacing the blown thermal fuse.","inLanguage":"en","wordCount":2314,"datePublished":"2021-10-14T12:07:57","dateModified":"2021-10-14T12:07:57","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge4\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
-<meta property="og:title" content="ClosedFridge: RIP OpenFridge">
-<meta property="og:description" content="Refrigerate in peace, OpenFridge.
+Heat Exchange
+Door
+Obviously, it should not look like this. What follows is a post-mortem, because it is worth learning from one&rsquo;s mistakes.
+The final moments of a fridge After fixing the defrost I did not get around to replacing the blown thermal fuse. The Chinese sensors were supplied with some kind of wire which breaks if you so much as look at it, and I was afraid I would knock the wire at some point and crash the system."><meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge4\/","name":"Closed fridge RIP open fridge"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"ClosedFridge: RIP OpenFridge","description":"Refrigerate in peace, OpenFridge.\nThe hardware OpenFridge was controlling is no more. It now looks like this:\nHeat Exchange\nDoor\nObviously, it should not look like this. What follows is a post-mortem, because it is worth learning from one\u0026rsquo;s mistakes.\nThe final moments of a fridge After fixing the defrost I did not get around to replacing the blown thermal fuse. The Chinese sensors were supplied with some kind of wire which breaks if you so much as look at it, and I was afraid I would knock the wire at some point and crash the system.","inLanguage":"en","wordCount":2314,"datePublished":"2021-10-14T12:07:57","dateModified":"2021-10-14T12:07:57","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge4\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script><meta property="og:title" content="ClosedFridge: RIP OpenFridge"><meta property="og:description" content="Refrigerate in peace, OpenFridge.
 The hardware OpenFridge was controlling is no more. It now looks like this:
-   Heat Exchange
-      Door
-    Obviously, it should not look like this. What follows is a post-mortem, because it is worth learning from one&rsquo;s mistakes.
-The final moments of a fridge After fixing the defrost I did not get around to replacing the blown thermal fuse.">
-<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
-<meta property="og:url" content="https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Jack of All Trades">
-<meta name=twitter:title content="ClosedFridge: RIP OpenFridge">
-<meta name=twitter:description content="Refrigerate in peace, OpenFridge.
+Heat Exchange
+Door
+Obviously, it should not look like this. What follows is a post-mortem, because it is worth learning from one&rsquo;s mistakes.
+The final moments of a fridge After fixing the defrost I did not get around to replacing the blown thermal fuse. The Chinese sensors were supplied with some kind of wire which breaks if you so much as look at it, and I was afraid I would knock the wire at some point and crash the system."><meta property="og:image" content="https://2e0byo.github.io/img/planing.png"><meta property="og:url" content="https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/"><meta property="og:type" content="website"><meta property="og:site_name" content="Jack of All Trades"><meta name=twitter:title content="ClosedFridge: RIP OpenFridge"><meta name=twitter:description content="Refrigerate in peace, OpenFridge.
 The hardware OpenFridge was controlling is no more. It now looks like this:
-   Heat Exchange
-      Door
-    Obviously, it should not look like this. What follows is a …">
-<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
-<meta name=twitter:card content="summary">
-<meta name=generator content="Hugo 0.91.2">
-<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
-<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
-<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
-</head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-<div class=container-fluid>
-<div class=navbar-header>
-<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+Heat Exchange
+Door
+Obviously, it should not look like this. What follows is a post-mortem, …"><meta name=twitter:image content="https://2e0byo.github.io/img/planing.png"><meta name=twitter:card content="summary"><meta name=generator content="Hugo 0.101.0"><link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
 <span class=sr-only>Toggle navigation</span>
 <span class=icon-bar></span>
 <span class=icon-bar></span>
-<span class=icon-bar></span>
-</button>
-<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
-</div>
-<div class="collapse navbar-collapse" id=main-navbar>
-<ul class="nav navbar-nav navbar-right">
-<li>
-<a title=Home href=https://2e0byo.github.io/>Home</a>
-</li>
-<li>
-<a title=search href=https://2e0byo.github.io/search/>search</a>
-</li>
-<li>
-<a title=About href=https://2e0byo.github.io/page/about/>About</a>
-</li>
-<li class=navlinks-container>
-<a class=navlinks-parent>Project by...</a>
-<div class=navlinks-children>
-<a href=https://2e0byo.github.io/categories>Category</a>
-<a href=https://2e0byo.github.io/tags>Tag</a>
-</div>
-</li>
-</ul>
-</div>
-<div class=avatar-container>
-<div class=avatar-img-border>
-<a title="Jack of All Trades" href=https://2e0byo.github.io/>
-<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
-</a>
-</div>
-</div>
-</div>
-</nav>
-<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
-<div class=pswp__bg></div>
-<div class=pswp__scroll-wrap>
-<div class=pswp__container>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-</div>
-<div class="pswp__ui pswp__ui--hidden">
-<div class=pswp__top-bar>
-<div class=pswp__counter></div>
-<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title=Home href=https://2e0byo.github.io/>Home</a></li><li><a title=search href=https://2e0byo.github.io/search/>search</a></li><li><a title=About href=https://2e0byo.github.io/page/about/>About</a></li><li class=navlinks-container><a class=navlinks-parent>Project by...</a><div class=navlinks-children><a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a></div></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Jack of All Trades" href=https://2e0byo.github.io/><img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-<div class=pswp__preloader>
-<div class=pswp__preloader__icn>
-<div class=pswp__preloader__cut>
-<div class=pswp__preloader__donut></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-<div class=pswp__share-tooltip></div>
-</div>
-<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-</button>
-<div class=pswp__caption>
-<div class=pswp__caption__center></div>
-</div>
-</div>
-</div>
-</div>
-<div id=header-big-imgs data-num-img=2 data-img-src-1=/img/closed-fridge/fridge-burnt.jpg data-img-src-2=/img/closed-fridge/fridge-burnt.jpg></div>
-<header class="header-section has-img">
-<div class="intro-header big-img">
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class=post-heading>
-<h1>ClosedFridge: RIP OpenFridge</h1>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on October 14, 2021
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><div id=header-big-imgs data-num-img=2 data-img-src-1=/img/closed-fridge/fridge-burnt.jpg data-img-src-2=/img/closed-fridge/fridge-burnt.jpg></div><header class="header-section has-img"><div class="intro-header big-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>ClosedFridge: RIP OpenFridge</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on October 14, 2021
 &nbsp;(Last modified on October 15, 2021)
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
-</span>
-</div>
-</div>
-</div>
-</div>
-<span class=img-desc style=display:inline></span>
-</div>
-<div class="intro-header no-img">
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class=post-heading>
-<h1>ClosedFridge: RIP OpenFridge</h1>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on October 14, 2021
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris</span></div></div></div></div><span class=img-desc style=display:inline></span></div><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>ClosedFridge: RIP OpenFridge</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on October 14, 2021
 &nbsp;(Last modified on October 15, 2021)
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class=container role=main>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<article role=main class=blog-post>
-<p>Refrigerate in peace, OpenFridge.</p>
-<p>The hardware OpenFridge was controlling is no more. It now looks like this:</p>
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
-<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/closed-fridge/fridge-burnt.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/closed-fridge/fridge-burnt.jpg alt="Heat Exchange">
-</div>
-<a href=https://2e0byo.github.io/img/closed-fridge/fridge-burnt.jpg itemprop=contentUrl></a>
-<figcaption>
-<p>Heat Exchange</p>
-</figcaption>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/closed-fridge/door-burnt.jpg)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/closed-fridge/door-burnt.jpg alt=Door>
-</div>
-<a href=https://2e0byo.github.io/img/closed-fridge/door-burnt.jpg itemprop=contentUrl></a>
-<figcaption>
-<p>Door</p>
-</figcaption>
-</figure>
-</div>
-</div>
-<p>Obviously, it should <em>not</em> look like this. What follows is a post-mortem,
-because it is worth learning from one&rsquo;s mistakes.</p>
-<h1 id=the-final-moments-of-a-fridge>The final moments of a fridge</h1>
-<p>After <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3>fixing the defrost</a> I did
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris</span></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>Refrigerate in peace, OpenFridge.</p><p>The hardware OpenFridge was controlling is no more. It now looks like this:</p><div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery><link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/closed-fridge/fridge-burnt.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/closed-fridge/fridge-burnt.jpg alt="Heat Exchange"></div><a href=https://2e0byo.github.io/img/closed-fridge/fridge-burnt.jpg itemprop=contentUrl></a><figcaption><p>Heat Exchange</p></figcaption></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/closed-fridge/door-burnt.jpg)><img itemprop=thumbnail src=https://2e0byo.github.io/img/closed-fridge/door-burnt.jpg alt=Door></div><a href=https://2e0byo.github.io/img/closed-fridge/door-burnt.jpg itemprop=contentUrl></a><figcaption><p>Door</p></figcaption></figure></div></div><p>Obviously, it should <em>not</em> look like this. What follows is a post-mortem,
+because it is worth learning from one&rsquo;s mistakes.</p><h1 id=the-final-moments-of-a-fridge>The final moments of a fridge</h1><p>After <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3>fixing the defrost</a> I did
 not get around to replacing the blown thermal fuse. The Chinese sensors were
 supplied with some kind of wire which breaks if you so much as look at it, and I
 was afraid I would knock the wire at some point and crash the system. Two
@@ -195,37 +37,31 @@ complained that the fridge was &lsquo;melting&rsquo;, at which point I assumed t
 had indeed failed, and the fridge had used stale data and failed to cool. No,
 she meant the <em>fridge</em> was melting, or more specifically the freezer: the
 plastic has melted, flown down into the heat exchange, and then fused in situ.
-The whole thing is now one lump and cannot be separated.</p>
-<p>The sensor had indeed come detached. I stripped the broken wire, screwed it
+The whole thing is now one lump and cannot be separated.</p><p>The sensor had indeed come detached. I stripped the broken wire, screwed it
 into the block, and rebooted the fridge, at which point it instantly went into
 deep freeze mode. The freezer was sitting at around 50 C, whilst the fridge had
 only got up to room temperature. The element was still hot to the touch, but I
 think the defrost had actually finished a while before. A chicken breast in the
 freezer had actually been cooked, and all the (little) food in it was ruined;
-but there was still ice in the bottom drawer.</p>
-<p>After a few minutes of cooling (with almost no air getting through the blocked
+but there was still ice in the bottom drawer.</p><p>After a few minutes of cooling (with almost no air getting through the blocked
 heat exchange to cool the freezer) everything was at a normal temperature and
 the food in the fridge could be transferred out (it was all fine), the food in
 the freezer binned, the controller hardware stripped away and the fridge removed
 from the kitchen. Then I spent the evening cleaning up, moving things around,
-moping around, and wondering how I could be so very stupid.</p>
-<p>We had another separate fridge and freezer, and placing them side by side where
+moping around, and wondering how I could be so very stupid.</p><p>We had another separate fridge and freezer, and placing them side by side where
 the fridge was we now have another work surface and a lot more light in the
 room. My wife professes to prefer it this way, and I don&rsquo;t think she&rsquo;s just
 trying to make me feel better. So all is not too bad: and it could have caught
 fire in the night or something horrible. What follows is an attempt to
-understand what <em>did</em> happen.</p>
-<h1 id=analysis>Analysis</h1>
-<p>In order to understand how something like this could happen, it&rsquo;s necessary to
+understand what <em>did</em> happen.</p><h1 id=analysis>Analysis</h1><p>In order to understand how something like this could happen, it&rsquo;s necessary to
 look at the architecture of OpenFridge. The basic coding pattern is to isolate
-all hardware interfaces inside HALs which respond to events (&lsquo;turn on&rsquo;, &lsquo;turn
+all hardware interfaces inside HALs which respond to events (&rsquo;turn on&rsquo;, &rsquo;turn
 off&rsquo;, &lsquo;raise temperature&rsquo;) and take the appropriate actions by themselves. Thus
-the control loop is extremely simple, and is full of statements like this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>if</span> <span class=n>hal</span><span class=o>.</span><span class=n>sensors</span><span class=p>[</span><span class=s2>&#34;fridge_temp&#34;</span><span class=p>]</span> <span class=o>&lt;</span> <span class=n>settings</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;fridge_setpoint&#34;</span><span class=p>)</span> <span class=o>-</span> <span class=n>settings</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;hysteresis&#34;</span><span class=p>):</span>
-    <span class=k>if</span> <span class=n>debugging</span><span class=p>:</span>
-        <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;Fridge under temperature&#34;</span><span class=p>)</span>
-    <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>refridgerating</span> <span class=o>=</span> <span class=kc>False</span>
-</code></pre></div><p>A similar control loop runs for refrigerating, and another for defrosting. The
+the control loop is extremely simple, and is full of statements like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>if</span> <span class=n>hal</span><span class=o>.</span><span class=n>sensors</span><span class=p>[</span><span class=s2>&#34;fridge_temp&#34;</span><span class=p>]</span> <span class=o>&lt;</span> <span class=n>settings</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;fridge_setpoint&#34;</span><span class=p>)</span> <span class=o>-</span> <span class=n>settings</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s2>&#34;hysteresis&#34;</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=n>debugging</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>logger</span><span class=o>.</span><span class=n>debug</span><span class=p>(</span><span class=s2>&#34;Fridge under temperature&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>refridgerating</span> <span class=o>=</span> <span class=kc>False</span>
+</span></span></code></pre></div><p>A similar control loop runs for refrigerating, and another for defrosting. The
 <code>fridge_freezer</code> class has properties&mdash;<code>defrosting</code>, <code>freezing</code>,
 <code>refridgerating</code> [sic]&mdash;and setting them causes it to change state. It then
 works out the appropriate state for the hardware and commands that state to a
@@ -235,158 +71,136 @@ not in conflict, forbidding turning on heating and cooling at once, or turning
 the compressor on if it has been turned off in the last 5 minutes (thus giving
 the gas time to reliquify, preventing undue load when starting the motor). These
 double checks exist because the hardware can be directly controlled by the API
-for testing purposes, and we still want safeguards.</p>
-<p>OpenFridge uses a crude way of getting these synchronous properties into an
-asychronous control loop:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>class</span> <span class=nc>FridgeFreezer</span><span class=p>(</span><span class=n>HAL</span><span class=p>):</span>
-    <span class=o>...</span>
-    <span class=nd>@property</span>
-    <span class=k>def</span> <span class=nf>freezing</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_freezing</span>
-        
-    <span class=nd>@freezing</span><span class=o>.</span><span class=n>setter</span>
-    <span class=k>def</span> <span class=nf>freezing</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>val</span><span class=p>):</span>
-        <span class=k>if</span> <span class=n>val</span> <span class=ow>and</span> <span class=bp>self</span><span class=o>.</span><span class=n>defrosting</span><span class=p>:</span>
-            <span class=k>raise</span> <span class=n>FridgeError</span><span class=p>(</span><span class=s2>&#34;Not allowed to freeze when defrosting&#34;</span><span class=p>)</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>_freezing</span> <span class=o>=</span> <span class=n>val</span>
-        <span class=k>if</span> <span class=ow>not</span> <span class=n>val</span><span class=p>:</span>
-            <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;fan&#34;</span><span class=p>,</span> <span class=kc>False</span><span class=p>)</span>
-            <span class=k>if</span> <span class=ow>not</span> <span class=bp>self</span><span class=o>.</span><span class=n>_refridgerating</span><span class=p>:</span>
-                <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;compressor&#34;</span><span class=p>,</span> <span class=kc>False</span><span class=p>)</span>
-                <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;deep_freeze&#34;</span><span class=p>,</span> <span class=kc>False</span><span class=p>)</span>
-        <span class=k>else</span><span class=p>:</span>
-            <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;fan&#34;</span><span class=p>,</span> <span class=kc>True</span><span class=p>)</span>
-            <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;compressor&#34;</span><span class=p>,</span> <span class=kc>True</span><span class=p>)</span>
-            
-    <span class=k>def</span> <span class=nf>set_state</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>val</span><span class=p>):</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>_state</span><span class=p>[</span><span class=n>name</span><span class=p>]</span> <span class=o>=</span> <span class=kc>True</span> <span class=k>if</span> <span class=n>val</span> <span class=k>else</span> <span class=kc>False</span>
-</code></pre></div><p>I&rsquo;ve simplified a bit: <code>set_state</code> belongs on the underlying <code>HAL</code>, whereas
+for testing purposes, and we still want safeguards.</p><p>OpenFridge uses a crude way of getting these synchronous properties into an
+asychronous control loop:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>class</span> <span class=nc>FridgeFreezer</span><span class=p>(</span><span class=n>HAL</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=o>...</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@property</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>freezing</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_freezing</span>
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>    <span class=nd>@freezing</span><span class=o>.</span><span class=n>setter</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>freezing</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>val</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=n>val</span> <span class=ow>and</span> <span class=bp>self</span><span class=o>.</span><span class=n>defrosting</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>raise</span> <span class=n>FridgeError</span><span class=p>(</span><span class=s2>&#34;Not allowed to freeze when defrosting&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>_freezing</span> <span class=o>=</span> <span class=n>val</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=ow>not</span> <span class=n>val</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;fan&#34;</span><span class=p>,</span> <span class=kc>False</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=ow>not</span> <span class=bp>self</span><span class=o>.</span><span class=n>_refridgerating</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;compressor&#34;</span><span class=p>,</span> <span class=kc>False</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;deep_freeze&#34;</span><span class=p>,</span> <span class=kc>False</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;fan&#34;</span><span class=p>,</span> <span class=kc>True</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>set_state</span><span class=p>(</span><span class=s2>&#34;compressor&#34;</span><span class=p>,</span> <span class=kc>True</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>set_state</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>val</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>_state</span><span class=p>[</span><span class=n>name</span><span class=p>]</span> <span class=o>=</span> <span class=kc>True</span> <span class=k>if</span> <span class=n>val</span> <span class=k>else</span> <span class=kc>False</span>
+</span></span></code></pre></div><p>I&rsquo;ve simplified a bit: <code>set_state</code> belongs on the underlying <code>HAL</code>, whereas
 <code>freezing</code> is a property of the derived <code>FridgeFreezer</code>. Then in the
 <code>hardware_control_loop</code>, ignoring all the code for mocked control and conflict
-checking, we have:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>async</span> <span class=k>def</span> <span class=nf>hardware_control_loop</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>_wdt</span><span class=o>.</span><span class=n>feed</span><span class=p>()</span>
-        <span class=k>for</span> <span class=n>name</span><span class=p>,</span> <span class=n>val</span> <span class=ow>in</span> <span class=bp>self</span><span class=o>.</span><span class=n>_state</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
-            <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>achieved_state</span><span class=p>(</span><span class=n>name</span><span class=p>):</span>
-                <span class=k>continue</span>
-            <span class=k>elif</span> <span class=n>safe_to_achieve_state</span><span class=p>(</span><span class=n>name</span><span class=p>):</span> <span class=c1># dummy</span>
-                <span class=k>await</span> <span class=bp>self</span><span class=o>.</span><span class=n>_set_output</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>val</span><span class=p>)</span>
-        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-</code></pre></div><p>This introduces a latency of <em>at least</em> 1 second between setting an output and
+checking, we have:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>async</span> <span class=k>def</span> <span class=nf>hardware_control_loop</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>_wdt</span><span class=o>.</span><span class=n>feed</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=n>name</span><span class=p>,</span> <span class=n>val</span> <span class=ow>in</span> <span class=bp>self</span><span class=o>.</span><span class=n>_state</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>achieved_state</span><span class=p>(</span><span class=n>name</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>                <span class=k>continue</span>
+</span></span><span class=line><span class=cl>            <span class=k>elif</span> <span class=n>safe_to_achieve_state</span><span class=p>(</span><span class=n>name</span><span class=p>):</span> <span class=c1># dummy</span>
+</span></span><span class=line><span class=cl>                <span class=k>await</span> <span class=bp>self</span><span class=o>.</span><span class=n>_set_output</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>val</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+</span></span></code></pre></div><p>This introduces a latency of <em>at least</em> 1 second between setting an output and
 the hardware responding, but that doesn&rsquo;t matter here. The wdt is fed from this
 loop, as I was mostly interested in keeping this loop alive&mdash;after all, if it&rsquo;s
 running, we can&rsquo;t get into any horrible state, can we? Oops. Having an
 <code>.achieved_state</code> method is no bad thing, as we can use it in debugging. But
 all this could be much better written using an awaitable event with message,
-which is what I now do:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>async</span> <span class=k>def</span> <span class=nf>_loop</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
-        <span class=n>msg</span> <span class=o>=</span> <span class=k>await</span> <span class=bp>self</span><span class=o>.</span><span class=n>_update</span><span class=o>.</span><span class=n>wait</span><span class=p>()</span>
-        <span class=k>if</span> <span class=n>msg</span> <span class=ow>is</span> <span class=bp>self</span><span class=o>.</span><span class=n>HEATING_ON</span><span class=p>:</span>
-            <span class=bp>self</span><span class=o>.</span><span class=n>relay</span><span class=o>.</span><span class=n>on</span><span class=p>()</span>
-        <span class=o>...</span>
-</code></pre></div><p>For this idiom we would need either to re-set the message, or use an queue and
+which is what I now do:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>async</span> <span class=k>def</span> <span class=nf>_loop</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>msg</span> <span class=o>=</span> <span class=k>await</span> <span class=bp>self</span><span class=o>.</span><span class=n>_update</span><span class=o>.</span><span class=n>wait</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=n>msg</span> <span class=ow>is</span> <span class=bp>self</span><span class=o>.</span><span class=n>HEATING_ON</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>relay</span><span class=o>.</span><span class=n>on</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=o>...</span>
+</span></span></code></pre></div><p>For this idiom we would need either to re-set the message, or use an queue and
 only pop the task when we actually apply it. But the advantage is
 near-instantaneous transition from the synchronous property to the hardware
-doing what you want, <em>despite</em> having to wait for the event loop to call your code.</p>
-<h2 id=sensor-reading-code>Sensor reading code</h2>
-<p>Here is the sensor reading code:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>async</span> <span class=k>def</span> <span class=nf>get_temps</span><span class=p>()</span>
-    <span class=n>sensors</span> <span class=o>=</span> <span class=p>{</span>
-        <span class=s2>&#34;freezer_temp&#34;</span><span class=p>:</span> <span class=kc>None</span><span class=p>,</span>
-        <span class=s2>&#34;fridge_temp&#34;</span><span class=p>:</span> <span class=kc>None</span><span class=p>,</span>
-        <span class=s2>&#34;ext_temp&#34;</span><span class=p>:</span> <span class=kc>None</span><span class=p>,</span>
-        <span class=s2>&#34;cooler_temp&#34;</span><span class=p>:</span> <span class=kc>None</span><span class=p>,</span>
-    <span class=p>}</span>
-
-    <span class=k>for</span> <span class=n>_</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
-        <span class=n>sens</span><span class=o>.</span><span class=n>convert_temp</span><span class=p>()</span>
-        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-        <span class=k>for</span> <span class=n>sensor</span> <span class=ow>in</span> <span class=n>sensors</span><span class=p>:</span>
-            <span class=k>if</span> <span class=n>sensors</span><span class=p>[</span><span class=n>sensor</span><span class=p>]:</span>
-                <span class=k>continue</span>
-            <span class=n>rom</span> <span class=o>=</span> <span class=nb>getattr</span><span class=p>(</span><span class=n>config</span><span class=p>,</span> <span class=n>sensor</span><span class=o>.</span><span class=n>replace</span><span class=p>(</span><span class=s2>&#34;temp&#34;</span><span class=p>,</span> <span class=s2>&#34;rom&#34;</span><span class=p>))</span>
-            <span class=n>temp</span> <span class=o>=</span> <span class=n>sens</span><span class=o>.</span><span class=n>read_temp</span><span class=p>(</span><span class=n>rom</span><span class=p>)</span>
-            <span class=k>if</span> <span class=n>temp</span> <span class=o>!=</span> <span class=mi>85</span><span class=p>:</span>
-                <span class=n>sensors</span><span class=p>[</span><span class=n>sensor</span><span class=p>]</span> <span class=o>=</span> <span class=n>temp</span>
-        <span class=k>if</span> <span class=nb>all</span><span class=p>(</span><span class=n>x</span> <span class=k>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>sensors</span><span class=o>.</span><span class=n>items</span><span class=p>()):</span>
-            <span class=k>break</span>
-        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep_ms</span><span class=p>(</span><span class=mi>100</span><span class=p>)</span>
-        
-    <span class=k>return</span> <span class=n>sensors</span>
-</code></pre></div><p>This code is rather odd, so it needs some explanation. <code>sens</code> is a sensor
+doing what you want, <em>despite</em> having to wait for the event loop to call your code.</p><h2 id=sensor-reading-code>Sensor reading code</h2><p>Here is the sensor reading code:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>async</span> <span class=k>def</span> <span class=nf>get_temps</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>sensors</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;freezer_temp&#34;</span><span class=p>:</span> <span class=kc>None</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;fridge_temp&#34;</span><span class=p>:</span> <span class=kc>None</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;ext_temp&#34;</span><span class=p>:</span> <span class=kc>None</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;cooler_temp&#34;</span><span class=p>:</span> <span class=kc>None</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>_</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=n>sens</span><span class=o>.</span><span class=n>convert_temp</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=n>sensor</span> <span class=ow>in</span> <span class=n>sensors</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=n>sensors</span><span class=p>[</span><span class=n>sensor</span><span class=p>]:</span>
+</span></span><span class=line><span class=cl>                <span class=k>continue</span>
+</span></span><span class=line><span class=cl>            <span class=n>rom</span> <span class=o>=</span> <span class=nb>getattr</span><span class=p>(</span><span class=n>config</span><span class=p>,</span> <span class=n>sensor</span><span class=o>.</span><span class=n>replace</span><span class=p>(</span><span class=s2>&#34;temp&#34;</span><span class=p>,</span> <span class=s2>&#34;rom&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>            <span class=n>temp</span> <span class=o>=</span> <span class=n>sens</span><span class=o>.</span><span class=n>read_temp</span><span class=p>(</span><span class=n>rom</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=n>temp</span> <span class=o>!=</span> <span class=mi>85</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                <span class=n>sensors</span><span class=p>[</span><span class=n>sensor</span><span class=p>]</span> <span class=o>=</span> <span class=n>temp</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=nb>all</span><span class=p>(</span><span class=n>x</span> <span class=k>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>sensors</span><span class=o>.</span><span class=n>items</span><span class=p>()):</span>
+</span></span><span class=line><span class=cl>            <span class=k>break</span>
+</span></span><span class=line><span class=cl>        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep_ms</span><span class=p>(</span><span class=mi>100</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>sensors</span>
+</span></span></code></pre></div><p>This code is rather odd, so it needs some explanation. <code>sens</code> is a sensor
 object, which communicates with the DS18X20 clones I&rsquo;m using. Sometimes those
 sensors can fail to read, in which case they return 85. It is possible to
 distinguish this false 85 C from a true reading of 85 C, but since the fridge
 was not supposed to get up to 85 C in the first place I simply checked it
-directly. What we do is:</p>
-<ul>
-<li>Trigger all the sensors to measure temperature</li>
-<li>Wait for them to do it</li>
-<li>Get the right rom code and address the bus to query the result for that sensor</li>
-<li>If the reading is 85, ignore it, else assign it</li>
-<li>If all sensors have been read successfully, return them, else keep trying for
-a maximum of 5 attempts.</li>
-</ul>
-<p>Incidentally, this is not the best style in the world: <code>all(sensors.values())</code>
+directly. What we do is:</p><ul><li>Trigger all the sensors to measure temperature</li><li>Wait for them to do it</li><li>Get the right rom code and address the bus to query the result for that sensor</li><li>If the reading is 85, ignore it, else assign it</li><li>If all sensors have been read successfully, return them, else keep trying for
+a maximum of 5 attempts.</li></ul><p>Incidentally, this is not the best style in the world: <code>all(sensors.values())</code>
 would have been better than <code>all(x for _, x in sensors.items())</code>, although
 <code>all(1 for _, x in sensors.items())</code> would still have been better than what I
 wrote; and <code>for sensor in (x for x in sensors if not sensors[x])</code> might well
 have been more readable than continuing immediately. But the code as written
-worked fine for more than a year. The trouble is in the line:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>temp</span> <span class=o>=</span> <span class=n>sens</span><span class=o>.</span><span class=n>read_temp</span><span class=p>(</span><span class=n>rom</span><span class=p>)</span>
-</code></pre></div><p>Detach the sensor and this raises an error, rather than returning 85. At that
+worked fine for more than a year. The trouble is in the line:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>temp</span> <span class=o>=</span> <span class=n>sens</span><span class=o>.</span><span class=n>read_temp</span><span class=p>(</span><span class=n>rom</span><span class=p>)</span>
+</span></span></code></pre></div><p>Detach the sensor and this raises an error, rather than returning 85. At that
 point, following the logic of this function, we should return <code>None</code>, so that
 comparisons will fail higher up the call stack. Instead we will raise an
-uncaught error and die. Worse, here is the calling code:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>async</span> <span class=k>def</span> <span class=nf>temp_loop</span><span class=p>():</span>
-    <span class=k>global</span> <span class=n>sensors</span>
-    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
-        <span class=k>while</span> <span class=ow>not</span> <span class=n>mock_temps</span><span class=p>:</span>
-            <span class=n>sensors</span> <span class=o>=</span> <span class=k>await</span> <span class=n>get_temps</span><span class=p>()</span>
-            <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
-
-        <span class=n>mocking_temps</span><span class=o>.</span><span class=n>set</span><span class=p>()</span>
-
-        <span class=k>while</span> <span class=n>mock_temps</span><span class=p>:</span>
-            <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-</code></pre></div><p>Ignore the bit about mocking: that was used by the functional test routines to
+uncaught error and die. Worse, here is the calling code:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>async</span> <span class=k>def</span> <span class=nf>temp_loop</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=k>global</span> <span class=n>sensors</span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=ow>not</span> <span class=n>mock_temps</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=n>sensors</span> <span class=o>=</span> <span class=k>await</span> <span class=n>get_temps</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>            <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>mocking_temps</span><span class=o>.</span><span class=n>set</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=n>mock_temps</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+</span></span></code></pre></div><p>Ignore the bit about mocking: that was used by the functional test routines to
 simulate different conditions. The event is used to signal to the test function
 that we have entered mocking mode, as depending on the load it can take a while
-to get back to the loop, and of course the loop has a 5s delay.</p>
-<p>If <code>get_temps()</code> raises here, it will propagate back up this loop, which,
+to get back to the loop, and of course the loop has a 5s delay.</p><p>If <code>get_temps()</code> raises here, it will propagate back up this loop, which,
 without an exception handler, will die. Now the rest of the event loop will
 continue on its merry way with the (stale) values, and the stage is set for the
-<em>denouement</em>.</p>
-<p>I thought of this problem a long time ago, and I now use a much more robust
+<em>denouement</em>.</p><p>I thought of this problem a long time ago, and I now use a much more robust
 temperature loop which captures exceptions originating at the hardware level,
 but I was holding off touching the OpenFridge code until I&rsquo;d finished writing
-and testing some unrelated HTTP authentication code for the API.</p>
-<h2 id=defrosting-code>Defrosting Code</h2>
-<p>Here is the defrosting code. It contains only one error:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>async</span> <span class=k>def</span> <span class=nf>_defrost</span><span class=p>():</span>
-    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>60</span><span class=p>):</span>
-        <span class=k>try</span><span class=p>:</span>
-            <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>defrosting</span> <span class=o>=</span> <span class=kc>True</span>
-            <span class=k>break</span>
-        <span class=k>except</span> <span class=n>FridgeError</span><span class=p>:</span>
-            <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
-    <span class=k>if</span> <span class=ow>not</span> <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>defrosting</span><span class=p>:</span>
-        <span class=n>logger</span><span class=o>.</span><span class=n>info</span><span class=p>(</span><span class=s2>&#34;Failed to start defrosting: timed out waiting&#34;</span><span class=p>)</span>
-        <span class=k>return</span>
-
-    <span class=k>while</span> <span class=ow>not</span> <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>achieved_state</span><span class=p>(</span><span class=s2>&#34;heaters&#34;</span><span class=p>):</span>
-        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
-
-    <span class=c1># defrost till element reaches 10C or 120 minutes is up</span>
-    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>60</span> <span class=o>*</span> <span class=mi>12</span><span class=p>):</span>
-        <span class=k>if</span> <span class=n>hal</span><span class=o>.</span><span class=n>sensors</span><span class=p>[</span><span class=s2>&#34;cooler_temp&#34;</span><span class=p>]</span> <span class=o>&gt;=</span> <span class=mi>2</span><span class=p>:</span>
-            <span class=k>break</span>
-        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
-    <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>60</span> <span class=o>*</span> <span class=mi>5</span><span class=p>)</span>  <span class=c1># reduce thermal stress</span>
-    <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>defrosting</span> <span class=o>=</span> <span class=kc>False</span>
-</code></pre></div><p>Here we try to start defrosting for a maximum of 600s, and give up if we can&rsquo;t.
+and testing some unrelated HTTP authentication code for the API.</p><h2 id=defrosting-code>Defrosting Code</h2><p>Here is the defrosting code. It contains only one error:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>async</span> <span class=k>def</span> <span class=nf>_defrost</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>60</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>defrosting</span> <span class=o>=</span> <span class=kc>True</span>
+</span></span><span class=line><span class=cl>            <span class=k>break</span>
+</span></span><span class=line><span class=cl>        <span class=k>except</span> <span class=n>FridgeError</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=ow>not</span> <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>defrosting</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>logger</span><span class=o>.</span><span class=n>info</span><span class=p>(</span><span class=s2>&#34;Failed to start defrosting: timed out waiting&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=ow>not</span> <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>achieved_state</span><span class=p>(</span><span class=s2>&#34;heaters&#34;</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1># defrost till element reaches 10C or 120 minutes is up</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>60</span> <span class=o>*</span> <span class=mi>12</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=n>hal</span><span class=o>.</span><span class=n>sensors</span><span class=p>[</span><span class=s2>&#34;cooler_temp&#34;</span><span class=p>]</span> <span class=o>&gt;=</span> <span class=mi>2</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>break</span>
+</span></span><span class=line><span class=cl>        <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>60</span> <span class=o>*</span> <span class=mi>5</span><span class=p>)</span>  <span class=c1># reduce thermal stress</span>
+</span></span><span class=line><span class=cl>    <span class=n>hal</span><span class=o>.</span><span class=n>fridge_freezer</span><span class=o>.</span><span class=n>defrosting</span> <span class=o>=</span> <span class=kc>False</span>
+</span></span></code></pre></div><p>Here we try to start defrosting for a maximum of 600s, and give up if we can&rsquo;t.
 If we can, we defrost &lsquo;until the element reaches 10C or 120 minutes is up&rsquo;. The
 error is that number: 120 minutes is <em>far</em> too long a defrost cycle. It was
 initially half an hour, but I increased it when trying to work out why the
@@ -397,167 +211,75 @@ blown fuse, but forgot to go and change that constant for a smaller number.
 <strong>Had it been only 30 minutes, the Freezer would be absolutely fine</strong>. <strong>Had it
 been 60 minutes, the freezer would likely be mostly intact</strong>. In point of fact
 <em>two hours</em> of defrosting&mdash;over by time we got to the freezer&mdash;cooked a
-chicken breast very nicely!</p>
-<h2 id=false-assumptions>False Assumptions</h2>
-<p>When I knocked the wire I immediately thought of the risk, but I didn&rsquo;t worry
+chicken breast very nicely!</p><h2 id=false-assumptions>False Assumptions</h2><p>When I knocked the wire I immediately thought of the risk, but I didn&rsquo;t worry
 about it since I assumed a dead sensor would cause an error to propagate,
 rebooting the fridge, at which point failure would be obvious. It would be stuck
 in a reboot cycle (with all the hardware off), would fail to light up when
 opened, and I could fix the problem and carry on. Nothing could get
 over-temperature, because I hadn&rsquo;t damaged the all-important cooler sensor. This
-assumption was wrong in several ways:</p>
-<ul>
-<li>
-<p>I had not in fact implemented the stale reading timeout I since use as
-standard in all my code, so it happily believed the old readings were true.</p>
-</li>
-<li>
-<p>Whilst the other three sensors functioned perfectly correctly, the code was
-brittle: it couldn&rsquo;t cope with even a single failure.</p>
-</li>
-<li>
-<p>There was in fact no guarantee that throwing an exception would terminate the
+assumption was wrong in several ways:</p><ul><li><p>I had not in fact implemented the stale reading timeout I since use as
+standard in all my code, so it happily believed the old readings were true.</p></li><li><p>Whilst the other three sensors functioned perfectly correctly, the code was
+brittle: it couldn&rsquo;t cope with even a single failure.</p></li><li><p>There was in fact no guarantee that throwing an exception would terminate the
 program. This is something to bear in mind in <code>asyncio</code> code: we are so used
 to the synchronous assumption that throwing an uncaught exception terminates
 everything we rarely think about writing error handlers for unrecoverable
 cases. Throwing an exception in <code>asyncio</code> code does <em>not</em> terminate the loop
-by default.</p>
-</li>
-</ul>
-<p>This latter point is counter-intuitive. Consider the following code:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1># /tmp/test.py</span>
-<span class=kn>import</span> <span class=nn>asyncio</span>
-
-
-<span class=k>async</span> <span class=k>def</span> <span class=nf>errorfn</span><span class=p>():</span>
-    <span class=k>raise</span> <span class=ne>Exception</span><span class=p>(</span><span class=s2>&#34;Error&#34;</span><span class=p>)</span>
-
-
-<span class=k>async</span> <span class=k>def</span> <span class=nf>otherfn</span><span class=p>():</span>
-    <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;I&#39;m running&#34;</span><span class=p>)</span>
-
-
-<span class=n>loop</span> <span class=o>=</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>get_event_loop</span><span class=p>()</span>
-<span class=n>loop</span><span class=o>.</span><span class=n>create_task</span><span class=p>(</span><span class=n>errorfn</span><span class=p>())</span>
-<span class=n>loop</span><span class=o>.</span><span class=n>create_task</span><span class=p>(</span><span class=n>otherfn</span><span class=p>())</span>
-<span class=n>loop</span><span class=o>.</span><span class=n>run_forever</span><span class=p>()</span>
-</code></pre></div><p>What happens if you run this? The answer is this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>Task</span> <span class=n>exception</span> <span class=n>was</span> <span class=n>never</span> <span class=n>retrieved</span>
-<span class=n>future</span><span class=p>:</span> <span class=o>&lt;</span><span class=n>Task</span> <span class=n>finished</span> <span class=n>name</span><span class=o>=</span><span class=s1>&#39;Task-1&#39;</span> <span class=n>coro</span><span class=o>=&lt;</span><span class=n>errorfn</span><span class=p>()</span> <span class=n>done</span><span class=p>,</span> <span class=n>defined</span> <span class=n>at</span> <span class=o>/</span><span class=n>tmp</span><span class=o>/</span><span class=n>test</span><span class=o>.</span><span class=n>py</span><span class=p>:</span><span class=mi>4</span><span class=o>&gt;</span> <span class=n>exception</span><span class=o>=</span><span class=ne>Exception</span><span class=p>(</span><span class=s1>&#39;Error&#39;</span><span class=p>)</span><span class=o>&gt;</span>
-<span class=n>Traceback</span> <span class=p>(</span><span class=n>most</span> <span class=n>recent</span> <span class=n>call</span> <span class=n>last</span><span class=p>):</span>
-  <span class=n>File</span> <span class=s2>&#34;/tmp/test.py&#34;</span><span class=p>,</span> <span class=n>line</span> <span class=mi>5</span><span class=p>,</span> <span class=ow>in</span> <span class=n>errorfn</span>
-    <span class=k>raise</span> <span class=ne>Exception</span><span class=p>(</span><span class=s2>&#34;Error&#34;</span><span class=p>)</span>
-<span class=ne>Exception</span><span class=p>:</span> <span class=n>Error</span>
-<span class=n>I</span><span class=s1>&#39;m running</span>
-</code></pre></div><p>The worst thing is that I was well aware of this, and part of the work due to be
+by default.</p></li></ul><p>This latter point is counter-intuitive. Consider the following code:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># /tmp/test.py</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>asyncio</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>async</span> <span class=k>def</span> <span class=nf>errorfn</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=k>raise</span> <span class=ne>Exception</span><span class=p>(</span><span class=s2>&#34;Error&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>async</span> <span class=k>def</span> <span class=nf>otherfn</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=k>await</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;I&#39;m running&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>loop</span> <span class=o>=</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>get_event_loop</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>loop</span><span class=o>.</span><span class=n>create_task</span><span class=p>(</span><span class=n>errorfn</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=n>loop</span><span class=o>.</span><span class=n>create_task</span><span class=p>(</span><span class=n>otherfn</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=n>loop</span><span class=o>.</span><span class=n>run_forever</span><span class=p>()</span>
+</span></span></code></pre></div><p>What happens if you run this? The answer is this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>Task</span> <span class=n>exception</span> <span class=n>was</span> <span class=n>never</span> <span class=n>retrieved</span>
+</span></span><span class=line><span class=cl><span class=n>future</span><span class=p>:</span> <span class=o>&lt;</span><span class=n>Task</span> <span class=n>finished</span> <span class=n>name</span><span class=o>=</span><span class=s1>&#39;Task-1&#39;</span> <span class=n>coro</span><span class=o>=&lt;</span><span class=n>errorfn</span><span class=p>()</span> <span class=n>done</span><span class=p>,</span> <span class=n>defined</span> <span class=n>at</span> <span class=o>/</span><span class=n>tmp</span><span class=o>/</span><span class=n>test</span><span class=o>.</span><span class=n>py</span><span class=p>:</span><span class=mi>4</span><span class=o>&gt;</span> <span class=n>exception</span><span class=o>=</span><span class=ne>Exception</span><span class=p>(</span><span class=s1>&#39;Error&#39;</span><span class=p>)</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl><span class=n>Traceback</span> <span class=p>(</span><span class=n>most</span> <span class=n>recent</span> <span class=n>call</span> <span class=n>last</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>  <span class=n>File</span> <span class=s2>&#34;/tmp/test.py&#34;</span><span class=p>,</span> <span class=n>line</span> <span class=mi>5</span><span class=p>,</span> <span class=ow>in</span> <span class=n>errorfn</span>
+</span></span><span class=line><span class=cl>    <span class=k>raise</span> <span class=ne>Exception</span><span class=p>(</span><span class=s2>&#34;Error&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=ne>Exception</span><span class=p>:</span> <span class=n>Error</span>
+</span></span><span class=line><span class=cl><span class=n>I</span><span class=s1>&#39;m running</span>
+</span></span></code></pre></div><p>The worst thing is that I was well aware of this, and part of the work due to be
 done on OpenFridge was to add a general bail-out-now function which signalled
 that our current state really wasn&rsquo;t good enough. Of course, this should be
 checked in the watchdog, but I was only using the watchdog to detect if the loop
 was running at all&mdash;because sometimes the whole processor would lock up for (I
-suspect) EMI related reasons.</p>
-<h1 id=morals>Morals</h1>
-<p>OpenFridge controlled an otherwise dead fridge-freezer correctly for over a
-year. I bought this fridge-freezer for £90 around three years ago: since then:</p>
-<ul>
-<li><a href=https://2e0byo.github.io/post/repairs/how-to-break-a-freezer>the power failed</a> with a full load of food and I had to clean it out</li>
-<li><a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge>the controller failed</a> and was replaced with a breadboarded controller</li>
-<li><a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3>the defrosting failed</a> with that controller after it got into a conflicted
+suspect) EMI related reasons.</p><h1 id=morals>Morals</h1><p>OpenFridge controlled an otherwise dead fridge-freezer correctly for over a
+year. I bought this fridge-freezer for £90 around three years ago: since then:</p><ul><li><a href=https://2e0byo.github.io/post/repairs/how-to-break-a-freezer>the power failed</a> with a full load of food and I had to clean it out</li><li><a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge>the controller failed</a> and was replaced with a breadboarded controller</li><li><a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3>the defrosting failed</a> with that controller after it got into a conflicted
 state (heating and cooling at once) and it was extensively re-written to avoid
 conflicts. (This worked very well and is the basis for all embedded code I&rsquo;ve
-written since.)</li>
-</ul>
-<p>We got another year out of a junk fridge; I got a lot of experience writing
+written since.)</li></ul><p>We got another year out of a junk fridge; I got a lot of experience writing
 <code>asyncio</code> code in python, and a stable architecture for embedded systems with
 <code>asyncio</code>; and now we&rsquo;ve got a lot more space in the kitchen, and a fair bit
-more light.</p>
-<p>Still, I&rsquo;m sad to see it go: a lot of work went into that fridge. Particularly
+more light.</p><p>Still, I&rsquo;m sad to see it go: a lot of work went into that fridge. Particularly
 for a completely avoidable bug I had actually predicted but hadn&rsquo;t got round to
-fixing.</p>
-<p>Some takeaways:</p>
-<ul>
-<li>Always pick safe fallback defaults. 120 minutes' defrosting was a stupid
-value.</li>
-<li>Look hard at failure points in asynchronous code. You need to handle errors
-early, yourself.</li>
-<li>Replace brittle code as soon as you notice the assumptions.</li>
-<li>Don&rsquo;t leave state lying around if the code updating it has died.</li>
-<li>Replace your hardware interlocks <em>pronto</em>. It was alright to run the fridge
+fixing.</p><p>Some takeaways:</p><ul><li>Always pick safe fallback defaults. 120 minutes&rsquo; defrosting was a stupid
+value.</li><li>Look hard at failure points in asynchronous code. You need to handle errors
+early, yourself.</li><li>Replace brittle code as soon as you notice the assumptions.</li><li>Don&rsquo;t leave state lying around if the code updating it has died.</li><li>Replace your hardware interlocks <em>pronto</em>. It was alright to run the fridge
 without the fuse for a few days to stop the food going off. It wasn&rsquo;t alright
-to run it that way for a few <em>months</em>.</li>
-</ul>
-<p>The lesson is very simple: <strong>always have a hardware interlock</strong>. A £0.60
+to run it that way for a few <em>months</em>.</li></ul><p>The lesson is very simple: <strong>always have a hardware interlock</strong>. A £0.60
 thermal fuse would have saved the whole system, and OpenFridge would still be
-running today.</p>
-</article>
-<ul class="pager blog-pager">
-<li class=previous>
-<a href=https://2e0byo.github.io/post/carpentry/plane-repair/ data-toggle=tooltip data-placement=top title="Plane Repair">&larr; Previous Post</a>
-</li>
-<li class=next>
-<a href=https://2e0byo.github.io/post/coding/modern-authentication/ data-toggle=tooltip data-placement=top title="“Modern Authentication”: Outlook365 in Emacs">Next Post &rarr;</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<footer>
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<ul class="list-inline text-center footer-links">
-<li>
-<a href=mailto:2e0byo@gmail.com title="Email me">
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://github.com/2e0byo title=GitHub>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-github fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://gitlab.com/2e0byo title=GitLab>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href title=RSS>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-</ul>
-<p class="credits copyright text-muted">
-John Morris
+running today.</p></article><ul class="pager blog-pager"><li class=previous><a href=https://2e0byo.github.io/post/carpentry/plane-repair/ data-toggle=tooltip data-placement=top title="Plane Repair">&larr; Previous Post</a></li><li class=next><a href=https://2e0byo.github.io/post/coding/modern-authentication/ data-toggle=tooltip data-placement=top title="“Modern Authentication”: Outlook365 in Emacs">Next Post &rarr;</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:2e0byo@gmail.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/2e0byo title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://gitlab.com/2e0byo title=GitLab><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">John Morris
 &nbsp;&bull;&nbsp;&copy;
-2021
+2022
 &nbsp;&bull;&nbsp;
-<a href=https://2e0byo.github.io/>Jack of All Trades</a>
-</p>
-<p class="credits theme-by text-muted">
-<a href=https://gohugo.io>Hugo v0.91.2</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/99ca1c9de29d35adde3955c2e09291c286d507cd>99ca1c9d</a>]
-</p>
-</div>
-</div>
-</div>
-</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<a href=https://2e0byo.github.io/>Jack of All Trades</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.101.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/99ca1c9de29d35adde3955c2e09291c286d507cd>99ca1c9d</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
 <script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
 <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
 <script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
-</body>
-</html>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script></body></html>

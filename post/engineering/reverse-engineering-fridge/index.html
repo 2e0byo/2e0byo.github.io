@@ -1,149 +1,26 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Reverse Engineering a Fridge - Jack of All Trades</title>
-<meta name=description content="We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:
-    I don&rsquo;t mind a bit of swing in the temperature, but that&rsquo;s all over the place. In the meantime the fridge compartment turned into a freezer, albeit not a very good one. Time to take it apart and see what the problem could be.">
-<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge\/","name":"Reverse engineering a fridge"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Reverse Engineering a Fridge","description":"We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:\n    I don\u0026rsquo;t mind a bit of swing in the temperature, but that\u0026rsquo;s all over the place. In the meantime the fridge compartment turned into a freezer, albeit not a very good one. Time to take it apart and see what the problem could be.","inLanguage":"en","wordCount":1275,"datePublished":"2021-01-18T20:36:37","dateModified":"2021-01-18T20:36:37","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
-<meta property="og:title" content="Reverse Engineering a Fridge">
-<meta property="og:description" content="We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:
-    I don&rsquo;t mind a bit of swing in the temperature, but that&rsquo;s all over the place. In the meantime the fridge compartment turned into a freezer, albeit not a very good one. Time to take it apart and see what the problem could be.">
-<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
-<meta property="og:url" content="https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Jack of All Trades">
-<meta name=twitter:title content="Reverse Engineering a Fridge">
-<meta name=twitter:description content="We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:
-    I don&rsquo;t mind a bit of swing in the temperature, …">
-<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
-<meta name=twitter:card content="summary">
-<meta name=generator content="Hugo 0.91.2">
-<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
-<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
-<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
-</head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-<div class=container-fluid>
-<div class=navbar-header>
-<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Reverse Engineering a Fridge - Jack of All Trades</title><meta name=description content="We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:
+I don&rsquo;t mind a bit of swing in the temperature, but that&rsquo;s all over the place. In the meantime the fridge compartment turned into a freezer, albeit not a very good one. Time to take it apart and see what the problem could be.
+Cooling System This fridge-freezer has one fan, two thermistors (one in each compartment), one heat exchange (at the top of the freezer compartment), a duct around the heat exchange/fan which causes air to be drawn from the bottom of the freezer compartment and blown out at the top, recirculating via the door, a &lsquo;superfreeze&rsquo; button which causes it get colder quicker (or possibly just colder) and is to be used &lsquo;when the ambient temperature is below 16 degrees or you want to freeze fresh food&rsquo; and should be used &lsquo;only for 24 hours, but always if the ambient temperature is below 16 degrees&rsquo;, a light (in the fridge compartment), a door switch (in the fridge compartment), an uncalibrated knob to set the fridge temperature, and a power indicator, which never comes on."><meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge\/","name":"Reverse engineering a fridge"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Reverse Engineering a Fridge","description":"We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:\nI don\u0026rsquo;t mind a bit of swing in the temperature, but that\u0026rsquo;s all over the place. In the meantime the fridge compartment turned into a freezer, albeit not a very good one. Time to take it apart and see what the problem could be.\nCooling System This fridge-freezer has one fan, two thermistors (one in each compartment), one heat exchange (at the top of the freezer compartment), a duct around the heat exchange\/fan which causes air to be drawn from the bottom of the freezer compartment and blown out at the top, recirculating via the door, a \u0026lsquo;superfreeze\u0026rsquo; button which causes it get colder quicker (or possibly just colder) and is to be used \u0026lsquo;when the ambient temperature is below 16 degrees or you want to freeze fresh food\u0026rsquo; and should be used \u0026lsquo;only for 24 hours, but always if the ambient temperature is below 16 degrees\u0026rsquo;, a light (in the fridge compartment), a door switch (in the fridge compartment), an uncalibrated knob to set the fridge temperature, and a power indicator, which never comes on.","inLanguage":"en","wordCount":1275,"datePublished":"2021-01-18T20:36:37","dateModified":"2021-01-18T20:36:37","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/engineering\/reverse-engineering-fridge\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script><meta property="og:title" content="Reverse Engineering a Fridge"><meta property="og:description" content="We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:
+I don&rsquo;t mind a bit of swing in the temperature, but that&rsquo;s all over the place. In the meantime the fridge compartment turned into a freezer, albeit not a very good one. Time to take it apart and see what the problem could be.
+Cooling System This fridge-freezer has one fan, two thermistors (one in each compartment), one heat exchange (at the top of the freezer compartment), a duct around the heat exchange/fan which causes air to be drawn from the bottom of the freezer compartment and blown out at the top, recirculating via the door, a &lsquo;superfreeze&rsquo; button which causes it get colder quicker (or possibly just colder) and is to be used &lsquo;when the ambient temperature is below 16 degrees or you want to freeze fresh food&rsquo; and should be used &lsquo;only for 24 hours, but always if the ambient temperature is below 16 degrees&rsquo;, a light (in the fridge compartment), a door switch (in the fridge compartment), an uncalibrated knob to set the fridge temperature, and a power indicator, which never comes on."><meta property="og:image" content="https://2e0byo.github.io/img/planing.png"><meta property="og:url" content="https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/"><meta property="og:type" content="website"><meta property="og:site_name" content="Jack of All Trades"><meta name=twitter:title content="Reverse Engineering a Fridge"><meta name=twitter:description content="We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:
+I don&rsquo;t mind a bit of swing in the temperature, but …"><meta name=twitter:image content="https://2e0byo.github.io/img/planing.png"><meta name=twitter:card content="summary"><meta name=generator content="Hugo 0.101.0"><link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
 <span class=sr-only>Toggle navigation</span>
 <span class=icon-bar></span>
 <span class=icon-bar></span>
-<span class=icon-bar></span>
-</button>
-<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
-</div>
-<div class="collapse navbar-collapse" id=main-navbar>
-<ul class="nav navbar-nav navbar-right">
-<li>
-<a title=Home href=https://2e0byo.github.io/>Home</a>
-</li>
-<li>
-<a title=search href=https://2e0byo.github.io/search/>search</a>
-</li>
-<li>
-<a title=About href=https://2e0byo.github.io/page/about/>About</a>
-</li>
-<li class=navlinks-container>
-<a class=navlinks-parent>Project by...</a>
-<div class=navlinks-children>
-<a href=https://2e0byo.github.io/categories>Category</a>
-<a href=https://2e0byo.github.io/tags>Tag</a>
-</div>
-</li>
-</ul>
-</div>
-<div class=avatar-container>
-<div class=avatar-img-border>
-<a title="Jack of All Trades" href=https://2e0byo.github.io/>
-<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
-</a>
-</div>
-</div>
-</div>
-</nav>
-<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
-<div class=pswp__bg></div>
-<div class=pswp__scroll-wrap>
-<div class=pswp__container>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-</div>
-<div class="pswp__ui pswp__ui--hidden">
-<div class=pswp__top-bar>
-<div class=pswp__counter></div>
-<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title=Home href=https://2e0byo.github.io/>Home</a></li><li><a title=search href=https://2e0byo.github.io/search/>search</a></li><li><a title=About href=https://2e0byo.github.io/page/about/>About</a></li><li class=navlinks-container><a class=navlinks-parent>Project by...</a><div class=navlinks-children><a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a></div></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Jack of All Trades" href=https://2e0byo.github.io/><img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-<div class=pswp__preloader>
-<div class=pswp__preloader__icn>
-<div class=pswp__preloader__cut>
-<div class=pswp__preloader__donut></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-<div class=pswp__share-tooltip></div>
-</div>
-<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-</button>
-<div class=pswp__caption>
-<div class=pswp__caption__center></div>
-</div>
-</div>
-</div>
-</div>
-<header class=header-section>
-<div class="intro-header no-img">
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class=post-heading>
-<h1>Reverse Engineering a Fridge</h1>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on January 18, 2021
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Reverse Engineering a Fridge</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on January 18, 2021
 &nbsp;(Last modified on August 13, 2021)
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class=container role=main>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<article role=main class=blog-post>
-<p>We have a Hotpoint FFA52 fridge-freezer. It has previously given
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris</span></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>We have a Hotpoint FFA52 fridge-freezer. It has previously given
 <a href=https://2e0byo.github.io/post/repairs/how-to-break-a-freezer>much hardship</a>. It no longer
-works. Here is a graph of a non-working freezer:</p>
-<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/broken_freezer_log.png.jpg alt=/img/broken_freezer_log.png.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/broken_freezer_log.png.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<p>I don&rsquo;t mind a bit of swing in the temperature, but that&rsquo;s all over
+works. Here is a graph of a non-working freezer:</p><link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/broken_freezer_log.png.jpg alt=/img/broken_freezer_log.png.jpg></div><a href=https://2e0byo.github.io/img/broken_freezer_log.png.jpg itemprop=contentUrl></a></figure></div><p>I don&rsquo;t mind a bit of swing in the temperature, but that&rsquo;s all over
 the place. In the meantime the fridge compartment turned into a
 freezer, albeit not a very good one. Time to take it apart and see
-what the problem could be.</p>
-<h1 id=cooling-system>Cooling System</h1>
-<p>This fridge-freezer has one fan, two thermistors (one in each
+what the problem could be.</p><h1 id=cooling-system>Cooling System</h1><p>This fridge-freezer has one fan, two thermistors (one in each
 compartment), one heat exchange (at the top of the freezer
 compartment), a duct around the heat exchange/fan which causes air to
 be drawn from the bottom of the freezer compartment and blown out at
@@ -157,122 +34,40 @@ uncalibrated knob to set the fridge temperature, and a power
 indicator, which never comes on. Attached to heat exchange is a
 defrosting coil and a thermal fuse, and another defrosting coil is in
 the polystyrene insulation directly below the heat exchange and in the
-duct.</p>
-<p>For pictures of all this, see the <a href=https://2e0byo.github.io/post/repairs/how-to-break-a-freezer>previous
-post</a>.</p>
-<p>There is a control board at the very top of the freezer, in the same
+duct.</p><p>For pictures of all this, see the <a href=https://2e0byo.github.io/post/repairs/how-to-break-a-freezer>previous
+post</a>.</p><p>There is a control board at the very top of the freezer, in the same
 plastic membrane which supports the top door hinge. Every design
 decision here seems to be about cutting cost (why no third metal
 hinge?) and the plastic had become brittle, but despite snapping the
 clips taking it off the two screws seem to hold the door rigidly
-enough.</p>
-<p>I removed the top membrane, cut notches in it where the two bundles of
+enough.</p><p>I removed the top membrane, cut notches in it where the two bundles of
 wires come out to meet the control board, removed (at the cost of a
 screwdrive gashing a fingertip) the control board from the membrane
 and reattached it with everything poked up on top. Now we can fiddle
 with the controller without having to take the fridge apart each
-time. Here is a poor photo of the control board:</p>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_145551.jpg alt=/img/20210118_145551.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/20210118_145551.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<p>and here is the other side, with the microcontroller:</p>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_145734.jpg alt=/img/20210118_145734.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/20210118_145734.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<p>Alas, that&rsquo;s a manufacturer-specific partnumber and I have no idea
+time. Here is a poor photo of the control board:</p><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_145551.jpg alt=/img/20210118_145551.jpg></div><a href=https://2e0byo.github.io/img/20210118_145551.jpg itemprop=contentUrl></a></figure></div><p>and here is the other side, with the microcontroller:</p><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_145734.jpg alt=/img/20210118_145734.jpg></div><a href=https://2e0byo.github.io/img/20210118_145734.jpg itemprop=contentUrl></a></figure></div><p>Alas, that&rsquo;s a manufacturer-specific partnumber and I have no idea
 what this is, but probably an 8-bitter (or maybe it&rsquo;s just a bunch of
 comparitors and not an MCU at all?). There goes the dream of hooking
 up an STLink and flashing new firmware. Still, it&rsquo;s likely not the
-firmware (if there is any) which has gone.</p>
-<p>We&rsquo;re lucky enough to have another fridge and freezer, so I decamped
+firmware (if there is any) which has gone.</p><p>We&rsquo;re lucky enough to have another fridge and freezer, so I decamped
 everything and turned it off. Then I took the ducting off. It was
 frozen solid and took a hairdryer to move. Once off it was clear what
-had happened:</p>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_170448.jpg alt=/img/20210118_170448.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/20210118_170448.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<p>That&rsquo;s ice, all along the back, right up to where it hit the inside of
+had happened:</p><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_170448.jpg alt=/img/20210118_170448.jpg></div><a href=https://2e0byo.github.io/img/20210118_170448.jpg itemprop=contentUrl></a></figure></div><p>That&rsquo;s ice, all along the back, right up to where it hit the inside of
 the compartment. No wonder it wouldn&rsquo;t come. The overflow tube is a
-solid icycle. The heat exchange, crucially, looks fine however:</p>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_170730.jpg alt=/img/20210118_170730.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/20210118_170730.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<p>The coil in the foreground is the heater, the wire is to the
-thermistor and the the thermal fuse is on the other side.</p>
-<h1 id=testing>Testing</h1>
-<p>What had gone wrong? My first guess was that either the fan had
+solid icycle. The heat exchange, crucially, looks fine however:</p><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_170730.jpg alt=/img/20210118_170730.jpg></div><a href=https://2e0byo.github.io/img/20210118_170730.jpg itemprop=contentUrl></a></figure></div><p>The coil in the foreground is the heater, the wire is to the
+thermistor and the the thermal fuse is on the other side.</p><h1 id=testing>Testing</h1><p>What had gone wrong? My first guess was that either the fan had
 failed or one or both of the heating coils. The heat exchange wasn&rsquo;t
 frozen solid and the heater attached to it measured only a few ohms,
 so it wasn&rsquo;t that. The other heater was rather less inspiring at 6k,
 but 6k is not an open circuit and looked plausible. I thus took it
-upstairs, put it on a towel, and rigged up an experiment:</p>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_172959.jpg alt=/img/20210118_172959.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/20210118_172959.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<p>The multimeter is a Vichy VC99 with optoisolated serial output added
+upstairs, put it on a towel, and rigged up an experiment:</p><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_172959.jpg alt=/img/20210118_172959.jpg></div><a href=https://2e0byo.github.io/img/20210118_172959.jpg itemprop=contentUrl></a></figure></div><p>The multimeter is a Vichy VC99 with optoisolated serial output added
 to it, but multimeter hacking is for another post. Mains arrives by
-the black wire.</p>
-<p>Well that clearly didn&rsquo;t work, but I briefly saw 150mA being drawn.
+the black wire.</p><p>Well that clearly didn&rsquo;t work, but I briefly saw 150mA being drawn.
 Perhaps it&rsquo;s the connection? With some 2.5mm^2 wire bent and pushed
-in it started going:</p>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_173750.jpg alt=/img/20210118_173750.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/20210118_173750.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<p>Which is actually a test of the <em>fan</em>, as you can see. The fan works;
-the heater works too:</p>
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/heater_log.png)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/heater_log.png alt=/img/heater_log.png>
-</div>
-<a href=https://2e0byo.github.io/img/heater_log.png itemprop=contentUrl></a>
-</figure>
-</div>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img style=background-image:url(https://2e0byo.github.io//img/current_heater_log.png)>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/current_heater_log.png alt=/img/current_heater_log.png>
-</div>
-<a href=https://2e0byo.github.io/img/current_heater_log.png itemprop=contentUrl></a>
-</figure>
-</div>
-</div>
-<p>Apologies for the screenshot. SmuView&rsquo;s saving is currently broken
-and I haven&rsquo;t had time to look at it.</p>
-<p>Fan draws less than 50mA with a noticeable startup spike (probably
-higher as the multimeter only samples every 0.6s), heater draws 150mA.</p>
-<p>So that can&rsquo;t be it. Why, then, were they not getting switched on? I
+in it started going:</p><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_173750.jpg alt=/img/20210118_173750.jpg></div><a href=https://2e0byo.github.io/img/20210118_173750.jpg itemprop=contentUrl></a></figure></div><p>Which is actually a test of the <em>fan</em>, as you can see. The fan works;
+the heater works too:</p><div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype=http://schema.org/ImageGallery><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/heater_log.png)><img itemprop=thumbnail src=https://2e0byo.github.io/img/heater_log.png alt=/img/heater_log.png></div><a href=https://2e0byo.github.io/img/heater_log.png itemprop=contentUrl></a></figure></div><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img style=background-image:url(https://2e0byo.github.io//img/current_heater_log.png)><img itemprop=thumbnail src=https://2e0byo.github.io/img/current_heater_log.png alt=/img/current_heater_log.png></div><a href=https://2e0byo.github.io/img/current_heater_log.png itemprop=contentUrl></a></figure></div></div><p>Apologies for the screenshot. SmuView&rsquo;s saving is currently broken
+and I haven&rsquo;t had time to look at it.</p><p>Fan draws less than 50mA with a noticeable startup spike (probably
+higher as the multimeter only samples every 0.6s), heater draws 150mA.</p><p>So that can&rsquo;t be it. Why, then, were they not getting switched on? I
 had another look at the controller board. It has a large 100nF
 capacitor, presumably as a capacitative power supply. It has a 12v
 relay, a lot of transistors, SCRs (or mosfets? But would have to be
@@ -280,33 +75,24 @@ two/output if so, so unlikely), some high-power resistors (second
 power supply for the logic?) and handfull of passives, most notably
 varistors. What could go? The relay is for the compressor (highest
 current load). So the rest are on SCRs, which <em>can</em> go; or perhaps
-its a transistor somewhere?</p>
-<p>As it happens, I&rsquo;ve always wanted to build a fridge controller. So
-let&rsquo;s just reverse-engineer the connections and start from scratch.</p>
-<h1 id=reverse-engineering>Reverse Engineering</h1>
-<h2 id=fridge-operation>Fridge Operation</h2>
-<p>There is no air-channel from the freezer to the fridge. So the usual
+its a transistor somewhere?</p><p>As it happens, I&rsquo;ve always wanted to build a fridge controller. So
+let&rsquo;s just reverse-engineer the connections and start from scratch.</p><h1 id=reverse-engineering>Reverse Engineering</h1><h2 id=fridge-operation>Fridge Operation</h2><p>There is no air-channel from the freezer to the fridge. So the usual
 blow-air-from-freezer block-channel approach can&rsquo;t be in use. What
 else could it be? I was stumped for ages until I realised the
 insulation under the heat exchange is partly to insulate the <em>freezer</em>
 from the heat exchange. So the fridge is called by direct contact
 with the heat exchange + convection. Colder fridge = run compressor
 for longer. That explains why turning the <em>fridge</em> temperature to the
-lowest setting did cool the <em>freezer</em>, but froze the fridge.</p>
-<h2 id=freezer-operation>Freezer Operation</h2>
-<p>How does the freezer cool, then? I was stumped a bit further, and
+lowest setting did cool the <em>freezer</em>, but froze the fridge.</p><h2 id=freezer-operation>Freezer Operation</h2><p>How does the freezer cool, then? I was stumped a bit further, and
 wondered if they were doing something horrible like using a heater to
 stop it getting too cold (&lsquo;icebox in fridge&rsquo; fridges actually do
 this). Then I realised that the freezer will basically not cool if
 the fan doesn&rsquo;t run, or if the airway is blocked. So run the fan =
 cool the freezer. The aggressive defrosting is to prevent exactly
-what has been happening.</p>
-<p>How long do we defrost for? This will require some experimentation,
+what has been happening.</p><p>How long do we defrost for? This will require some experimentation,
 but the presence of a thermal fuse suggests a reasonable time (unless
 it&rsquo;s just a statutory requirement). The thermistor on the heat
-exchange should give us useful data on that.</p>
-<h2 id=wiring>Wiring</h2>
-<p>This was rather time-consuming and is specific to this fridge, but I
+exchange should give us useful data on that.</p><h2 id=wiring>Wiring</h2><p>This was rather time-consuming and is specific to this fridge, but I
 eventually found I have two thermistors, one in each compartment, with
 a room-temperature resistance of around 20k and a negative temperature
 coefficient (tested with a hairdryer). Then there&rsquo;s a connection for
@@ -315,104 +101,22 @@ with a thermal fuse in series on each leg), the motor, the door
 switch, and separate switch for the &lsquo;quick freeze&rsquo; option, which is
 wired directly to a tap on the compressor motor and probably just
 makes the compressor run faster. So to control everything we need to
-switch:</p>
-<ul>
-<li>the compressor (10A on their relay)</li>
-<li>the &lsquo;go fast&rsquo; (10A to be safe)</li>
-<li>the light</li>
-<li>the fan</li>
-<li>the heaters</li>
-</ul>
-<p>and recieve input from:</p>
-<ul>
-<li>the door (digital)</li>
-<li>the fridge thermistor (analogue)</li>
-<li>the freezer thermistor (analogue)</li>
-</ul>
-<p>That&rsquo;s 5 relays or SCRs (but I have no SCRs). Fortunately I have an
-old microwave controller with relays galore:</p>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_200724.jpg alt=/img/20210118_200724.jpg>
-</div>
-<a href=https://2e0byo.github.io/img/20210118_200724.jpg itemprop=contentUrl></a>
-</figure>
-</div>
-<p>These are 24V relays, but 5*5 = 25, which is close enough, and a 5x
+switch:</p><ul><li>the compressor (10A on their relay)</li><li>the &lsquo;go fast&rsquo; (10A to be safe)</li><li>the light</li><li>the fan</li><li>the heaters</li></ul><p>and recieve input from:</p><ul><li>the door (digital)</li><li>the fridge thermistor (analogue)</li><li>the freezer thermistor (analogue)</li></ul><p>That&rsquo;s 5 relays or SCRs (but I have no SCRs). Fortunately I have an
+old microwave controller with relays galore:</p><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/20210118_200724.jpg alt=/img/20210118_200724.jpg></div><a href=https://2e0byo.github.io/img/20210118_200724.jpg itemprop=contentUrl></a></figure></div><p>These are 24V relays, but 5*5 = 25, which is close enough, and a 5x
 voltage multiplier is easy enough. Switching current on the large
 relays is 50mA however, but with a soft-hold we can save current (so
-long as we don&rsquo;t switch too many at once).</p>
-<p>Time for part two: <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2>writing a fridge controller</a>.</p>
-</article>
-<ul class="pager blog-pager">
-<li class=previous>
-<a href=https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/ data-toggle=tooltip data-placement=top title="Cleaning Scanned Pdfs">&larr; Previous Post</a>
-</li>
-<li class=next>
-<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/ data-toggle=tooltip data-placement=top title="Reverse Engineering a Fridge: Part 2">Next Post &rarr;</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<footer>
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<ul class="list-inline text-center footer-links">
-<li>
-<a href=mailto:2e0byo@gmail.com title="Email me">
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://github.com/2e0byo title=GitHub>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-github fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://gitlab.com/2e0byo title=GitLab>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href title=RSS>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-</ul>
-<p class="credits copyright text-muted">
-John Morris
+long as we don&rsquo;t switch too many at once).</p><p>Time for part two: <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2>writing a fridge controller</a>.</p></article><ul class="pager blog-pager"><li class=previous><a href=https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/ data-toggle=tooltip data-placement=top title="Cleaning Scanned Pdfs">&larr; Previous Post</a></li><li class=next><a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/ data-toggle=tooltip data-placement=top title="Reverse Engineering a Fridge: Part 2">Next Post &rarr;</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:2e0byo@gmail.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/2e0byo title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://gitlab.com/2e0byo title=GitLab><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">John Morris
 &nbsp;&bull;&nbsp;&copy;
-2021
+2022
 &nbsp;&bull;&nbsp;
-<a href=https://2e0byo.github.io/>Jack of All Trades</a>
-</p>
-<p class="credits theme-by text-muted">
-<a href=https://gohugo.io>Hugo v0.91.2</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]
-</p>
-</div>
-</div>
-</div>
-</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<a href=https://2e0byo.github.io/>Jack of All Trades</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.101.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
 <script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
 <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
 <script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
-</body>
-</html>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script></body></html>

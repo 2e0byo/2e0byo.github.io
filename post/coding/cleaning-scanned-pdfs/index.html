@@ -1,164 +1,32 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Cleaning Scanned Pdfs - Jack of All Trades</title>
-<meta name=description content="This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on&mldr;
- Background Frequently in academia&mdash;and probably in much of the modern world&mdash;one has to handle things which began life as books, hit the glass of a scanner, and became pdfs. Scanning is hard, and unless one has a lot of patience, the resulting pdfs are generally pretty all over the place: sometimes pages are upside down, frequently the book (which was not made to lie flat) does not want to flatten on the glass, and often the scanner has simply picked a nearby standard page size.">
-<meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/coding\/cleaning-scanned-pdfs\/","name":"Cleaning scanned pdfs"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Cleaning Scanned Pdfs","description":"This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on\u0026hellip;\n Background Frequently in academia\u0026mdash;and probably in much of the modern world\u0026mdash;one has to handle things which began life as books, hit the glass of a scanner, and became pdfs. Scanning is hard, and unless one has a lot of patience, the resulting pdfs are generally pretty all over the place: sometimes pages are upside down, frequently the book (which was not made to lie flat) does not want to flatten on the glass, and often the scanner has simply picked a nearby standard page size.","inLanguage":"en","wordCount":1072,"datePublished":"2020-10-24T18:01:04","dateModified":"2020-10-24T18:01:04","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/coding\/cleaning-scanned-pdfs\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script>
-<meta property="og:title" content="Cleaning Scanned Pdfs">
-<meta property="og:description" content="This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on&mldr;
- Background Frequently in academia&mdash;and probably in much of the modern world&mdash;one has to handle things which began life as books, hit the glass of a scanner, and became pdfs. Scanning is hard, and unless one has a lot of patience, the resulting pdfs are generally pretty all over the place: sometimes pages are upside down, frequently the book (which was not made to lie flat) does not want to flatten on the glass, and often the scanner has simply picked a nearby standard page size.">
-<meta property="og:image" content="https://2e0byo.github.io/img/planing.png">
-<meta property="og:url" content="https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Jack of All Trades">
-<meta name=twitter:title content="Cleaning Scanned Pdfs">
-<meta name=twitter:description content="This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on&mldr;
- Background Frequently in academia&mdash;and probably in much of …">
-<meta name=twitter:image content="https://2e0byo.github.io/img/planing.png">
-<meta name=twitter:card content="summary">
-<meta name=generator content="Hugo 0.91.2">
-<link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous>
-<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous>
-<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous>
-</head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-<div class=container-fluid>
-<div class=navbar-header>
-<button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Cleaning Scanned Pdfs - Jack of All Trades</title><meta name=description content="This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on&mldr;
+Background Frequently in academia&mdash;and probably in much of the modern world&mdash;one has to handle things which began life as books, hit the glass of a scanner, and became pdfs. Scanning is hard, and unless one has a lot of patience, the resulting pdfs are generally pretty all over the place: sometimes pages are upside down, frequently the book (which was not made to lie flat) does not want to flatten on the glass, and often the scanner has simply picked a nearby standard page size."><meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/coding\/cleaning-scanned-pdfs\/","name":"Cleaning scanned pdfs"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Cleaning Scanned Pdfs","description":"This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on\u0026hellip;\nBackground Frequently in academia\u0026mdash;and probably in much of the modern world\u0026mdash;one has to handle things which began life as books, hit the glass of a scanner, and became pdfs. Scanning is hard, and unless one has a lot of patience, the resulting pdfs are generally pretty all over the place: sometimes pages are upside down, frequently the book (which was not made to lie flat) does not want to flatten on the glass, and often the scanner has simply picked a nearby standard page size.","inLanguage":"en","wordCount":1072,"datePublished":"2020-10-24T18:01:04","dateModified":"2020-10-24T18:01:04","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/coding\/cleaning-scanned-pdfs\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script><meta property="og:title" content="Cleaning Scanned Pdfs"><meta property="og:description" content="This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on&mldr;
+Background Frequently in academia&mdash;and probably in much of the modern world&mdash;one has to handle things which began life as books, hit the glass of a scanner, and became pdfs. Scanning is hard, and unless one has a lot of patience, the resulting pdfs are generally pretty all over the place: sometimes pages are upside down, frequently the book (which was not made to lie flat) does not want to flatten on the glass, and often the scanner has simply picked a nearby standard page size."><meta property="og:image" content="https://2e0byo.github.io/img/planing.png"><meta property="og:url" content="https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/"><meta property="og:type" content="website"><meta property="og:site_name" content="Jack of All Trades"><meta name=twitter:title content="Cleaning Scanned Pdfs"><meta name=twitter:description content="This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on&mldr;
+Background Frequently in academia&mdash;and probably in much of the …"><meta name=twitter:image content="https://2e0byo.github.io/img/planing.png"><meta name=twitter:card content="summary"><meta name=generator content="Hugo 0.101.0"><link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
 <span class=sr-only>Toggle navigation</span>
 <span class=icon-bar></span>
 <span class=icon-bar></span>
-<span class=icon-bar></span>
-</button>
-<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a>
-</div>
-<div class="collapse navbar-collapse" id=main-navbar>
-<ul class="nav navbar-nav navbar-right">
-<li>
-<a title=Home href=https://2e0byo.github.io/>Home</a>
-</li>
-<li>
-<a title=search href=https://2e0byo.github.io/search/>search</a>
-</li>
-<li>
-<a title=About href=https://2e0byo.github.io/page/about/>About</a>
-</li>
-<li class=navlinks-container>
-<a class=navlinks-parent>Project by...</a>
-<div class=navlinks-children>
-<a href=https://2e0byo.github.io/categories>Category</a>
-<a href=https://2e0byo.github.io/tags>Tag</a>
-</div>
-</li>
-</ul>
-</div>
-<div class=avatar-container>
-<div class=avatar-img-border>
-<a title="Jack of All Trades" href=https://2e0byo.github.io/>
-<img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades">
-</a>
-</div>
-</div>
-</div>
-</nav>
-<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
-<div class=pswp__bg></div>
-<div class=pswp__scroll-wrap>
-<div class=pswp__container>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-<div class=pswp__item></div>
-</div>
-<div class="pswp__ui pswp__ui--hidden">
-<div class=pswp__top-bar>
-<div class=pswp__counter></div>
-<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title=Home href=https://2e0byo.github.io/>Home</a></li><li><a title=search href=https://2e0byo.github.io/search/>search</a></li><li><a title=About href=https://2e0byo.github.io/page/about/>About</a></li><li class=navlinks-container><a class=navlinks-parent>Project by...</a><div class=navlinks-children><a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a></div></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Jack of All Trades" href=https://2e0byo.github.io/><img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 <button class="pswp__button pswp__button--share" title=Share></button>
 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-<div class=pswp__preloader>
-<div class=pswp__preloader__icn>
-<div class=pswp__preloader__cut>
-<div class=pswp__preloader__donut></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-<div class=pswp__share-tooltip></div>
-</div>
-<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-</button>
-<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-</button>
-<div class=pswp__caption>
-<div class=pswp__caption__center></div>
-</div>
-</div>
-</div>
-</div>
-<header class=header-section>
-<div class="intro-header no-img">
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<div class=post-heading>
-<h1>Cleaning Scanned Pdfs</h1>
-<span class=post-meta>
-<i class="fas fa-calendar"></i>&nbsp;Posted on October 24, 2020
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Cleaning Scanned Pdfs</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on October 24, 2020
 &nbsp;(Last modified on August 13, 2021)
-&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class=container role=main>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<article role=main class=blog-post>
-<blockquote>
-<p>This post is largely a log so I remember how to do it next time, but
-if anyone else has a bunch of scans to convert, read on&mldr;</p>
-</blockquote>
-<h2 id=background>Background</h2>
-<p>Frequently in academia&mdash;and probably in much of the modern
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris</span></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><blockquote><p>This post is largely a log so I remember how to do it next time, but
+if anyone else has a bunch of scans to convert, read on&mldr;</p></blockquote><h2 id=background>Background</h2><p>Frequently in academia&mdash;and probably in much of the modern
 world&mdash;one has to handle things which began life as books, hit the
 glass of a scanner, and became pdfs. Scanning is hard, and unless one
 has a lot of patience, the resulting pdfs are generally pretty all
 over the place: sometimes pages are upside down, frequently the book
 (which was not made to lie flat) does not want to flatten on the
 glass, and often the scanner has simply picked a nearby standard page
-size.</p>
-<link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css>
-<div class=box>
-<figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
-<div class=img>
-<img itemprop=thumbnail src=https://linearbookscanner.org/designs/p1/proto1.png alt="Unfortunately nobody seems to have one of these.">
-</div>
-<a href=https://linearbookscanner.org/designs/p1/proto1.png itemprop=contentUrl></a>
-<figcaption>
-<p>Unfortunately nobody seems to have one of these.</p>
-</figcaption>
-</figure>
-</div>
-<p>(That&rsquo;s a <a href=https://linearbookscanner.org/>linear book scanner</a> by the
-way. Some day&mldr;)</p>
-<p>Fortunately converting scans to decent images isn’t that hard with
+size.</p><link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://linearbookscanner.org/designs/p1/proto1.png alt="Unfortunately nobody seems to have one of these."></div><a href=https://linearbookscanner.org/designs/p1/proto1.png itemprop=contentUrl></a><figcaption><p>Unfortunately nobody seems to have one of these.</p></figcaption></figure></div><p>(That&rsquo;s a <a href=https://linearbookscanner.org/>linear book scanner</a> by the
+way. Some day&mldr;)</p><p>Fortunately converting scans to decent images isn’t that hard with
 <a href=https://github.com/4lex4/scantailor-advanced>scantailor</a>. Most of
 the processing can be done automagically, but one can keep an eye on
 it and correct the inevetable odd slip. (Again and again I’ve tried
-to write fully automated scan converters, but it just doesn’t work.)</p>
-<p>What was missing&mdash;up to now&mdash;was some way of automating the process
+to write fully automated scan converters, but it just doesn’t work.)</p><p>What was missing&mdash;up to now&mdash;was some way of automating the process
 of taking a pdf, splitting it up into individual images, dumping those
 images in a sensible directory, running scantailor on that directory,
 and then, when it was all done, converting back to pdf, running ocr on
@@ -166,9 +34,7 @@ the pdfs and then zipping them all back together into a single,
 processed pdf (and ideally putting it somewhere sensible). All of
 this can be <em>done</em>, quite easily, with a mix of <code>find</code>, <code>parallel</code>,
 <code>imagemagick</code> and <code>tesseract</code> but I don’t do it often enough to
-remember the comands.</p>
-<h2 id=automating-it>Automating it</h2>
-<p>A few days ago I encountered <a href=https://github.com/cookiecutter/cookiecutter>cookiecutter</a> which makes
+remember the comands.</p><h2 id=automating-it>Automating it</h2><p>A few days ago I encountered <a href=https://github.com/cookiecutter/cookiecutter>cookiecutter</a> which makes
 pre-populating directories very easy: even easier than just putting a
 bunch of <code>mkdirs</code> in a script: so easy I actually <em>use</em> it. I also
 had occasion to convert a bunch of scanned pdfs into processed files.
@@ -177,162 +43,82 @@ script on it which will set everything up for scantailor: come back
 with a cup of tea and work through the scantailor projects, and then
 run some other script and leave the computer OCRing overnight, to wake
 up to a neat bunch of pdfs in some easy-to-find directory. So I
-decided to <em>write</em> the scripts and put them up somewhere.</p>
-<p>First off was a <a href=https://gitlab.com/2e0byo/cookiecutter-process-scan>cookiecutter
+decided to <em>write</em> the scripts and put them up somewhere.</p><p>First off was a <a href=https://gitlab.com/2e0byo/cookiecutter-process-scan>cookiecutter
 template</a> to make
-the right dirs, which spits out something looking like this:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>project_name
-	/ src / tmp
-	/ final
-	/ templates / minimal_template.ScanTailor
-	/ prepare.py
-	/ finish.py
-</code></pre></div><p>The key to this is the minimal ScanTailor template. It seems
-ScanTailor will accept a <em>very</em> minimal template indeed:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;project</span> <span class=na>layoutDirection=</span><span class=s>&#34;LTR&#34;</span> <span class=na>outputDirectory=</span><span class=s>&#34;{{ outdir }}&#34;</span> <span class=na>version=</span><span class=s>&#34;3&#34;</span><span class=nt>&gt;</span>
-  <span class=nt>&lt;directories&gt;</span>
-    <span class=nt>&lt;directory</span> <span class=na>id=</span><span class=s>&#34;1&#34;</span> <span class=na>path=</span><span class=s>&#34;{{ outdir|replace(&#39;/final&#39;, &#39;/source/tmp&#39;) }}&#34;</span><span class=nt>/&gt;</span>
-  <span class=nt>&lt;/directories&gt;</span>
-  <span class=nt>&lt;files&gt;</span>
-    {% for inf in input_filenames %}
-    <span class=nt>&lt;file</span> <span class=na>name=</span><span class=s>&#34;{{inf.name}}&#34;</span> <span class=na>id=</span><span class=s>&#34;{{inf.id}}&#34;</span> <span class=na>dirId=</span><span class=s>&#34;1&#34;</span><span class=nt>/&gt;</span>
-    {% endfor %}
-  <span class=nt>&lt;/files&gt;</span>
-  <span class=nt>&lt;images&gt;</span>
-    {% for inf in input_filenames %}
-    <span class=nt>&lt;image</span> <span class=na>fileId=</span><span class=s>&#34;{{inf.id}}&#34;</span> <span class=na>subPages=</span><span class=s>&#34;2&#34;</span> <span class=na>id=</span><span class=s>&#34;{{inf.id + 1}}&#34;</span> <span class=na>fileImage=</span><span class=s>&#34;0&#34;</span><span class=nt>&gt;</span>
-      <span class=nt>&lt;dpi</span> <span class=na>horizontal=</span><span class=s>&#34;600&#34;</span> <span class=na>vertical=</span><span class=s>&#34;600&#34;</span><span class=nt>/&gt;</span>
-    <span class=nt>&lt;/image&gt;</span>
-    {% endfor %}
-  <span class=nt>&lt;/images&gt;</span>
-<span class=nt>&lt;/project&gt;</span>
-</code></pre></div><p>That’s a jinja2 template, but you can easily see the xml in it. It
+the right dirs, which spits out something looking like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>project_name
+</span></span><span class=line><span class=cl>	/ src / tmp
+</span></span><span class=line><span class=cl>	/ final
+</span></span><span class=line><span class=cl>	/ templates / minimal_template.ScanTailor
+</span></span><span class=line><span class=cl>	/ prepare.py
+</span></span><span class=line><span class=cl>	/ finish.py
+</span></span></code></pre></div><p>The key to this is the minimal ScanTailor template. It seems
+ScanTailor will accept a <em>very</em> minimal template indeed:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>layoutDirection=</span><span class=s>&#34;LTR&#34;</span> <span class=na>outputDirectory=</span><span class=s>&#34;{{ outdir }}&#34;</span> <span class=na>version=</span><span class=s>&#34;3&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;directories&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;directory</span> <span class=na>id=</span><span class=s>&#34;1&#34;</span> <span class=na>path=</span><span class=s>&#34;{{ outdir|replace(&#39;/final&#39;, &#39;/source/tmp&#39;) }}&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;/directories&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;files&gt;</span>
+</span></span><span class=line><span class=cl>    {% for inf in input_filenames %}
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;file</span> <span class=na>name=</span><span class=s>&#34;{{inf.name}}&#34;</span> <span class=na>id=</span><span class=s>&#34;{{inf.id}}&#34;</span> <span class=na>dirId=</span><span class=s>&#34;1&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    {% endfor %}
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;/files&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;images&gt;</span>
+</span></span><span class=line><span class=cl>    {% for inf in input_filenames %}
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;image</span> <span class=na>fileId=</span><span class=s>&#34;{{inf.id}}&#34;</span> <span class=na>subPages=</span><span class=s>&#34;2&#34;</span> <span class=na>id=</span><span class=s>&#34;{{inf.id + 1}}&#34;</span> <span class=na>fileImage=</span><span class=s>&#34;0&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=nt>&lt;dpi</span> <span class=na>horizontal=</span><span class=s>&#34;600&#34;</span> <span class=na>vertical=</span><span class=s>&#34;600&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/image&gt;</span>
+</span></span><span class=line><span class=cl>    {% endfor %}
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;/images&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/project&gt;</span>
+</span></span></code></pre></div><p>That’s a jinja2 template, but you can easily see the xml in it. It
 generates a valid, but bad looking project whose thumbnails are all
-off, but once we run ‘split pages’ it all gets sorted out.</p>
-<p>We generate this in <code>prepare.py</code>, once we’ve split the original pdf
+off, but once we run ‘split pages’ it all gets sorted out.</p><p>We generate this in <code>prepare.py</code>, once we’ve split the original pdf
 (using <code>pdftk burst</code>) and then generated an image for each
 page&mdash;ideally just taking the output with <code>pdfimages</code>, but if that
 doesn’t work (some ‘clever’ scanning packages actually output multiple
 layers) then we just pass it through <code>convert</code> i.e. ImageMagick, with
-<code>-density=300</code>.</p>
-<p>Parallelism is done with <code>gnu parallel</code>: indeed, the python scripts
+<code>-density=300</code>.</p><p>Parallelism is done with <code>gnu parallel</code>: indeed, the python scripts
 mainly just call <code>run(cmd, shell=True)</code> so you definitely should <em>not</em>
 run this willy-nilly. But it’s no worse than the shell script you
-otherwise would use (and I used before).</p>
-<p>These scripts are customised by cookiecutter when they are made, which
-is neat. So we can just put:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>cmd</span> <span class=o>=</span> <span class=s2>&#34;pdftk *-ocr.pdf output {{cookiecutter.directory_name}}.pdf&#34;</span>
-</code></pre></div><p>and the resulting script will contain the right filename. Of course,
+otherwise would use (and I used before).</p><p>These scripts are customised by cookiecutter when they are made, which
+is neat. So we can just put:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>cmd</span> <span class=o>=</span> <span class=s2>&#34;pdftk *-ocr.pdf output {{cookiecutter.directory_name}}.pdf&#34;</span>
+</span></span></code></pre></div><p>and the resulting script will contain the right filename. Of course,
 we could have worked it out from within the script, but this is
-neater.</p>
-<p>A few other things to note with this kind of work:</p>
-<ul>
-<li>tesseract will try to parallel, so you have to call it as <code>env OMP_THREAD_LIMIT=1 tesseract &lt;args></code>. Generally speaking it’s
+neater.</p><p>A few other things to note with this kind of work:</p><ul><li>tesseract will try to parallel, so you have to call it as <code>env OMP_THREAD_LIMIT=1 tesseract &lt;args></code>. Generally speaking it’s
 better to single-thread and run multiple instances in parallel when
-doing this kind of work.</li>
-<li>If it runs out of ram, editing the script and putting <code>-j $(echo $(nproc)-2 | bc)</code> (without the <code>$</code>s if you, like me, run fish), will
+doing this kind of work.</li><li>If it runs out of ram, editing the script and putting <code>-j $(echo $(nproc)-2 | bc)</code> (without the <code>$</code>s if you, like me, run fish), will
 generally calm things down. Or make more swap space temporarily
-i.e. a swapfile.</li>
-<li>We use a local tmpdir for parallel, as <code>/tmp</code> here is a ramdisk.</li>
-</ul>
-<p>Now, how do you batch process everything? In the root of the
-repository is a script</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>auto_process_pdfs.py <span class=o>[</span>-h<span class=o>]</span> <span class=o>[</span>--outdir OUTDIR<span class=o>]</span> <span class=o>[</span>--finish<span class=o>]</span> <span class=o>[</span>--process<span class=o>]</span> INDIR
-</code></pre></div><p>which expects to be
+i.e. a swapfile.</li><li>We use a local tmpdir for parallel, as <code>/tmp</code> here is a ramdisk.</li></ul><p>Now, how do you batch process everything? In the root of the
+repository is a script</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>auto_process_pdfs.py <span class=o>[</span>-h<span class=o>]</span> <span class=o>[</span>--outdir OUTDIR<span class=o>]</span> <span class=o>[</span>--finish<span class=o>]</span> <span class=o>[</span>--process<span class=o>]</span> INDIR
+</span></span></code></pre></div><p>which expects to be
 run from a dir containing pdfs to process. It will call
 <code>cookiecutter</code> for each pdf, using the slugified (i.e. <code>like-this</code>)
 form of the filename to name the repository (you need
 python-slugify). Then it will drop the relevant pdf into <code>/source</code> of
-the target dir and run <code>prepare.py</code>.</p>
-<p>After that you can run the script again, but with <code>--process</code> and it
-will call scantailor for every file.</p>
-<p>When everything is done, you can call the script <em>again</em>, this time
+the target dir and run <code>prepare.py</code>.</p><p>After that you can run the script again, but with <code>--process</code> and it
+will call scantailor for every file.</p><p>When everything is done, you can call the script <em>again</em>, this time
 with <code>--finish</code>, and walk away. If everything goes well you should
 find a bunch of symlinks in the output directory, ready to call <code>cd OUTDIR; zip -r ../archive .</code>. By default zip dereferences symbolic
 links, so you get a bunch of pdfs in a zip file, which poor users of
-the Windoze (almost)Operating System can probably handle.</p>
-<h2 id=statistics>Statistics</h2>
-<p>I’ve not timed the pre- and post-processing as they relate to the
+the Windoze (almost)Operating System can probably handle.</p><h2 id=statistics>Statistics</h2><p>I’ve not timed the pre- and post-processing as they relate to the
 particular computer in use and not much else. But how long does it
-take to process scans in scantailor this way?</p>
-<p>With 8 pdfs totalling 120 pages (some doubles), of which three needed serious
+take to process scans in scantailor this way?</p><p>With 8 pdfs totalling 120 pages (some doubles), of which three needed serious
 dewarping, it took me 36 minutes to produce 183 pages of output. That
-works out at 36*60/183 = 11.8 seconds a page. Not bad, eh?</p>
-<p>Add to that however long it takes you to get all the pdfs in one
+works out at 36*60/183 = 11.8 seconds a page. Not bad, eh?</p><p>Add to that however long it takes you to get all the pdfs in one
 directory (which would need doing anyhow), and thirty seconds&mdash;I&rsquo;m
 being generous&mdash;to run the script and walk away. Then think how long
-it would take to make all the dirs and populate them by hand&mldr;</p>
-<p>Most of that is down to scantailor-advanced, whose automatic defaults
-are <em>extremely</em> good.</p>
-</article>
-<ul class="pager blog-pager">
-<li class=previous>
-<a href=https://2e0byo.github.io/post/repairs/toaster/ data-toggle=tooltip data-placement=top title=Toaster>&larr; Previous Post</a>
-</li>
-<li class=next>
-<a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/ data-toggle=tooltip data-placement=top title="Reverse Engineering a Fridge">Next Post &rarr;</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<footer>
-<div class=container>
-<div class=row>
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<ul class="list-inline text-center footer-links">
-<li>
-<a href=mailto:2e0byo@gmail.com title="Email me">
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://github.com/2e0byo title=GitHub>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-github fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href=https://gitlab.com/2e0byo title=GitLab>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-<li>
-<a href title=RSS>
-<span class="fa-stack fa-lg">
-<i class="fas fa-circle fa-stack-2x"></i>
-<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-</span>
-</a>
-</li>
-</ul>
-<p class="credits copyright text-muted">
-John Morris
+it would take to make all the dirs and populate them by hand&mldr;</p><p>Most of that is down to scantailor-advanced, whose automatic defaults
+are <em>extremely</em> good.</p></article><ul class="pager blog-pager"><li class=previous><a href=https://2e0byo.github.io/post/repairs/toaster/ data-toggle=tooltip data-placement=top title=Toaster>&larr; Previous Post</a></li><li class=next><a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/ data-toggle=tooltip data-placement=top title="Reverse Engineering a Fridge">Next Post &rarr;</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:2e0byo@gmail.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/2e0byo title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://gitlab.com/2e0byo title=GitLab><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">John Morris
 &nbsp;&bull;&nbsp;&copy;
-2021
+2022
 &nbsp;&bull;&nbsp;
-<a href=https://2e0byo.github.io/>Jack of All Trades</a>
-</p>
-<p class="credits theme-by text-muted">
-<a href=https://gohugo.io>Hugo v0.91.2</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]
-</p>
-</div>
-</div>
-</div>
-</footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<a href=https://2e0byo.github.io/>Jack of All Trades</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.101.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/9f20376348fc0b81c690d1bb3107f217510867e4>9f203763</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
 <script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
 <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
 <script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script>
-</body>
-</html>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script></body></html>
