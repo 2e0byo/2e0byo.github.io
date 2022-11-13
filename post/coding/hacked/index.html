@@ -20,7 +20,7 @@ password ssh&mldr; but that&rsquo;s no fun when you&rsquo;re on someone else&rsq
 need to get in in a hurry.) But in a moment of weakness I had needed a blank
 slate to test an environment regression against. So I did <code>useradd test</code> with
 the password <code>test</code>, and set up a home directory and shell. It was only
-supposed to last ten minutes. I suppose I must have been called away.</p><p>Earlier I came to the computer to find this:</p><p>Well that&rsquo;s not good. What on earth is <code>kswapd0</code> complaining about? There&rsquo;s
+supposed to last ten minutes. I suppose I must have been called away.</p><p>Earlier I came to the computer to find this:</p><link rel=stylesheet href=https://2e0byo.github.io/css/hugo-easy-gallery.css><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=https://2e0byo.github.io/img/hacked.png alt=/img/hacked.png></div><a href=https://2e0byo.github.io/img/hacked.png itemprop=contentUrl></a></figure></div><p>Well that&rsquo;s not good. What on earth is <code>kswapd0</code> complaining about? There&rsquo;s
 plenty of ram. Must be a pessimal case from a memory leak in the browser;
 although curiously toggling swap (<code>swapoff -a</code> and then <code>swapon -a</code>) didn&rsquo;t seem
 to kill it. But I was in a hurry and doing something else, so I rebooted the
@@ -116,7 +116,7 @@ out the first grep instance (which will also match, because <code>|</code> is a 
 This is saved to a file we promptly remove, which is odd enough, but haven&rsquo;t
 they just leaked the names of a bunch of dodgy executables? Including one
 called <code>Donald</code>, which is weird enough. I wonder which Donald that could be?
-Probably Donald Duck.</p><p>Also, DRY, Russian hackers.</p><p><code>file kswapd0</code> tells us it&rsquo;s a binary, so we&rsquo;ll come back to that one.</p><h3 id=obfuscated-italian-perl>&lsquo;Obfuscated&rsquo; Italian Perl</h3><p>Meanwhile, what about <code>b</code>?</p><p><code>b/sync</code>, the entrypoint, contains the following pointless code:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/sh
+Probably Donald Duck.</p><p>Also, DRY, Russian hackers.</p><p><code>file kswapd0</code> tells us it&rsquo;s a binary, so we&rsquo;ll come back to that one.</p><h3 id=obfuscated-portugese-perl>&lsquo;Obfuscated&rsquo; Portugese Perl</h3><p>Meanwhile, what about <code>b</code>?</p><p><code>b/sync</code>, the entrypoint, contains the following pointless code:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/sh
 </span></span></span><span class=line><span class=cl><span class=cp></span><span class=nb>cd</span> /home/test/.configrc/b
 </span></span><span class=line><span class=cl>./run
 </span></span></code></pre></div><p>Ah well. I guess this is a kind of security by constant redirect. <code>run</code>
@@ -227,7 +227,7 @@ I guess I don&rsquo;t have to reverse engineer anything&mdash;it really is just 
 2022
 &nbsp;&bull;&nbsp;
 <a href=https://2e0byo.github.io/>Jack of All Trades</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.105.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
-&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/ac257588f4e517c1a0c054eb532bb28982e57633>ac257588</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/450fb245cfe2ab5f8d551dea86ebc8143cbb5a58>450fb245</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
 <script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
 <script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
