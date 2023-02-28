@@ -1,0 +1,165 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Migrating Home Assistant (and thoughts on over-engineering) - Jack of All Trades</title><meta name=description content="Home Automation is largely a gimmic. Even the founder of Home Assistant writes blog posts pointing out that turning the lights on from your phone is pretty pointless, except for showing off (not that I&rsquo;ve ever turned a light on from my phone to show off&mldr;). Another of these posts tries to think of a useful smart light and comes up with:
+Imagine a brave new world where you walk into a room and the light is already on, as you have naturally come to expect after years of living with such a technology."><meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/coding\/homeassistant\/","name":"Migrating home assistant (and thoughts on over engineering)"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Migrating Home Assistant (and thoughts on over-engineering)","description":"Home Automation is largely a gimmic. Even the founder of Home Assistant writes blog posts pointing out that turning the lights on from your phone is pretty pointless, except for showing off (not that I\u0026rsquo;ve ever turned a light on from my phone to show off\u0026hellip;). Another of these posts tries to think of a useful smart light and comes up with:\nImagine a brave new world where you walk into a room and the light is already on, as you have naturally come to expect after years of living with such a technology.","inLanguage":"en","wordCount":1689,"datePublished":"2023-02-28T11:19:25","dateModified":"2023-02-28T11:19:25","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/coding\/homeassistant\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script><meta property="og:title" content="Migrating Home Assistant (and thoughts on over-engineering)"><meta property="og:description" content="Home Automation is largely a gimmic. Even the founder of Home Assistant writes blog posts pointing out that turning the lights on from your phone is pretty pointless, except for showing off (not that I&rsquo;ve ever turned a light on from my phone to show off&mldr;). Another of these posts tries to think of a useful smart light and comes up with:
+Imagine a brave new world where you walk into a room and the light is already on, as you have naturally come to expect after years of living with such a technology."><meta property="og:image" content="https://2e0byo.github.io/img/planing.png"><meta property="og:url" content="https://2e0byo.github.io/post/coding/homeassistant/"><meta property="og:type" content="website"><meta property="og:site_name" content="Jack of All Trades"><meta name=twitter:title content="Migrating Home Assistant (and thoughts on over-engineering)"><meta name=twitter:description content="Home Automation is largely a gimmic. Even the founder of Home Assistant writes blog posts pointing out that turning the lights on from your phone is pretty pointless, except for showing off (not that …"><meta name=twitter:image content="https://2e0byo.github.io/img/planing.png"><meta name=twitter:card content="summary"><meta name=generator content="Hugo 0.110.0"><link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title=Home href=https://2e0byo.github.io/>Home</a></li><li><a title=search href=https://2e0byo.github.io/search/>search</a></li><li><a title=About href=https://2e0byo.github.io/page/about/>About</a></li><li class=navlinks-container><a class=navlinks-parent>Project by...</a><div class=navlinks-children><a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a></div></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Jack of All Trades" href=https://2e0byo.github.io/><img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Migrating Home Assistant (and thoughts on over-engineering)</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on February 28, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris</span></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>Home Automation is largely a gimmic. Even the founder of Home Assistant writes
+<a href=https://www.home-assistant.io/blog/2016/01/19/perfect-home-automation/>blog posts</a>
+pointing out that turning the lights on from your phone is pretty pointless,
+except for showing off (not that I&rsquo;ve <em>ever</em> turned a light on from my phone to
+show off&mldr;). <a href=https://danielbkr.net/reasons-for-home-automation/>Another</a> of
+these posts tries to think of a <em>useful</em> smart light and comes up with:</p><blockquote><p>Imagine a brave new world where you walk into a room and the light is already
+on, as you have naturally come to expect after years of living with such a
+technology. When you leave the room the light is turned off and nobody even
+takes note of it because it is completely taken for granted. This leaves you
+more mental capactiy to worry about other things.</p></blockquote><p>Hmm. What about if you subtract all the mental energy spent setting the thing
+up in the first place? Is it really less than all that energy we burned
+thinking about turning lights on?</p><p>But this isn&rsquo;t the point. Home Automation is mostly a gimmic, but there&rsquo;s
+nothing wrong with gimmics&mdash;providing they don&rsquo;t actually get in the way and
+prevent you e.g. turning the lights on with the switch. Everyone needs a hobby.</p><p>Anyhow, I didn&rsquo;t set out to do Home Automation. Above all not with Home
+Assistant. But we do have a towel radiator&mdash;because otherwise the towels don&rsquo;t
+try and go musty&mdash;so naturally I stuck a timer on it for when we forgot to turn
+it off. But that timer was (because I am lazy) written in micropython and
+running on an esp8266, and to justify the use of a whole SoC with wifi and
+bluetooth to turn a radiator on for 45 minutes I gave it a REST-like API. Then
+I thought it would be cool (see: all the adjectives are actually aesthetic, we
+only pretend otherwise) if the radiator turned itself on the morning, say half
+an hour before we got up, so the towels were warm. So I wrote a whole
+scheduling backend (with CRUD) which matched arbitrary conditions like &rsquo;every
+third tuesday when the month is even&rsquo;, because writing code is much more
+addictive than actually <em>using</em> it. Of course, this implementation had bugs
+(although being in Python I could at least write tests easily to find them), but
+when I&rsquo;d ironed them out I found it was only ever used with one rule&mdash;which I
+could have hard coded&mdash;which was wrong half the time anyhow. It was also a
+nuisance to change, because although I <em>like</em> curl, I had to read the source
+every time to remember what I&rsquo;d called the parameters. And of course they were
+different from the automatic watering system, which <em>also</em> has an HTTP api, and
+the fridge (before that <a href=https://2e0byo.github.io/post/engineering/reverse-engineering-fridge-4>died</a>).
+Now I <em>like</em> reading source&mdash;it&rsquo;s a good way to make sure refactoring
+actually happens, and nothing is more embarassing than a bad hack after two
+years&mdash;but still.</p><p>Then our daughter came along, and meanwhile Mr. Putin invaded Ukraine and the
+gas bills went through the roof. So I wanted to know that the room was at a
+reasonable temperature overnight without just setting the heating up for the
+whole house. And that radiator timer had, by now, gained a DS18X20 (fake) and
+had an api. So I could just poll it and graph. But then how to display the
+results? Previously I had just built a quick website. But&mldr;</p><p>At this point I decided to bite the bullet and have a look at Home Assitant
+again. My first impressions were the same as before: it&rsquo;s horrendously
+over-engineered, and popular in the wonderful (but frustrating) community of
+people who post bug reports of &lsquo;it doesn&rsquo;t work! So I changed a billion things,
+but it still doesn&rsquo;t work!&rsquo; In other words, it&rsquo;s as bad as the Raspberry Pi
+for signal/noise ratio; or in still other words, it&rsquo;s genuinely popular. But
+yes, you <em>can</em> just drag-and-drop a &lsquo;sensor&rsquo; component and you get a website
+with graph. I&rsquo;m rubbish at graphic design, so it even looks better than
+anything I&rsquo;d make. Unfortunately my random hardware isn&rsquo;t HA compatible, so I
+need to write an integration.</p><p>There are several hundred pages of docs, which start by telling you about the
+state machine at the heart of HA. (!) There are also a billion ways to do
+everything. Unfortunately the people who wrote HA <em>really</em> love writing
+code&mdash;so they do so even when they don&rsquo;t need to. Every sensor, for instance,
+is ultimately a subclass of <code>Sensor</code>, which makes sense, and the base class has
+a bunch of attributes which then got overriden. Fair enough. But these are
+allowed to be properties <em>or</em> attributes. Attributes are named <code>_attr_thing</code>
+and the base class has&mdash;for <em>every</em> attribute&mdash;a property consisting of:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nd>@property</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>thing</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>_attr_thing</span>
+</span></span></code></pre></div><p>Yep. They didn&rsquo;t just override <code>__getattr__</code>. Now multiply that by the whole
+codebase&mldr;</p><p>Then there seem to be half a dozen ways of registering a component, doubled by
+async and non async functions (where we duplicate python&rsquo;s syntax by requiring
+all async functions to be called <code>_async_thing</code> coz introspection is for
+losers<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>); and they&rsquo;re all called things like &lsquo;config flow&rsquo;. Fortunately there is
+also code to read.</p><p>Anyhow, three months later:</p><ul><li>I&rsquo;ve replaced the radiator timer code with
+<a href=https://esphome.io/>esphome</a>&mdash;write a bit of yaml (even including c++
+lambdas!) and you get OTA, HA integration, etc for free</li><li>In a vain attempt to save on heating, we got an electric blanket, so that has
+another controller</li><li>There&rsquo;s a sensor in the shed, mostly to tell me it&rsquo;s cold and wet and all my
+tools are rusting</li><li>The bedside lamp has an integration&mldr; mostly for the fun, but also so the
+alarm time can be coordinated with the radiator, and so I don&rsquo;t have to make a
+website to control its music server</li><li>The camera we sometimes use as a baby monitor is integrated, because that way
+everything&rsquo;s in one place</li></ul><p>and doubtless more gimmics will arrive.</p><p>Now, Home Assistant is running on my machine. But this is silly; when guests
+use that room I have to turn it off, and now the radiator doesn&rsquo;t come
+on&mdash;which is exactly why I didn&rsquo;t want to use an overblown server to switch a
+few relays in the first place. Ergo it must migrate. And I have a spare Pi.</p><p>First, I tried just installing the docker container; but it has random
+connection problems and anyhow I hate administering docker by hand. Why not
+just install HomeAssistant? Well&mdash;not only did they reinvent <code>getattr()</code>, they
+also reinvented <code>pip</code>. A <em>sensible</em> ecosystem would distribute plugins as pip
+packages and let pip handle dependencies. Home Assistant instead made its own
+format, which includes a <code>manifest.json</code> file containing dependencies. Then it
+calls <code>pip</code> and installs them to a local <code>.cache</code>. Now when we upgrade the system&rsquo;s
+python, everything can break! Even more fun, it calls <code>pip</code> with <code>--timeout 60</code>, which isn&rsquo;t long enough on a Pi for everything to work.</p><p>Never mind. If we&rsquo;re going to devote a whole machine to the task of turning
+relays on and off, we can use their Pi image and forget about it.</p><p>But how to get the old data into it? There&rsquo;s a &lsquo;backup&rsquo; facility, so, let&rsquo;s
+make a backup and download it. Unpack the <code>.tar</code> and we get a bunch of
+<code>.tar.gz</code> and a <code>backup.json</code>. Right. Let&rsquo;s build a script to make these
+archives:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=ch>#!/usr/bin/python</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>subprocess</span> <span class=kn>import</span> <span class=n>run</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>gz</span> <span class=o>=</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>d</span> <span class=ow>in</span> <span class=p>(</span><span class=n>x</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>Path</span><span class=p>(</span><span class=s2>&#34;.&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>iterdir</span><span class=p>()</span> <span class=k>if</span> <span class=n>x</span><span class=o>.</span><span class=n>is_dir</span><span class=p>()):</span>
+</span></span><span class=line><span class=cl>    <span class=n>run</span><span class=p>([</span><span class=s2>&#34;tar&#34;</span><span class=p>,</span> <span class=s2>&#34;-C&#34;</span><span class=p>,</span> <span class=nb>str</span><span class=p>(</span><span class=n>d</span><span class=p>),</span> <span class=s2>&#34;-czvf&#34;</span><span class=p>,</span> <span class=sa>f</span><span class=s2>&#34;</span><span class=si>{</span><span class=n>d</span><span class=o>.</span><span class=n>name</span><span class=si>}</span><span class=s2>.tar.gz&#34;</span><span class=p>,</span> <span class=s2>&#34;.&#34;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>    <span class=n>gz</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=nb>str</span><span class=p>(</span><span class=n>d</span><span class=o>.</span><span class=n>with_suffix</span><span class=p>(</span><span class=s2>&#34;.tar.gz&#34;</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>run</span><span class=p>([</span><span class=s2>&#34;tar&#34;</span><span class=p>,</span> <span class=s2>&#34;-cvf&#34;</span><span class=p>,</span> <span class=s2>&#34;faked.tar&#34;</span><span class=p>,</span> <span class=o>*</span><span class=n>gz</span><span class=p>,</span> <span class=s2>&#34;backup.json&#34;</span><span class=p>])</span>
+</span></span></code></pre></div><p>Yeah, my bash is really rusty. But python is really fast; why use a
+stringly-typed language when you can have proper objects?</p><p>Now we can just copy our old <code>.yaml</code> files, database and <code>.storage</code> over. We&rsquo;ll
+lose the custom integrations, but that&rsquo;s alright for now. Nope. Of course,
+failed, claiming <code>backup.json</code> wasn&rsquo;t present (it is). But it turns out there&rsquo;s
+a <code>backup</code> feature in all HA installations, so you can spin up the old
+installation, make a backup, upload it, restore, restart&mldr; and nope, that
+didn&rsquo;t work too, although no error this time.</p><p>Ah well. There&rsquo;s a terminal &lsquo;app&rsquo; which also apparently enables ssh (only it
+doesn&rsquo;t, as the port is blocked somewhere&mdash;oh, it&rsquo;s disabled but defaults to
+22, unless you manually set it to 22, at which point it&rsquo;s <em>enabled</em> and 22.
+Great UI that.). But we can do <em>outgoing</em> ssh, scp
+(no rsync) the files over, use <code>vim</code> (hurrah! not just <code>vi</code>) to edit
+<code>configuration.yaml</code> to remove the custom integrations, use qutebrowser to pass
+through the <code>ESC</code> needed to use vim, reboot and we have the same inteface as
+before. Right.</p><p>Enable ssh port and we have incoming ssh&mdash;as root, but then we&rsquo;re in a
+container. Let&rsquo;s install <code>HACS</code>&mdash;the hack which pulls components off github:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ wget -O - https://get.hacs.xyz <span class=p>|</span> bash -
+</span></span><span class=line><span class=cl>INFO: Trying to find the correct directory...
+</span></span><span class=line><span class=cl>INFO: Found Home Assistant configuration directory at <span class=s1>&#39;/root/config&#39;</span>
+</span></span><span class=line><span class=cl>INFO: Creating custom_components directory...
+</span></span><span class=line><span class=cl>INFO: Changing to the custom_components directory...
+</span></span><span class=line><span class=cl>INFO: Downloading HACS
+</span></span><span class=line><span class=cl>Connecting to github.com <span class=o>(</span>140.82.121.3:443<span class=o>)</span>
+</span></span><span class=line><span class=cl>Connecting to github.com <span class=o>(</span>140.82.121.3:443<span class=o>)</span>
+</span></span><span class=line><span class=cl>Connecting to objects.githubusercontent.com <span class=o>(</span>185.199.108.133:443<span class=o>)</span>
+</span></span><span class=line><span class=cl>saving to <span class=s1>&#39;hacs.zip&#39;</span>
+</span></span><span class=line><span class=cl>hacs.zip             100% <span class=p>|</span>**************************************************************************************************************<span class=p>|</span> 3885k  0:00:00 ETA
+</span></span><span class=line><span class=cl><span class=s1>&#39;hacs.zip&#39;</span> saved
+</span></span><span class=line><span class=cl>INFO: Creating HACS directory...
+</span></span><span class=line><span class=cl>INFO: Unpacking HACS...
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>INFO: Verifying versions
+</span></span><span class=line><span class=cl>INFO: Current version is 2023.2.5, minimum version is 2022.11.0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>INFO: Removing HACS zip file...
+</span></span><span class=line><span class=cl>INFO: Installation complete.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>INFO: Remember to restart Home Assistant before you configure it
+</span></span></code></pre></div><p>hmm, did that just make a <code>custom_components</code> dir? And if so, can I just drop
+the integrations in there? Yep.</p><p>Does it work? Well, not immediately. The Pi is rather slow, and we get
+timeouts which I hadn&rsquo;t bothered to handle. HA makes handling them ridiculously
+complicated, but eventually I figured out the right place to raise the exception
+and it seems to connect the second time round.</p><p>Then there&rsquo;s LetsEncrypt for ssl, and all the rest. Quick? No. Easier than
+building a bunch of scripts? Barely. Will just work if I don&rsquo;t tinker with it?
+Yes&mdash;which is more than you can say for anything home-rolled&mldr;</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Even more fun: some of these aren&rsquo;t async functions at all, but &lsquo;async
+friendly callbacks&rsquo;, whatever they are.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></article><ul class="pager blog-pager"><li class=previous><a href=https://2e0byo.github.io/post/coding/hacked/ data-toggle=tooltip data-placement=top title=Hacked>&larr; Previous Post</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:2e0byo@gmail.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/2e0byo title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://gitlab.com/2e0byo title=GitLab><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">John Morris
+&nbsp;&bull;&nbsp;&copy;
+2023
+&nbsp;&bull;&nbsp;
+<a href=https://2e0byo.github.io/>Jack of All Trades</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.110.0</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/2c60962c4df587141e4652bc7c1c625ca06ce7e3>2c60962c</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script></body></html>
