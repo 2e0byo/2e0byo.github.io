@@ -1,0 +1,206 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Too Many Directories - Jack of All Trades</title><meta name=description content="My PhD has too many directories in it.
+I have&mdash;currently&mdash;three parts, and each of those has several chapters. All the chapters have been written independently, so I have a structure which more or less looks like this:
+titlepage.tex thesis.tex -- 1.part1 | +- 1.chapter1 | +-- standalone.tex +-- title.tex +-- chapter1.tex +- 2.chapter2 etc, only with three parts and sensible names. Each of the chapters builds to a separate pdf with standalone."><meta name=author content="John Morris"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"Jack of All Trades","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/2e0byo.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/2e0byo.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/2e0byo.github.io\/post\/coding\/thesis-structure\/","name":"Too many directories"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"John Morris"},"headline":"Too Many Directories","description":"My PhD has too many directories in it.\nI have\u0026mdash;currently\u0026mdash;three parts, and each of those has several chapters. All the chapters have been written independently, so I have a structure which more or less looks like this:\ntitlepage.tex thesis.tex -- 1.part1 | \u002b- 1.chapter1 | \u002b-- standalone.tex \u002b-- title.tex \u002b-- chapter1.tex \u002b- 2.chapter2 etc, only with three parts and sensible names. Each of the chapters builds to a separate pdf with standalone.","inLanguage":"en","wordCount":1394,"datePublished":"2023-03-04T18:05:26","dateModified":"2023-03-04T18:05:26","image":"https:\/\/2e0byo.github.io\/img\/planing.png","keywords":[""],"mainEntityOfPage":"https:\/\/2e0byo.github.io\/post\/coding\/thesis-structure\/","publisher":{"@type":"Organization","name":"https:\/\/2e0byo.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/2e0byo.github.io\/img\/planing.png","height":60,"width":60}}}</script><meta property="og:title" content="Too Many Directories"><meta property="og:description" content="My PhD has too many directories in it.
+I have&mdash;currently&mdash;three parts, and each of those has several chapters. All the chapters have been written independently, so I have a structure which more or less looks like this:
+titlepage.tex thesis.tex -- 1.part1 | +- 1.chapter1 | +-- standalone.tex +-- title.tex +-- chapter1.tex +- 2.chapter2 etc, only with three parts and sensible names. Each of the chapters builds to a separate pdf with standalone."><meta property="og:image" content="https://2e0byo.github.io/img/planing.png"><meta property="og:url" content="https://2e0byo.github.io/post/coding/thesis-structure/"><meta property="og:type" content="website"><meta property="og:site_name" content="Jack of All Trades"><meta name=twitter:title content="Too Many Directories"><meta name=twitter:description content="My PhD has too many directories in it.
+I have&mdash;currently&mdash;three parts, and each of those has several chapters. All the chapters have been written independently, so I have a structure which …"><meta name=twitter:image content="https://2e0byo.github.io/img/planing.png"><meta name=twitter:card content="summary"><meta name=generator content="Hugo 0.111.1"><link rel=alternate href=https://2e0byo.github.io/index.xml type=application/rss+xml title="Jack of All Trades"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css integrity=sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css integrity=sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u crossorigin=anonymous><link rel=stylesheet href=https://2e0byo.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://2e0byo.github.io/css/syntax.css><link rel=stylesheet href=https://2e0byo.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span></button>
+<a class=navbar-brand href=https://2e0byo.github.io/>Jack of All Trades</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title=Home href=https://2e0byo.github.io/>Home</a></li><li><a title=search href=https://2e0byo.github.io/search/>search</a></li><li><a title=About href=https://2e0byo.github.io/page/about/>About</a></li><li class=navlinks-container><a class=navlinks-parent>Project by...</a><div class=navlinks-children><a href=https://2e0byo.github.io/categories>Category</a>
+<a href=https://2e0byo.github.io/tags>Tag</a></div></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title="Jack of All Trades" href=https://2e0byo.github.io/><img class=avatar-img src=https://2e0byo.github.io/img/planing.png alt="Jack of All Trades"></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Too Many Directories</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on March 4, 2023
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;John Morris</span></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>My PhD has too many directories in it.</p><p>I have&mdash;currently&mdash;three parts, and each of those has several chapters. All
+the chapters have been written independently, so I have a structure which more
+or less looks like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>titlepage.tex
+</span></span><span class=line><span class=cl>thesis.tex
+</span></span><span class=line><span class=cl>-- 1.part1
+</span></span><span class=line><span class=cl>  |
+</span></span><span class=line><span class=cl>  +- 1.chapter1
+</span></span><span class=line><span class=cl>    |
+</span></span><span class=line><span class=cl>    +-- standalone.tex
+</span></span><span class=line><span class=cl>    +-- title.tex
+</span></span><span class=line><span class=cl>    +-- chapter1.tex
+</span></span><span class=line><span class=cl>  +- 2.chapter2
+</span></span></code></pre></div><p>etc, only with three parts and sensible names. Each of the chapters builds to
+a separate pdf with <code>standalone.tex</code>, but now the Final Thing is upon me and I
+needed to write <code>thesis.tex</code>.</p><p>First, I thought of using a <code>jinja2</code> template to generate it after scanning the
+whole directory. This was the right solution, but it was boring, so I abandoned
+it.</p><p>Then I thought of just <code>\input</code>ting the files in <code>thesis.tex</code>. And indeed I
+started doing so, but after copy-pasting three or four times my sense of
+neatness revolted. &ldquo;What would Knuth think?&rdquo; I asked myself. &ldquo;Why did he give
+you a turing-complete language? It wasn&rsquo;t so you could do all the work with
+emacs macros.&rdquo;</p><p>Thus I decided to do the work in Tex. When I have to write Tex I prefer raw
+Tex. There&rsquo;s nothing <em>nice</em> about programming in a macro language, but it is
+curious, in the sense that museums are full of curiosities. The only thing
+worse than museums is museums with guided tours, which is what LaTeX is. On the
+other hand, <code>\newcommand</code> gets nice syntax highlighting, so we should use it for
+the API. So I wrote:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\newcommand</span><span class=nb>{</span><span class=k>\includeChapter</span><span class=nb>}</span>[1]<span class=nb>{</span><span class=c>%
+</span></span></span><span class=line><span class=cl><span class=c></span>    <span class=k>\inputTitle</span><span class=na>[#1]</span>
+</span></span><span class=line><span class=cl>    <span class=k>\chapter</span><span class=nb>{</span><span class=k>\title</span><span class=nb>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>\inputChapter</span><span class=na>[#1]</span>
+</span></span><span class=line><span class=cl><span class=nb>}</span>
+</span></span></code></pre></div><p>So far, so clear. <code>\inputTitle</code> has to exist because the title is a <em>chapter</em>
+title in <code>thesis.tex</code>, but a <em>section</em> title in <code>standalone.tex</code>. So it
+consists of a single definition:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\ifdef</span><span class=nb>{</span><span class=k>\title</span><span class=nb>}{</span><span class=k>\let\title\relax</span><span class=nb>}{}</span>
+</span></span><span class=line><span class=cl><span class=k>\newcommand</span><span class=nb>{</span><span class=k>\title</span><span class=nb>}{</span>Spiritual Tradition and Theological Tradition<span class=nb>}</span>
+</span></span></code></pre></div><p>Alright. I should probably just come clean and admit that I can remember some
+things in LaTeX and others in Tex, and I just mix them freely. Anyhow. This
+gives us a macro <code>\title</code>, but how do we load it programmatically?</p><p><code>\includeChapter</code> is called with a relative path, like
+<code>0.frontmatter/0.acknowledgements</code> (yes, this is over-engineered). So loading
+the title is easy: we can just append:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\def\inputTitle</span><span class=na>[#1]</span><span class=nb>{</span><span class=k>\input</span><span class=nb>{</span>#1/title<span class=nb>}}</span>
+</span></span></code></pre></div><p>Now all we need is to load the content. But&mdash;and I have home-rolled CI and all
+kinds of other fragile things hanging on this convention&mdash;the name of each
+chapter is meaningful. Thus the chapter on the controversy over Nature and
+Grace is called <code>nature-grace.tex</code> and lives at
+<code>1.part1/1.nature-grace/nature-grace.tex</code>. So we have to do some string
+munging. What we want is something like python&rsquo;s <code>str.split()</code>. What we <em>get</em>
+is another macro:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\def\splitstr</span> #1.#2<span class=nb>{</span>#2<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\def\inputChapter</span><span class=na>[#1/#2]</span><span class=nb>{</span><span class=k>\input</span><span class=nb>{</span>#1/#2/<span class=k>\expandafter\splitstr</span> #2<span class=nb>}}</span>
+</span></span></code></pre></div><p>This works because <em>there&rsquo;s actually nothing going on with <code>[]</code> in a TeX macro</em>.
+Or rather, TeX macros are defined with <code>\def\name$ARGS$BODY</code>. (And they look
+as awful as that does.) The <code>{}</code> of LaTeX are just group markers. The <code>[]</code> are
+just arbitrary (1-long groups of) characters between which the macro expander looks for
+arguments. And those arguments are separated by whatever you put in.
+So this is perfectly valid:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\def\munge</span> Hi#1!#2Ho<span class=nb>{</span>Generates: #2 (#1)<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\munge</span> Hiread this!bet you can&#39;tHo
+</span></span></code></pre></div><p>(If you don&rsquo;t believe me, try it.) Now you know why LaTeX errors are so
+horrible and are never going to make sense.</p><p>Anyhow. So <code>\def\splitstr #1.#2{#2}</code> is equivalent to
+<code>lambda x: x.split(".", maxsplit=1)[1]</code> in python, and we can extract our title.
+The same trick splits the
+path on <code>/</code>, and now we can input the chapter.</p><p>At this point, mighty pleased with myself, I stuck <code>includeChapter{path}</code> calls
+in the right place, fixed the inevitable typos with words like &ldquo;acknowledgements&rdquo;
+(which I simply can&rsquo;t spell), and watched it compile.</p><p>Then a little later I wanted to see how close I was to the wordcount, so I ran
+<code>texcount thesis.tex</code>. Hang on: nothing. Because of course, this unparseable
+macro language is unparseable. The only way to know what it will do is to run
+it.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> So <code>texcount</code> has implemented just enough TeX to follow <code>\input</code> calls,
+but it hasn&rsquo;t (obviously) got any idea how to parse my macro.</p><p>Oh well, we can just count the chapters individually and sum the counts as we
+input them, can&rsquo;t we. So we get:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\newcounter</span><span class=nb>{</span>wordCount<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>\newcommand</span><span class=nb>{</span><span class=k>\includeChapter</span><span class=nb>}</span>[1]<span class=nb>{</span><span class=c>%
+</span></span></span><span class=line><span class=cl><span class=c></span>  <span class=k>\inputTitle</span><span class=na>[#1]</span>
+</span></span><span class=line><span class=cl>  <span class=k>\chapter</span><span class=nb>{</span><span class=k>\title</span><span class=nb>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\inputChapter</span><span class=na>[#1]</span>
+</span></span><span class=line><span class=cl>  <span class=k>\addWordCount</span><span class=na>[#1]</span>
+</span></span><span class=line><span class=cl><span class=nb>}</span>
+</span></span></code></pre></div><p>Hang on. If we do this, the counter will only be correct at the very end of the
+file, when the final <code>includeChapter</code> is expanded. But a wordcount on the back
+page isn&rsquo;t much use. So we need to call the macro <em>before</em> we output anything,
+and defer actually including anything till later. In other words, we need it to
+define another macro (in a non macro language we&rsquo;d have it <em>return</em> something,
+but hey, global state is what a document is). So we want a variadic macro:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\newcommand</span><span class=nb>{</span><span class=k>\includeChapter</span><span class=nb>}</span>[2]<span class=nb>{</span><span class=c>%
+</span></span></span><span class=line><span class=cl><span class=c></span>  <span class=k>\expandafter\def\csname</span> input#2<span class=k>\endcsname</span><span class=nb>{</span><span class=c>%
+</span></span></span><span class=line><span class=cl><span class=c></span>    <span class=k>\inputTitle</span><span class=na>[#1]</span>
+</span></span><span class=line><span class=cl>    <span class=k>\chapter</span><span class=nb>{</span><span class=k>\title</span><span class=nb>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>\inputChapter</span><span class=na>[#1]</span>
+</span></span><span class=line><span class=cl>  <span class=nb>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\addWordCount</span><span class=na>[#1]</span>
+</span></span><span class=line><span class=cl><span class=nb>}</span>
+</span></span></code></pre></div><p>Yes! If you want key-value pairs in TeX, you use macros. At any rate I think
+it&rsquo;s clearer than some &ldquo;hashmap&rdquo; package which is just going to do this under
+the hood. <code>\csname</code> and <code>\endcsname</code> make macro names,<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> and then we pass the
+name in (I originally used a counter to generate <code>\chapterOne</code>, <code>chapterTwo</code>,
+etc, but that just gets silly). But how do we write <code>addWordCount</code>?</p><p>My first attempts is what everyone tries:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\def\addWordCount</span><span class=na>[#1]</span><span class=nb>{</span><span class=k>\addtocounter</span><span class=nb>{</span><span class=k>\input</span><span class=na>[#1/words.txt]</span><span class=nb>}}</span>
+</span></span></code></pre></div><p>My second attempt was copy-pasted from the Tex.SE question everyone then lands on:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-tex data-lang=tex><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>readarray<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\def\addWordCount</span><span class=na>[#1]</span><span class=nb>{</span><span class=c>%
+</span></span></span><span class=line><span class=cl><span class=c></span>  <span class=k>\readdef</span><span class=nb>{</span>#1/words.txt<span class=nb>}</span><span class=k>\theReadCount</span>
+</span></span><span class=line><span class=cl>  <span class=k>\addtocounter</span><span class=nb>{</span>wordCount<span class=nb>}{</span><span class=k>\theReadCount</span><span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=nb>}</span>
+</span></span></code></pre></div><p>Right. Now how do we get <code>words.txt</code>? We <em>could</em> use an external shell call.
+But actually I was simultaneously developing a proper build system, so we might
+as well use that.</p><p>To start with, every chapter had its own makefile, generated by cookiecutter.
+But recursive make is bad, and anyhow we have top-level dependencies on lower
+files, so it makes no sense. Really we should have <em>one</em> makefile. But
+building it by hand is the same, <em>mutatis mutandis</em>, as before, except that RMS
+is probably not as polite as Knuth.</p><p>One option would be build systems. I consdered Meson for about ten seconds, and
+cmake for fifteen. (Autotools isn&rsquo;t a build system, it&rsquo;s a preventable
+disaster.) So we have a python script:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=ch>#!/usr/bin/python</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>pathlib</span> <span class=kn>import</span> <span class=n>Path</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>header</span> <span class=o>=</span> <span class=s2>&#34;&#34;&#34;</span><span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span><span class=s2>.PHONY: all standalones thesis thesis-clean
+</span></span></span><span class=line><span class=cl><span class=s2>LATEXMK ?= latexmk --pdf --synctex=1
+</span></span></span><span class=line><span class=cl><span class=s2>&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>footer</span> <span class=o>=</span> <span class=s2>&#34;&#34;&#34;
+</span></span></span><span class=line><span class=cl><span class=s2>thesis-clean:
+</span></span></span><span class=line><span class=cl><span class=s2>	$</span><span class=si>{LATEXMK}</span><span class=s2> -C
+</span></span></span><span class=line><span class=cl><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>thesis: standalones titlepage.tex
+</span></span></span><span class=line><span class=cl><span class=s2>	$</span><span class=si>{LATEXMK}</span><span class=s2> thesis.tex
+</span></span></span><span class=line><span class=cl><span class=s2>&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>pdf_template</span> <span class=o>=</span> <span class=s2>&#34;&#34;&#34;</span><span class=si>{deps}</span><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>	cd </span><span class=si>{dir}</span><span class=s2> &amp;&amp; ${{LATEXMK}} standalone.tex
+</span></span></span><span class=line><span class=cl><span class=s2>&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>skip</span> <span class=o>=</span> <span class=p>{</span><span class=s2>&#34;papers&#34;</span><span class=p>,</span> <span class=s2>&#34;template&#34;</span><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=n>standalones</span> <span class=o>=</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=n>x</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>Path</span><span class=p>(</span><span class=s2>&#34;.&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>glob</span><span class=p>(</span><span class=s2>&#34;**/standalone.tex&#34;</span><span class=p>)</span> <span class=k>if</span> <span class=n>x</span><span class=o>.</span><span class=n>parent</span><span class=o>.</span><span class=n>parent</span><span class=o>.</span><span class=n>name</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>skip</span>
+</span></span><span class=line><span class=cl><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>outf</span> <span class=o>=</span> <span class=n>Path</span><span class=p>(</span><span class=s2>&#34;Makefile&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>pdf_entries</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nb>str</span><span class=p>(</span><span class=n>s</span><span class=o>.</span><span class=n>with_suffix</span><span class=p>(</span><span class=s2>&#34;.pdf&#34;</span><span class=p>)):</span> <span class=n>pdf_template</span><span class=o>.</span><span class=n>format</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=n>deps</span><span class=o>=</span><span class=s2>&#34; &#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>            <span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>                <span class=n>s</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=n>s</span><span class=o>.</span><span class=n>with_stem</span><span class=p>(</span><span class=n>s</span><span class=o>.</span><span class=n>parent</span><span class=o>.</span><span class=n>name</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s2>&#34;.&#34;</span><span class=p>)[</span><span class=mi>1</span><span class=p>]),</span>
+</span></span><span class=line><span class=cl>                <span class=n>s</span><span class=o>.</span><span class=n>with_name</span><span class=p>(</span><span class=s2>&#34;title.tex&#34;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>            <span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>),</span>
+</span></span><span class=line><span class=cl>        <span class=nb>dir</span><span class=o>=</span><span class=n>s</span><span class=o>.</span><span class=n>parent</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>s</span> <span class=ow>in</span> <span class=n>standalones</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>parts</span> <span class=o>=</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=n>header</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;all: standalones thesis&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;standalones:&#34;</span> <span class=o>+</span> <span class=s2>&#34; &#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>pdf_entries</span><span class=o>.</span><span class=n>keys</span><span class=p>()),</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=s2>&#34;:&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=n>k</span><span class=p>,</span> <span class=n>v</span><span class=p>])</span> <span class=k>for</span> <span class=n>k</span><span class=p>,</span> <span class=n>v</span> <span class=ow>in</span> <span class=n>pdf_entries</span><span class=o>.</span><span class=n>items</span><span class=p>()]),</span>
+</span></span><span class=line><span class=cl>    <span class=n>footer</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>outf</span><span class=o>.</span><span class=n>write_text</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>parts</span><span class=p>))</span>
+</span></span></code></pre></div><p>There. We get a makefile, and however naughty it is to use a <em>modern</em>
+scripting language to generate a Makefile, and however horribly readable python
+is, it&rsquo;s a makefile in the end. And best of all it took less time to write than
+it would take me to remember exactly how the whole thing with $ and { and } and
+@ works for arrays in bash.</p><p>Now all we need to do is to add <code>s.with_name("words.txt")</code> to the dependencies
+for <code>pdf_entries</code> and add a rule to generate <code>words.txt</code> by calling <code>texcount</code>.
+I actually have a bona fide shell script for this, although my eyes hurt slightly
+when I look at it:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=cp>#!/usr/bin/env sh
+</span></span></span><span class=line><span class=cl><span class=cp></span><span class=nb>cd</span> <span class=nv>$1</span> <span class=o>&amp;&amp;</span> texcount -brief -merge -sum<span class=o>=</span>1,0,1,0,1,1,1 2&gt;/dev/null <span class=s2>&#34;</span><span class=nv>$2</span><span class=s2>&#34;</span> <span class=p>|</span> cut -d <span class=s1>&#39;:&#39;</span> -f1 <span class=p>|</span> awk <span class=s1>&#39;{print $1}&#39;</span> &gt; words.txt
+</span></span></code></pre></div><p>I always forget about <code>cut</code>. These days I&rsquo;d probably use <code>sed</code> for the whole
+thing. (Those days I mostly used google.) Anyhow, it gets us the word count,
+which is what we want, and then we concatenate it. Slightly to my surprise
+LaTeX has no built-in ability to print numbers with separators, but
+<code>\usepackage{comma}</code> puts paid to that.</p><p>Now how many words do I have? 94,477. Drat. The limit 100,00 and I have two
+chapters still to go. I&rsquo;d better get cutting.</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Techically this is true<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup> of any turing complete language, but you can get
+actually do a pretty good job of parsing most <em>sane</em> languages without
+executing them, assuming the programmer hasn&rsquo;t done anything stupid.
+<code>texcount</code> is a Perl script, so yes, it&rsquo;s just one big regex and we&rsquo;re
+parsing with a regex.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>That will do for here.&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>I think. I&rsquo;m only a poor PhD student in theology.&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></article><ul class="pager blog-pager"><li class=previous><a href=https://2e0byo.github.io/post/coding/homeassistant/ data-toggle=tooltip data-placement=top title="Migrating Home Assistant (and thoughts on over-engineering)">&larr; Previous Post</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:2e0byo@gmail.com title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/2e0byo title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://gitlab.com/2e0byo title=GitLab><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i></span></a></li><li><a href title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="credits copyright text-muted">John Morris
+&nbsp;&bull;&nbsp;&copy;
+2023
+&nbsp;&bull;&nbsp;
+<a href=https://2e0byo.github.io/>Jack of All Trades</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.111.1</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/2e0byo/blog/commit/60ecf19c5e48a878d4a48eeaaaed8db7eb9a727c>60ecf19c</a>]</p></div></div></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js integrity=sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js integrity=sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe crossorigin=anonymous></script>
+<script src=https://code.jquery.com/jquery-1.12.4.min.js integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js integrity=sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa crossorigin=anonymous></script>
+<script src=https://2e0byo.github.io/js/main.js></script><script>renderMathInElement(document.body)</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://2e0byo.github.io/js/load-photoswipe.js></script></body></html>
