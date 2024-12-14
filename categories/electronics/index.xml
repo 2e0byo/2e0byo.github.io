@@ -1,5 +1,142 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Electronics on Jack of All Trades</title><link>https://2e0byo.github.io/categories/electronics/</link><description>Recent content in Electronics on Jack of All Trades</description><generator>Hugo -- gohugo.io</generator><managingEditor>2e0byo@gmail.com (John Morris)</managingEditor><webMaster>2e0byo@gmail.com (John Morris)</webMaster><lastBuildDate>Thu, 19 Aug 2021 18:45:21 +0200</lastBuildDate><atom:link href="https://2e0byo.github.io/categories/electronics/index.xml" rel="self" type="application/rss+xml"/><item><title>Motorcycle Alarm</title><link>https://2e0byo.github.io/post/electronics/motorcycle-alarm/</link><pubDate>Thu, 19 Aug 2021 18:45:21 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/motorcycle-alarm/</guid><description>Apparently one of the local bike thieves was eyeing up the bike. Certainly a car was driving down the road, crawling opposite the bike, and then driving off again. Having had one bike nicked I didn&amp;rsquo;t much fancy losing another. Thus we had to make the house look a lot more secure in a hurry; and the shops were closing that evening and not reopening till Tuesday. For it was the New Year.</description></item><item><title>Sunrise Lamp</title><link>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</link><pubDate>Thu, 19 Aug 2021 13:28:58 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</guid><description>Every project is a prototype, which calls out for a second version avoiding the mistakes of the former. The trick is to give the prototypes away; then one has a legitimate excuse to make another&amp;mdash;and one gains an (undeserved) reputation for generosity to boot. After the quick sunrise alarm clock various things happened, including a &amp;rsquo;two week lockdown&amp;rsquo; to build up capacity in the NHS, which turned into three months. Thus I was stuck in one part of London, and my fiancée in another, and the streets were patrolled by Dobermans with £10,000 fine notices stuck to their teeth.</description></item><item><title>Quick Sunrise Alarm Clock</title><link>https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/</link><pubDate>Tue, 14 Apr 2020 13:42:14 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/</guid><description>This was a sudden impulse last summer: I&amp;rsquo;d seen a &amp;lsquo;sunrise&amp;rsquo; alarm clock (which fades on slowly to simulate sunrise, theoretically bringing you out of deep sleep naturally and waking you up gently). My sister mentioned having difficulty getting up and needing multiple alarm clocks. Ergo.
-First thought: where to get the light? I had a look in the LED parts draw, but it was disappointing, as was the draw of old led torches and bike lights.</description></item><item><title>Networked Clock with Hands</title><link>https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/</link><pubDate>Sun, 12 Jan 2020 22:48:29 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/</guid><description>Dad rather liked my clock. In fact, he went looking for &amp;lsquo;a clock with hands and an adjustable chime&amp;rsquo;. Which, of course, made me wonder whether I could make one.
-The first question was the hands: I liked the leds at the front of mine, and didn&amp;rsquo;t see the point in moving real hands around with a stepper motor or something of the kind. A digital clock should, I think, look digital.</description></item><item><title>Vertical Etching Tank</title><link>https://2e0byo.github.io/post/electronics/vertical-etching-tank/</link><pubDate>Sun, 12 Jan 2020 21:37:18 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/vertical-etching-tank/</guid><description>I don&amp;rsquo;t much like PCBs, but I like wiring ICs up even less. Up till now I&amp;rsquo;ve made boards with the toner-transfer-and-any-old-container method. The trouble is that I hate making up ferric cholride and always make the bare minimum, and during etching the concentration falls off, the rate slows, and you get poor definition and damage. So I decided to make a proper vertical etching tank, big enough to do a large board and still not run out of etchant.</description></item><item><title>Networked Alarm Clock</title><link>https://2e0byo.github.io/post/electronics/clocks/networked-alarm-clock/</link><pubDate>Sun, 12 Jan 2020 21:23:04 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clocks/networked-alarm-clock/</guid><description>This project began when the noise of the ethernet switch opposite my college room became unbearable. I picked the room for the view, which was sublime: the valley falls away so steeply you can see right down, over the trees, to the river, and climbs again the far side in a steeply wooded bank over which the pigeons perform what I can only describe as buzzing runs on the squirells. In the distance, the rolling hills, at night the moon and by day the sun—morning and evening, opposite corners of the window.</description></item><item><title>Radio repair</title><link>https://2e0byo.github.io/post/repairs/radio-repair/</link><pubDate>Sun, 02 Dec 2018 13:55:22 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/radio-repair/</guid><description>The radio we use in the kitchen to make washing up bearable stopped working. Specifically, it wouldn&amp;rsquo;t turn on, but the power LED was constantly flashing on and then fading off. What makes me think the power supply might have died? Lo and behold, after purchasing a cheap multimeter (it&amp;rsquo;s incredible how cheaply one can get some things now: in ten years the price of test equipment has plumetted): the &amp;lsquo;8v&amp;rsquo; output was about 3v, and the &amp;lsquo;15v&amp;rsquo; output was 0v.</description></item><item><title>Clap-clap switch</title><link>https://2e0byo.github.io/post/electronics/clap-clap-switch/</link><pubDate>Wed, 19 Sep 2018 15:33:39 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clap-clap-switch/</guid><description>I&amp;rsquo;ve always thought of those clap-activated switches as a bit of a gimmick&amp;mdash;after all, you can always just move the lightswitch if it&amp;rsquo;s that hard to get at. But currently my mother is hobbling around on crutches, and it suddenly struck me that turning the uplighter on from the doorway would be handy. A rummage through the junkbox found a board—I think from an old washing machine—full of relays, and 5v relays at that, so no need for a voltage multiplier to turn the relay on.</description></item><item><title>'Off and on again' remotely</title><link>https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/</link><pubDate>Thu, 02 Aug 2018 08:30:53 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/</guid><description>The internet in Durham, which was allowing me to use the workstation there remotely, has gone down; support tell me to &amp;rsquo;turn it off and on again&amp;rsquo;. But obviously I can&amp;rsquo;t do that remotely. Ah well, it wasn&amp;rsquo;t really needed. But what if it were? I&amp;rsquo;ve run servers over unreliable wifi links with good uptime before, with a failsafe script which rebooted everything if it couldn&amp;rsquo;t ping the gateway for too long—and looking at the logs, sometimes it was needed.</description></item><item><title>Display Board</title><link>https://2e0byo.github.io/post/electronics/frequency-counter/display-board/</link><pubDate>Tue, 31 Jul 2018 16:02:59 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/frequency-counter/display-board/</guid><description>I started this peice of test equipment when I was about 15, I think, built the timebase with enthusiasm, the counting chain with a bit less, and then wondered how on earth I was to attach the 7-segment displays. Surely not one wire each?! So the project languished, and eventually got relegated to the shelf without ever being finished. All I had was the breadboard and two schematics which nearly corresponded with what was in front of me:</description></item><item><title>CD Player Line-In</title><link>https://2e0byo.github.io/post/electronics/cd-player-line-in/</link><pubDate>Tue, 31 Jul 2018 12:11:45 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/cd-player-line-in/</guid><description>This is a very simple project indeed: add a line-in input feeding the amplifier in my sister&amp;rsquo;s CD/Tape/Radio, which has much better sound than the &amp;lsquo;device&amp;rsquo; she mainly plays music from. How hard can it be to find the amplifier IC and feed in directly?
-Taking the thing apart was none too hard, and it&amp;rsquo;s cheap &amp;rsquo;90s hardware so all through-hole and single-sided PCB. I found the mode switch, traced it back to the amplifier, paid careful attention to the pinouts and soldered a small cable onto one input, the other end going to a 555 &amp;lsquo;signal generator&amp;rsquo; kit I had lying around.</description></item><item><title>Proof of Concept</title><link>https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/</link><pubDate>Fri, 20 Jul 2018 07:30:59 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/</guid><description>By this point we have all we need for a basic charge, and I do actually need to charge some batteries. I can build a simple current regulator with an LM317 and a resistor, which will be good enough for now.
-No Termination The simplest thing would be just to charge some batteries and log to the computer. There&amp;rsquo;s a marvellous thing out there called FeedGnuPlot which makes graphing realtime or static data so easy one has to resist the temptation to graph everything.</description></item><item><title>PIC Development Board</title><link>https://2e0byo.github.io/post/electronics/pic-development-board/</link><pubDate>Thu, 19 Jul 2018 17:09:12 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/pic-development-board/</guid><description>As part of the Battery Charger project I need a basic PIC dev board. I built one a long time ago for A2 coursework, and I even found the artwork lying around, but the tracks and pads were too small for hand etching and drilling. Trying to open the cad files in KiCad I discovered that they&amp;rsquo;ve changed everything, and half the symbols &amp;lsquo;cannot be found&amp;rsquo;. I&amp;rsquo;ve also completely forgotten how to use KiCad or schematic capture/Pcb design software in general: all pointing to a need to redraw.</description></item><item><title>Background</title><link>https://2e0byo.github.io/post/electronics/battery-charger/background/</link><pubDate>Thu, 19 Jul 2018 12:50:36 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/battery-charger/background/</guid><description>There are lots of &amp;lsquo;smart&amp;rsquo; chargers out there. Most of them boast that they can charge your batteries quicker than the competition, and that a &amp;lsquo;smart&amp;rsquo; algorithm will somehow prevent packing as much current as possible into a cell in the shortest time from having deleterious effects. Slow chargers are harder to come by: there are the cheap constant-current things you run for a certain amount of time—but if your batteries are not absolutely dead they will overcharge, and probably overheat and explode, as mine did.</description></item><item><title>Poor Man's Raspberry Pi</title><link>https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi/</link><pubDate>Thu, 19 Jul 2018 09:58:16 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi/</guid><description>Embedded Linux is currently all the rage with little boards like the Pi running a full-fledged Debian just to flash a few LEDs. Now certainly, the Pi would find uses here, but it&amp;rsquo;s hardly cheap. What is cheap—or even free—is defunct wireless routers. They, too, are embedded systems running Linux. Unlike the Pi they have on-board wifi and an ethernet switch; the cpu isn&amp;rsquo;t usually too bad either. I also picked a few up for £0.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Electronics on Jack of All Trades</title><link>https://2e0byo.github.io/categories/electronics/</link><description>Recent content in Electronics on Jack of All Trades</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 20 Aug 2021 13:01:26 +0200</lastBuildDate><atom:link href="https://2e0byo.github.io/categories/electronics/index.xml" rel="self" type="application/rss+xml"/><item><title>Motorcycle Alarm</title><link>https://2e0byo.github.io/post/electronics/motorcycle-alarm/</link><pubDate>Thu, 19 Aug 2021 18:45:21 +0200</pubDate><guid>https://2e0byo.github.io/post/electronics/motorcycle-alarm/</guid><description>&lt;p>Apparently one of the local bike thieves was eyeing up the bike. Certainly a
+car was driving down the road, crawling opposite the bike, and then driving off
+again. Having had one bike nicked I didn&amp;rsquo;t much fancy losing another. Thus we
+had to make the house look a lot more secure in a hurry; and the shops were
+closing that evening and not reopening till Tuesday. For it was the New Year.&lt;/p></description></item><item><title>Sunrise Lamp</title><link>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</link><pubDate>Thu, 19 Aug 2021 13:28:58 +0200</pubDate><guid>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</guid><description>&lt;p>Every project is a prototype, which calls out for a second version avoiding the
+mistakes of the former. The trick is to give the prototypes away; then one has
+a legitimate excuse to make another&amp;mdash;and one gains an (undeserved) reputation
+for generosity to boot. After the &lt;a href="https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock">quick sunrise alarm
+clock&lt;/a> various things
+happened, including a &amp;rsquo;two week lockdown&amp;rsquo; to build up capacity in the NHS,
+which turned into three months. Thus I was stuck in one part of London, and my
+fiancée in another, and the streets were patrolled by Dobermans with £10,000
+fine notices stuck to their teeth. How to get from one side of London to the
+other?&lt;/p></description></item><item><title>Quick Sunrise Alarm Clock</title><link>https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/</link><pubDate>Tue, 14 Apr 2020 13:42:14 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/</guid><description>&lt;p>This was a sudden impulse last summer: I&amp;rsquo;d seen a &amp;lsquo;sunrise&amp;rsquo; alarm
+clock (which fades on slowly to simulate sunrise, theoretically
+bringing you out of deep sleep naturally and waking you up gently).
+My sister mentioned having difficulty getting up and needing multiple
+alarm clocks. &lt;em>Ergo.&lt;/em>&lt;/p>
+&lt;p>First thought: where to get the light? I had a look in the LED parts
+draw, but it was disappointing, as was the draw of old led torches and
+bike lights. None of them gave a reasonable light: more like a little
+pin-prick than the sun. So off down the road to the &lt;em>bricolage&lt;/em> shop
+(or bric-a-brack as we call them) and I came back with this:&lt;/p></description></item><item><title>Networked Clock with Hands</title><link>https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/</link><pubDate>Sun, 12 Jan 2020 22:48:29 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/</guid><description>&lt;p>Dad rather liked my clock. In fact, he went looking for &amp;lsquo;a clock with
+hands and an adjustable chime&amp;rsquo;. Which, of course, made me wonder
+whether I could make one.&lt;/p>
+&lt;p>The first question was the hands: I liked
+the leds at the front of mine, and didn&amp;rsquo;t see the point in moving real
+hands around with a stepper motor or something of the kind. A digital
+clock should, I think, look digital. Looking online for things like
+&amp;rsquo;led ring clocks&amp;rsquo; showed the odd design, but none with all three hands
+in one ring, and three rings struck me as a bit much. Thus I started
+looking on farnell for bicolour leds to make the hands out of, and
+found an orange/red led on clearance at around 10p each: and also some
+red/green &lt;em>rectangular&lt;/em> leds. Now, wouldn&amp;rsquo;t it be nice to have the
+&amp;rsquo;ticks&amp;rsquo; in the display differently &lt;em>shaped&lt;/em> as well as coloured?&lt;/p></description></item><item><title>Vertical Etching Tank</title><link>https://2e0byo.github.io/post/electronics/vertical-etching-tank/</link><pubDate>Sun, 12 Jan 2020 21:37:18 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/vertical-etching-tank/</guid><description>&lt;p>I don&amp;rsquo;t much like PCBs, but I like wiring ICs up even less. Up till
+now I&amp;rsquo;ve made boards with the toner-transfer-and-any-old-container
+method. The trouble is that I hate making up ferric cholride and
+always make the bare minimum, and during etching the concentration
+falls off, the rate slows, and you get poor definition and damage. So
+I decided to make a proper vertical etching tank, big enough to do a
+large board and still not run out of etchant. Casting about the shed
+found a large transparent dust-sheet, and I wondered about using it
+for the tank. With care an unpierced section could be found, and a
+bag was taped together:&lt;/p></description></item><item><title>Networked Alarm Clock</title><link>https://2e0byo.github.io/post/electronics/clocks/networked-alarm-clock/</link><pubDate>Sun, 12 Jan 2020 21:23:04 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/clocks/networked-alarm-clock/</guid><description>&lt;p>This project began when the noise of the ethernet switch opposite my
+college room became unbearable. I picked the room for the view, which
+was sublime: the valley falls away so steeply you can see right down,
+over the trees, to the river, and climbs again the far side in a
+steeply wooded bank over which the pigeons perform what I can only
+describe as buzzing runs on the squirells. In the distance, the
+rolling hills, at night the moon and by day the sun—morning and
+evening, opposite corners of the window. Sometimes the outside world
+would come a little
+closer:&lt;/p></description></item><item><title>Radio repair</title><link>https://2e0byo.github.io/post/repairs/radio-repair/</link><pubDate>Sun, 02 Dec 2018 13:55:22 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/radio-repair/</guid><description>&lt;p>The radio we use in the kitchen to make washing up bearable stopped
+working. Specifically, it wouldn&amp;rsquo;t turn on, but the power LED was
+constantly flashing on and then fading off. What makes me think the
+power supply might have died? Lo and behold, after purchasing a cheap
+multimeter (it&amp;rsquo;s incredible how cheaply one can get some things now:
+in ten years the price of test equipment has plumetted): the &amp;lsquo;8v&amp;rsquo;
+output was about 3v, and the &amp;lsquo;15v&amp;rsquo; output was 0v. Hmm. Here&amp;rsquo;s the
+very crude power supply:&lt;/p></description></item><item><title>Clap-clap switch</title><link>https://2e0byo.github.io/post/electronics/clap-clap-switch/</link><pubDate>Wed, 19 Sep 2018 15:33:39 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/clap-clap-switch/</guid><description>&lt;p>I&amp;rsquo;ve always thought of those clap-activated switches as a bit of a
+gimmick&amp;mdash;after all, you can always just move the lightswitch if it&amp;rsquo;s
+that hard to get at. But currently my mother is hobbling around on
+crutches, and it suddenly struck me that turning the uplighter on from
+the doorway would be handy. A rummage through the junkbox found a
+board—I think from an old washing machine—full of relays, and 5v
+relays at that, so no need for a voltage multiplier to turn the relay
+on. I also found an old &amp;lsquo;usb charger&amp;rsquo; rated at 1A 4.2V (?!), which is
+thankfully enough to turn on the relay.&lt;/p></description></item><item><title>'Off and on again' remotely</title><link>https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/</link><pubDate>Thu, 02 Aug 2018 08:30:53 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/</guid><description>&lt;p>The internet in Durham, which was allowing me to use the workstation
+there remotely, has gone down; support tell me to &amp;rsquo;turn it off and on
+again&amp;rsquo;. But obviously I can&amp;rsquo;t do that remotely. Ah well, it wasn&amp;rsquo;t
+really needed. But what if it &lt;em>were&lt;/em>? I&amp;rsquo;ve run servers over
+unreliable wifi links with good uptime before, with a failsafe script
+which rebooted everything if it couldn&amp;rsquo;t ping the gateway for too
+long—and looking at the logs, sometimes it was needed. But I can&amp;rsquo;t
+reboot the router (and though I&amp;rsquo;ll replace it, there&amp;rsquo;s little
+opensource DSL firmware, so I&amp;rsquo;m never going to be able to reboot
+the &lt;em>modem&lt;/em>). So what we need is the remote equivalent of pulling the
+plug out and putting it back in again. I have a few of those &lt;a href="https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi">Poor
+Man’s Rasberry
+Pi&lt;/a> boards
+lying around; one could surely be made to pulse a relay if it can&amp;rsquo;t
+ping after a while? But the only relays I have (mainly rescued from a
+faulty boiler) are designed for industrial 24v DC. I hunted for a
+while and then gave up on finding any 12v relays. Isn&amp;rsquo;t there a
+circuit called a voltage doubler? As usual, SM0VPO has some
+&lt;a href="http://www.sm0vpo.com/">information&lt;/a>. I was going to use a 555
+timer, but that shamed me: I can still build a discrete
+multivibrator—it was one of the first circuits I ever built, after
+all. But first off the relay inline in an extension cord. Here I
+made a completely daft error: the box is about 100% too long, because
+I thought the cable exit grommets went the other way round. But
+anyhow, here is how to make a box out of hardboard, that most
+intractable thing:&lt;/p></description></item><item><title>Display Board</title><link>https://2e0byo.github.io/post/electronics/frequency-counter/display-board/</link><pubDate>Tue, 31 Jul 2018 16:02:59 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/frequency-counter/display-board/</guid><description>&lt;p>I started this peice of test equipment when I was about 15, I think,
+built the timebase with enthusiasm, the counting chain with a bit
+less, and then wondered how on earth I was to attach the 7-segment
+displays. Surely not one wire each?! So the project languished, and
+eventually got relegated to the shelf without ever being finished.
+All I had was the breadboard and two schematics which &lt;em>nearly&lt;/em>
+corresponded with what was in front of me:&lt;/p></description></item><item><title>CD Player Line-In</title><link>https://2e0byo.github.io/post/electronics/cd-player-line-in/</link><pubDate>Tue, 31 Jul 2018 12:11:45 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/cd-player-line-in/</guid><description>&lt;p>This is a very simple project indeed: add a line-in input feeding the
+amplifier in my sister&amp;rsquo;s CD/Tape/Radio, which has much better sound
+than the &amp;lsquo;device&amp;rsquo; she mainly plays music from. How hard can it be to
+find the amplifier IC and feed in directly?&lt;/p>
+&lt;p>Taking the thing apart was none too hard, and it&amp;rsquo;s cheap &amp;rsquo;90s hardware
+so all through-hole and single-sided PCB. I found the mode switch,
+traced it back to the amplifier, paid careful attention to the pinouts
+and soldered a small cable onto one input, the other end going to a
+555 &amp;lsquo;signal generator&amp;rsquo; kit I had lying around. Power up: the signal
+generator exploded and the lcd backlight died.&lt;/p></description></item><item><title>Proof of Concept</title><link>https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/</link><pubDate>Fri, 20 Jul 2018 07:30:59 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/</guid><description>&lt;p>By this point we have all we need for a basic charge, and I do
+actually need to charge some batteries. I can build a simple current
+regulator with an LM317 and a resistor, which will be good enough for
+now.&lt;/p>
+&lt;h1 id="no-termination">No Termination&lt;/h1>
+&lt;p>The simplest thing would be just to charge some batteries and log to
+the computer. There&amp;rsquo;s a marvellous thing out there called
+&lt;a href="https://github.com/dkogan/feedgnuplot">FeedGnuPlot&lt;/a> which makes
+graphing realtime or static data so easy one has to resist the
+temptation to graph everything. But before we can do that, we need to
+be able to read analogue values and throw them over USB.&lt;/p></description></item><item><title>PIC Development Board</title><link>https://2e0byo.github.io/post/electronics/pic-development-board/</link><pubDate>Thu, 19 Jul 2018 17:09:12 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/pic-development-board/</guid><description>&lt;p>As part of the &lt;a href="https://2e0byo.github.io/tags/battery-charger/">Battery Charger&lt;/a>
+project I need a basic PIC dev board. I built one a long time ago for
+A2 coursework, and I even found the artwork lying around, but the
+tracks and pads were too small for hand etching and drilling. Trying
+to open the cad files in KiCad I discovered that they&amp;rsquo;ve changed
+everything, and half the symbols &amp;lsquo;cannot be found&amp;rsquo;. I&amp;rsquo;ve also
+completely forgotten how to use KiCad or schematic capture/Pcb design
+software in general: all pointing to a need to redraw.&lt;/p></description></item><item><title>Background</title><link>https://2e0byo.github.io/post/electronics/battery-charger/background/</link><pubDate>Thu, 19 Jul 2018 12:50:36 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/battery-charger/background/</guid><description>&lt;p>There are lots of &amp;lsquo;smart&amp;rsquo; chargers out there. Most of them boast that
+they can charge your batteries quicker than the competition, and that
+a &amp;lsquo;smart&amp;rsquo; algorithm will somehow prevent packing as much current as
+possible into a cell in the shortest time from having deleterious
+effects. &lt;em>Slow&lt;/em> chargers are harder to come by: there are the cheap
+constant-current things you run for a certain amount of time—but if
+your batteries are not &lt;em>absolutely&lt;/em> dead they &lt;em>will&lt;/em> overcharge, and
+probably overheat and explode, as mine did. So not ideal. A few
+vacations ago, as a break from reading, I converted an old analogue
+ammeter into a basic adjustable-current charger with current and
+voltage read-off. The current regulation is not particularly clever.
+It uses the &amp;rsquo;trick&amp;rsquo; I devised for my AS Electronics coursework&lt;/p></description></item><item><title>Poor Man's Raspberry Pi</title><link>https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi/</link><pubDate>Thu, 19 Jul 2018 09:58:16 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi/</guid><description>&lt;p>Embedded Linux is currently all the rage with little boards like the
+Pi running a full-fledged Debian just to flash a few LEDs. Now
+certainly, the Pi would find uses here, but it&amp;rsquo;s hardly cheap. What
+&lt;em>is&lt;/em> cheap—or even free—is defunct wireless routers. They, too, are
+embedded systems running Linux. Unlike the Pi they have on-board wifi
+and an ethernet switch; the cpu isn&amp;rsquo;t usually too bad either. I also
+picked a few up for £0.99 on Ebay. Here&amp;rsquo;s one:&lt;/p></description></item></channel></rss>

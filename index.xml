@@ -1,43 +1,775 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jack of All Trades</title><link>https://2e0byo.github.io/</link><description>Recent content on Jack of All Trades</description><generator>Hugo -- gohugo.io</generator><managingEditor>2e0byo@gmail.com (John Morris)</managingEditor><webMaster>2e0byo@gmail.com (John Morris)</webMaster><lastBuildDate>Sat, 04 Mar 2023 18:05:26 +0000</lastBuildDate><atom:link href="https://2e0byo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Too Many Directories</title><link>https://2e0byo.github.io/post/coding/thesis-structure/</link><pubDate>Sat, 04 Mar 2023 18:05:26 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/thesis-structure/</guid><description>My PhD has too many directories in it.
-I have&amp;mdash;currently&amp;mdash;three parts, and each of those has several chapters. All the chapters have been written independently, so I have a structure which more or less looks like this:
-titlepage.tex thesis.tex -- 1.part1 | +- 1.chapter1 | +-- standalone.tex +-- title.tex +-- chapter1.tex +- 2.chapter2 etc, only with three parts and sensible names. Each of the chapters builds to a separate pdf with standalone.</description></item><item><title>Migrating Home Assistant (and thoughts on over-engineering)</title><link>https://2e0byo.github.io/post/coding/homeassistant/</link><pubDate>Tue, 28 Feb 2023 11:19:25 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/homeassistant/</guid><description>Home Automation is largely a gimmic. Even the founder of Home Assistant writes blog posts pointing out that turning the lights on from your phone is pretty pointless, except for showing off (not that I&amp;rsquo;ve ever turned a light on from my phone to show off&amp;hellip;). Another of these posts tries to think of a useful smart light and comes up with:
-Imagine a brave new world where you walk into a room and the light is already on, as you have naturally come to expect after years of living with such a technology.</description></item><item><title>Hacked</title><link>https://2e0byo.github.io/post/coding/hacked/</link><pubDate>Sat, 12 Nov 2022 23:56:13 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/hacked/</guid><description>I got hacked.
-There are all kinds of fun exploits people use to get into systems they&amp;rsquo;re not supposed to be in. In my case they used ssh. Normally ssh is secure. None of my passwords are brute-forceable. (Yes, you shouldn&amp;rsquo;t have public-facing password ssh&amp;hellip; but that&amp;rsquo;s no fun when you&amp;rsquo;re on someone else&amp;rsquo;s computer and need to get in in a hurry.) But in a moment of weakness I had needed a blank slate to test an environment regression against.</description></item><item><title>Tracking down a faulty ABS sensor</title><link>https://2e0byo.github.io/post/repairs/abs-sensor/</link><pubDate>Fri, 17 Jun 2022 20:57:41 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/abs-sensor/</guid><description>Like many ageing Honda Civics our VSA and ABS lights have been coming on sporadically for the last few months. Now they&amp;rsquo;re stuck on all the time.
-First I suspected the battery, so I duly measured the no-load voltage (~12.6V: not great, but not awful either), the voltage dip when running the fuel pumps, (~11.6V) and the voltage dip when starting (briefly around 10V, but I didn&amp;rsquo;t have a scope on it).</description></item><item><title>Ignition Barrel Repair</title><link>https://2e0byo.github.io/post/repairs/ignition-barrel/</link><pubDate>Fri, 31 Dec 2021 12:44:27 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/ignition-barrel/</guid><description>Halfway down the country, at 7.30 in the morning (having been on the road since 5.30) the key stopped turning in the ignition. We have an old (&amp;lsquo;06) Honda Civic, and the AA man blamed the age. He was able to force the key round, doing much the same thing I&amp;rsquo;d been doing, only more effectively, and we drove on, to repeat the same rigmarole the next time it was started.</description></item><item><title>Python Is (sort-of) Functional</title><link>https://2e0byo.github.io/post/coding/python-is-sortof-functional/</link><pubDate>Wed, 24 Nov 2021 12:56:45 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/python-is-sortof-functional/</guid><description>I recently had to parse a csv file which looks like this:
-&amp;#34;key&amp;#34;,&amp;#34;val&amp;#34; &amp;#34;key&amp;#34;,&amp;#34;val&amp;#34; &amp;#34;key&amp;#34;,&amp;#34;val&amp;#34; &amp;#34;col1&amp;#34;,&amp;#34;col2&amp;#34;,&amp;#34;col3&amp;#34;,&amp;#34;col4&amp;#34; ... row data here The obvious, imperative solution would be:
-from csv import DictReader def parse(f): props = {} for line in f: if not line.strip(): break k, v = line.strip().replace(&amp;#39;&amp;#34;&amp;#39;, &amp;#34;&amp;#34;).split(&amp;#34;,&amp;#34;) props[k] = v reader = DictReader(f) data = list(reader) return props, data With the walrus operator we can save a few lines at the cost of non-obvious syntax:</description></item><item><title>“Modern Authentication”: Outlook365 in Emacs</title><link>https://2e0byo.github.io/post/coding/modern-authentication/</link><pubDate>Fri, 29 Oct 2021 16:37:35 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/modern-authentication/</guid><description>A few weeks ago I received an email from the university stating:
-Further to our previous communication advising about a change to basic authentication for Durham mailboxes, on 28th October 2021 we will be removing the ability to connect to University email via IMAP and our records indicate that you currently access email in this way.
-This, apparently, is down to the fact that
-Basic authentication is no longer secure enough to support modern working as it does not support security features such as Multi-Factor Authentication (MFA).</description></item><item><title>ClosedFridge: RIP OpenFridge</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/</link><pubDate>Thu, 14 Oct 2021 12:07:57 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/</guid><description>Refrigerate in peace, OpenFridge.
-The hardware OpenFridge was controlling is no more. It now looks like this:
-Heat Exchange
-Door
-Obviously, it should not look like this. What follows is a post-mortem, because it is worth learning from one&amp;rsquo;s mistakes.
-The final moments of a fridge After fixing the defrost I did not get around to replacing the blown thermal fuse. The Chinese sensors were supplied with some kind of wire which breaks if you so much as look at it, and I was afraid I would knock the wire at some point and crash the system.</description></item><item><title>Plane Repair</title><link>https://2e0byo.github.io/post/carpentry/plane-repair/</link><pubDate>Sat, 21 Aug 2021 20:43:56 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/carpentry/plane-repair/</guid><description>Exactly how flat does a sharpening stone need to be? Exactly how flat, for that matter, does a plane need to be?
-I&amp;rsquo;m on holiday. Here is a toy plane, a soft building block, and a half brick (not cut by me):
-The plane started out rather rusty, as did the iron (why do I always forget to take &amp;lsquo;before&amp;rsquo; photos?). The plane sole, lubricated with water, was used to flatten off the soft building block, and it was then used to take the rust off the iron.</description></item><item><title>Motorcycle Alarm</title><link>https://2e0byo.github.io/post/electronics/motorcycle-alarm/</link><pubDate>Thu, 19 Aug 2021 18:45:21 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/motorcycle-alarm/</guid><description>Apparently one of the local bike thieves was eyeing up the bike. Certainly a car was driving down the road, crawling opposite the bike, and then driving off again. Having had one bike nicked I didn&amp;rsquo;t much fancy losing another. Thus we had to make the house look a lot more secure in a hurry; and the shops were closing that evening and not reopening till Tuesday. For it was the New Year.</description></item><item><title>Reroofing a concrete shed</title><link>https://2e0byo.github.io/post/building/shed-roof/</link><pubDate>Thu, 19 Aug 2021 16:43:36 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/building/shed-roof/</guid><description>We have a brick built shed with a concrete roof, which serves me as workshop. Unfortunately when we moved in the torched on felt (the proper three-layer system) had died in a large part, and water could make its way inside. Thus it needed re-roofing.
-Now, whilst I have no experience roofing beyond tacking down felt on wooden roofs (which is infinitely simpler than what ended up happening), I immediately decided to volunteer to re-roof it if the landlord would pay.</description></item><item><title>Overzealous Zip Repair</title><link>https://2e0byo.github.io/post/engineering/zip/</link><pubDate>Thu, 19 Aug 2021 16:09:50 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/zip/</guid><description>What do you do with a broken zipper? Especially early in the morning (i.e. around 1am).
-Here is one way to repair a zip, preserving the latching effect to stop it falling down by itself. The wire rope (from ordinary copper stranded hookup wire) pulls the latching tooth, and the fairlead (made from two very small screws and some more wire soldered in place) converts enough of the tension into downwards force to move the zip.</description></item><item><title>Sunrise Lamp</title><link>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</link><pubDate>Thu, 19 Aug 2021 13:28:58 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</guid><description>Every project is a prototype, which calls out for a second version avoiding the mistakes of the former. The trick is to give the prototypes away; then one has a legitimate excuse to make another&amp;mdash;and one gains an (undeserved) reputation for generosity to boot. After the quick sunrise alarm clock various things happened, including a &amp;rsquo;two week lockdown&amp;rsquo; to build up capacity in the NHS, which turned into three months. Thus I was stuck in one part of London, and my fiancée in another, and the streets were patrolled by Dobermans with £10,000 fine notices stuck to their teeth.</description></item><item><title>Wedding Carpentry</title><link>https://2e0byo.github.io/post/carpentry/wedding/</link><pubDate>Thu, 12 Aug 2021 18:01:17 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/carpentry/wedding/</guid><description>Due to measures to combat the epidemic of bigamous marriages or something of the kind, we ended up having a wedding reception in the garden. Thus we needed tables, and benches, and things of the kind. Time to put the workbench to work.
-Firstly there was a lorry:
-Then there was a lot of wood:
-The short pieces are legs for the benches; the longer will become benches and trestles (and will replace these horrible trestles I made earlier).</description></item><item><title>Carpentry Workbench</title><link>https://2e0byo.github.io/post/carpentry/workbench2/</link><pubDate>Wed, 11 Aug 2021 19:14:29 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/carpentry/workbench2/</guid><description>The first shot at a workbench sat dormant for a fair while. Meanwhile it got cold&amp;mdash;very very cold. Then it got wet&amp;mdash;very very wet. Then it got hot&amp;mdash;very very hot. And how did my nice, carefully chosen unwarped 1&amp;quot; planks look after that? A pretty sorry state. Even the laminated legs had moved slightly (next time for lamination I need more glue). Then I discovered that I could get 6x2s from MKM building supplies.</description></item><item><title>Reverse Engineering a Fridge: Part 3</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/</link><pubDate>Sun, 18 Apr 2021 20:04:40 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/</guid><description>OpenFridge has been running the fridge since the first post, which apparently was in January. In that time:
-The fridge has been very cold (in fact so cold I increased the setpoint to 5 degrees and moved the sensor to the bottom) The freezer has been cold, as desired The controller reboots pretty frequently The controller sometimes loses the network connection and can&amp;rsquo;t allocate enough ram to recover it The controller occasionally latches up entirely, even with the software watchdog enabled, and refuses to respond to serial commands.</description></item><item><title>Reverse Engineering a Fridge: Part 2</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/</link><pubDate>Thu, 21 Jan 2021 15:42:44 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/</guid><description>Hardware So we have five mains circuits: the lamp, the fan, the heaters, the compressor, and the &amp;lsquo;superfreeze&amp;rsquo; button, which I think just adds the starting coils permanently. The original controller only switches four of these on the board (the superfreeze is a manual switch), and uses triacs for all except the compressor, which has a 10A relay. Of course, that requires the controller to be attached to the AC neutral, which isn&amp;rsquo;t a great idea with exposed hardware like a prototype balanced on a fridge.</description></item><item><title>Reverse Engineering a Fridge</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/</link><pubDate>Mon, 18 Jan 2021 20:36:37 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/</guid><description>We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:
-I don&amp;rsquo;t mind a bit of swing in the temperature, but that&amp;rsquo;s all over the place. In the meantime the fridge compartment turned into a freezer, albeit not a very good one. Time to take it apart and see what the problem could be.
-Cooling System This fridge-freezer has one fan, two thermistors (one in each compartment), one heat exchange (at the top of the freezer compartment), a duct around the heat exchange/fan which causes air to be drawn from the bottom of the freezer compartment and blown out at the top, recirculating via the door, a &amp;lsquo;superfreeze&amp;rsquo; button which causes it get colder quicker (or possibly just colder) and is to be used &amp;lsquo;when the ambient temperature is below 16 degrees or you want to freeze fresh food&amp;rsquo; and should be used &amp;lsquo;only for 24 hours, but always if the ambient temperature is below 16 degrees&amp;rsquo;, a light (in the fridge compartment), a door switch (in the fridge compartment), an uncalibrated knob to set the fridge temperature, and a power indicator, which never comes on.</description></item><item><title>Cleaning Scanned Pdfs</title><link>https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/</link><pubDate>Sat, 24 Oct 2020 18:01:04 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/</guid><description>This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on&amp;hellip;
-Background Frequently in academia&amp;mdash;and probably in much of the modern world&amp;mdash;one has to handle things which began life as books, hit the glass of a scanner, and became pdfs. Scanning is hard, and unless one has a lot of patience, the resulting pdfs are generally pretty all over the place: sometimes pages are upside down, frequently the book (which was not made to lie flat) does not want to flatten on the glass, and often the scanner has simply picked a nearby standard page size.</description></item><item><title>Toaster</title><link>https://2e0byo.github.io/post/repairs/toaster/</link><pubDate>Sun, 11 Oct 2020 21:01:29 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/toaster/</guid><description>Somebody has bent the toaster. It shouldn’t be looking like this:
-It should be looking rather like this:
-Oh well. It&amp;rsquo;s only mild steel and it bends easily. Some springs got out of place too, but it&amp;rsquo;s easy enough to ping them all back, particularly with the unbent side for comparison. The hard thing is normally taking toasters apart&amp;mdash;cheapy ones are frequently held together with bent metal tabs, which sheer if you try to unbend them&amp;mdash;and of course it&amp;rsquo;s always messy.</description></item><item><title>Thermostat</title><link>https://2e0byo.github.io/post/repairs/thermostat/</link><pubDate>Sun, 11 Oct 2020 20:44:46 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/thermostat/</guid><description>Our thermostat has an annoying feature. If you press any button&amp;mdash;but particularly the ‘OK’ button you have to press a lot to change anything&amp;mdash;it reboots. Worse, it loses everything you’ve just entered. Last night it started doing this without my pressing anything. I first thought a dead battery might be to blame, but even with a steady 3V from my bench power supply it refused to work. I put it aside, and when it came back on ten minutes later, very carefully increased the temperature till it turned on.</description></item><item><title>Microwave Repair and Volume Control</title><link>https://2e0byo.github.io/post/repairs/microwave-repair-and-volume-control/</link><pubDate>Sun, 11 Oct 2020 20:02:51 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/microwave-repair-and-volume-control/</guid><description>My microwave went on the blink, a few days before I got married. It started turning itself on, randomly, as soon as it was plugged in. You could use it&amp;mdash;I did in fact use it&amp;mdash;by putting something inside, waiting for it to turn on, and then opening the door after the required time had elapsed. Hardly ideal. I unplugged it and left it for later&amp;mdash;there were other things to think about after all&amp;hellip;</description></item><item><title>Anti Rsi</title><link>https://2e0byo.github.io/post/coding/anti-rsi/</link><pubDate>Thu, 08 Oct 2020 18:12:00 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/anti-rsi/</guid><description>There are lots of anti-rsi packages out there for windows. I even found a few for Linux. None did what I wanted them to do: to enforce short and long breaks at configurable intervals, allowing me to push them back when I was in the middle of something, but getting increasingly insistent that I actually took them.
-Enter anti-rsi, a python script which does everything an anti-rsi package needs to do and nothing more.</description></item><item><title>Webcam on and Off</title><link>https://2e0byo.github.io/post/computing/webcam-on-and-off/</link><pubDate>Thu, 08 Oct 2020 17:17:55 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/computing/webcam-on-and-off/</guid><description>Currently we are all stuck in front of webcams, at least half the time. I do have a laptop&amp;mdash;a gift from a kind friend&amp;mdash;and it does get used, but the rest of the time I am sitting before two old monitors (one of which recently had to be repaired) and a lovely cherry keyboard: and no webcam. No matter: I’ve a cheapo usb-thing and it works fine. I’ve also an old phone handset from an 80s landline wired into two 3.</description></item><item><title>Workbench: first shot</title><link>https://2e0byo.github.io/post/carpentry/workbench/</link><pubDate>Wed, 07 Oct 2020 15:34:19 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/carpentry/workbench/</guid><description>Background This workbench is built almost exactly to a published design and following the videos. One has to buy the videos. This is the first time I have ever done anything like this, and it was a very good idea. Buy them; watch them; copy them. Unless one is very lucky one simply doesn’t get to watch a good craftsman up close very often, but the ability to pause, zoom, replay, and see exactly how to position your hands and body when paring with a chisel, for example, is worth any amount of textbooks.</description></item><item><title>Volatile Tmp</title><link>https://2e0byo.github.io/post/coding/volatile-tmp/</link><pubDate>Wed, 07 Oct 2020 11:00:07 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/volatile-tmp/</guid><description>What does one do with temporary files? For things one really doesn’t need, there’s /tmp, which is wiped on boot&amp;mdash;though sometimes it’s a ramdisk, and one should be wary of dropping large files into ramdisks. But what about e.g. downloaded isos, pdfs prepared for printing, and the like? Things one needs now, might need tomorrow, but definitely won’t need in a year’s time?
-Like most people I used to use ~/Downloads and go through it (with ncdu) every time it got too large.</description></item><item><title>CLI Countdown Timer</title><link>https://2e0byo.github.io/post/coding/cli-countdown-timer/</link><pubDate>Tue, 29 Sep 2020 13:05:10 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/cli-countdown-timer/</guid><description>I wrote this a while ago, and it’s been in use ever since: a very simple script which counts down (or up) while printing the remaining time. Controlled with standard job control, it’s one up on sleep as you can see how long is left. This is occasionally handy; if I only have ten seconds on the clock before lunch I’ll not start something new, but if I’ve got fifteen it might make sense.</description></item><item><title>Leaving Wordpress</title><link>https://2e0byo.github.io/post/2020-09-28-leaving-wordpress/</link><pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/2020-09-28-leaving-wordpress/</guid><description>Wordpress is a glorious conglomeration of PHP which works very well, PHP which works poorly and PHP which doesn’t work at all. The former is generally written by the Wordpress developers, the next by me, and the latter by me after around 11pm.
-This website existed for a while on wordpress.com. It was the natural choice: everyone uses wordpress to manage blogs, and this is little more than a blog. On the other hand, writing in a web browser is irritating (writing is what text editors are for) and does one really need the whole wordpress architecture to serve a lot of static pages and images?</description></item><item><title>Shaver Repair</title><link>https://2e0byo.github.io/post/repairs/shaver-repair/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/shaver-repair/</guid><description>My father’s electric shaver wasn’t holding charge; he asked if I could have a look at it and see if the internal battery could be replaced. Here’s the exploded view:
-The green battery is a NiMH, not NiCad as I&amp;rsquo;d expected. I suppose it&amp;rsquo;s not that old. Which is as well, as I couldn&amp;rsquo;t find any NiCads in the drawer when hunting around before, and was planning on gutting it and fitting a LiPo battery and tiny charging module.</description></item><item><title>Quick Sunrise Alarm Clock</title><link>https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/</link><pubDate>Tue, 14 Apr 2020 13:42:14 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/</guid><description>This was a sudden impulse last summer: I&amp;rsquo;d seen a &amp;lsquo;sunrise&amp;rsquo; alarm clock (which fades on slowly to simulate sunrise, theoretically bringing you out of deep sleep naturally and waking you up gently). My sister mentioned having difficulty getting up and needing multiple alarm clocks. Ergo.
-First thought: where to get the light? I had a look in the LED parts draw, but it was disappointing, as was the draw of old led torches and bike lights.</description></item><item><title>Networked Clock with Hands</title><link>https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/</link><pubDate>Sun, 12 Jan 2020 22:48:29 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/</guid><description>Dad rather liked my clock. In fact, he went looking for &amp;lsquo;a clock with hands and an adjustable chime&amp;rsquo;. Which, of course, made me wonder whether I could make one.
-The first question was the hands: I liked the leds at the front of mine, and didn&amp;rsquo;t see the point in moving real hands around with a stepper motor or something of the kind. A digital clock should, I think, look digital.</description></item><item><title>Vertical Etching Tank</title><link>https://2e0byo.github.io/post/electronics/vertical-etching-tank/</link><pubDate>Sun, 12 Jan 2020 21:37:18 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/vertical-etching-tank/</guid><description>I don&amp;rsquo;t much like PCBs, but I like wiring ICs up even less. Up till now I&amp;rsquo;ve made boards with the toner-transfer-and-any-old-container method. The trouble is that I hate making up ferric cholride and always make the bare minimum, and during etching the concentration falls off, the rate slows, and you get poor definition and damage. So I decided to make a proper vertical etching tank, big enough to do a large board and still not run out of etchant.</description></item><item><title>Networked Alarm Clock</title><link>https://2e0byo.github.io/post/electronics/clocks/networked-alarm-clock/</link><pubDate>Sun, 12 Jan 2020 21:23:04 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clocks/networked-alarm-clock/</guid><description>This project began when the noise of the ethernet switch opposite my college room became unbearable. I picked the room for the view, which was sublime: the valley falls away so steeply you can see right down, over the trees, to the river, and climbs again the far side in a steeply wooded bank over which the pigeons perform what I can only describe as buzzing runs on the squirells. In the distance, the rolling hills, at night the moon and by day the sun—morning and evening, opposite corners of the window.</description></item><item><title>How to Move a Piano</title><link>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</link><pubDate>Sun, 12 Jan 2020 20:07:44 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</guid><description>Moving is not much fun. Moving pianos is even less fun: you have all the difficulty of moving a 300kg object coupled with the worry that you&amp;rsquo;ll twist it out of shape, drop it, strain it, or just shake it too much.
-Moving, however, just round the corner—700yds, according to Google—is at least easier than moving halfway round the world. But moving a piano 700yds is not apparently any easier than moving it 300 miles: you can&amp;rsquo;t wheel it, not on those little coasters, or even on a furniture dolly.</description></item><item><title>How To Break a Freezer</title><link>https://2e0byo.github.io/post/repairs/how-to-break-a-freezer/</link><pubDate>Sun, 28 Jul 2019 13:52:03 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/how-to-break-a-freezer/</guid><description>I arrived back yesterday to discover that the fridge, or more specifically the fridge-freezer, had been off for at least a week.1 The same week, coincidentally, that temperatures in the range of southern France on a cool day have lead to pantograph cables all falling off. Oops. Hopefully the repairs will be more heat-tolerant&amp;hellip; Thus in this heat wave2—well, it was certainly warm—the inside of the fridge/freezer got to goodness knows what temperature (fridges make good beer-brewing ovens, as google will show).</description></item><item><title>CoffeePot, short and stout; here's my handle...</title><link>https://2e0byo.github.io/post/repairs/coffeepot-short-and-stout-heres-my-handle/</link><pubDate>Thu, 23 May 2019 18:44:05 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/coffeepot-short-and-stout-heres-my-handle/</guid><description>One should not over-brew one&amp;rsquo;s coffee. This is a fault (mea culpa) I occasionally commit. One should probably not use one&amp;rsquo;s coffee pot to reheat coffee, and if one does, one should pay some attention to how long it is on for. Else it will boil dry, and then that heat has got to go somewhere… In this case, it went into the handle, the silicone rubber seal between the two sections and the knob.</description></item><item><title>Piano Tuning Lever</title><link>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</link><pubDate>Sun, 09 Dec 2018 11:05:15 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</guid><description>I have a piano to tune. And also to restore: a few hammer shafts to bend, hammers to file, a bit of crud to clean out, bridle straps to replace, etc, etc. The piano cost £40 from Ebay and is in remarkably good nick, and any piano is better than none! But an out of tune piano is no good.
-Now students, I feel, should not really spend money having their pianos tuned&amp;mdash;at least, not students of Theology.</description></item><item><title>Radio repair</title><link>https://2e0byo.github.io/post/repairs/radio-repair/</link><pubDate>Sun, 02 Dec 2018 13:55:22 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/radio-repair/</guid><description>The radio we use in the kitchen to make washing up bearable stopped working. Specifically, it wouldn&amp;rsquo;t turn on, but the power LED was constantly flashing on and then fading off. What makes me think the power supply might have died? Lo and behold, after purchasing a cheap multimeter (it&amp;rsquo;s incredible how cheaply one can get some things now: in ten years the price of test equipment has plumetted): the &amp;lsquo;8v&amp;rsquo; output was about 3v, and the &amp;lsquo;15v&amp;rsquo; output was 0v.</description></item><item><title>PdfJam: for more than just pdfs</title><link>https://2e0byo.github.io/post/computing/pdfjam-for-more-than-just-pdfs/</link><pubDate>Sun, 25 Nov 2018 15:48:37 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/computing/pdfjam-for-more-than-just-pdfs/</guid><description>Can we take a moment to remark on how wonderfully useful PdfJam is? Behind the scenes it&amp;rsquo;s just LaTeX. Thus you might be surprised to notice that
-pdfnup --nup 1x1 --paper a5paper --no-landscape image.png Is an excellent way to turn an image—say, a bunch of screenshots of a page which you concatenated with
-convert image1.png image2.png image3.png -append image.png Into (say) an a5 pdf, ready to be turned into a full-length pdf with</description></item><item><title>Bicycle Stand</title><link>https://2e0byo.github.io/post/carpentry/bicycle-stand/</link><pubDate>Wed, 07 Nov 2018 12:04:33 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/carpentry/bicycle-stand/</guid><description>After a few months of balancing my bicycle between two walls where once, it would seem, was a pantry, it got too annoying. Ideally one would like some kind of stand to hold the bike out the way, vertically. The internet turns up many such designs. After a trip around the rather poor selection of wood available at B&amp;amp;Q (the only place open), I settled on something slightly different—an L-shaped half-lapped frame with wooden chocks to space it, and the bicycle balanced with just a small inward turning moment counteracted by its own weight.</description></item><item><title>Napkin Rings</title><link>https://2e0byo.github.io/post/workbench/napkin-rings/</link><pubDate>Fri, 26 Oct 2018 10:00:00 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/workbench/napkin-rings/</guid><description>One expects a student&amp;rsquo;s life to have a certain ascesis to it. One, for instance, does not buy rings for one&amp;rsquo;s napkin, one makes them. And so I procured some cord (the seller considered me carefully and then said that I had a face which permitted me to indulge in sailing, which in turn justified buying cord to tie knots—‘Sailors fiddle’, she said approvingly; though I cannot play the violin). And I procured a helpful video on the tying of 3-lead 8-bight Turks Heads, because I can never remember any of these fancy knots.</description></item><item><title>Clap-clap switch</title><link>https://2e0byo.github.io/post/electronics/clap-clap-switch/</link><pubDate>Wed, 19 Sep 2018 15:33:39 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clap-clap-switch/</guid><description>I&amp;rsquo;ve always thought of those clap-activated switches as a bit of a gimmick&amp;mdash;after all, you can always just move the lightswitch if it&amp;rsquo;s that hard to get at. But currently my mother is hobbling around on crutches, and it suddenly struck me that turning the uplighter on from the doorway would be handy. A rummage through the junkbox found a board—I think from an old washing machine—full of relays, and 5v relays at that, so no need for a voltage multiplier to turn the relay on.</description></item><item><title>ChuffChuff (cheaply)</title><link>https://2e0byo.github.io/post/coding/chuffchuff-cheaply/</link><pubDate>Wed, 29 Aug 2018 08:12:22 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/chuffchuff-cheaply/</guid><description>On a rainy day here I wondered exactly when I should book a ticket up to Durham for another term. Most of the booking websites will help you, but not much: it&amp;rsquo;s tiresome to check a few days to see what the price variation is—and it can be fairly enormous. I was also curious as to what the long term trends might be: they don&amp;rsquo;t just seem to go down. All of which suggested some code to screenscrape all the tickets from somewhere and analyse them.</description></item><item><title>Compiling KiCAD/WxWidgets</title><link>https://2e0byo.github.io/post/computing/compiling-kicad-wxwidgets/</link><pubDate>Mon, 13 Aug 2018 20:52:36 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/computing/compiling-kicad-wxwidgets/</guid><description>Since this has, alongside other things, occupied a whole day, I thought I&amp;rsquo;d put it up here in case anyone else tries. Back in the day KiCAD had a python scripting console. Currently that would be very useful: but it&amp;rsquo;s implemented with gtk2, and everything ships with wxwidgets compiled against gtk3. So we have to compile wxwidgets, which is fairly straightforward: get the sources compile&amp;mdash;except it&amp;rsquo;s not a ./configure, make, make install job: rather a python script calls other python scripts, and so on.</description></item><item><title>Basic Counter</title><link>https://2e0byo.github.io/post/electronics/frequency-counter/basic-counter/</link><pubDate>Thu, 02 Aug 2018 16:04:41 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/frequency-counter/basic-counter/</guid><description>Now that we have a working counter and display the next thing to look at is the timebase. The timebase I built when first working on this counter is odd. It uses, for some reason, a 3.2768MHz crystal divided by (2^16 * 10n) to get a gate pulse which is a multiple of 1s, then further divided and decoded by a 3-to-8 decoder to generate pulses which latch the counter onto the display, and reset the counters.</description></item><item><title>'Off and on again' remotely</title><link>https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/</link><pubDate>Thu, 02 Aug 2018 08:30:53 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/</guid><description>The internet in Durham, which was allowing me to use the workstation there remotely, has gone down; support tell me to &amp;rsquo;turn it off and on again&amp;rsquo;. But obviously I can&amp;rsquo;t do that remotely. Ah well, it wasn&amp;rsquo;t really needed. But what if it were? I&amp;rsquo;ve run servers over unreliable wifi links with good uptime before, with a failsafe script which rebooted everything if it couldn&amp;rsquo;t ping the gateway for too long—and looking at the logs, sometimes it was needed.</description></item><item><title>Display Board</title><link>https://2e0byo.github.io/post/electronics/frequency-counter/display-board/</link><pubDate>Tue, 31 Jul 2018 16:02:59 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/frequency-counter/display-board/</guid><description>I started this peice of test equipment when I was about 15, I think, built the timebase with enthusiasm, the counting chain with a bit less, and then wondered how on earth I was to attach the 7-segment displays. Surely not one wire each?! So the project languished, and eventually got relegated to the shelf without ever being finished. All I had was the breadboard and two schematics which nearly corresponded with what was in front of me:</description></item><item><title>CD Player Line-In</title><link>https://2e0byo.github.io/post/electronics/cd-player-line-in/</link><pubDate>Tue, 31 Jul 2018 12:11:45 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/cd-player-line-in/</guid><description>This is a very simple project indeed: add a line-in input feeding the amplifier in my sister&amp;rsquo;s CD/Tape/Radio, which has much better sound than the &amp;lsquo;device&amp;rsquo; she mainly plays music from. How hard can it be to find the amplifier IC and feed in directly?
-Taking the thing apart was none too hard, and it&amp;rsquo;s cheap &amp;rsquo;90s hardware so all through-hole and single-sided PCB. I found the mode switch, traced it back to the amplifier, paid careful attention to the pinouts and soldered a small cable onto one input, the other end going to a 555 &amp;lsquo;signal generator&amp;rsquo; kit I had lying around.</description></item><item><title>More bookbinding tools</title><link>https://2e0byo.github.io/post/bookbinding/more-bookbinding-tools/</link><pubDate>Thu, 26 Jul 2018 08:12:14 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/bookbinding/more-bookbinding-tools/</guid><description>A while ago I made one of those vices used for bookbinding which is called a &amp;rsquo;lying press&amp;rsquo;, not because it is used to print articles for the Lügendpresse, whoever that might be, but because it is a press and lies down, in a bench called a tub. There are many drawings, etc, all over the internet. My press is a little different: I used old windowsill &amp;lsquo;mahogany&amp;rsquo;, and took advantage of the profile to make one side a &amp;lsquo;backing press&amp;rsquo; with protruding jaws planed away after a picture I found in an old book somewhere.</description></item><item><title>Proof of Concept</title><link>https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/</link><pubDate>Fri, 20 Jul 2018 07:30:59 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/</guid><description>By this point we have all we need for a basic charge, and I do actually need to charge some batteries. I can build a simple current regulator with an LM317 and a resistor, which will be good enough for now.
-No Termination The simplest thing would be just to charge some batteries and log to the computer. There&amp;rsquo;s a marvellous thing out there called FeedGnuPlot which makes graphing realtime or static data so easy one has to resist the temptation to graph everything.</description></item><item><title>PIC Development Board</title><link>https://2e0byo.github.io/post/electronics/pic-development-board/</link><pubDate>Thu, 19 Jul 2018 17:09:12 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/pic-development-board/</guid><description>As part of the Battery Charger project I need a basic PIC dev board. I built one a long time ago for A2 coursework, and I even found the artwork lying around, but the tracks and pads were too small for hand etching and drilling. Trying to open the cad files in KiCad I discovered that they&amp;rsquo;ve changed everything, and half the symbols &amp;lsquo;cannot be found&amp;rsquo;. I&amp;rsquo;ve also completely forgotten how to use KiCad or schematic capture/Pcb design software in general: all pointing to a need to redraw.</description></item><item><title>Background</title><link>https://2e0byo.github.io/post/electronics/battery-charger/background/</link><pubDate>Thu, 19 Jul 2018 12:50:36 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/battery-charger/background/</guid><description>There are lots of &amp;lsquo;smart&amp;rsquo; chargers out there. Most of them boast that they can charge your batteries quicker than the competition, and that a &amp;lsquo;smart&amp;rsquo; algorithm will somehow prevent packing as much current as possible into a cell in the shortest time from having deleterious effects. Slow chargers are harder to come by: there are the cheap constant-current things you run for a certain amount of time—but if your batteries are not absolutely dead they will overcharge, and probably overheat and explode, as mine did.</description></item><item><title>Poor Man's Raspberry Pi</title><link>https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi/</link><pubDate>Thu, 19 Jul 2018 09:58:16 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi/</guid><description>Embedded Linux is currently all the rage with little boards like the Pi running a full-fledged Debian just to flash a few LEDs. Now certainly, the Pi would find uses here, but it&amp;rsquo;s hardly cheap. What is cheap—or even free—is defunct wireless routers. They, too, are embedded systems running Linux. Unlike the Pi they have on-board wifi and an ethernet switch; the cpu isn&amp;rsquo;t usually too bad either. I also picked a few up for £0.</description></item><item><title>Vice Screw</title><link>https://2e0byo.github.io/post/workbench/vice-screw/</link><pubDate>Wed, 11 Jul 2018 15:17:33 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/workbench/vice-screw/</guid><description>About five years ago now I stopped dreaming of a proper bench vice and built one from some old oak kitchen doors I rescued from a skip, an old oak drawer, and long M6 bolts.
-Some day if I find the pictures I might write it up as an example of how not to do it: I dovetailed the two runners on in opposite directions and a whole host of other things.</description></item><item><title>Repairing a Broken Tenon</title><link>https://2e0byo.github.io/post/repairs/repairing-a-broken-tenon/</link><pubDate>Wed, 11 Jul 2018 14:54:31 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/repairing-a-broken-tenon/</guid><description>This posed something of a problem: what do you do when a pinned tenon breaks? The joint was too broken just to glue, neither surface was flat, and the dowels were in the way. In the end I decided to dowel it with three dowls, to leave as much of the broken tenon intact as possible. Dowled joints are easy on flat, square workpeices. On jagged tapering workpeices, now&amp;hellip; With a quarter-inch chisel I cut flats to mark on and marked the three holes on both mortice and tenon.</description></item><item><title>A lesson in Ferric Chloride</title><link>https://2e0byo.github.io/post/workbench/a-lesson-in-ferric-chloride/</link><pubDate>Wed, 11 Jul 2018 14:41:48 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/workbench/a-lesson-in-ferric-chloride/</guid><description>FeCl3 is that stuff we use to etch circuit boards; apparently there are other uses for it too. It etches most things, including, it would seem, the lid of the jar I kept spent etchant in, the M10 studding on the bench underneath, and most surprisingly for me—for my chemistry is rather rusty—the plastic cap of the clamp on the shelf in front of it.
-Here&amp;rsquo;s the damage control: Ferric Damage: it really does etch.</description></item><item><title>Microwave repair</title><link>https://2e0byo.github.io/post/repairs/microwave-repair/</link><pubDate>Wed, 11 Jul 2018 14:24:34 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/microwave-repair/</guid><description>There is a nasty thing out there called &amp;lsquo;built in obsolescence&amp;rsquo;, which is supposed to cure the fact that most things are actually made quite well and would last a long time if left to themselves. Here is a microwave: Well at any rate, there&amp;rsquo;s most of a microwave. The &amp;lsquo;cancel&amp;rsquo; button was no longer working. What makes me think the entire microwave is being held hostage by a £0.03 switch?</description></item><item><title>About</title><link>https://2e0byo.github.io/page/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/page/about/</guid><description>Gardener Joe&amp;mdash;that great and renowned figure&amp;mdash;had a mouth like an &amp;lsquo;O&amp;rsquo;, but of what interest was that alongside his wheelbarrow full of surprises? This website resembles a wheelbarrow in several ways: it is no doubt full of (rather poor) surprises, generally of the how-not-to-do-things variety, it is all balanced rather precariously on one wheel and could pitch over any moment and make a mess, and it is liable to be forgotten for months and then overworked on a hot summer&amp;rsquo;s afternoon.</description></item><item><title>Search</title><link>https://2e0byo.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/search/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jack of All Trades</title><link>https://2e0byo.github.io/</link><description>Recent content on Jack of All Trades</description><generator>Hugo</generator><language>en</language><atom:link href="https://2e0byo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Scooter</title><link>https://2e0byo.github.io/post/repairs/scooter/</link><pubDate>Sat, 14 Dec 2024 15:20:59 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/scooter/</guid><description>&lt;p>Scooter repairs coming here.&lt;/p></description></item><item><title>Too Many Directories</title><link>https://2e0byo.github.io/post/coding/thesis-structure/</link><pubDate>Sat, 04 Mar 2023 18:05:26 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/thesis-structure/</guid><description>&lt;p>My PhD has too many directories in it.&lt;/p>
+&lt;p>I have&amp;mdash;currently&amp;mdash;three parts, and each of those has several chapters. All
+the chapters have been written independently, so I have a structure which more
+or less looks like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">titlepage.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">thesis.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-- 1.part1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +- 1.chapter1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-- standalone.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-- title.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-- chapter1.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +- 2.chapter2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>etc, only with three parts and sensible names. Each of the chapters builds to
+a separate pdf with &lt;code>standalone.tex&lt;/code>, but now the Final Thing is upon me and I
+needed to write &lt;code>thesis.tex&lt;/code>.&lt;/p></description></item><item><title>Migrating Home Assistant (and thoughts on over-engineering)</title><link>https://2e0byo.github.io/post/coding/homeassistant/</link><pubDate>Tue, 28 Feb 2023 11:19:25 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/homeassistant/</guid><description>&lt;p>Home Automation is largely a gimmic. Even the founder of Home Assistant writes
+&lt;a href="https://www.home-assistant.io/blog/2016/01/19/perfect-home-automation/">blog posts&lt;/a>
+pointing out that turning the lights on from your phone is pretty pointless,
+except for showing off (not that I&amp;rsquo;ve &lt;em>ever&lt;/em> turned a light on from my phone to
+show off&amp;hellip;). &lt;a href="https://danielbkr.net/reasons-for-home-automation/">Another&lt;/a> of
+these posts tries to think of a &lt;em>useful&lt;/em> smart light and comes up with:&lt;/p>
+&lt;blockquote>
+&lt;p>Imagine a brave new world where you walk into a room and the light is already
+on, as you have naturally come to expect after years of living with such a
+technology. When you leave the room the light is turned off and nobody even
+takes note of it because it is completely taken for granted. This leaves you
+more mental capactiy to worry about other things.&lt;/p></description></item><item><title>Hacked</title><link>https://2e0byo.github.io/post/coding/hacked/</link><pubDate>Sat, 12 Nov 2022 23:56:13 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/hacked/</guid><description>&lt;p>I got hacked.&lt;/p>
+&lt;p>There are all kinds of fun exploits people use to get into systems they&amp;rsquo;re not
+supposed to be in. In my case they used &lt;code>ssh&lt;/code>. Normally &lt;code>ssh&lt;/code> is secure. None
+of my passwords are brute-forceable. (Yes, you shouldn&amp;rsquo;t have public-facing
+password ssh&amp;hellip; but that&amp;rsquo;s no fun when you&amp;rsquo;re on someone else&amp;rsquo;s computer and
+need to get in in a hurry.) But in a moment of weakness I had needed a blank
+slate to test an environment regression against. So I did &lt;code>useradd test&lt;/code> with
+the password &lt;code>test&lt;/code>, and set up a home directory and shell. It was only
+supposed to last ten minutes. I suppose I must have been called away.&lt;/p></description></item><item><title>Tracking down a faulty ABS sensor</title><link>https://2e0byo.github.io/post/repairs/abs-sensor/</link><pubDate>Fri, 17 Jun 2022 20:57:41 +0100</pubDate><guid>https://2e0byo.github.io/post/repairs/abs-sensor/</guid><description>&lt;p>Like many ageing Honda Civics our VSA and ABS lights have been coming on
+sporadically for the last few months. Now they&amp;rsquo;re stuck on all the time.&lt;/p>
+&lt;p>First I suspected the battery, so I duly measured the no-load voltage (~12.6V:
+not great, but not awful either), the voltage dip when running the fuel pumps,
+(~11.6V) and the voltage dip when starting (briefly around 10V, but I didn&amp;rsquo;t
+have a scope on it). Yep, the battery is ageing. What about its internal
+resistance? Everyone did this at school, right&amp;mdash;you put a load across the
+battery, measure the current through the load and the voltage across the
+terminals before and after; then you assume that voltage was dropped across the
+internal resistance and do R=V/I. The trouble is that the voltage drop is tiny,
+so you need a reasonable current. I couldn&amp;rsquo;t find any decent loads, but &lt;em>any&lt;/em>
+load will do if you have an ammeter in series, so I disconnected the negative
+lead and used the car itself. Since the alarm promptly started going off (next
+time lock the car door!) that formed one data point, and then I turned the
+running lights on for the other. With the multimeter in relative mode even the
+subtraction was done for me:&lt;/p></description></item><item><title>Ignition Barrel Repair</title><link>https://2e0byo.github.io/post/repairs/ignition-barrel/</link><pubDate>Fri, 31 Dec 2021 12:44:27 +0100</pubDate><guid>https://2e0byo.github.io/post/repairs/ignition-barrel/</guid><description>&lt;p>Halfway down the country, at 7.30 in the morning (having been on the road since
+5.30) the key stopped turning in the ignition. We have an old (&amp;lsquo;06) Honda Civic,
+and the AA man blamed the age. He was able to force the key round, doing much
+the same thing I&amp;rsquo;d been doing, only more effectively, and we drove on, to repeat
+the same rigmarole the next time it was started. The AA had been free (it turned
+out the car had cover from being serviced at a Honda dealership), but a
+locksmith wasn&amp;rsquo;t going to be. Thus I ran to screwfix and bought a screwdriver
+and removed the plastics in a slightly wet carpark in Bedford: but I couldn&amp;rsquo;t
+get the last screw to get the antenna off the barrel, and anyhow it wasn&amp;rsquo;t
+coming without more tools. Thus after fighting for long enough it turned, and
+the car was driven down to London and put in the garage; and we went off on
+holiday.&lt;/p></description></item><item><title>Python Is (sort-of) Functional</title><link>https://2e0byo.github.io/post/coding/python-is-sortof-functional/</link><pubDate>Wed, 24 Nov 2021 12:56:45 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/python-is-sortof-functional/</guid><description>&lt;p>I recently had to parse a csv file which looks like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;#34;key&amp;#34;,&amp;#34;val&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;key&amp;#34;,&amp;#34;val&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;key&amp;#34;,&amp;#34;val&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;col1&amp;#34;,&amp;#34;col2&amp;#34;,&amp;#34;col3&amp;#34;,&amp;#34;col4&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">... row data here
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The obvious, imperative solution would be:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">csv&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">DictReader&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">parse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">props&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">line&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">line&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strip&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">k&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">v&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">line&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strip&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;#34;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;,&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">props&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">k&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">reader&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">DictReader&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">reader&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">props&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">data&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>With the walrus operator we can save a few lines at the cost of non-obvious
+syntax:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">parse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">props&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="n">line&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">next&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strip&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I suppose there might be people who think that is neat.&lt;/p></description></item><item><title>“Modern Authentication”: Outlook365 in Emacs</title><link>https://2e0byo.github.io/post/coding/modern-authentication/</link><pubDate>Fri, 29 Oct 2021 16:37:35 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/modern-authentication/</guid><description>&lt;p>A few weeks ago I received an email from the university stating:&lt;/p>
+&lt;blockquote>
+&lt;p>Further to our previous communication advising about a change to basic
+authentication for Durham mailboxes, on 28th October 2021 we will be removing
+the ability to connect to University email via IMAP and our records indicate
+that you currently access email in this way.&lt;/p>
+&lt;/blockquote>
+&lt;p>This, apparently, is down to the fact that&lt;/p>
+&lt;blockquote>
+&lt;p>Basic authentication is no longer secure enough to support modern working as
+it does not support security features such as Multi-Factor Authentication
+(MFA). Using modern authentication will mean we can protect our mailboxes from
+unauthorised access, however, this does mean that email clients configured to
+use legacy authentication will stop working.&lt;/p></description></item><item><title>ClosedFridge: RIP OpenFridge</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/</link><pubDate>Thu, 14 Oct 2021 12:07:57 +0100</pubDate><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/</guid><description>&lt;p>Refrigerate in peace, OpenFridge.&lt;/p>
+&lt;p>The hardware OpenFridge was controlling is no more. It now looks like this:&lt;/p>
+
+
+
+&lt;div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+	 
+	
+	&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+	&lt;div class="box" >
+	 &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	 &lt;div class="img" style="background-image: url('https://2e0byo.github.io//img/closed-fridge/fridge-burnt.jpg');">
+	 &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/closed-fridge/fridge-burnt.jpg" alt="Heat Exchange"/>
+	 &lt;/div>
+	 &lt;a href="https://2e0byo.github.io/img/closed-fridge/fridge-burnt.jpg" itemprop="contentUrl">&lt;/a>
+	 &lt;figcaption>
+	 &lt;p>Heat Exchange&lt;/p>
+	 &lt;/figcaption>
+	 &lt;/figure>
+	&lt;/div>
+
+	
+	
+	&lt;div class="box" >
+	 &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	 &lt;div class="img" style="background-image: url('https://2e0byo.github.io//img/closed-fridge/door-burnt.jpg');">
+	 &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/closed-fridge/door-burnt.jpg" alt="Door"/>
+	 &lt;/div>
+	 &lt;a href="https://2e0byo.github.io/img/closed-fridge/door-burnt.jpg" itemprop="contentUrl">&lt;/a>
+	 &lt;figcaption>
+	 &lt;p>Door&lt;/p>
+	 &lt;/figcaption>
+	 &lt;/figure>
+	&lt;/div>
+
+
+&lt;/div>
+
+&lt;p>Obviously, it should &lt;em>not&lt;/em> look like this. What follows is a post-mortem,
+because it is worth learning from one&amp;rsquo;s mistakes.&lt;/p>
+&lt;h1 id="the-final-moments-of-a-fridge">The final moments of a fridge&lt;/h1>
+&lt;p>After &lt;a href="https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3">fixing the defrost&lt;/a> I did
+not get around to replacing the blown thermal fuse. The Chinese sensors were
+supplied with some kind of wire which breaks if you so much as look at it, and I
+was afraid I would knock the wire at some point and crash the system. Two
+nights ago, putting something in the fridge, I knocked one block and wondered if
+I had indeed snapped the wire&amp;mdash;but I didn&amp;rsquo;t look. Last night my wife
+complained that the fridge was &amp;lsquo;melting&amp;rsquo;, at which point I assumed the sensor
+had indeed failed, and the fridge had used stale data and failed to cool. No,
+she meant the &lt;em>fridge&lt;/em> was melting, or more specifically the freezer: the
+plastic has melted, flown down into the heat exchange, and then fused in situ.
+The whole thing is now one lump and cannot be separated.&lt;/p></description></item><item><title>Plane Repair</title><link>https://2e0byo.github.io/post/carpentry/plane-repair/</link><pubDate>Sat, 21 Aug 2021 20:43:56 +0200</pubDate><guid>https://2e0byo.github.io/post/carpentry/plane-repair/</guid><description>&lt;p>Exactly how flat does a sharpening stone need to be? Exactly how flat, for that
+matter, does a plane need to be?&lt;/p>
+&lt;p>I&amp;rsquo;m on holiday. Here is a toy plane, a soft building block, and a half brick (not cut by me):&lt;/p>
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/plane-repair/plane1.jpg" alt="/img/plane-repair/plane1.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/plane-repair/plane1.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>The plane started out rather rusty, as did the iron (why do I always forget to
+take &amp;lsquo;before&amp;rsquo; photos?). The plane sole, lubricated with water, was used to
+flatten off the soft building block, and it was then used to take the rust off
+the iron. The half-brick did a much better job of sharpening, but it wasn&amp;rsquo;t
+perfect. Then I found a better stone:&lt;/p></description></item><item><title>Motorcycle Alarm</title><link>https://2e0byo.github.io/post/electronics/motorcycle-alarm/</link><pubDate>Thu, 19 Aug 2021 18:45:21 +0200</pubDate><guid>https://2e0byo.github.io/post/electronics/motorcycle-alarm/</guid><description>&lt;p>Apparently one of the local bike thieves was eyeing up the bike. Certainly a
+car was driving down the road, crawling opposite the bike, and then driving off
+again. Having had one bike nicked I didn&amp;rsquo;t much fancy losing another. Thus we
+had to make the house look a lot more secure in a hurry; and the shops were
+closing that evening and not reopening till Tuesday. For it was the New Year.&lt;/p></description></item><item><title>Reroofing a concrete shed</title><link>https://2e0byo.github.io/post/building/shed-roof/</link><pubDate>Thu, 19 Aug 2021 16:43:36 +0200</pubDate><guid>https://2e0byo.github.io/post/building/shed-roof/</guid><description>&lt;p>We have a brick built shed with a concrete roof, which serves me as workshop.
+Unfortunately when we moved in the torched on felt (the proper
+three-layer system) had died in a large part, and water could make its way
+inside. Thus it needed re-roofing.&lt;/p>
+&lt;p>Now, whilst I have no experience roofing beyond tacking down felt on wooden
+roofs (which is infinitely simpler than what ended up happening), I immediately
+decided to volunteer to re-roof it if the landlord would pay. And since it made
+no sense to do &lt;em>one&lt;/em> side, I offered to do the neighbour&amp;rsquo;s half as well (the
+shed is semi-detached). The reasoning at the time was that a proper reroofing
+job would be at least a grand, and the landlord was unlikely to volunteer that
+for a small leak. More likely he would put some sealer on; the problem would
+reappear; etc. (I have no evidence this would actually be the case as I did not
+ask him. But it&amp;rsquo;s what I&amp;rsquo;d likely do if someone said the shed was
+leaking&amp;mdash;repair it for a year or so and try to get friendly with a roofer in
+the meanwhile.) Whereas I wanted to know the tools and wood inside were
+properly dry. And besides, I&amp;rsquo;d never done anything of the kind.&lt;/p></description></item><item><title>Overzealous Zip Repair</title><link>https://2e0byo.github.io/post/engineering/zip/</link><pubDate>Thu, 19 Aug 2021 16:09:50 +0200</pubDate><guid>https://2e0byo.github.io/post/engineering/zip/</guid><description>&lt;p>What do you do with a broken zipper? Especially early in the morning (i.e. around 1am).&lt;/p>
+&lt;p>Here is one way to repair a zip, preserving the latching effect to stop it
+falling down by itself. The wire rope (from ordinary copper stranded hookup
+wire) pulls the latching tooth, and the fairlead (made from two very small
+screws and some more wire soldered in place) converts enough of the tension into
+downwards force to move the zip. I have no idea how it has held up in practice,
+as the coat is my mother&amp;rsquo;s.&lt;/p></description></item><item><title>Sunrise Lamp</title><link>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</link><pubDate>Thu, 19 Aug 2021 13:28:58 +0200</pubDate><guid>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</guid><description>&lt;p>Every project is a prototype, which calls out for a second version avoiding the
+mistakes of the former. The trick is to give the prototypes away; then one has
+a legitimate excuse to make another&amp;mdash;and one gains an (undeserved) reputation
+for generosity to boot. After the &lt;a href="https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock">quick sunrise alarm
+clock&lt;/a> various things
+happened, including a &amp;rsquo;two week lockdown&amp;rsquo; to build up capacity in the NHS,
+which turned into three months. Thus I was stuck in one part of London, and my
+fiancée in another, and the streets were patrolled by Dobermans with £10,000
+fine notices stuck to their teeth. How to get from one side of London to the
+other?&lt;/p></description></item><item><title>Wedding Carpentry</title><link>https://2e0byo.github.io/post/carpentry/wedding/</link><pubDate>Thu, 12 Aug 2021 18:01:17 +0200</pubDate><guid>https://2e0byo.github.io/post/carpentry/wedding/</guid><description>&lt;p>Due to measures to combat the &lt;a href="https://2e0byo.github.io/post/carpentry/workbench2">epidemic of bigamous
+marriages&lt;/a> or something of the kind, we ended up
+having a wedding reception in the garden. Thus we needed tables, and benches,
+and things of the kind. Time to put the workbench to work.&lt;/p>
+&lt;p>Firstly there was a lorry:&lt;/p>
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/wedding/lorry.jpg" alt="/img/wedding/lorry.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/wedding/lorry.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>Then there was a lot of wood:&lt;/p>
+
+
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/wedding/all-wood.jpg" alt="/img/wedding/all-wood.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/wedding/all-wood.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>The short pieces are legs for the benches; the longer will become benches and
+trestles (and will replace these horrible trestles I made earlier). But the OSB
+was even more of a nuisance, so that got sliced up first.&lt;/p></description></item><item><title>Carpentry Workbench</title><link>https://2e0byo.github.io/post/carpentry/workbench2/</link><pubDate>Wed, 11 Aug 2021 19:14:29 +0200</pubDate><guid>https://2e0byo.github.io/post/carpentry/workbench2/</guid><description>&lt;p>&lt;a href="https://2e0byo.github.io/post/carpentry/workbench">The first shot&lt;/a> at a workbench sat dormant for a fair while. Meanwhile it got
+cold&amp;mdash;very very cold. Then it got wet&amp;mdash;very very wet. Then it got hot&amp;mdash;very
+very hot. And how did my nice, carefully chosen unwarped 1&amp;quot; planks look after
+that? A pretty sorry state. Even the laminated legs had moved slightly (next
+time for lamination I need more glue). Then I discovered that I could get 6x2s
+from MKM building supplies. I rang to ask about stock and he checked&amp;mdash;&amp;lsquo;yes,
+I&amp;rsquo;ve got 3,500m in stock at the moment&amp;rsquo;. Madly I decided to take the trolley
+out again. Very madly, as MKM deliver for free, and if you plead with them they
+will select vaguely straight timber for you. Instead of which I lugged this lot
+home:&lt;/p></description></item><item><title>Reverse Engineering a Fridge: Part 3</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/</link><pubDate>Sun, 18 Apr 2021 20:04:40 +0100</pubDate><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/</guid><description>&lt;p>OpenFridge has been running the fridge since the first post, which apparently
+was in January. In that time:&lt;/p>
+&lt;ul>
+&lt;li>The fridge has been very cold (in fact so cold I increased the setpoint to 5
+degrees and moved the sensor to the bottom)&lt;/li>
+&lt;li>The freezer has been cold, as desired&lt;/li>
+&lt;li>The controller reboots pretty frequently&lt;/li>
+&lt;li>The controller sometimes loses the network connection and can&amp;rsquo;t allocate
+enough ram to recover it&lt;/li>
+&lt;li>The controller occasionally latches up entirely, even with the software
+watchdog enabled, and refuses to respond to serial commands.&lt;/li>
+&lt;/ul>
+&lt;p>I speculate that this latter is caused either by 1. brown out/noise/bouncing
+from switching a relay (it almost always happens after switching the compressor
+&lt;em>off&lt;/em>) or 2. noise on the lines causing the ESP32 to enter step/run debugging
+mode. I &amp;lsquo;fixed&amp;rsquo; it by a. adding a 555-based hardware WDT and b. moving the
+relay board ground line to separate the grounds. Unfortunately, the
+&lt;code>RESET_CAUSE&lt;/code> property is not very reliable (reproducible) so I can&amp;rsquo;t really get
+any metrics on how often this is triggering.&lt;/p></description></item><item><title>Reverse Engineering a Fridge: Part 2</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/</link><pubDate>Thu, 21 Jan 2021 15:42:44 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/</guid><description>&lt;h1 id="hardware">Hardware&lt;/h1>
+&lt;p>So we have five mains circuits: the lamp, the fan, the heaters, the
+compressor, and the &amp;lsquo;superfreeze&amp;rsquo; button, which I think just adds the
+starting coils permanently. The original controller only switches
+four of these on the board (the superfreeze is a manual switch), and
+uses triacs for all except the compressor, which has a 10A relay. Of
+course, that requires the controller to be attached to the AC neutral,
+which isn&amp;rsquo;t a great idea with exposed hardware like a prototype
+balanced on a fridge. So we&amp;rsquo;ll use relays for everything: three
+low-current relays, and two great big 15A monsters, all from the
+microwave control board.&lt;/p></description></item><item><title>Reverse Engineering a Fridge</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/</link><pubDate>Mon, 18 Jan 2021 20:36:37 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/</guid><description>&lt;p>We have a Hotpoint FFA52 fridge-freezer. It has previously given
+&lt;a href="https://2e0byo.github.io/post/repairs/how-to-break-a-freezer">much hardship&lt;/a>. It no longer
+works. Here is a graph of a non-working freezer:&lt;/p>
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/broken_freezer_log.png.jpg" alt="/img/broken_freezer_log.png.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/broken_freezer_log.png.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>I don&amp;rsquo;t mind a bit of swing in the temperature, but that&amp;rsquo;s all over
+the place. In the meantime the fridge compartment turned into a
+freezer, albeit not a very good one. Time to take it apart and see
+what the problem could be.&lt;/p>
+&lt;h1 id="cooling-system">Cooling System&lt;/h1>
+&lt;p>This fridge-freezer has one fan, two thermistors (one in each
+compartment), one heat exchange (at the top of the freezer
+compartment), a duct around the heat exchange/fan which causes air to
+be drawn from the bottom of the freezer compartment and blown out at
+the top, recirculating via the door, a &amp;lsquo;superfreeze&amp;rsquo; button which
+causes it get colder quicker (or possibly just colder) and is to be
+used &amp;lsquo;when the ambient temperature is below 16 degrees or you want to
+freeze fresh food&amp;rsquo; and should be used &amp;lsquo;only for 24 hours, but always
+if the ambient temperature is below 16 degrees&amp;rsquo;, a light (in the
+fridge compartment), a door switch (in the fridge compartment), an
+uncalibrated knob to set the fridge temperature, and a power
+indicator, which never comes on. Attached to heat exchange is a
+defrosting coil and a thermal fuse, and another defrosting coil is in
+the polystyrene insulation directly below the heat exchange and in the
+duct.&lt;/p></description></item><item><title>Cleaning Scanned Pdfs</title><link>https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/</link><pubDate>Sat, 24 Oct 2020 18:01:04 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/</guid><description>&lt;blockquote>
+&lt;p>This post is largely a log so I remember how to do it next time, but
+if anyone else has a bunch of scans to convert, read on&amp;hellip;&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="background">Background&lt;/h2>
+&lt;p>Frequently in academia&amp;mdash;and probably in much of the modern
+world&amp;mdash;one has to handle things which began life as books, hit the
+glass of a scanner, and became pdfs. Scanning is hard, and unless one
+has a lot of patience, the resulting pdfs are generally pretty all
+over the place: sometimes pages are upside down, frequently the book
+(which was not made to lie flat) does not want to flatten on the
+glass, and often the scanner has simply picked a nearby standard page
+size.&lt;/p></description></item><item><title>Toaster</title><link>https://2e0byo.github.io/post/repairs/toaster/</link><pubDate>Sun, 11 Oct 2020 21:01:29 +0100</pubDate><guid>https://2e0byo.github.io/post/repairs/toaster/</guid><description>&lt;p>Somebody has bent the toaster. It shouldn’t be looking like this:&lt;/p>
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/toaster/bent1.jpg" alt="/img/toaster/bent1.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/toaster/bent1.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>It should be looking rather like this:&lt;/p>
+
+
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/toaster/unbent.jpg" alt="/img/toaster/unbent.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/toaster/unbent.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>Oh well. It&amp;rsquo;s only mild steel and it bends easily. Some springs got
+out of place too, but it&amp;rsquo;s easy enough to ping them all back,
+particularly with the unbent side for comparison. The hard thing is
+normally taking toasters apart&amp;mdash;cheapy ones are frequently held
+together with bent metal tabs, which sheer if you try to unbend
+them&amp;mdash;and of course it&amp;rsquo;s always messy. But this is a &lt;em>quality&lt;/em>
+toaster. I got it half price, but if a tree fell on it tomorrow I
+would go out and buy the same model. It has the deepest slots of any
+toaster in the local Tescos (and the local Tescos had many
+toasters). I know. I measured them all. (Back then nobody bothered
+you in shops. Now of course they&amp;rsquo;d probably arrest me for touching
+the merchandise and spreading the coronavirus.) And I was going to
+award Russel Hobbs full marks for making something with no hidden
+screws and only standard heads, until lo and behold! there was &lt;em>one&lt;/em>
+hidden screw with a star head. Well I have screwdrivers a lot more
+exotic than star heads, but that&amp;rsquo;s one black mark against Russel
+Hobbs. So the toaster only scores 19/20.&lt;/p></description></item><item><title>Thermostat</title><link>https://2e0byo.github.io/post/repairs/thermostat/</link><pubDate>Sun, 11 Oct 2020 20:44:46 +0100</pubDate><guid>https://2e0byo.github.io/post/repairs/thermostat/</guid><description>&lt;p>Our thermostat has an annoying feature. If you press any button&amp;mdash;but
+particularly the ‘OK’ button you have to press a lot to change
+anything&amp;mdash;it reboots. Worse, it loses everything you’ve just
+entered. Last night it started doing this &lt;em>without&lt;/em> my pressing
+anything. I first thought a dead battery might be to blame, but even
+with a steady 3V from my bench power supply it refused to work. I put
+it aside, and when it came back on ten minutes later, very &lt;em>carefully&lt;/em>
+increased the temperature till it turned on. Here is a dud
+thermostat:&lt;/p></description></item><item><title>Microwave Repair and Volume Control</title><link>https://2e0byo.github.io/post/repairs/microwave-repair-and-volume-control/</link><pubDate>Sun, 11 Oct 2020 20:02:51 +0100</pubDate><guid>https://2e0byo.github.io/post/repairs/microwave-repair-and-volume-control/</guid><description>&lt;p>My microwave went on the blink, a few days before I got married. It
+started turning itself on, randomly, as soon as it was plugged in.
+You could use it&amp;mdash;I did in fact use it&amp;mdash;by putting something inside,
+waiting for it to turn on, and then opening the door after the
+required time had elapsed. Hardly ideal. I unplugged it and left it
+for later&amp;mdash;there were other things to think about after all&amp;hellip;&lt;/p></description></item><item><title>Anti Rsi</title><link>https://2e0byo.github.io/post/coding/anti-rsi/</link><pubDate>Thu, 08 Oct 2020 18:12:00 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/anti-rsi/</guid><description>&lt;p>There are lots of anti-rsi packages out there for windows. I even
+found a few for Linux. None did what I wanted them to do: to enforce
+short and long breaks at configurable intervals, allowing me to push
+them back when I was in the middle of something, but getting
+increasingly insistent that I actually took them.&lt;/p>
+&lt;p>Enter &lt;a href="https://gitlab.com/2e0byo/anti-rsi">anti-rsi&lt;/a>, a python script
+which does everything an anti-rsi package needs to do and nothing
+more. It can be paused, resumed, postponed, and forced to run early.
+It uses some idleprinter (&lt;code>xprintidle&lt;/code>) to keep track of when the
+computer isn’t in use and pause itself. It logs the total time it
+considers that the system has been in use. Communication is by unix
+signals, which is a bit naughty, but I found enough. It will output
+usage when &lt;code>sigpoll&lt;/code>ed to &lt;code>/dev/shm/usage&lt;/code>, which I then pickup with a
+wrapper script for &lt;code>i3status&lt;/code>. It also logs, and I run a few services
+to conglomerate all these logs onto the main workstation and generate
+a nice pretty graph of them with the wonderful
+&lt;a href="http://mpld3.github.io/">mlpd3&lt;/a> which &amp;lsquo;brings matplotlib to the browser&amp;rsquo;.&lt;/p></description></item><item><title>Webcam on and Off</title><link>https://2e0byo.github.io/post/computing/webcam-on-and-off/</link><pubDate>Thu, 08 Oct 2020 17:17:55 +0100</pubDate><guid>https://2e0byo.github.io/post/computing/webcam-on-and-off/</guid><description>&lt;p>Currently we are all stuck in front of webcams, at least half the
+time. I do have a laptop&amp;mdash;a gift from a kind friend&amp;mdash;and it does
+get used, but the rest of the time I am sitting before two old
+monitors (one of which recently had to be repaired) and a lovely
+cherry keyboard: and no webcam. No matter: I’ve a cheapo usb-thing
+and it works fine. I’ve also an old phone handset from an 80s
+landline wired into two 3.5mm jacks&amp;mdash;it had an electret microphone
+and works fine. It gets laughs on zoom, but it’s easier to pick up
+and put down than a headset, and I can hear if anyone’s creeping up
+behind me.&lt;/p></description></item><item><title>Workbench: first shot</title><link>https://2e0byo.github.io/post/carpentry/workbench/</link><pubDate>Wed, 07 Oct 2020 15:34:19 +0100</pubDate><guid>https://2e0byo.github.io/post/carpentry/workbench/</guid><description>&lt;h1 id="background">Background&lt;/h1>
+&lt;p>This workbench is built almost exactly to a &lt;a href="https://www.theenglishwoodworker.com/the-english-workbench/">published
+design&lt;/a>
+and following the videos. One has to &lt;em>buy&lt;/em> the videos. This is the
+first time I have ever done anything like this, and it was a very good
+idea. Buy them; watch them; copy them. Unless one is very lucky one
+simply doesn’t get to watch a good craftsman up close very often, but
+the ability to pause, zoom, replay, and see &lt;em>exactly&lt;/em> how to position
+your hands and body when paring with a chisel, for example, is worth
+any amount of textbooks.&lt;/p></description></item><item><title>Volatile Tmp</title><link>https://2e0byo.github.io/post/coding/volatile-tmp/</link><pubDate>Wed, 07 Oct 2020 11:00:07 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/volatile-tmp/</guid><description>&lt;p>What does one do with temporary files? For things one really doesn’t
+need, there’s &lt;code>/tmp&lt;/code>, which is wiped on boot&amp;mdash;though sometimes it’s a
+ramdisk, and one should be wary of dropping large files into
+ramdisks. But what about e.g. downloaded isos, pdfs prepared for
+printing, and the like? Things one needs &lt;em>now&lt;/em>, might need
+&lt;em>tomorrow&lt;/em>, but definitely won’t need in a year’s time?&lt;/p>
+&lt;p>Like most people I used to use &lt;code>~/Downloads&lt;/code> and go through it (with
+&lt;code>ncdu&lt;/code>) every time it got too large. But this isn’t really
+satisfying: one can accumulate thousands of files each only a megabyte
+in size. I considered using &lt;code>cron&lt;/code> to wipe downloads ever so often,
+but sometimes one wants to keep things.&lt;/p></description></item><item><title>CLI Countdown Timer</title><link>https://2e0byo.github.io/post/coding/cli-countdown-timer/</link><pubDate>Tue, 29 Sep 2020 13:05:10 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/cli-countdown-timer/</guid><description>&lt;p>I wrote this a while ago, and it’s been in use ever since: a very
+simple script which counts down (or up) while printing the remaining
+time. Controlled with standard job control, it’s one up on &lt;code>sleep&lt;/code> as
+you can &lt;em>see how long is left&lt;/em>. This is occasionally handy; if I only
+have ten seconds on the clock before lunch I’ll not start something
+new, but if I’ve got fifteen it might make sense.&lt;/p></description></item><item><title>Leaving Wordpress</title><link>https://2e0byo.github.io/post/2020-09-28-leaving-wordpress/</link><pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate><guid>https://2e0byo.github.io/post/2020-09-28-leaving-wordpress/</guid><description>&lt;p>Wordpress is a glorious conglomeration of PHP which works very well,
+PHP which works poorly and PHP which doesn’t work at all. The former
+is generally written by the Wordpress developers, the next by me, and
+the latter by me after around 11pm.&lt;/p>
+&lt;p>This website existed for a while on wordpress.com. It was the natural
+choice: everyone uses wordpress to manage blogs, and this is little
+more than a blog. On the other hand, writing in a web browser is
+irritating (writing is what text editors are for) and does one really
+need the whole wordpress architecture to serve a lot of static pages
+and images? Wordpress.com won’t even let you install plugins on the
+free tier, so it’s not like I was doing anything with all that dynamic
+ability anyhow.&lt;/p></description></item><item><title>Shaver Repair</title><link>https://2e0byo.github.io/post/repairs/shaver-repair/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/shaver-repair/</guid><description>&lt;p>My father’s electric shaver wasn’t holding charge; he asked if I could
+have a look at it and see if the internal battery could be replaced.
+Here’s the exploded view:&lt;/p>
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/shaver/orig.jpg" alt="/img/shaver/orig.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/shaver/orig.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>The green battery is a NiMH, not NiCad as I&amp;rsquo;d expected. I suppose
+it&amp;rsquo;s not &lt;em>that&lt;/em> old. Which is as well, as I couldn&amp;rsquo;t find any NiCads
+in the drawer when hunting around before, and was planning on gutting
+it and fitting a LiPo battery and tiny charging module.&lt;/p></description></item><item><title>Quick Sunrise Alarm Clock</title><link>https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/</link><pubDate>Tue, 14 Apr 2020 13:42:14 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock/</guid><description>&lt;p>This was a sudden impulse last summer: I&amp;rsquo;d seen a &amp;lsquo;sunrise&amp;rsquo; alarm
+clock (which fades on slowly to simulate sunrise, theoretically
+bringing you out of deep sleep naturally and waking you up gently).
+My sister mentioned having difficulty getting up and needing multiple
+alarm clocks. &lt;em>Ergo.&lt;/em>&lt;/p>
+&lt;p>First thought: where to get the light? I had a look in the LED parts
+draw, but it was disappointing, as was the draw of old led torches and
+bike lights. None of them gave a reasonable light: more like a little
+pin-prick than the sun. So off down the road to the &lt;em>bricolage&lt;/em> shop
+(or bric-a-brack as we call them) and I came back with this:&lt;/p></description></item><item><title>Networked Clock with Hands</title><link>https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/</link><pubDate>Sun, 12 Jan 2020 22:48:29 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/clocks/networked-clock-with-hands/</guid><description>&lt;p>Dad rather liked my clock. In fact, he went looking for &amp;lsquo;a clock with
+hands and an adjustable chime&amp;rsquo;. Which, of course, made me wonder
+whether I could make one.&lt;/p>
+&lt;p>The first question was the hands: I liked
+the leds at the front of mine, and didn&amp;rsquo;t see the point in moving real
+hands around with a stepper motor or something of the kind. A digital
+clock should, I think, look digital. Looking online for things like
+&amp;rsquo;led ring clocks&amp;rsquo; showed the odd design, but none with all three hands
+in one ring, and three rings struck me as a bit much. Thus I started
+looking on farnell for bicolour leds to make the hands out of, and
+found an orange/red led on clearance at around 10p each: and also some
+red/green &lt;em>rectangular&lt;/em> leds. Now, wouldn&amp;rsquo;t it be nice to have the
+&amp;rsquo;ticks&amp;rsquo; in the display differently &lt;em>shaped&lt;/em> as well as coloured?&lt;/p></description></item><item><title>Vertical Etching Tank</title><link>https://2e0byo.github.io/post/electronics/vertical-etching-tank/</link><pubDate>Sun, 12 Jan 2020 21:37:18 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/vertical-etching-tank/</guid><description>&lt;p>I don&amp;rsquo;t much like PCBs, but I like wiring ICs up even less. Up till
+now I&amp;rsquo;ve made boards with the toner-transfer-and-any-old-container
+method. The trouble is that I hate making up ferric cholride and
+always make the bare minimum, and during etching the concentration
+falls off, the rate slows, and you get poor definition and damage. So
+I decided to make a proper vertical etching tank, big enough to do a
+large board and still not run out of etchant. Casting about the shed
+found a large transparent dust-sheet, and I wondered about using it
+for the tank. With care an unpierced section could be found, and a
+bag was taped together:&lt;/p></description></item><item><title>Networked Alarm Clock</title><link>https://2e0byo.github.io/post/electronics/clocks/networked-alarm-clock/</link><pubDate>Sun, 12 Jan 2020 21:23:04 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/clocks/networked-alarm-clock/</guid><description>&lt;p>This project began when the noise of the ethernet switch opposite my
+college room became unbearable. I picked the room for the view, which
+was sublime: the valley falls away so steeply you can see right down,
+over the trees, to the river, and climbs again the far side in a
+steeply wooded bank over which the pigeons perform what I can only
+describe as buzzing runs on the squirells. In the distance, the
+rolling hills, at night the moon and by day the sun—morning and
+evening, opposite corners of the window. Sometimes the outside world
+would come a little
+closer:&lt;/p></description></item><item><title>How to Move a Piano</title><link>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</link><pubDate>Sun, 12 Jan 2020 20:07:44 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</guid><description>&lt;p>Moving is not much fun. Moving pianos is even less fun: you have all
+the difficulty of moving a 300kg object coupled with the worry that
+you&amp;rsquo;ll twist it out of shape, drop it, strain it, or just shake it too
+much.&lt;/p>
+&lt;p>Moving, however, just round the corner—700yds, according to
+Google—is at least easier than moving halfway round the world. But
+moving a piano 700yds is not apparently any easier than moving it 300
+miles: you can&amp;rsquo;t wheel it, not on those little coasters, or even on a
+furniture dolly. And the seven hundred yards in question included one
+gravel drive, a hundred yards of dodgy pavement, three LVAs and two
+sharp corners&amp;mdash;and then a lot of road, not to mention steps at the
+far end. On the other hand, I couldn&amp;rsquo;t find a van for less than £300.
+Split with my housemate that&amp;rsquo;s £150: surely that money could be spent
+on something I could keep at the end of the day?&lt;/p></description></item><item><title>How To Break a Freezer</title><link>https://2e0byo.github.io/post/repairs/how-to-break-a-freezer/</link><pubDate>Sun, 28 Jul 2019 13:52:03 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/how-to-break-a-freezer/</guid><description>&lt;p>I arrived back yesterday to discover that the fridge, or more
+specifically the fridge-freezer, had been off for at least a
+week.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> The same week, coincidentally, that temperatures in the range
+of southern France on a cool day have lead to pantograph cables all
+falling off. Oops. Hopefully the repairs will be more heat-tolerant&amp;hellip;
+Thus in this heat wave&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>—well, it was certainly warm—the inside of the
+fridge/freezer got to goodness knows what temperature (fridges make
+good beer-brewing ovens, as google will show).&lt;/p></description></item><item><title>CoffeePot, short and stout; here's my handle...</title><link>https://2e0byo.github.io/post/repairs/coffeepot-short-and-stout-heres-my-handle/</link><pubDate>Thu, 23 May 2019 18:44:05 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/coffeepot-short-and-stout-heres-my-handle/</guid><description>&lt;p>One should not over-brew one&amp;rsquo;s coffee. This is a fault (mea culpa) I
+occasionally commit. One should &lt;em>probably&lt;/em> not use one&amp;rsquo;s coffee pot to
+reheat coffee, and if one does, one should pay some attention to how
+long it is on for. Else it will boil dry, and then that heat has got
+to go somewhere… In this case, it went into the handle, the silicone
+rubber seal between the two sections and the knob. The handle
+drooped, faded and expired with a great groan. Already it had broken
+off when the pot hit the floor at a velocity not specified in the
+design; now its weakened frame gave up the ghost. (Why do they use
+thermoplastics for these things? Because this aluminium pot cost ~£6.
+But it came with not only an (ungrammatical) warranty, but also a
+spare silicone sealing ring and filter! So all is not lost.) Here is
+the dismembered carcass:&lt;/p></description></item><item><title>Piano Tuning Lever</title><link>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</link><pubDate>Sun, 09 Dec 2018 11:05:15 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</guid><description>&lt;p>I have a piano to tune. And also to restore: a few hammer shafts to
+bend, hammers to file, a bit of crud to clean out, bridle straps to
+replace, etc, etc. The piano cost £40 from Ebay and is in remarkably
+good nick, and &lt;em>any&lt;/em> piano is better than none! But an out of tune
+piano is no good.&lt;/p>
+&lt;p>Now students, I feel, should not really spend money
+having their pianos tuned&amp;mdash;at least, not students of Theology.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> But who
+is to say I cannot tune it myself? So I read a few books (I am doing
+an arts degree after all!) and websites, and it seems a moderately
+competent person with a tuning meter can expect to do a &lt;em>reasonable&lt;/em>
+job in a day—the kind of job a tuner would do in half an hour. I&amp;rsquo;ll
+settle for that: it&amp;rsquo;ll make things infintely more playable, and I
+can&amp;rsquo;t start work regulating an out-of-tune piano. It&amp;rsquo;s just too
+painful on the ear.&lt;/p></description></item><item><title>Radio repair</title><link>https://2e0byo.github.io/post/repairs/radio-repair/</link><pubDate>Sun, 02 Dec 2018 13:55:22 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/radio-repair/</guid><description>&lt;p>The radio we use in the kitchen to make washing up bearable stopped
+working. Specifically, it wouldn&amp;rsquo;t turn on, but the power LED was
+constantly flashing on and then fading off. What makes me think the
+power supply might have died? Lo and behold, after purchasing a cheap
+multimeter (it&amp;rsquo;s incredible how cheaply one can get some things now:
+in ten years the price of test equipment has plumetted): the &amp;lsquo;8v&amp;rsquo;
+output was about 3v, and the &amp;lsquo;15v&amp;rsquo; output was 0v. Hmm. Here&amp;rsquo;s the
+very crude power supply:&lt;/p></description></item><item><title>PdfJam: for more than just pdfs</title><link>https://2e0byo.github.io/post/computing/pdfjam-for-more-than-just-pdfs/</link><pubDate>Sun, 25 Nov 2018 15:48:37 +0000</pubDate><guid>https://2e0byo.github.io/post/computing/pdfjam-for-more-than-just-pdfs/</guid><description>&lt;p>Can we take a moment to remark on how wonderfully useful
+&lt;a href="http://freshmeat.sourceforge.net/projects/pdfjam/">PdfJam&lt;/a> is? Behind
+the scenes it&amp;rsquo;s just LaTeX. Thus you might be surprised to notice
+that&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pdfnup --nup 1x1 --paper a5paper --no-landscape image.png 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Is an excellent way to turn an image—say, a bunch of screenshots of a
+page which you concatenated with&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">convert image1.png image2.png image3.png -append image.png
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Into (say) an a5 pdf, ready to be turned into a full-length pdf with&lt;/p></description></item><item><title>Bicycle Stand</title><link>https://2e0byo.github.io/post/carpentry/bicycle-stand/</link><pubDate>Wed, 07 Nov 2018 12:04:33 +0000</pubDate><guid>https://2e0byo.github.io/post/carpentry/bicycle-stand/</guid><description>&lt;p>After a few months of balancing my bicycle between two walls where
+once, it would seem, was a pantry, it got too annoying. Ideally one
+would like some kind of stand to hold the bike out the way,
+vertically. The internet turns up
+&lt;a href="https://duckduckgo.com/?q=vertical+bike+stand+wood&amp;amp;iar=images&amp;amp;iax=images&amp;amp;ia=images">many&lt;/a>
+such designs. After a trip around the rather poor selection of wood
+available at B&amp;amp;Q (the only place open), I settled on something
+slightly different—an L-shaped half-lapped frame with wooden chocks to
+space it, and the bicycle balanced with just a small &lt;em>inward&lt;/em> turning
+moment counteracted by its own weight.&lt;/p></description></item><item><title>Napkin Rings</title><link>https://2e0byo.github.io/post/workbench/napkin-rings/</link><pubDate>Fri, 26 Oct 2018 10:00:00 +0000</pubDate><guid>https://2e0byo.github.io/post/workbench/napkin-rings/</guid><description>&lt;p>One expects a student&amp;rsquo;s life to have a certain ascesis to it. One,
+for instance, does not &lt;em>buy&lt;/em> rings for one&amp;rsquo;s napkin, one &lt;em>makes&lt;/em> them.
+And so I procured some cord (the seller considered me carefully and
+then said that I had a face which permitted me to indulge in sailing,
+which in turn justified buying cord to tie knots—‘Sailors fiddle’, she
+said approvingly; though I cannot play the violin). And I procured a
+helpful video on the tying of 3-lead 8-bight Turks Heads, because I
+can never remember any of these fancy knots. Yet being a student is no
+cause for shoddy workmanship. It seems I cannot recognise cotton, for
+I tried a butane backsplice. But lo! cotton does not melt. So the
+question is, how small a sailmaker&amp;rsquo;s whipping can you
+make?&lt;/p></description></item><item><title>Clap-clap switch</title><link>https://2e0byo.github.io/post/electronics/clap-clap-switch/</link><pubDate>Wed, 19 Sep 2018 15:33:39 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/clap-clap-switch/</guid><description>&lt;p>I&amp;rsquo;ve always thought of those clap-activated switches as a bit of a
+gimmick&amp;mdash;after all, you can always just move the lightswitch if it&amp;rsquo;s
+that hard to get at. But currently my mother is hobbling around on
+crutches, and it suddenly struck me that turning the uplighter on from
+the doorway would be handy. A rummage through the junkbox found a
+board—I think from an old washing machine—full of relays, and 5v
+relays at that, so no need for a voltage multiplier to turn the relay
+on. I also found an old &amp;lsquo;usb charger&amp;rsquo; rated at 1A 4.2V (?!), which is
+thankfully enough to turn on the relay.&lt;/p></description></item><item><title>ChuffChuff (cheaply)</title><link>https://2e0byo.github.io/post/coding/chuffchuff-cheaply/</link><pubDate>Wed, 29 Aug 2018 08:12:22 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/chuffchuff-cheaply/</guid><description>&lt;p>On a rainy day here I wondered exactly when I should book a ticket up
+to Durham for another term. Most of the booking websites will help
+you, but not &lt;em>much&lt;/em>: it&amp;rsquo;s tiresome to check a few days to see what the
+price variation is—and it can be fairly enormous. I was also curious
+as to what the long term trends might be: they don&amp;rsquo;t just seem to go
+down. All of which suggested some code to screenscrape all the tickets
+from somewhere and analyse them. It seems the national rail website
+encodes the query straight into the url (though not as an http query)
+and then sticks the results, in json, in the page served, presumably
+for some javascript to parse later. So all we need is to generate the
+url:&lt;/p></description></item><item><title>Compiling KiCAD/WxWidgets</title><link>https://2e0byo.github.io/post/computing/compiling-kicad-wxwidgets/</link><pubDate>Mon, 13 Aug 2018 20:52:36 +0000</pubDate><guid>https://2e0byo.github.io/post/computing/compiling-kicad-wxwidgets/</guid><description>&lt;p>Since this has, alongside other things, occupied a whole day, I
+thought I&amp;rsquo;d put it up here in case anyone else tries. Back in the day
+KiCAD had a python scripting console. Currently that would be very
+useful: but it&amp;rsquo;s implemented with gtk2, and everything ships with
+wxwidgets compiled against gtk3. So we have to compile wxwidgets,
+which is fairly straightforward: get the
+&lt;a href="https://wiki.wxwidgets.org/Compiling_and_getting_started">sources&lt;/a>
+compile&amp;mdash;except it&amp;rsquo;s not a ./configure, make, make install job:
+rather a python script calls other python scripts, and so on. And of
+course there was a problem: a function whose argument might not be a
+char buffer throws a format-security error, and the whole thing won&amp;rsquo;t
+work. Normally we&amp;rsquo;d just edit the GCC flags and set
+&lt;code>-Wno-format-security&lt;/code>, but how to do that here? I spent ages ag-ing
+around the sources trying to find out where the python code actually
+called gcc, and was about to give up. Then I thought of environment
+variables. In fish (which is not &lt;em>quite&lt;/em> bash-compatible) we do:&lt;/p></description></item><item><title>Basic Counter</title><link>https://2e0byo.github.io/post/electronics/frequency-counter/basic-counter/</link><pubDate>Thu, 02 Aug 2018 16:04:41 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/frequency-counter/basic-counter/</guid><description>&lt;p>Now that we have a working counter and display the next thing to look
+at is the timebase. The timebase I built when first working on this
+counter is odd. It uses, for some reason, a 3.2768MHz crystal divided
+by (2^16 * 10n) to get a gate &lt;em>pulse&lt;/em> which is a multiple of 1s, then
+further divided and decoded by a 3-to-8 decoder to generate pulses
+which latch the counter onto the display, and reset the counters.
+This much was copied from
+&lt;a href="https://books.google.co.uk/books/about/Experimental_Methods_in_RF_Design.html?id=GGUJAAAACAAJ&amp;amp;redir_esc=y">EMRFD&lt;/a>
+but without the intelligence that excellent book expects: obviously,
+this solution is fine for a quick gate but highly tedious for the long
+gates I decided to add, as well as being useless for
+pulse-width-counting, which I wanted to make it do like &lt;a href="http://www.hanssummers.com/counter.html">G0UPL&amp;rsquo;s
+counter&lt;/a>—the other project I
+copied rather blindly. I&amp;rsquo;d be much better off with a 10 or 20MHz
+crystal and drop the needless 2^16 counter. But more on that later
+when I finish it.&lt;/p></description></item><item><title>'Off and on again' remotely</title><link>https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/</link><pubDate>Thu, 02 Aug 2018 08:30:53 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/off-and-on-again-remotely/</guid><description>&lt;p>The internet in Durham, which was allowing me to use the workstation
+there remotely, has gone down; support tell me to &amp;rsquo;turn it off and on
+again&amp;rsquo;. But obviously I can&amp;rsquo;t do that remotely. Ah well, it wasn&amp;rsquo;t
+really needed. But what if it &lt;em>were&lt;/em>? I&amp;rsquo;ve run servers over
+unreliable wifi links with good uptime before, with a failsafe script
+which rebooted everything if it couldn&amp;rsquo;t ping the gateway for too
+long—and looking at the logs, sometimes it was needed. But I can&amp;rsquo;t
+reboot the router (and though I&amp;rsquo;ll replace it, there&amp;rsquo;s little
+opensource DSL firmware, so I&amp;rsquo;m never going to be able to reboot
+the &lt;em>modem&lt;/em>). So what we need is the remote equivalent of pulling the
+plug out and putting it back in again. I have a few of those &lt;a href="https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi">Poor
+Man’s Rasberry
+Pi&lt;/a> boards
+lying around; one could surely be made to pulse a relay if it can&amp;rsquo;t
+ping after a while? But the only relays I have (mainly rescued from a
+faulty boiler) are designed for industrial 24v DC. I hunted for a
+while and then gave up on finding any 12v relays. Isn&amp;rsquo;t there a
+circuit called a voltage doubler? As usual, SM0VPO has some
+&lt;a href="http://www.sm0vpo.com/">information&lt;/a>. I was going to use a 555
+timer, but that shamed me: I can still build a discrete
+multivibrator—it was one of the first circuits I ever built, after
+all. But first off the relay inline in an extension cord. Here I
+made a completely daft error: the box is about 100% too long, because
+I thought the cable exit grommets went the other way round. But
+anyhow, here is how to make a box out of hardboard, that most
+intractable thing:&lt;/p></description></item><item><title>Display Board</title><link>https://2e0byo.github.io/post/electronics/frequency-counter/display-board/</link><pubDate>Tue, 31 Jul 2018 16:02:59 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/frequency-counter/display-board/</guid><description>&lt;p>I started this peice of test equipment when I was about 15, I think,
+built the timebase with enthusiasm, the counting chain with a bit
+less, and then wondered how on earth I was to attach the 7-segment
+displays. Surely not one wire each?! So the project languished, and
+eventually got relegated to the shelf without ever being finished.
+All I had was the breadboard and two schematics which &lt;em>nearly&lt;/em>
+corresponded with what was in front of me:&lt;/p></description></item><item><title>CD Player Line-In</title><link>https://2e0byo.github.io/post/electronics/cd-player-line-in/</link><pubDate>Tue, 31 Jul 2018 12:11:45 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/cd-player-line-in/</guid><description>&lt;p>This is a very simple project indeed: add a line-in input feeding the
+amplifier in my sister&amp;rsquo;s CD/Tape/Radio, which has much better sound
+than the &amp;lsquo;device&amp;rsquo; she mainly plays music from. How hard can it be to
+find the amplifier IC and feed in directly?&lt;/p>
+&lt;p>Taking the thing apart was none too hard, and it&amp;rsquo;s cheap &amp;rsquo;90s hardware
+so all through-hole and single-sided PCB. I found the mode switch,
+traced it back to the amplifier, paid careful attention to the pinouts
+and soldered a small cable onto one input, the other end going to a
+555 &amp;lsquo;signal generator&amp;rsquo; kit I had lying around. Power up: the signal
+generator exploded and the lcd backlight died.&lt;/p></description></item><item><title>More bookbinding tools</title><link>https://2e0byo.github.io/post/bookbinding/more-bookbinding-tools/</link><pubDate>Thu, 26 Jul 2018 08:12:14 +0000</pubDate><guid>https://2e0byo.github.io/post/bookbinding/more-bookbinding-tools/</guid><description>&lt;p>A while ago I made one of those vices used for bookbinding which is
+called a &amp;rsquo;lying press&amp;rsquo;, not because it is used to print articles for
+the Lügendpresse, whoever that might be, but because it is a press and
+lies down, in a bench called a tub. There are many drawings, etc, all
+over the
+&lt;a href="http://www.edenworkshops.com/Lying_Press_And_Plough.html">internet&lt;/a>.
+My press is a little different: I used old windowsill &amp;lsquo;mahogany&amp;rsquo;, and
+took advantage of the profile to make one side a &amp;lsquo;backing press&amp;rsquo; with
+protruding jaws planed away after a picture I found in an old book
+somewhere. Nobody seems much to bother with them these days, but it
+was fun; in fact the whole thing was fun: finished up to a very high
+degree of accuracy entirely with hand tools, including planing all the
+timber square with a marvellous 22&amp;quot; wooden smoothing plane.&lt;/p></description></item><item><title>Proof of Concept</title><link>https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/</link><pubDate>Fri, 20 Jul 2018 07:30:59 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/battery-charger/proof-of-concept/</guid><description>&lt;p>By this point we have all we need for a basic charge, and I do
+actually need to charge some batteries. I can build a simple current
+regulator with an LM317 and a resistor, which will be good enough for
+now.&lt;/p>
+&lt;h1 id="no-termination">No Termination&lt;/h1>
+&lt;p>The simplest thing would be just to charge some batteries and log to
+the computer. There&amp;rsquo;s a marvellous thing out there called
+&lt;a href="https://github.com/dkogan/feedgnuplot">FeedGnuPlot&lt;/a> which makes
+graphing realtime or static data so easy one has to resist the
+temptation to graph everything. But before we can do that, we need to
+be able to read analogue values and throw them over USB.&lt;/p></description></item><item><title>PIC Development Board</title><link>https://2e0byo.github.io/post/electronics/pic-development-board/</link><pubDate>Thu, 19 Jul 2018 17:09:12 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/pic-development-board/</guid><description>&lt;p>As part of the &lt;a href="https://2e0byo.github.io/tags/battery-charger/">Battery Charger&lt;/a>
+project I need a basic PIC dev board. I built one a long time ago for
+A2 coursework, and I even found the artwork lying around, but the
+tracks and pads were too small for hand etching and drilling. Trying
+to open the cad files in KiCad I discovered that they&amp;rsquo;ve changed
+everything, and half the symbols &amp;lsquo;cannot be found&amp;rsquo;. I&amp;rsquo;ve also
+completely forgotten how to use KiCad or schematic capture/Pcb design
+software in general: all pointing to a need to redraw.&lt;/p></description></item><item><title>Background</title><link>https://2e0byo.github.io/post/electronics/battery-charger/background/</link><pubDate>Thu, 19 Jul 2018 12:50:36 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/battery-charger/background/</guid><description>&lt;p>There are lots of &amp;lsquo;smart&amp;rsquo; chargers out there. Most of them boast that
+they can charge your batteries quicker than the competition, and that
+a &amp;lsquo;smart&amp;rsquo; algorithm will somehow prevent packing as much current as
+possible into a cell in the shortest time from having deleterious
+effects. &lt;em>Slow&lt;/em> chargers are harder to come by: there are the cheap
+constant-current things you run for a certain amount of time—but if
+your batteries are not &lt;em>absolutely&lt;/em> dead they &lt;em>will&lt;/em> overcharge, and
+probably overheat and explode, as mine did. So not ideal. A few
+vacations ago, as a break from reading, I converted an old analogue
+ammeter into a basic adjustable-current charger with current and
+voltage read-off. The current regulation is not particularly clever.
+It uses the &amp;rsquo;trick&amp;rsquo; I devised for my AS Electronics coursework&lt;/p></description></item><item><title>Poor Man's Raspberry Pi</title><link>https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi/</link><pubDate>Thu, 19 Jul 2018 09:58:16 +0000</pubDate><guid>https://2e0byo.github.io/post/electronics/poor-mans-raspberry-pi/</guid><description>&lt;p>Embedded Linux is currently all the rage with little boards like the
+Pi running a full-fledged Debian just to flash a few LEDs. Now
+certainly, the Pi would find uses here, but it&amp;rsquo;s hardly cheap. What
+&lt;em>is&lt;/em> cheap—or even free—is defunct wireless routers. They, too, are
+embedded systems running Linux. Unlike the Pi they have on-board wifi
+and an ethernet switch; the cpu isn&amp;rsquo;t usually too bad either. I also
+picked a few up for £0.99 on Ebay. Here&amp;rsquo;s one:&lt;/p></description></item><item><title>Vice Screw</title><link>https://2e0byo.github.io/post/workbench/vice-screw/</link><pubDate>Wed, 11 Jul 2018 15:17:33 +0000</pubDate><guid>https://2e0byo.github.io/post/workbench/vice-screw/</guid><description>&lt;p>About five years ago now I stopped dreaming of a proper bench vice and
+built one from some old oak kitchen doors I rescued from a skip, an
+old oak drawer, and long M6 bolts.&lt;/p>
+&lt;p>Some day if I find the pictures I
+might write it up as an example of how &lt;em>not&lt;/em> to do it: I dovetailed
+the two runners on in opposite directions and a whole host of other
+things. Still, it&amp;rsquo;s a pretty good vice all told except for those M6
+bolts. Of course we should use a proper thread designed for clamping,
+but I&amp;rsquo;ve now left school so it&amp;rsquo;s too late to cut one on one of the
+lathes in the workshop, and have you &lt;em>seen&lt;/em> the prices? I thought
+about replacing it with M10 studding, as used in the bookbinder&amp;rsquo;s
+press, but there&amp;rsquo;s not enough wood on the bottom of the jaws to do it
+without extending them, and I&amp;rsquo;ve never got round to it. So I view the
+screws as expendable and replace them with studding when the thread
+strips.&lt;/p></description></item><item><title>Repairing a Broken Tenon</title><link>https://2e0byo.github.io/post/repairs/repairing-a-broken-tenon/</link><pubDate>Wed, 11 Jul 2018 14:54:31 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/repairing-a-broken-tenon/</guid><description>&lt;p>This posed something of a problem: what do you do when a pinned tenon
+breaks? The joint was too broken just to glue, neither surface was
+flat, and the dowels were in the way. In the end I decided to dowel
+it with three dowls, to leave as much of the broken tenon intact as
+possible. Dowled joints are &lt;em>easy&lt;/em> on flat, square workpeices. On
+jagged tapering workpeices, now&amp;hellip; With a quarter-inch chisel I cut
+flats to mark on and marked the three holes on both mortice and tenon.
+Then I made a jig to make drilling square a bit easier. This
+wood—generic African hardwood—is like fibreboard. The lip and spur
+bit just spun on the surface:&lt;/p></description></item><item><title>A lesson in Ferric Chloride</title><link>https://2e0byo.github.io/post/workbench/a-lesson-in-ferric-chloride/</link><pubDate>Wed, 11 Jul 2018 14:41:48 +0000</pubDate><guid>https://2e0byo.github.io/post/workbench/a-lesson-in-ferric-chloride/</guid><description>&lt;p>FeCl3 is that stuff we use to etch circuit boards; apparently there
+are other &lt;a href="https://en.wikipedia.org/wiki/Iron(III)_chloride">uses&lt;/a> for
+it too. It etches most things, including, it would seem, the lid of
+the jar I kept spent etchant in, the M10 studding on the bench
+underneath, and most surprisingly for me—for my chemistry is rather
+rusty—the plastic cap of the clamp on the shelf in front of it.&lt;/p>
+&lt;p>Here&amp;rsquo;s the damage control:
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/ferric_damage.jpg" alt="/img/ferric_damage.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/ferric_damage.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;figcaption>&lt;h4>Ferric Damage: it really does etch...&lt;/h4>
+ &lt;/figcaption>
+ &lt;/figure>
+&lt;/div>
+&lt;/p></description></item><item><title>Microwave repair</title><link>https://2e0byo.github.io/post/repairs/microwave-repair/</link><pubDate>Wed, 11 Jul 2018 14:24:34 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/microwave-repair/</guid><description>&lt;p>There is a nasty thing out there called &amp;lsquo;built in obsolescence&amp;rsquo;, which
+is supposed to cure the fact that most things are actually made quite
+well and would last a long time if left to themselves. Here is a
+microwave:
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/dscf10791.jpg" alt="/img/dscf10791.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/dscf10791.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+Well at any rate, there&amp;rsquo;s most of a microwave. The &amp;lsquo;cancel&amp;rsquo; button was
+no longer working. What makes me think the entire microwave is being
+held hostage by a £0.03 switch? Let&amp;rsquo;s take the case off and have a
+look:&lt;/p></description></item><item><title>About</title><link>https://2e0byo.github.io/page/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://2e0byo.github.io/page/about/</guid><description>&lt;p>Gardener Joe&amp;mdash;that great and renowned figure&amp;mdash;had a mouth like an
+&amp;lsquo;O&amp;rsquo;, but of what interest was that alongside his wheelbarrow full of
+surprises? This website resembles a wheelbarrow in several ways: it
+is no doubt full of (rather poor) surprises, generally of the
+how-not-to-do-things variety, it is all balanced rather precariously
+on one wheel and could pitch over any moment and make a mess, and it
+is liable to be forgotten for months and then overworked on a hot
+summer&amp;rsquo;s afternoon. It is, in short, a website about things, not
+people or ideas. Now things are infinitely (or rather, categorically)
+less important than people and ideas. It is for that reason I do not
+scatter these latter over the pages of the internet. Ho! anyone who
+thirsts for philosophical or theological ramblings, let him seek
+elsewhere! &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> Fools barge in where Angels fear to tread (for instance,
+in an over-crowded under-tidied workshop).&lt;/p></description></item><item><title>Search</title><link>https://2e0byo.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://2e0byo.github.io/search/</guid><description/></item></channel></rss>

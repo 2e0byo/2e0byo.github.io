@@ -1,6 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lockdown on Jack of All Trades</title><link>https://2e0byo.github.io/tags/lockdown/</link><description>Recent content in Lockdown on Jack of All Trades</description><generator>Hugo -- gohugo.io</generator><managingEditor>2e0byo@gmail.com (John Morris)</managingEditor><webMaster>2e0byo@gmail.com (John Morris)</webMaster><lastBuildDate>Thu, 19 Aug 2021 16:09:50 +0200</lastBuildDate><atom:link href="https://2e0byo.github.io/tags/lockdown/index.xml" rel="self" type="application/rss+xml"/><item><title>Overzealous Zip Repair</title><link>https://2e0byo.github.io/post/engineering/zip/</link><pubDate>Thu, 19 Aug 2021 16:09:50 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/zip/</guid><description>What do you do with a broken zipper? Especially early in the morning (i.e. around 1am).
-Here is one way to repair a zip, preserving the latching effect to stop it falling down by itself. The wire rope (from ordinary copper stranded hookup wire) pulls the latching tooth, and the fairlead (made from two very small screws and some more wire soldered in place) converts enough of the tension into downwards force to move the zip.</description></item><item><title>Sunrise Lamp</title><link>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</link><pubDate>Thu, 19 Aug 2021 13:28:58 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</guid><description>Every project is a prototype, which calls out for a second version avoiding the mistakes of the former. The trick is to give the prototypes away; then one has a legitimate excuse to make another&amp;mdash;and one gains an (undeserved) reputation for generosity to boot. After the quick sunrise alarm clock various things happened, including a &amp;rsquo;two week lockdown&amp;rsquo; to build up capacity in the NHS, which turned into three months. Thus I was stuck in one part of London, and my fiancée in another, and the streets were patrolled by Dobermans with £10,000 fine notices stuck to their teeth.</description></item><item><title>Wedding Carpentry</title><link>https://2e0byo.github.io/post/carpentry/wedding/</link><pubDate>Thu, 12 Aug 2021 18:01:17 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/carpentry/wedding/</guid><description>Due to measures to combat the epidemic of bigamous marriages or something of the kind, we ended up having a wedding reception in the garden. Thus we needed tables, and benches, and things of the kind. Time to put the workbench to work.
-Firstly there was a lorry:
-Then there was a lot of wood:
-The short pieces are legs for the benches; the longer will become benches and trestles (and will replace these horrible trestles I made earlier).</description></item><item><title>Carpentry Workbench</title><link>https://2e0byo.github.io/post/carpentry/workbench2/</link><pubDate>Wed, 11 Aug 2021 19:14:29 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/carpentry/workbench2/</guid><description>The first shot at a workbench sat dormant for a fair while. Meanwhile it got cold&amp;mdash;very very cold. Then it got wet&amp;mdash;very very wet. Then it got hot&amp;mdash;very very hot. And how did my nice, carefully chosen unwarped 1&amp;quot; planks look after that? A pretty sorry state. Even the laminated legs had moved slightly (next time for lamination I need more glue). Then I discovered that I could get 6x2s from MKM building supplies.</description></item><item><title>Workbench: first shot</title><link>https://2e0byo.github.io/post/carpentry/workbench/</link><pubDate>Wed, 07 Oct 2020 15:34:19 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/carpentry/workbench/</guid><description>Background This workbench is built almost exactly to a published design and following the videos. One has to buy the videos. This is the first time I have ever done anything like this, and it was a very good idea. Buy them; watch them; copy them. Unless one is very lucky one simply doesn’t get to watch a good craftsman up close very often, but the ability to pause, zoom, replay, and see exactly how to position your hands and body when paring with a chisel, for example, is worth any amount of textbooks.</description></item><item><title>Shaver Repair</title><link>https://2e0byo.github.io/post/repairs/shaver-repair/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/shaver-repair/</guid><description>My father’s electric shaver wasn’t holding charge; he asked if I could have a look at it and see if the internal battery could be replaced. Here’s the exploded view:
-The green battery is a NiMH, not NiCad as I&amp;rsquo;d expected. I suppose it&amp;rsquo;s not that old. Which is as well, as I couldn&amp;rsquo;t find any NiCads in the drawer when hunting around before, and was planning on gutting it and fitting a LiPo battery and tiny charging module.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lockdown on Jack of All Trades</title><link>https://2e0byo.github.io/tags/lockdown/</link><description>Recent content in Lockdown on Jack of All Trades</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 20 Aug 2021 13:01:26 +0200</lastBuildDate><atom:link href="https://2e0byo.github.io/tags/lockdown/index.xml" rel="self" type="application/rss+xml"/><item><title>Overzealous Zip Repair</title><link>https://2e0byo.github.io/post/engineering/zip/</link><pubDate>Thu, 19 Aug 2021 16:09:50 +0200</pubDate><guid>https://2e0byo.github.io/post/engineering/zip/</guid><description>&lt;p>What do you do with a broken zipper? Especially early in the morning (i.e. around 1am).&lt;/p>
+&lt;p>Here is one way to repair a zip, preserving the latching effect to stop it
+falling down by itself. The wire rope (from ordinary copper stranded hookup
+wire) pulls the latching tooth, and the fairlead (made from two very small
+screws and some more wire soldered in place) converts enough of the tension into
+downwards force to move the zip. I have no idea how it has held up in practice,
+as the coat is my mother&amp;rsquo;s.&lt;/p></description></item><item><title>Sunrise Lamp</title><link>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</link><pubDate>Thu, 19 Aug 2021 13:28:58 +0200</pubDate><guid>https://2e0byo.github.io/post/electronics/clocks/sunrise-lamp/</guid><description>&lt;p>Every project is a prototype, which calls out for a second version avoiding the
+mistakes of the former. The trick is to give the prototypes away; then one has
+a legitimate excuse to make another&amp;mdash;and one gains an (undeserved) reputation
+for generosity to boot. After the &lt;a href="https://2e0byo.github.io/post/electronics/clocks/quick-sunrise-alarm-clock">quick sunrise alarm
+clock&lt;/a> various things
+happened, including a &amp;rsquo;two week lockdown&amp;rsquo; to build up capacity in the NHS,
+which turned into three months. Thus I was stuck in one part of London, and my
+fiancée in another, and the streets were patrolled by Dobermans with £10,000
+fine notices stuck to their teeth. How to get from one side of London to the
+other?&lt;/p></description></item><item><title>Wedding Carpentry</title><link>https://2e0byo.github.io/post/carpentry/wedding/</link><pubDate>Thu, 12 Aug 2021 18:01:17 +0200</pubDate><guid>https://2e0byo.github.io/post/carpentry/wedding/</guid><description>&lt;p>Due to measures to combat the &lt;a href="https://2e0byo.github.io/post/carpentry/workbench2">epidemic of bigamous
+marriages&lt;/a> or something of the kind, we ended up
+having a wedding reception in the garden. Thus we needed tables, and benches,
+and things of the kind. Time to put the workbench to work.&lt;/p>
+&lt;p>Firstly there was a lorry:&lt;/p>
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/wedding/lorry.jpg" alt="/img/wedding/lorry.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/wedding/lorry.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>Then there was a lot of wood:&lt;/p>
+
+
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/wedding/all-wood.jpg" alt="/img/wedding/all-wood.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/wedding/all-wood.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>The short pieces are legs for the benches; the longer will become benches and
+trestles (and will replace these horrible trestles I made earlier). But the OSB
+was even more of a nuisance, so that got sliced up first.&lt;/p></description></item><item><title>Carpentry Workbench</title><link>https://2e0byo.github.io/post/carpentry/workbench2/</link><pubDate>Wed, 11 Aug 2021 19:14:29 +0200</pubDate><guid>https://2e0byo.github.io/post/carpentry/workbench2/</guid><description>&lt;p>&lt;a href="https://2e0byo.github.io/post/carpentry/workbench">The first shot&lt;/a> at a workbench sat dormant for a fair while. Meanwhile it got
+cold&amp;mdash;very very cold. Then it got wet&amp;mdash;very very wet. Then it got hot&amp;mdash;very
+very hot. And how did my nice, carefully chosen unwarped 1&amp;quot; planks look after
+that? A pretty sorry state. Even the laminated legs had moved slightly (next
+time for lamination I need more glue). Then I discovered that I could get 6x2s
+from MKM building supplies. I rang to ask about stock and he checked&amp;mdash;&amp;lsquo;yes,
+I&amp;rsquo;ve got 3,500m in stock at the moment&amp;rsquo;. Madly I decided to take the trolley
+out again. Very madly, as MKM deliver for free, and if you plead with them they
+will select vaguely straight timber for you. Instead of which I lugged this lot
+home:&lt;/p></description></item><item><title>Workbench: first shot</title><link>https://2e0byo.github.io/post/carpentry/workbench/</link><pubDate>Wed, 07 Oct 2020 15:34:19 +0100</pubDate><guid>https://2e0byo.github.io/post/carpentry/workbench/</guid><description>&lt;h1 id="background">Background&lt;/h1>
+&lt;p>This workbench is built almost exactly to a &lt;a href="https://www.theenglishwoodworker.com/the-english-workbench/">published
+design&lt;/a>
+and following the videos. One has to &lt;em>buy&lt;/em> the videos. This is the
+first time I have ever done anything like this, and it was a very good
+idea. Buy them; watch them; copy them. Unless one is very lucky one
+simply doesn’t get to watch a good craftsman up close very often, but
+the ability to pause, zoom, replay, and see &lt;em>exactly&lt;/em> how to position
+your hands and body when paring with a chisel, for example, is worth
+any amount of textbooks.&lt;/p></description></item><item><title>Shaver Repair</title><link>https://2e0byo.github.io/post/repairs/shaver-repair/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/shaver-repair/</guid><description>&lt;p>My father’s electric shaver wasn’t holding charge; he asked if I could
+have a look at it and see if the internal battery could be replaced.
+Here’s the exploded view:&lt;/p>
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/shaver/orig.jpg" alt="/img/shaver/orig.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/shaver/orig.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>The green battery is a NiMH, not NiCad as I&amp;rsquo;d expected. I suppose
+it&amp;rsquo;s not &lt;em>that&lt;/em> old. Which is as well, as I couldn&amp;rsquo;t find any NiCads
+in the drawer when hunting around before, and was planning on gutting
+it and fitting a LiPo battery and tiny charging module.&lt;/p></description></item></channel></rss>

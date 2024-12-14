@@ -1,15 +1,178 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Engineering on Jack of All Trades</title><link>https://2e0byo.github.io/categories/engineering/</link><description>Recent content in Engineering on Jack of All Trades</description><generator>Hugo -- gohugo.io</generator><managingEditor>2e0byo@gmail.com (John Morris)</managingEditor><webMaster>2e0byo@gmail.com (John Morris)</webMaster><atom:link href="https://2e0byo.github.io/categories/engineering/index.xml" rel="self" type="application/rss+xml"/><item><title>Tracking down a faulty ABS sensor</title><link>https://2e0byo.github.io/post/repairs/abs-sensor/</link><pubDate>Fri, 17 Jun 2022 20:57:41 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/repairs/abs-sensor/</guid><description>Like many ageing Honda Civics our VSA and ABS lights have been coming on sporadically for the last few months. Now they&amp;rsquo;re stuck on all the time.
-First I suspected the battery, so I duly measured the no-load voltage (~12.6V: not great, but not awful either), the voltage dip when running the fuel pumps, (~11.6V) and the voltage dip when starting (briefly around 10V, but I didn&amp;rsquo;t have a scope on it).</description></item><item><title>ClosedFridge: RIP OpenFridge</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/</link><pubDate>Thu, 14 Oct 2021 12:07:57 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/</guid><description>Refrigerate in peace, OpenFridge.
-The hardware OpenFridge was controlling is no more. It now looks like this:
-Heat Exchange
-Door
-Obviously, it should not look like this. What follows is a post-mortem, because it is worth learning from one&amp;rsquo;s mistakes.
-The final moments of a fridge After fixing the defrost I did not get around to replacing the blown thermal fuse. The Chinese sensors were supplied with some kind of wire which breaks if you so much as look at it, and I was afraid I would knock the wire at some point and crash the system.</description></item><item><title>Plane Repair</title><link>https://2e0byo.github.io/post/carpentry/plane-repair/</link><pubDate>Sat, 21 Aug 2021 20:43:56 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/carpentry/plane-repair/</guid><description>Exactly how flat does a sharpening stone need to be? Exactly how flat, for that matter, does a plane need to be?
-I&amp;rsquo;m on holiday. Here is a toy plane, a soft building block, and a half brick (not cut by me):
-The plane started out rather rusty, as did the iron (why do I always forget to take &amp;lsquo;before&amp;rsquo; photos?). The plane sole, lubricated with water, was used to flatten off the soft building block, and it was then used to take the rust off the iron.</description></item><item><title>Overzealous Zip Repair</title><link>https://2e0byo.github.io/post/engineering/zip/</link><pubDate>Thu, 19 Aug 2021 16:09:50 +0200</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/zip/</guid><description>What do you do with a broken zipper? Especially early in the morning (i.e. around 1am).
-Here is one way to repair a zip, preserving the latching effect to stop it falling down by itself. The wire rope (from ordinary copper stranded hookup wire) pulls the latching tooth, and the fairlead (made from two very small screws and some more wire soldered in place) converts enough of the tension into downwards force to move the zip.</description></item><item><title>Reverse Engineering a Fridge: Part 3</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/</link><pubDate>Sun, 18 Apr 2021 20:04:40 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/</guid><description>OpenFridge has been running the fridge since the first post, which apparently was in January. In that time:
-The fridge has been very cold (in fact so cold I increased the setpoint to 5 degrees and moved the sensor to the bottom) The freezer has been cold, as desired The controller reboots pretty frequently The controller sometimes loses the network connection and can&amp;rsquo;t allocate enough ram to recover it The controller occasionally latches up entirely, even with the software watchdog enabled, and refuses to respond to serial commands.</description></item><item><title>Reverse Engineering a Fridge: Part 2</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/</link><pubDate>Thu, 21 Jan 2021 15:42:44 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/</guid><description>Hardware So we have five mains circuits: the lamp, the fan, the heaters, the compressor, and the &amp;lsquo;superfreeze&amp;rsquo; button, which I think just adds the starting coils permanently. The original controller only switches four of these on the board (the superfreeze is a manual switch), and uses triacs for all except the compressor, which has a 10A relay. Of course, that requires the controller to be attached to the AC neutral, which isn&amp;rsquo;t a great idea with exposed hardware like a prototype balanced on a fridge.</description></item><item><title>Reverse Engineering a Fridge</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/</link><pubDate>Mon, 18 Jan 2021 20:36:37 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/</guid><description>We have a Hotpoint FFA52 fridge-freezer. It has previously given much hardship. It no longer works. Here is a graph of a non-working freezer:
-I don&amp;rsquo;t mind a bit of swing in the temperature, but that&amp;rsquo;s all over the place. In the meantime the fridge compartment turned into a freezer, albeit not a very good one. Time to take it apart and see what the problem could be.
-Cooling System This fridge-freezer has one fan, two thermistors (one in each compartment), one heat exchange (at the top of the freezer compartment), a duct around the heat exchange/fan which causes air to be drawn from the bottom of the freezer compartment and blown out at the top, recirculating via the door, a &amp;lsquo;superfreeze&amp;rsquo; button which causes it get colder quicker (or possibly just colder) and is to be used &amp;lsquo;when the ambient temperature is below 16 degrees or you want to freeze fresh food&amp;rsquo; and should be used &amp;lsquo;only for 24 hours, but always if the ambient temperature is below 16 degrees&amp;rsquo;, a light (in the fridge compartment), a door switch (in the fridge compartment), an uncalibrated knob to set the fridge temperature, and a power indicator, which never comes on.</description></item><item><title>How to Move a Piano</title><link>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</link><pubDate>Sun, 12 Jan 2020 20:07:44 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</guid><description>Moving is not much fun. Moving pianos is even less fun: you have all the difficulty of moving a 300kg object coupled with the worry that you&amp;rsquo;ll twist it out of shape, drop it, strain it, or just shake it too much.
-Moving, however, just round the corner—700yds, according to Google—is at least easier than moving halfway round the world. But moving a piano 700yds is not apparently any easier than moving it 300 miles: you can&amp;rsquo;t wheel it, not on those little coasters, or even on a furniture dolly.</description></item><item><title>Piano Tuning Lever</title><link>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</link><pubDate>Sun, 09 Dec 2018 11:05:15 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</guid><description>I have a piano to tune. And also to restore: a few hammer shafts to bend, hammers to file, a bit of crud to clean out, bridle straps to replace, etc, etc. The piano cost £40 from Ebay and is in remarkably good nick, and any piano is better than none! But an out of tune piano is no good.
-Now students, I feel, should not really spend money having their pianos tuned&amp;mdash;at least, not students of Theology.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Engineering on Jack of All Trades</title><link>https://2e0byo.github.io/categories/engineering/</link><description>Recent content in Engineering on Jack of All Trades</description><generator>Hugo</generator><language>en</language><atom:link href="https://2e0byo.github.io/categories/engineering/index.xml" rel="self" type="application/rss+xml"/><item><title>Tracking down a faulty ABS sensor</title><link>https://2e0byo.github.io/post/repairs/abs-sensor/</link><pubDate>Fri, 17 Jun 2022 20:57:41 +0100</pubDate><guid>https://2e0byo.github.io/post/repairs/abs-sensor/</guid><description>&lt;p>Like many ageing Honda Civics our VSA and ABS lights have been coming on
+sporadically for the last few months. Now they&amp;rsquo;re stuck on all the time.&lt;/p>
+&lt;p>First I suspected the battery, so I duly measured the no-load voltage (~12.6V:
+not great, but not awful either), the voltage dip when running the fuel pumps,
+(~11.6V) and the voltage dip when starting (briefly around 10V, but I didn&amp;rsquo;t
+have a scope on it). Yep, the battery is ageing. What about its internal
+resistance? Everyone did this at school, right&amp;mdash;you put a load across the
+battery, measure the current through the load and the voltage across the
+terminals before and after; then you assume that voltage was dropped across the
+internal resistance and do R=V/I. The trouble is that the voltage drop is tiny,
+so you need a reasonable current. I couldn&amp;rsquo;t find any decent loads, but &lt;em>any&lt;/em>
+load will do if you have an ammeter in series, so I disconnected the negative
+lead and used the car itself. Since the alarm promptly started going off (next
+time lock the car door!) that formed one data point, and then I turned the
+running lights on for the other. With the multimeter in relative mode even the
+subtraction was done for me:&lt;/p></description></item><item><title>ClosedFridge: RIP OpenFridge</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/</link><pubDate>Thu, 14 Oct 2021 12:07:57 +0100</pubDate><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge4/</guid><description>&lt;p>Refrigerate in peace, OpenFridge.&lt;/p>
+&lt;p>The hardware OpenFridge was controlling is no more. It now looks like this:&lt;/p>
+
+
+
+&lt;div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+	 
+	
+	&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+	&lt;div class="box" >
+	 &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	 &lt;div class="img" style="background-image: url('https://2e0byo.github.io//img/closed-fridge/fridge-burnt.jpg');">
+	 &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/closed-fridge/fridge-burnt.jpg" alt="Heat Exchange"/>
+	 &lt;/div>
+	 &lt;a href="https://2e0byo.github.io/img/closed-fridge/fridge-burnt.jpg" itemprop="contentUrl">&lt;/a>
+	 &lt;figcaption>
+	 &lt;p>Heat Exchange&lt;/p>
+	 &lt;/figcaption>
+	 &lt;/figure>
+	&lt;/div>
+
+	
+	
+	&lt;div class="box" >
+	 &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	 &lt;div class="img" style="background-image: url('https://2e0byo.github.io//img/closed-fridge/door-burnt.jpg');">
+	 &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/closed-fridge/door-burnt.jpg" alt="Door"/>
+	 &lt;/div>
+	 &lt;a href="https://2e0byo.github.io/img/closed-fridge/door-burnt.jpg" itemprop="contentUrl">&lt;/a>
+	 &lt;figcaption>
+	 &lt;p>Door&lt;/p>
+	 &lt;/figcaption>
+	 &lt;/figure>
+	&lt;/div>
+
+
+&lt;/div>
+
+&lt;p>Obviously, it should &lt;em>not&lt;/em> look like this. What follows is a post-mortem,
+because it is worth learning from one&amp;rsquo;s mistakes.&lt;/p>
+&lt;h1 id="the-final-moments-of-a-fridge">The final moments of a fridge&lt;/h1>
+&lt;p>After &lt;a href="https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3">fixing the defrost&lt;/a> I did
+not get around to replacing the blown thermal fuse. The Chinese sensors were
+supplied with some kind of wire which breaks if you so much as look at it, and I
+was afraid I would knock the wire at some point and crash the system. Two
+nights ago, putting something in the fridge, I knocked one block and wondered if
+I had indeed snapped the wire&amp;mdash;but I didn&amp;rsquo;t look. Last night my wife
+complained that the fridge was &amp;lsquo;melting&amp;rsquo;, at which point I assumed the sensor
+had indeed failed, and the fridge had used stale data and failed to cool. No,
+she meant the &lt;em>fridge&lt;/em> was melting, or more specifically the freezer: the
+plastic has melted, flown down into the heat exchange, and then fused in situ.
+The whole thing is now one lump and cannot be separated.&lt;/p></description></item><item><title>Plane Repair</title><link>https://2e0byo.github.io/post/carpentry/plane-repair/</link><pubDate>Sat, 21 Aug 2021 20:43:56 +0200</pubDate><guid>https://2e0byo.github.io/post/carpentry/plane-repair/</guid><description>&lt;p>Exactly how flat does a sharpening stone need to be? Exactly how flat, for that
+matter, does a plane need to be?&lt;/p>
+&lt;p>I&amp;rsquo;m on holiday. Here is a toy plane, a soft building block, and a half brick (not cut by me):&lt;/p>
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/plane-repair/plane1.jpg" alt="/img/plane-repair/plane1.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/plane-repair/plane1.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>The plane started out rather rusty, as did the iron (why do I always forget to
+take &amp;lsquo;before&amp;rsquo; photos?). The plane sole, lubricated with water, was used to
+flatten off the soft building block, and it was then used to take the rust off
+the iron. The half-brick did a much better job of sharpening, but it wasn&amp;rsquo;t
+perfect. Then I found a better stone:&lt;/p></description></item><item><title>Overzealous Zip Repair</title><link>https://2e0byo.github.io/post/engineering/zip/</link><pubDate>Thu, 19 Aug 2021 16:09:50 +0200</pubDate><guid>https://2e0byo.github.io/post/engineering/zip/</guid><description>&lt;p>What do you do with a broken zipper? Especially early in the morning (i.e. around 1am).&lt;/p>
+&lt;p>Here is one way to repair a zip, preserving the latching effect to stop it
+falling down by itself. The wire rope (from ordinary copper stranded hookup
+wire) pulls the latching tooth, and the fairlead (made from two very small
+screws and some more wire soldered in place) converts enough of the tension into
+downwards force to move the zip. I have no idea how it has held up in practice,
+as the coat is my mother&amp;rsquo;s.&lt;/p></description></item><item><title>Reverse Engineering a Fridge: Part 3</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/</link><pubDate>Sun, 18 Apr 2021 20:04:40 +0100</pubDate><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge3/</guid><description>&lt;p>OpenFridge has been running the fridge since the first post, which apparently
+was in January. In that time:&lt;/p>
+&lt;ul>
+&lt;li>The fridge has been very cold (in fact so cold I increased the setpoint to 5
+degrees and moved the sensor to the bottom)&lt;/li>
+&lt;li>The freezer has been cold, as desired&lt;/li>
+&lt;li>The controller reboots pretty frequently&lt;/li>
+&lt;li>The controller sometimes loses the network connection and can&amp;rsquo;t allocate
+enough ram to recover it&lt;/li>
+&lt;li>The controller occasionally latches up entirely, even with the software
+watchdog enabled, and refuses to respond to serial commands.&lt;/li>
+&lt;/ul>
+&lt;p>I speculate that this latter is caused either by 1. brown out/noise/bouncing
+from switching a relay (it almost always happens after switching the compressor
+&lt;em>off&lt;/em>) or 2. noise on the lines causing the ESP32 to enter step/run debugging
+mode. I &amp;lsquo;fixed&amp;rsquo; it by a. adding a 555-based hardware WDT and b. moving the
+relay board ground line to separate the grounds. Unfortunately, the
+&lt;code>RESET_CAUSE&lt;/code> property is not very reliable (reproducible) so I can&amp;rsquo;t really get
+any metrics on how often this is triggering.&lt;/p></description></item><item><title>Reverse Engineering a Fridge: Part 2</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/</link><pubDate>Thu, 21 Jan 2021 15:42:44 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge2/</guid><description>&lt;h1 id="hardware">Hardware&lt;/h1>
+&lt;p>So we have five mains circuits: the lamp, the fan, the heaters, the
+compressor, and the &amp;lsquo;superfreeze&amp;rsquo; button, which I think just adds the
+starting coils permanently. The original controller only switches
+four of these on the board (the superfreeze is a manual switch), and
+uses triacs for all except the compressor, which has a 10A relay. Of
+course, that requires the controller to be attached to the AC neutral,
+which isn&amp;rsquo;t a great idea with exposed hardware like a prototype
+balanced on a fridge. So we&amp;rsquo;ll use relays for everything: three
+low-current relays, and two great big 15A monsters, all from the
+microwave control board.&lt;/p></description></item><item><title>Reverse Engineering a Fridge</title><link>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/</link><pubDate>Mon, 18 Jan 2021 20:36:37 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/reverse-engineering-fridge/</guid><description>&lt;p>We have a Hotpoint FFA52 fridge-freezer. It has previously given
+&lt;a href="https://2e0byo.github.io/post/repairs/how-to-break-a-freezer">much hardship&lt;/a>. It no longer
+works. Here is a graph of a non-working freezer:&lt;/p>
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/broken_freezer_log.png.jpg" alt="/img/broken_freezer_log.png.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/broken_freezer_log.png.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;/figure>
+&lt;/div>
+
+&lt;p>I don&amp;rsquo;t mind a bit of swing in the temperature, but that&amp;rsquo;s all over
+the place. In the meantime the fridge compartment turned into a
+freezer, albeit not a very good one. Time to take it apart and see
+what the problem could be.&lt;/p>
+&lt;h1 id="cooling-system">Cooling System&lt;/h1>
+&lt;p>This fridge-freezer has one fan, two thermistors (one in each
+compartment), one heat exchange (at the top of the freezer
+compartment), a duct around the heat exchange/fan which causes air to
+be drawn from the bottom of the freezer compartment and blown out at
+the top, recirculating via the door, a &amp;lsquo;superfreeze&amp;rsquo; button which
+causes it get colder quicker (or possibly just colder) and is to be
+used &amp;lsquo;when the ambient temperature is below 16 degrees or you want to
+freeze fresh food&amp;rsquo; and should be used &amp;lsquo;only for 24 hours, but always
+if the ambient temperature is below 16 degrees&amp;rsquo;, a light (in the
+fridge compartment), a door switch (in the fridge compartment), an
+uncalibrated knob to set the fridge temperature, and a power
+indicator, which never comes on. Attached to heat exchange is a
+defrosting coil and a thermal fuse, and another defrosting coil is in
+the polystyrene insulation directly below the heat exchange and in the
+duct.&lt;/p></description></item><item><title>How to Move a Piano</title><link>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</link><pubDate>Sun, 12 Jan 2020 20:07:44 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</guid><description>&lt;p>Moving is not much fun. Moving pianos is even less fun: you have all
+the difficulty of moving a 300kg object coupled with the worry that
+you&amp;rsquo;ll twist it out of shape, drop it, strain it, or just shake it too
+much.&lt;/p>
+&lt;p>Moving, however, just round the corner—700yds, according to
+Google—is at least easier than moving halfway round the world. But
+moving a piano 700yds is not apparently any easier than moving it 300
+miles: you can&amp;rsquo;t wheel it, not on those little coasters, or even on a
+furniture dolly. And the seven hundred yards in question included one
+gravel drive, a hundred yards of dodgy pavement, three LVAs and two
+sharp corners&amp;mdash;and then a lot of road, not to mention steps at the
+far end. On the other hand, I couldn&amp;rsquo;t find a van for less than £300.
+Split with my housemate that&amp;rsquo;s £150: surely that money could be spent
+on something I could keep at the end of the day?&lt;/p></description></item><item><title>Piano Tuning Lever</title><link>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</link><pubDate>Sun, 09 Dec 2018 11:05:15 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</guid><description>&lt;p>I have a piano to tune. And also to restore: a few hammer shafts to
+bend, hammers to file, a bit of crud to clean out, bridle straps to
+replace, etc, etc. The piano cost £40 from Ebay and is in remarkably
+good nick, and &lt;em>any&lt;/em> piano is better than none! But an out of tune
+piano is no good.&lt;/p>
+&lt;p>Now students, I feel, should not really spend money
+having their pianos tuned&amp;mdash;at least, not students of Theology.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> But who
+is to say I cannot tune it myself? So I read a few books (I am doing
+an arts degree after all!) and websites, and it seems a moderately
+competent person with a tuning meter can expect to do a &lt;em>reasonable&lt;/em>
+job in a day—the kind of job a tuner would do in half an hour. I&amp;rsquo;ll
+settle for that: it&amp;rsquo;ll make things infintely more playable, and I
+can&amp;rsquo;t start work regulating an out-of-tune piano. It&amp;rsquo;s just too
+painful on the ear.&lt;/p></description></item></channel></rss>

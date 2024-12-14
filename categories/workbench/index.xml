@@ -1,5 +1,71 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workbench on Jack of All Trades</title><link>https://2e0byo.github.io/categories/workbench/</link><description>Recent content in Workbench on Jack of All Trades</description><generator>Hugo -- gohugo.io</generator><managingEditor>2e0byo@gmail.com (John Morris)</managingEditor><webMaster>2e0byo@gmail.com (John Morris)</webMaster><atom:link href="https://2e0byo.github.io/categories/workbench/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Move a Piano</title><link>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</link><pubDate>Sun, 12 Jan 2020 20:07:44 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</guid><description>Moving is not much fun. Moving pianos is even less fun: you have all the difficulty of moving a 300kg object coupled with the worry that you&amp;rsquo;ll twist it out of shape, drop it, strain it, or just shake it too much.
-Moving, however, just round the corner—700yds, according to Google—is at least easier than moving halfway round the world. But moving a piano 700yds is not apparently any easier than moving it 300 miles: you can&amp;rsquo;t wheel it, not on those little coasters, or even on a furniture dolly.</description></item><item><title>Piano Tuning Lever</title><link>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</link><pubDate>Sun, 09 Dec 2018 11:05:15 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</guid><description>I have a piano to tune. And also to restore: a few hammer shafts to bend, hammers to file, a bit of crud to clean out, bridle straps to replace, etc, etc. The piano cost £40 from Ebay and is in remarkably good nick, and any piano is better than none! But an out of tune piano is no good.
-Now students, I feel, should not really spend money having their pianos tuned&amp;mdash;at least, not students of Theology.</description></item><item><title>Napkin Rings</title><link>https://2e0byo.github.io/post/workbench/napkin-rings/</link><pubDate>Fri, 26 Oct 2018 10:00:00 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/workbench/napkin-rings/</guid><description>One expects a student&amp;rsquo;s life to have a certain ascesis to it. One, for instance, does not buy rings for one&amp;rsquo;s napkin, one makes them. And so I procured some cord (the seller considered me carefully and then said that I had a face which permitted me to indulge in sailing, which in turn justified buying cord to tie knots—‘Sailors fiddle’, she said approvingly; though I cannot play the violin). And I procured a helpful video on the tying of 3-lead 8-bight Turks Heads, because I can never remember any of these fancy knots.</description></item><item><title>Vice Screw</title><link>https://2e0byo.github.io/post/workbench/vice-screw/</link><pubDate>Wed, 11 Jul 2018 15:17:33 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/workbench/vice-screw/</guid><description>About five years ago now I stopped dreaming of a proper bench vice and built one from some old oak kitchen doors I rescued from a skip, an old oak drawer, and long M6 bolts.
-Some day if I find the pictures I might write it up as an example of how not to do it: I dovetailed the two runners on in opposite directions and a whole host of other things.</description></item><item><title>A lesson in Ferric Chloride</title><link>https://2e0byo.github.io/post/workbench/a-lesson-in-ferric-chloride/</link><pubDate>Wed, 11 Jul 2018 14:41:48 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/workbench/a-lesson-in-ferric-chloride/</guid><description>FeCl3 is that stuff we use to etch circuit boards; apparently there are other uses for it too. It etches most things, including, it would seem, the lid of the jar I kept spent etchant in, the M10 studding on the bench underneath, and most surprisingly for me—for my chemistry is rather rusty—the plastic cap of the clamp on the shelf in front of it.
-Here&amp;rsquo;s the damage control: Ferric Damage: it really does etch.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workbench on Jack of All Trades</title><link>https://2e0byo.github.io/categories/workbench/</link><description>Recent content in Workbench on Jack of All Trades</description><generator>Hugo</generator><language>en</language><atom:link href="https://2e0byo.github.io/categories/workbench/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Move a Piano</title><link>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</link><pubDate>Sun, 12 Jan 2020 20:07:44 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/how-to-move-a-piano/</guid><description>&lt;p>Moving is not much fun. Moving pianos is even less fun: you have all
+the difficulty of moving a 300kg object coupled with the worry that
+you&amp;rsquo;ll twist it out of shape, drop it, strain it, or just shake it too
+much.&lt;/p>
+&lt;p>Moving, however, just round the corner—700yds, according to
+Google—is at least easier than moving halfway round the world. But
+moving a piano 700yds is not apparently any easier than moving it 300
+miles: you can&amp;rsquo;t wheel it, not on those little coasters, or even on a
+furniture dolly. And the seven hundred yards in question included one
+gravel drive, a hundred yards of dodgy pavement, three LVAs and two
+sharp corners&amp;mdash;and then a lot of road, not to mention steps at the
+far end. On the other hand, I couldn&amp;rsquo;t find a van for less than £300.
+Split with my housemate that&amp;rsquo;s £150: surely that money could be spent
+on something I could keep at the end of the day?&lt;/p></description></item><item><title>Piano Tuning Lever</title><link>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</link><pubDate>Sun, 09 Dec 2018 11:05:15 +0000</pubDate><guid>https://2e0byo.github.io/post/engineering/piano-tuning-lever/</guid><description>&lt;p>I have a piano to tune. And also to restore: a few hammer shafts to
+bend, hammers to file, a bit of crud to clean out, bridle straps to
+replace, etc, etc. The piano cost £40 from Ebay and is in remarkably
+good nick, and &lt;em>any&lt;/em> piano is better than none! But an out of tune
+piano is no good.&lt;/p>
+&lt;p>Now students, I feel, should not really spend money
+having their pianos tuned&amp;mdash;at least, not students of Theology.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> But who
+is to say I cannot tune it myself? So I read a few books (I am doing
+an arts degree after all!) and websites, and it seems a moderately
+competent person with a tuning meter can expect to do a &lt;em>reasonable&lt;/em>
+job in a day—the kind of job a tuner would do in half an hour. I&amp;rsquo;ll
+settle for that: it&amp;rsquo;ll make things infintely more playable, and I
+can&amp;rsquo;t start work regulating an out-of-tune piano. It&amp;rsquo;s just too
+painful on the ear.&lt;/p></description></item><item><title>Napkin Rings</title><link>https://2e0byo.github.io/post/workbench/napkin-rings/</link><pubDate>Fri, 26 Oct 2018 10:00:00 +0000</pubDate><guid>https://2e0byo.github.io/post/workbench/napkin-rings/</guid><description>&lt;p>One expects a student&amp;rsquo;s life to have a certain ascesis to it. One,
+for instance, does not &lt;em>buy&lt;/em> rings for one&amp;rsquo;s napkin, one &lt;em>makes&lt;/em> them.
+And so I procured some cord (the seller considered me carefully and
+then said that I had a face which permitted me to indulge in sailing,
+which in turn justified buying cord to tie knots—‘Sailors fiddle’, she
+said approvingly; though I cannot play the violin). And I procured a
+helpful video on the tying of 3-lead 8-bight Turks Heads, because I
+can never remember any of these fancy knots. Yet being a student is no
+cause for shoddy workmanship. It seems I cannot recognise cotton, for
+I tried a butane backsplice. But lo! cotton does not melt. So the
+question is, how small a sailmaker&amp;rsquo;s whipping can you
+make?&lt;/p></description></item><item><title>Vice Screw</title><link>https://2e0byo.github.io/post/workbench/vice-screw/</link><pubDate>Wed, 11 Jul 2018 15:17:33 +0000</pubDate><guid>https://2e0byo.github.io/post/workbench/vice-screw/</guid><description>&lt;p>About five years ago now I stopped dreaming of a proper bench vice and
+built one from some old oak kitchen doors I rescued from a skip, an
+old oak drawer, and long M6 bolts.&lt;/p>
+&lt;p>Some day if I find the pictures I
+might write it up as an example of how &lt;em>not&lt;/em> to do it: I dovetailed
+the two runners on in opposite directions and a whole host of other
+things. Still, it&amp;rsquo;s a pretty good vice all told except for those M6
+bolts. Of course we should use a proper thread designed for clamping,
+but I&amp;rsquo;ve now left school so it&amp;rsquo;s too late to cut one on one of the
+lathes in the workshop, and have you &lt;em>seen&lt;/em> the prices? I thought
+about replacing it with M10 studding, as used in the bookbinder&amp;rsquo;s
+press, but there&amp;rsquo;s not enough wood on the bottom of the jaws to do it
+without extending them, and I&amp;rsquo;ve never got round to it. So I view the
+screws as expendable and replace them with studding when the thread
+strips.&lt;/p></description></item><item><title>A lesson in Ferric Chloride</title><link>https://2e0byo.github.io/post/workbench/a-lesson-in-ferric-chloride/</link><pubDate>Wed, 11 Jul 2018 14:41:48 +0000</pubDate><guid>https://2e0byo.github.io/post/workbench/a-lesson-in-ferric-chloride/</guid><description>&lt;p>FeCl3 is that stuff we use to etch circuit boards; apparently there
+are other &lt;a href="https://en.wikipedia.org/wiki/Iron(III)_chloride">uses&lt;/a> for
+it too. It etches most things, including, it would seem, the lid of
+the jar I kept spent etchant in, the M10 studding on the bench
+underneath, and most surprisingly for me—for my chemistry is rather
+rusty—the plastic cap of the clamp on the shelf in front of it.&lt;/p>
+&lt;p>Here&amp;rsquo;s the damage control:
+
+&lt;link rel="stylesheet" href="https://2e0byo.github.io/css/hugo-easy-gallery.css" />
+&lt;div class="box" >
+ &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+ &lt;div class="img">
+ &lt;img itemprop="thumbnail" src="https://2e0byo.github.io/img/ferric_damage.jpg" alt="/img/ferric_damage.jpg"/>
+ &lt;/div>
+ &lt;a href="https://2e0byo.github.io/img/ferric_damage.jpg" itemprop="contentUrl">&lt;/a>
+ &lt;figcaption>&lt;h4>Ferric Damage: it really does etch...&lt;/h4>
+ &lt;/figcaption>
+ &lt;/figure>
+&lt;/div>
+&lt;/p></description></item></channel></rss>

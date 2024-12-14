@@ -1,13 +1,131 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Coding on Jack of All Trades</title><link>https://2e0byo.github.io/categories/coding/</link><description>Recent content in Coding on Jack of All Trades</description><generator>Hugo -- gohugo.io</generator><managingEditor>2e0byo@gmail.com (John Morris)</managingEditor><webMaster>2e0byo@gmail.com (John Morris)</webMaster><atom:link href="https://2e0byo.github.io/categories/coding/index.xml" rel="self" type="application/rss+xml"/><item><title>Too Many Directories</title><link>https://2e0byo.github.io/post/coding/thesis-structure/</link><pubDate>Sat, 04 Mar 2023 18:05:26 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/thesis-structure/</guid><description>My PhD has too many directories in it.
-I have&amp;mdash;currently&amp;mdash;three parts, and each of those has several chapters. All the chapters have been written independently, so I have a structure which more or less looks like this:
-titlepage.tex thesis.tex -- 1.part1 | +- 1.chapter1 | +-- standalone.tex +-- title.tex +-- chapter1.tex +- 2.chapter2 etc, only with three parts and sensible names. Each of the chapters builds to a separate pdf with standalone.</description></item><item><title>Migrating Home Assistant (and thoughts on over-engineering)</title><link>https://2e0byo.github.io/post/coding/homeassistant/</link><pubDate>Tue, 28 Feb 2023 11:19:25 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/homeassistant/</guid><description>Home Automation is largely a gimmic. Even the founder of Home Assistant writes blog posts pointing out that turning the lights on from your phone is pretty pointless, except for showing off (not that I&amp;rsquo;ve ever turned a light on from my phone to show off&amp;hellip;). Another of these posts tries to think of a useful smart light and comes up with:
-Imagine a brave new world where you walk into a room and the light is already on, as you have naturally come to expect after years of living with such a technology.</description></item><item><title>Hacked</title><link>https://2e0byo.github.io/post/coding/hacked/</link><pubDate>Sat, 12 Nov 2022 23:56:13 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/hacked/</guid><description>I got hacked.
-There are all kinds of fun exploits people use to get into systems they&amp;rsquo;re not supposed to be in. In my case they used ssh. Normally ssh is secure. None of my passwords are brute-forceable. (Yes, you shouldn&amp;rsquo;t have public-facing password ssh&amp;hellip; but that&amp;rsquo;s no fun when you&amp;rsquo;re on someone else&amp;rsquo;s computer and need to get in in a hurry.) But in a moment of weakness I had needed a blank slate to test an environment regression against.</description></item><item><title>Python Is (sort-of) Functional</title><link>https://2e0byo.github.io/post/coding/python-is-sortof-functional/</link><pubDate>Wed, 24 Nov 2021 12:56:45 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/python-is-sortof-functional/</guid><description>I recently had to parse a csv file which looks like this:
-&amp;#34;key&amp;#34;,&amp;#34;val&amp;#34; &amp;#34;key&amp;#34;,&amp;#34;val&amp;#34; &amp;#34;key&amp;#34;,&amp;#34;val&amp;#34; &amp;#34;col1&amp;#34;,&amp;#34;col2&amp;#34;,&amp;#34;col3&amp;#34;,&amp;#34;col4&amp;#34; ... row data here The obvious, imperative solution would be:
-from csv import DictReader def parse(f): props = {} for line in f: if not line.strip(): break k, v = line.strip().replace(&amp;#39;&amp;#34;&amp;#39;, &amp;#34;&amp;#34;).split(&amp;#34;,&amp;#34;) props[k] = v reader = DictReader(f) data = list(reader) return props, data With the walrus operator we can save a few lines at the cost of non-obvious syntax:</description></item><item><title>“Modern Authentication”: Outlook365 in Emacs</title><link>https://2e0byo.github.io/post/coding/modern-authentication/</link><pubDate>Fri, 29 Oct 2021 16:37:35 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/modern-authentication/</guid><description>A few weeks ago I received an email from the university stating:
-Further to our previous communication advising about a change to basic authentication for Durham mailboxes, on 28th October 2021 we will be removing the ability to connect to University email via IMAP and our records indicate that you currently access email in this way.
-This, apparently, is down to the fact that
-Basic authentication is no longer secure enough to support modern working as it does not support security features such as Multi-Factor Authentication (MFA).</description></item><item><title>Cleaning Scanned Pdfs</title><link>https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/</link><pubDate>Sat, 24 Oct 2020 18:01:04 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/</guid><description>This post is largely a log so I remember how to do it next time, but if anyone else has a bunch of scans to convert, read on&amp;hellip;
-Background Frequently in academia&amp;mdash;and probably in much of the modern world&amp;mdash;one has to handle things which began life as books, hit the glass of a scanner, and became pdfs. Scanning is hard, and unless one has a lot of patience, the resulting pdfs are generally pretty all over the place: sometimes pages are upside down, frequently the book (which was not made to lie flat) does not want to flatten on the glass, and often the scanner has simply picked a nearby standard page size.</description></item><item><title>Anti Rsi</title><link>https://2e0byo.github.io/post/coding/anti-rsi/</link><pubDate>Thu, 08 Oct 2020 18:12:00 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/anti-rsi/</guid><description>There are lots of anti-rsi packages out there for windows. I even found a few for Linux. None did what I wanted them to do: to enforce short and long breaks at configurable intervals, allowing me to push them back when I was in the middle of something, but getting increasingly insistent that I actually took them.
-Enter anti-rsi, a python script which does everything an anti-rsi package needs to do and nothing more.</description></item><item><title>Volatile Tmp</title><link>https://2e0byo.github.io/post/coding/volatile-tmp/</link><pubDate>Wed, 07 Oct 2020 11:00:07 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/volatile-tmp/</guid><description>What does one do with temporary files? For things one really doesn’t need, there’s /tmp, which is wiped on boot&amp;mdash;though sometimes it’s a ramdisk, and one should be wary of dropping large files into ramdisks. But what about e.g. downloaded isos, pdfs prepared for printing, and the like? Things one needs now, might need tomorrow, but definitely won’t need in a year’s time?
-Like most people I used to use ~/Downloads and go through it (with ncdu) every time it got too large.</description></item><item><title>CLI Countdown Timer</title><link>https://2e0byo.github.io/post/coding/cli-countdown-timer/</link><pubDate>Tue, 29 Sep 2020 13:05:10 +0100</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/cli-countdown-timer/</guid><description>I wrote this a while ago, and it’s been in use ever since: a very simple script which counts down (or up) while printing the remaining time. Controlled with standard job control, it’s one up on sleep as you can see how long is left. This is occasionally handy; if I only have ten seconds on the clock before lunch I’ll not start something new, but if I’ve got fifteen it might make sense.</description></item><item><title>ChuffChuff (cheaply)</title><link>https://2e0byo.github.io/post/coding/chuffchuff-cheaply/</link><pubDate>Wed, 29 Aug 2018 08:12:22 +0000</pubDate><author>2e0byo@gmail.com (John Morris)</author><guid>https://2e0byo.github.io/post/coding/chuffchuff-cheaply/</guid><description>On a rainy day here I wondered exactly when I should book a ticket up to Durham for another term. Most of the booking websites will help you, but not much: it&amp;rsquo;s tiresome to check a few days to see what the price variation is—and it can be fairly enormous. I was also curious as to what the long term trends might be: they don&amp;rsquo;t just seem to go down. All of which suggested some code to screenscrape all the tickets from somewhere and analyse them.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Coding on Jack of All Trades</title><link>https://2e0byo.github.io/categories/coding/</link><description>Recent content in Coding on Jack of All Trades</description><generator>Hugo</generator><language>en</language><atom:link href="https://2e0byo.github.io/categories/coding/index.xml" rel="self" type="application/rss+xml"/><item><title>Too Many Directories</title><link>https://2e0byo.github.io/post/coding/thesis-structure/</link><pubDate>Sat, 04 Mar 2023 18:05:26 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/thesis-structure/</guid><description>&lt;p>My PhD has too many directories in it.&lt;/p>
+&lt;p>I have&amp;mdash;currently&amp;mdash;three parts, and each of those has several chapters. All
+the chapters have been written independently, so I have a structure which more
+or less looks like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">titlepage.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">thesis.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-- 1.part1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +- 1.chapter1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-- standalone.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-- title.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-- chapter1.tex
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +- 2.chapter2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>etc, only with three parts and sensible names. Each of the chapters builds to
+a separate pdf with &lt;code>standalone.tex&lt;/code>, but now the Final Thing is upon me and I
+needed to write &lt;code>thesis.tex&lt;/code>.&lt;/p></description></item><item><title>Migrating Home Assistant (and thoughts on over-engineering)</title><link>https://2e0byo.github.io/post/coding/homeassistant/</link><pubDate>Tue, 28 Feb 2023 11:19:25 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/homeassistant/</guid><description>&lt;p>Home Automation is largely a gimmic. Even the founder of Home Assistant writes
+&lt;a href="https://www.home-assistant.io/blog/2016/01/19/perfect-home-automation/">blog posts&lt;/a>
+pointing out that turning the lights on from your phone is pretty pointless,
+except for showing off (not that I&amp;rsquo;ve &lt;em>ever&lt;/em> turned a light on from my phone to
+show off&amp;hellip;). &lt;a href="https://danielbkr.net/reasons-for-home-automation/">Another&lt;/a> of
+these posts tries to think of a &lt;em>useful&lt;/em> smart light and comes up with:&lt;/p>
+&lt;blockquote>
+&lt;p>Imagine a brave new world where you walk into a room and the light is already
+on, as you have naturally come to expect after years of living with such a
+technology. When you leave the room the light is turned off and nobody even
+takes note of it because it is completely taken for granted. This leaves you
+more mental capactiy to worry about other things.&lt;/p></description></item><item><title>Hacked</title><link>https://2e0byo.github.io/post/coding/hacked/</link><pubDate>Sat, 12 Nov 2022 23:56:13 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/hacked/</guid><description>&lt;p>I got hacked.&lt;/p>
+&lt;p>There are all kinds of fun exploits people use to get into systems they&amp;rsquo;re not
+supposed to be in. In my case they used &lt;code>ssh&lt;/code>. Normally &lt;code>ssh&lt;/code> is secure. None
+of my passwords are brute-forceable. (Yes, you shouldn&amp;rsquo;t have public-facing
+password ssh&amp;hellip; but that&amp;rsquo;s no fun when you&amp;rsquo;re on someone else&amp;rsquo;s computer and
+need to get in in a hurry.) But in a moment of weakness I had needed a blank
+slate to test an environment regression against. So I did &lt;code>useradd test&lt;/code> with
+the password &lt;code>test&lt;/code>, and set up a home directory and shell. It was only
+supposed to last ten minutes. I suppose I must have been called away.&lt;/p></description></item><item><title>Python Is (sort-of) Functional</title><link>https://2e0byo.github.io/post/coding/python-is-sortof-functional/</link><pubDate>Wed, 24 Nov 2021 12:56:45 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/python-is-sortof-functional/</guid><description>&lt;p>I recently had to parse a csv file which looks like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;#34;key&amp;#34;,&amp;#34;val&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;key&amp;#34;,&amp;#34;val&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;key&amp;#34;,&amp;#34;val&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;col1&amp;#34;,&amp;#34;col2&amp;#34;,&amp;#34;col3&amp;#34;,&amp;#34;col4&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">... row data here
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The obvious, imperative solution would be:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">csv&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">DictReader&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">parse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">props&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">line&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">line&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strip&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">k&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">v&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">line&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strip&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;#34;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;,&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">props&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">k&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">reader&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">DictReader&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">list&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">reader&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">props&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">data&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>With the walrus operator we can save a few lines at the cost of non-obvious
+syntax:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">parse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">props&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="n">line&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nb">next&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">f&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">strip&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I suppose there might be people who think that is neat.&lt;/p></description></item><item><title>“Modern Authentication”: Outlook365 in Emacs</title><link>https://2e0byo.github.io/post/coding/modern-authentication/</link><pubDate>Fri, 29 Oct 2021 16:37:35 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/modern-authentication/</guid><description>&lt;p>A few weeks ago I received an email from the university stating:&lt;/p>
+&lt;blockquote>
+&lt;p>Further to our previous communication advising about a change to basic
+authentication for Durham mailboxes, on 28th October 2021 we will be removing
+the ability to connect to University email via IMAP and our records indicate
+that you currently access email in this way.&lt;/p>
+&lt;/blockquote>
+&lt;p>This, apparently, is down to the fact that&lt;/p>
+&lt;blockquote>
+&lt;p>Basic authentication is no longer secure enough to support modern working as
+it does not support security features such as Multi-Factor Authentication
+(MFA). Using modern authentication will mean we can protect our mailboxes from
+unauthorised access, however, this does mean that email clients configured to
+use legacy authentication will stop working.&lt;/p></description></item><item><title>Cleaning Scanned Pdfs</title><link>https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/</link><pubDate>Sat, 24 Oct 2020 18:01:04 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/cleaning-scanned-pdfs/</guid><description>&lt;blockquote>
+&lt;p>This post is largely a log so I remember how to do it next time, but
+if anyone else has a bunch of scans to convert, read on&amp;hellip;&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="background">Background&lt;/h2>
+&lt;p>Frequently in academia&amp;mdash;and probably in much of the modern
+world&amp;mdash;one has to handle things which began life as books, hit the
+glass of a scanner, and became pdfs. Scanning is hard, and unless one
+has a lot of patience, the resulting pdfs are generally pretty all
+over the place: sometimes pages are upside down, frequently the book
+(which was not made to lie flat) does not want to flatten on the
+glass, and often the scanner has simply picked a nearby standard page
+size.&lt;/p></description></item><item><title>Anti Rsi</title><link>https://2e0byo.github.io/post/coding/anti-rsi/</link><pubDate>Thu, 08 Oct 2020 18:12:00 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/anti-rsi/</guid><description>&lt;p>There are lots of anti-rsi packages out there for windows. I even
+found a few for Linux. None did what I wanted them to do: to enforce
+short and long breaks at configurable intervals, allowing me to push
+them back when I was in the middle of something, but getting
+increasingly insistent that I actually took them.&lt;/p>
+&lt;p>Enter &lt;a href="https://gitlab.com/2e0byo/anti-rsi">anti-rsi&lt;/a>, a python script
+which does everything an anti-rsi package needs to do and nothing
+more. It can be paused, resumed, postponed, and forced to run early.
+It uses some idleprinter (&lt;code>xprintidle&lt;/code>) to keep track of when the
+computer isn’t in use and pause itself. It logs the total time it
+considers that the system has been in use. Communication is by unix
+signals, which is a bit naughty, but I found enough. It will output
+usage when &lt;code>sigpoll&lt;/code>ed to &lt;code>/dev/shm/usage&lt;/code>, which I then pickup with a
+wrapper script for &lt;code>i3status&lt;/code>. It also logs, and I run a few services
+to conglomerate all these logs onto the main workstation and generate
+a nice pretty graph of them with the wonderful
+&lt;a href="http://mpld3.github.io/">mlpd3&lt;/a> which &amp;lsquo;brings matplotlib to the browser&amp;rsquo;.&lt;/p></description></item><item><title>Volatile Tmp</title><link>https://2e0byo.github.io/post/coding/volatile-tmp/</link><pubDate>Wed, 07 Oct 2020 11:00:07 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/volatile-tmp/</guid><description>&lt;p>What does one do with temporary files? For things one really doesn’t
+need, there’s &lt;code>/tmp&lt;/code>, which is wiped on boot&amp;mdash;though sometimes it’s a
+ramdisk, and one should be wary of dropping large files into
+ramdisks. But what about e.g. downloaded isos, pdfs prepared for
+printing, and the like? Things one needs &lt;em>now&lt;/em>, might need
+&lt;em>tomorrow&lt;/em>, but definitely won’t need in a year’s time?&lt;/p>
+&lt;p>Like most people I used to use &lt;code>~/Downloads&lt;/code> and go through it (with
+&lt;code>ncdu&lt;/code>) every time it got too large. But this isn’t really
+satisfying: one can accumulate thousands of files each only a megabyte
+in size. I considered using &lt;code>cron&lt;/code> to wipe downloads ever so often,
+but sometimes one wants to keep things.&lt;/p></description></item><item><title>CLI Countdown Timer</title><link>https://2e0byo.github.io/post/coding/cli-countdown-timer/</link><pubDate>Tue, 29 Sep 2020 13:05:10 +0100</pubDate><guid>https://2e0byo.github.io/post/coding/cli-countdown-timer/</guid><description>&lt;p>I wrote this a while ago, and it’s been in use ever since: a very
+simple script which counts down (or up) while printing the remaining
+time. Controlled with standard job control, it’s one up on &lt;code>sleep&lt;/code> as
+you can &lt;em>see how long is left&lt;/em>. This is occasionally handy; if I only
+have ten seconds on the clock before lunch I’ll not start something
+new, but if I’ve got fifteen it might make sense.&lt;/p></description></item><item><title>ChuffChuff (cheaply)</title><link>https://2e0byo.github.io/post/coding/chuffchuff-cheaply/</link><pubDate>Wed, 29 Aug 2018 08:12:22 +0000</pubDate><guid>https://2e0byo.github.io/post/coding/chuffchuff-cheaply/</guid><description>&lt;p>On a rainy day here I wondered exactly when I should book a ticket up
+to Durham for another term. Most of the booking websites will help
+you, but not &lt;em>much&lt;/em>: it&amp;rsquo;s tiresome to check a few days to see what the
+price variation is—and it can be fairly enormous. I was also curious
+as to what the long term trends might be: they don&amp;rsquo;t just seem to go
+down. All of which suggested some code to screenscrape all the tickets
+from somewhere and analyse them. It seems the national rail website
+encodes the query straight into the url (though not as an http query)
+and then sticks the results, in json, in the page served, presumably
+for some javascript to parse later. So all we need is to generate the
+url:&lt;/p></description></item></channel></rss>
