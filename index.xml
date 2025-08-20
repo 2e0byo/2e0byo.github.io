@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jack of All Trades</title><link>https://2e0byo.github.io/</link><description>Recent content on Jack of All Trades</description><generator>Hugo</generator><language>en</language><atom:link href="https://2e0byo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Repairing an Electric Scooter</title><link>https://2e0byo.github.io/post/repairs/scooter/</link><pubDate>Sat, 14 Dec 2024 15:20:59 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/scooter/</guid><description>&lt;p>Here is one of those electric scooters, already anaethetised ready for surgery.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jack of All Trades</title><link>https://2e0byo.github.io/</link><description>Recent content on Jack of All Trades</description><generator>Hugo</generator><language>en</language><atom:link href="https://2e0byo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Measuring a turntable speed with FFMPEG (mostly)</title><link>https://2e0byo.github.io/post/coding/lp/</link><pubDate>Wed, 20 Aug 2025 12:16:54 +0200</pubDate><guid>https://2e0byo.github.io/post/coding/lp/</guid><description>&lt;p>Here on holiday I have no internet most of the time. We also have a record
+player, and it&amp;rsquo;s annoying me: it&amp;rsquo;s clearly flat by roughly a quarter tone, and
+slow. The question is, &lt;em>how&lt;/em> slow?&lt;/p>
+&lt;p>Apparently there are apps which can measure the rotation speed directly with the
+phone&amp;rsquo;s accelerometer, but none seemed to work for me, so I set the record
+player up with nothing on the plateau except a scrap of paper as an indicator
+and recorded an hour of footage at &amp;lsquo;33RPM&amp;rsquo;. In theory now all we need to do is
+work out how many times the dot hits a given section of the image per minute and
+we have measured the rotational speed. Unfortunately I have another problem: I&amp;rsquo;m
+not a data scientist, I&amp;rsquo;m more of a systems programmer. This is the kind of
+thing I&amp;rsquo;d normally do with a bit of googling, but that&amp;rsquo;s out of the question.
+Naturally, a real data scientist would do this with OpenCV or something in a
+notebook, but let&amp;rsquo;s see what we can do with just what I can figure out offline.&lt;/p></description></item><item><title>Repairing an Electric Scooter</title><link>https://2e0byo.github.io/post/repairs/scooter/</link><pubDate>Sat, 14 Dec 2024 15:20:59 +0000</pubDate><guid>https://2e0byo.github.io/post/repairs/scooter/</guid><description>&lt;p>Here is one of those electric scooters, already anaethetised ready for surgery.
 It&amp;rsquo;s in a pretty sorry state: the front fork has sheared right off and is bent
 and mangled, while the steering bearing is loose and wobbles alarmingly. The
 thing is almost impossible to open, but can be forced.
